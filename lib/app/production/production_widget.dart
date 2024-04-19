@@ -560,8 +560,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  FFAppState().videoUrl =
-                                      'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                  FFAppState().update(() {
+                                    FFAppState().videoUrl =
+                                        'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                  });
 
                                   context.pushNamed('infos');
                                 },
