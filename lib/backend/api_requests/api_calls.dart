@@ -101,6 +101,7 @@ class PostSubmissionFgCall {
     String? video = '',
     String? slug = '',
     String? brand = '',
+    String? time = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -109,11 +110,41 @@ class PostSubmissionFgCall {
   "email": "$email",
   "video": "$video",
   "slug": "$slug",
-  "brand": "$brand"
+  "brand": "$brand",
+  "time": "$time"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',
       apiUrl: 'https://tryinit.fastgenapp.com/submitFF',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class NewStartCall {
+  static Future<ApiCallResponse> call({
+    String? slug = '',
+    String? brand = '',
+    String? time = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "slug": "$slug",
+  "brand": "$brand",
+  "time": "$time"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'New start',
+      apiUrl: 'https://tryinit.fastgenapp.com/flowstart',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

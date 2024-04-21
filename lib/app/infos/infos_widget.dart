@@ -855,6 +855,8 @@ class _InfosWidgetState extends State<InfosWidget> {
                                               video: FFAppState().videoUrl,
                                               slug: FFAppState().slug,
                                               brand: FFAppState().brandName,
+                                              time: getCurrentTimestamp
+                                                  .toString(),
                                             );
                                             shouldSetState = true;
                                             if ((_model
