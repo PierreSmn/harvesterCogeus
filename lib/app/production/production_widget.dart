@@ -265,8 +265,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                   onTap: () async {
                                                     final selectedMedia =
                                                         await selectMedia(
-                                                      storageFolderPath:
-                                                          'audios',
+                                                      storageFolderPath: 'new',
                                                       isVideo: true,
                                                       mediaSource: MediaSource
                                                           .videoGallery,
@@ -311,7 +310,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                         downloadUrls =
                                                             await uploadSupabaseStorageFiles(
                                                           bucketName:
-                                                              'conversations',
+                                                              'submissions',
                                                           selectedFiles:
                                                               selectedMedia,
                                                         );
@@ -341,7 +340,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                     }
                                                   },
                                                   child: Text(
-                                                    ' ',
+                                                    '  ',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -560,8 +559,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  FFAppState().videoUrl =
-                                      'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                  FFAppState().update(() {
+                                    FFAppState().videoUrl =
+                                        'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                  });
 
                                   context.pushNamed('infos');
                                 },

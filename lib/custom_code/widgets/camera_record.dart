@@ -79,12 +79,12 @@ class _CameraRecordState extends State<CameraRecord>
         });
         final dateFolderName =
             DateFormat('yyyy-MM-dd_HH:mm:ss').format(DateTime.now());
-        final videoPrefix = "FF";
+        final videoPrefix = FFAppState().slug;
         final fileName = "$videoPrefix$dateFolderName-" + file.name + ".mp4";
 
         final supabase = Supabase.instance.client;
         final url = await supabase.storage
-            .from('conversations')
+            .from('submissions')
             .uploadBinary(fileName, fileAsBytes);
         FFAppState().recordVideoFBStorage = await url ?? '';
         FFAppState().videoReady = true;
