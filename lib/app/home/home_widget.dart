@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -251,345 +252,414 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ),
                                     ].divide(const SizedBox(height: 11.0)),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 48.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 280.0,
-                                          decoration: const BoxDecoration(),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 10.0, 0.0),
-                                                child: Theme(
-                                                  data: ThemeData(
-                                                    checkboxTheme:
-                                                        CheckboxThemeData(
-                                                      visualDensity:
-                                                          VisualDensity.compact,
-                                                      materialTapTargetSize:
-                                                          MaterialTapTargetSize
-                                                              .shrinkWrap,
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(2.0),
+                                  if (MediaQuery.sizeOf(context).width <
+                                      kBreakpointSmall)
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 48.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 280.0,
+                                            decoration: const BoxDecoration(),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Theme(
+                                                    data: ThemeData(
+                                                      checkboxTheme:
+                                                          CheckboxThemeData(
+                                                        visualDensity:
+                                                            VisualDensity
+                                                                .compact,
+                                                        materialTapTargetSize:
+                                                            MaterialTapTargetSize
+                                                                .shrinkWrap,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      2.0),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    unselectedWidgetColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .appleTxt1,
-                                                  ),
-                                                  child: Checkbox(
-                                                    value:
-                                                        _model.checkboxValue ??=
-                                                            false,
-                                                    onChanged:
-                                                        (newValue) async {
-                                                      setState(() =>
-                                                          _model.checkboxValue =
-                                                              newValue!);
-                                                      if (newValue!) {
-                                                        setState(() {
-                                                          _model.checked = true;
-                                                        });
-                                                      } else {
-                                                        setState(() {
-                                                          _model.checked =
-                                                              false;
-                                                        });
-                                                      }
-                                                    },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color:
+                                                      unselectedWidgetColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .appleTxt1,
                                                     ),
-                                                    activeColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryBackground,
-                                                    checkColor: GetSupaCall
-                                                                    .colorButton(
-                                                                  homeGetSupaResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                null &&
-                                                            GetSupaCall
-                                                                    .colorButton(
-                                                                  homeGetSupaResponse
-                                                                      .jsonBody,
-                                                                ) !=
-                                                                ''
-                                                        ? colorFromCssString(
-                                                            GetSupaCall
-                                                                .colorButton(
-                                                              homeGetSupaResponse
-                                                                  .jsonBody,
-                                                            )!,
-                                                            defaultColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .appleButton,
-                                                          )
-                                                        : FlutterFlowTheme.of(
-                                                                context)
-                                                            .appleButton,
-                                                  ),
-                                                ).animateOnActionTrigger(
-                                                    animationsMap[
-                                                        'checkboxOnActionTriggerAnimation']!,
-                                                    hasBeenTriggered:
-                                                        hasCheckboxTriggered),
-                                              ),
-                                              Flexible(
-                                                child: RichText(
-                                                  textScaler:
-                                                      MediaQuery.of(context)
-                                                          .textScaler,
-                                                  text: TextSpan(
-                                                    children: [
-                                                      const TextSpan(
-                                                        text: 'J\'accepte les ',
-                                                        style: TextStyle(),
+                                                    child: Checkbox(
+                                                      value: _model
+                                                              .checkboxValue ??=
+                                                          false,
+                                                      onChanged:
+                                                          (newValue) async {
+                                                        setState(() => _model
+                                                                .checkboxValue =
+                                                            newValue!);
+                                                        if (newValue!) {
+                                                          setState(() {
+                                                            _model.checked =
+                                                                true;
+                                                          });
+                                                        } else {
+                                                          setState(() {
+                                                            _model.checked =
+                                                                false;
+                                                          });
+                                                        }
+                                                      },
+                                                      side: BorderSide(
+                                                        width: 2,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .appleTxt1,
                                                       ),
-                                                      TextSpan(
-                                                        text:
-                                                            'Conditions Générales',
-                                                        style: TextStyle(
-                                                          color: GetSupaCall
-                                                                          .colorButton(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      null &&
-                                                                  GetSupaCall
-                                                                          .colorButton(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      ''
-                                                              ? colorFromCssString(
-                                                                  GetSupaCall
+                                                      activeColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                      checkColor: GetSupaCall
                                                                       .colorButton(
                                                                     homeGetSupaResponse
                                                                         .jsonBody,
-                                                                  )!,
-                                                                  defaultColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .appleButton,
-                                                                )
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .appleButton,
+                                                                  ) !=
+                                                                  null &&
+                                                              GetSupaCall
+                                                                      .colorButton(
+                                                                    homeGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  ''
+                                                          ? colorFromCssString(
+                                                              GetSupaCall
+                                                                  .colorButton(
+                                                                homeGetSupaResponse
+                                                                    .jsonBody,
+                                                              )!,
+                                                              defaultColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .appleButton,
+                                                            )
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .appleButton,
+                                                    ),
+                                                  ).animateOnActionTrigger(
+                                                      animationsMap[
+                                                          'checkboxOnActionTriggerAnimation']!,
+                                                      hasBeenTriggered:
+                                                          hasCheckboxTriggered),
+                                                ),
+                                                Flexible(
+                                                  child: RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        const TextSpan(
+                                                          text:
+                                                              'J\'accepte les ',
+                                                          style: TextStyle(),
                                                         ),
-                                                        mouseCursor:
-                                                            SystemMouseCursors
-                                                                .click,
-                                                        recognizer:
-                                                            TapGestureRecognizer()
-                                                              ..onTap =
-                                                                  () async {
-                                                                await launchURL(
-                                                                    'https://www.cogeus.com/terms-of-use');
-                                                              },
+                                                        TextSpan(
+                                                          text:
+                                                              'Conditions Générales',
+                                                          style: TextStyle(
+                                                            color: GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButton(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .appleButton,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .appleButton,
+                                                          ),
+                                                          mouseCursor:
+                                                              SystemMouseCursors
+                                                                  .click,
+                                                          recognizer:
+                                                              TapGestureRecognizer()
+                                                                ..onTap =
+                                                                    () async {
+                                                                  await launchURL(
+                                                                      'https://www.cogeus.com/terms-of-use');
+                                                                },
+                                                        ),
+                                                        const TextSpan(
+                                                          text:
+                                                              ' et que ma vidéo apparaisse dans les communications de ',
+                                                          style: TextStyle(),
+                                                        ),
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            GetSupaCall.brand(
+                                                              homeGetSupaResponse
+                                                                  .jsonBody,
+                                                            ),
+                                                            'brandName',
+                                                          ),
+                                                          style: const TextStyle(),
+                                                        )
+                                                      ],
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Manrope',
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.checked =
+                                                        _model.checkboxValue;
+                                                  });
+                                                  if (!_model.checked!) {
+                                                    if (animationsMap[
+                                                            'checkboxOnActionTriggerAnimation'] !=
+                                                        null) {
+                                                      setState(() =>
+                                                          hasCheckboxTriggered =
+                                                              true);
+                                                      SchedulerBinding.instance
+                                                          .addPostFrameCallback((_) async =>
+                                                              await animationsMap[
+                                                                      'checkboxOnActionTriggerAnimation']!
+                                                                  .controller
+                                                                  .forward(
+                                                                      from:
+                                                                          0.0));
+                                                    }
+                                                    return;
+                                                  }
+                                                  setState(() {
+                                                    FFAppState().slug = () {
+                                                      if (widget.slug != '') {
+                                                        return widget.slug;
+                                                      } else if (FFAppState().slug !=
+                                                              '') {
+                                                        return FFAppState()
+                                                            .slug;
+                                                      } else {
+                                                        return 'test';
+                                                      }
+                                                    }();
+                                                    FFAppState().brandName =
+                                                        valueOrDefault<String>(
+                                                      GetSupaCall.brand(
+                                                        homeGetSupaResponse
+                                                            .jsonBody,
                                                       ),
-                                                      const TextSpan(
-                                                        text:
-                                                            ' et que ma vidéo apparaisse dans les communications de ',
-                                                        style: TextStyle(),
-                                                      ),
-                                                      TextSpan(
-                                                        text: valueOrDefault<
-                                                            String>(
-                                                          GetSupaCall.brand(
+                                                      'unset',
+                                                    );
+                                                    FFAppState().validatedDone =
+                                                        false;
+                                                    FFAppState().isRecording =
+                                                        false;
+                                                    FFAppState()
+                                                        .recordVideoFBStorage = '';
+                                                    FFAppState().videoReady =
+                                                        false;
+                                                  });
+                                                  unawaited(
+                                                    () async {
+                                                      await NewStartCall.call(
+                                                        slug: FFAppState().slug,
+                                                        brand: FFAppState()
+                                                            .brandName,
+                                                        time:
+                                                            getCurrentTimestamp
+                                                                .toString(),
+                                                      );
+                                                    }(),
+                                                  );
+
+                                                  context
+                                                      .pushNamed('production');
+                                                },
+                                                text: 'J’enregistre ma vidéo',
+                                                options: FFButtonOptions(
+                                                  width: 300.0,
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: GetSupaCall
+                                                                  .colorButton(
+                                                                homeGetSupaResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              null &&
+                                                          GetSupaCall
+                                                                  .colorButton(
+                                                                homeGetSupaResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              ''
+                                                      ? colorFromCssString(
+                                                          GetSupaCall
+                                                              .colorButton(
                                                             homeGetSupaResponse
                                                                 .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .appleButton,
+                                                        )
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .appleButton,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Manrope',
+                                                            color: GetSupaCall
+                                                                            .colorButtonText(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButtonText(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButtonText(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
                                                           ),
-                                                          'brandName',
-                                                        ),
-                                                        style: const TextStyle(),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                  elevation: 0.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
                                                   ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          7.0),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                setState(() {
-                                                  _model.checked =
-                                                      _model.checkboxValue;
-                                                });
-                                                if (!_model.checked!) {
-                                                  if (animationsMap[
-                                                          'checkboxOnActionTriggerAnimation'] !=
-                                                      null) {
-                                                    setState(() =>
-                                                        hasCheckboxTriggered =
-                                                            true);
-                                                    SchedulerBinding.instance
-                                                        .addPostFrameCallback((_) async =>
-                                                            await animationsMap[
-                                                                    'checkboxOnActionTriggerAnimation']!
-                                                                .controller
-                                                                .forward(
-                                                                    from: 0.0));
-                                                  }
-                                                  return;
-                                                }
-                                                setState(() {
-                                                  FFAppState().slug = () {
-                                                    if (widget.slug != '') {
-                                                      return widget.slug;
-                                                    } else if (FFAppState().slug !=
-                                                            '') {
-                                                      return FFAppState().slug;
-                                                    } else {
-                                                      return 'test';
-                                                    }
-                                                  }();
-                                                  FFAppState().brandName =
-                                                      valueOrDefault<String>(
-                                                    GetSupaCall.brand(
-                                                      homeGetSupaResponse
-                                                          .jsonBody,
-                                                    ),
-                                                    'unset',
-                                                  );
-                                                  FFAppState().validatedDone =
-                                                      false;
-                                                  FFAppState().isRecording =
-                                                      false;
-                                                  FFAppState()
-                                                      .recordVideoFBStorage = '';
-                                                  FFAppState().videoReady =
-                                                      false;
-                                                });
-                                                unawaited(
-                                                  () async {
-                                                    await NewStartCall.call(
-                                                      slug: FFAppState().slug,
-                                                      brand: FFAppState()
-                                                          .brandName,
-                                                      time: getCurrentTimestamp
-                                                          .toString(),
-                                                    );
-                                                  }(),
-                                                );
-
-                                                context.pushNamed('production');
-                                              },
-                                              text: 'J’enregistre ma vidéo',
-                                              options: FFButtonOptions(
-                                                width: 300.0,
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color: GetSupaCall.colorButton(
-                                                              homeGetSupaResponse
-                                                                  .jsonBody,
-                                                            ) !=
-                                                            null &&
-                                                        GetSupaCall.colorButton(
-                                                              homeGetSupaResponse
-                                                                  .jsonBody,
-                                                            ) !=
-                                                            ''
-                                                    ? colorFromCssString(
-                                                        GetSupaCall.colorButton(
-                                                          homeGetSupaResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                        defaultColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .appleButton,
-                                                      )
-                                                    : FlutterFlowTheme.of(
-                                                            context)
-                                                        .appleButton,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: GetSupaCall
-                                                                          .colorButtonText(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      null &&
-                                                                  GetSupaCall
-                                                                          .colorButtonText(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      ''
-                                                              ? colorFromCssString(
-                                                                  GetSupaCall
-                                                                      .colorButtonText(
-                                                                    homeGetSupaResponse
-                                                                        .jsonBody,
-                                                                  )!,
-                                                                  defaultColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                )
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(7.0),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
+                                      ),
                                     ),
-                                  ),
+                                  if (MediaQuery.sizeOf(context).width >
+                                      kBreakpointSmall)
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 48.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            decoration: const BoxDecoration(),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                BarcodeWidget(
+                                                  data:
+                                                      'https://app.cogeus.com/home?slug=${widget.slug != '' ? widget.slug : FFAppState().slug}',
+                                                  barcode: Barcode.qrCode(),
+                                                  width: 240.0,
+                                                  height: 160.0,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  errorBuilder:
+                                                      (context, error) =>
+                                                          const SizedBox(
+                                                    width: 240.0,
+                                                    height: 160.0,
+                                                  ),
+                                                  drawText: false,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Text(
+                                            'Scannez ce code pour\n continuer sur un téléphone',
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ].divide(const SizedBox(height: 12.0)),
+                                      ),
+                                    ),
                                 ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),

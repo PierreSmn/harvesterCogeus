@@ -78,14 +78,17 @@ class _CameraRecordState extends State<CameraRecord>
           FFAppState().isRecording = false;
         });
         final dateFolderName =
-            DateFormat('yyyy-MM-dd_HH:mm:ss').format(DateTime.now());
+            DateFormat('_HH:mm:ss_dd-MM-yyyy').format(DateTime.now());
         final videoPrefix = FFAppState().slug;
-        final fileName = "$videoPrefix$dateFolderName-" + file.name + ".mp4";
+        final fileName = "/$videoPrefix/$dateFolderName-" + file.name;
 
+        final fileOptions = FileOptions(
+          contentType: 'video/mp4',
+        );
         final supabase = Supabase.instance.client;
         final url = await supabase.storage
             .from('submissions')
-            .uploadBinary(fileName, fileAsBytes);
+            .uploadBinary(fileName, fileAsBytes, fileOptions: fileOptions);
         FFAppState().recordVideoFBStorage = await url ?? '';
         FFAppState().videoReady = true;
       }).catchError((error) {});
