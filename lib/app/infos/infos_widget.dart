@@ -166,7 +166,7 @@ class _InfosWidgetState extends State<InfosWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Nous avons besoin de votre nom complet pour que l\'inscription soit validé.',
+                                                  'Nous avons besoin de votre nom complet pour que l\'inscription soit validée.',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
