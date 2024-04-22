@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -128,7 +129,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                         children: const [
                                           TextSpan(
                                             text:
-                                                'Votre participation est validé !',
+                                                'Votre participation est validée !',
                                             style: TextStyle(),
                                           )
                                         ],
@@ -316,6 +317,70 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                       ),
                                                 ),
                                               ].divide(const SizedBox(width: 6.0)),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 12.0, 0.0, 0.0),
+                                            child: FFButtonWidget(
+                                              onPressed: () async {
+                                                await launchURL(
+                                                    GetSupaCall.ctaUrl(
+                                                  doneGetSupaResponse.jsonBody,
+                                                )!);
+                                              },
+                                              text: 'Aller sur le site',
+                                              icon: const Icon(
+                                                Icons.exit_to_app,
+                                                size: 15.0,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: colorFromCssString(
+                                                  GetSupaCall.colorButton(
+                                                    doneGetSupaResponse
+                                                        .jsonBody,
+                                                  )!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              colorFromCssString(
+                                                            GetSupaCall
+                                                                .colorButtonText(
+                                                              doneGetSupaResponse
+                                                                  .jsonBody,
+                                                            )!,
+                                                            defaultColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                  width: 0.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(7.0),
+                                              ),
                                             ),
                                           ),
                                         ].divide(const SizedBox(height: 12.0)),

@@ -91,6 +91,10 @@ class GetSupaCall {
         response,
         r'''$[:].descriptionCodePromo''',
       ));
+  static String? ctaUrl(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].ctaUrl''',
+      ));
 }
 
 class PostSubmissionFgCall {
