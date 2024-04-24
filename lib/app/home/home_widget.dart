@@ -287,7 +287,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
-                                                                      2.0),
+                                                                      4.0),
                                                         ),
                                                       ),
                                                       unselectedWidgetColor:

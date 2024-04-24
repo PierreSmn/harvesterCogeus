@@ -56,33 +56,33 @@ class _ProductionWidgetState extends State<ProductionWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: const Color(0xFF020109),
-            body: Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: const BoxDecoration(),
-              child: FutureBuilder<ApiCallResponse>(
-                future: FFAppState().api(
-                  uniqueQueryKey: FFAppState().slug,
-                  requestFn: () => GetSupaCall.call(
-                    slug: FFAppState().slug,
-                  ),
+            body: FutureBuilder<ApiCallResponse>(
+              future: FFAppState().api(
+                uniqueQueryKey: FFAppState().slug,
+                requestFn: () => GetSupaCall.call(
+                  slug: FFAppState().slug,
                 ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: SpinKitRing(
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 50.0,
-                        ),
+              ),
+              builder: (context, snapshot) {
+                // Customize what your widget looks like when it's loading.
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: SpinKitRing(
+                        color: FlutterFlowTheme.of(context).primary,
+                        size: 50.0,
                       ),
-                    );
-                  }
-                  final columnGetSupaResponse = snapshot.data!;
-                  return Column(
+                    ),
+                  );
+                }
+                final containerGetSupaResponse = snapshot.data!;
+                return Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: const BoxDecoration(),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -204,154 +204,168 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                       .toString();
                                             });
                                           },
-                                          child: Container(
-                                            width: 350.0,
-                                            height: 110.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .revoSearchIconColor,
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            elevation: 0.0,
+                                            shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
-                                              border: Border.all(
+                                            ),
+                                            child: Container(
+                                              width: 350.0,
+                                              height: 110.0,
+                                              decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                width: 0.0,
+                                                        .revoSearchIconColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                border: Border.all(
+                                                  width: 0.0,
+                                                ),
                                               ),
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      GetSupaCall.expla(
-                                                        columnGetSupaResponse
-                                                            .jsonBody,
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        GetSupaCall.expla(
+                                                          containerGetSupaResponse
+                                                              .jsonBody,
+                                                        ),
+                                                        'Erreur, rechargez la page.',
                                                       ),
-                                                      'Erreur, rechargez la page.',
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                fontSize: 18.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
                                                     ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          fontSize: 18.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
                                                   ),
-                                                ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    final selectedMedia =
-                                                        await selectMedia(
-                                                      storageFolderPath: 'new',
-                                                      isVideo: true,
-                                                      mediaSource: MediaSource
-                                                          .videoGallery,
-                                                      multiImage: false,
-                                                    );
-                                                    if (selectedMedia != null &&
-                                                        selectedMedia.every((m) =>
-                                                            validateFileFormat(
-                                                                m.storagePath,
-                                                                context))) {
-                                                      setState(() => _model
-                                                              .isDataUploading =
-                                                          true);
-                                                      var selectedUploadedFiles =
-                                                          <FFUploadedFile>[];
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      final selectedMedia =
+                                                          await selectMedia(
+                                                        storageFolderPath:
+                                                            'new',
+                                                        isVideo: true,
+                                                        mediaSource: MediaSource
+                                                            .videoGallery,
+                                                        multiImage: false,
+                                                      );
+                                                      if (selectedMedia !=
+                                                              null &&
+                                                          selectedMedia.every((m) =>
+                                                              validateFileFormat(
+                                                                  m.storagePath,
+                                                                  context))) {
+                                                        setState(() => _model
+                                                                .isDataUploading =
+                                                            true);
+                                                        var selectedUploadedFiles =
+                                                            <FFUploadedFile>[];
 
-                                                      var downloadUrls =
-                                                          <String>[];
-                                                      try {
-                                                        selectedUploadedFiles =
-                                                            selectedMedia
-                                                                .map((m) =>
-                                                                    FFUploadedFile(
-                                                                      name: m
-                                                                          .storagePath
-                                                                          .split(
-                                                                              '/')
-                                                                          .last,
-                                                                      bytes: m
-                                                                          .bytes,
-                                                                      height: m
-                                                                          .dimensions
-                                                                          ?.height,
-                                                                      width: m
-                                                                          .dimensions
-                                                                          ?.width,
-                                                                      blurHash:
-                                                                          m.blurHash,
-                                                                    ))
-                                                                .toList();
+                                                        var downloadUrls =
+                                                            <String>[];
+                                                        try {
+                                                          selectedUploadedFiles =
+                                                              selectedMedia
+                                                                  .map((m) =>
+                                                                      FFUploadedFile(
+                                                                        name: m
+                                                                            .storagePath
+                                                                            .split('/')
+                                                                            .last,
+                                                                        bytes: m
+                                                                            .bytes,
+                                                                        height: m
+                                                                            .dimensions
+                                                                            ?.height,
+                                                                        width: m
+                                                                            .dimensions
+                                                                            ?.width,
+                                                                        blurHash:
+                                                                            m.blurHash,
+                                                                      ))
+                                                                  .toList();
 
-                                                        downloadUrls =
-                                                            await uploadSupabaseStorageFiles(
-                                                          bucketName:
-                                                              'submissions',
-                                                          selectedFiles:
-                                                              selectedMedia,
-                                                        );
-                                                      } finally {
-                                                        _model.isDataUploading =
-                                                            false;
+                                                          downloadUrls =
+                                                              await uploadSupabaseStorageFiles(
+                                                            bucketName:
+                                                                'submissions',
+                                                            selectedFiles:
+                                                                selectedMedia,
+                                                          );
+                                                        } finally {
+                                                          _model.isDataUploading =
+                                                              false;
+                                                        }
+                                                        if (selectedUploadedFiles
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length &&
+                                                            downloadUrls
+                                                                    .length ==
+                                                                selectedMedia
+                                                                    .length) {
+                                                          setState(() {
+                                                            _model.uploadedLocalFile =
+                                                                selectedUploadedFiles
+                                                                    .first;
+                                                            _model.uploadedFileUrl =
+                                                                downloadUrls
+                                                                    .first;
+                                                          });
+                                                        } else {
+                                                          setState(() {});
+                                                          return;
+                                                        }
                                                       }
-                                                      if (selectedUploadedFiles
-                                                                  .length ==
-                                                              selectedMedia
-                                                                  .length &&
-                                                          downloadUrls.length ==
-                                                              selectedMedia
-                                                                  .length) {
-                                                        setState(() {
-                                                          _model.uploadedLocalFile =
-                                                              selectedUploadedFiles
-                                                                  .first;
-                                                          _model.uploadedFileUrl =
-                                                              downloadUrls
-                                                                  .first;
-                                                        });
-                                                      } else {
-                                                        setState(() {});
-                                                        return;
-                                                      }
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    '  ',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          fontSize: 2.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                    },
+                                                    child: Text(
+                                                      '  ',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Manrope',
+                                                            fontSize: 2.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -595,9 +609,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                           ),
                         ),
                     ].divide(const SizedBox(height: 6.0)),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
           ),
         ));

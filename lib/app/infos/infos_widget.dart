@@ -80,40 +80,43 @@ class _InfosWidgetState extends State<InfosWidget>
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Title(
-        title: 'infos',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-        child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
-          child: Scaffold(
-            key: scaffoldKey,
+    return FutureBuilder<ApiCallResponse>(
+      future: FFAppState().api(
+        requestFn: () => GetSupaCall.call(
+          slug: FFAppState().slug,
+        ),
+      ),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: SafeArea(
-              top: true,
-              child: FutureBuilder<ApiCallResponse>(
-                future: FFAppState().api(
-                  requestFn: () => GetSupaCall.call(
-                    slug: FFAppState().slug,
-                  ),
+            body: Center(
+              child: SizedBox(
+                width: 50.0,
+                height: 50.0,
+                child: SpinKitRing(
+                  color: FlutterFlowTheme.of(context).primary,
+                  size: 50.0,
                 ),
-                builder: (context, snapshot) {
-                  // Customize what your widget looks like when it's loading.
-                  if (!snapshot.hasData) {
-                    return Center(
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: SpinKitRing(
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 50.0,
-                        ),
-                      ),
-                    );
-                  }
-                  final columnGetSupaResponse = snapshot.data!;
-                  return SingleChildScrollView(
+              ),
+            ),
+          );
+        }
+        final infosGetSupaResponse = snapshot.data!;
+        return Title(
+            title: 'infos',
+            color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+            child: GestureDetector(
+              onTap: () => _model.unfocusNode.canRequestFocus
+                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                  : FocusScope.of(context).unfocus(),
+              child: Scaffold(
+                key: scaffoldKey,
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                body: SafeArea(
+                  top: true,
+                  child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -556,7 +559,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: colorFromCssString(
                                             GetSupaCall.colorButton(
-                                              columnGetSupaResponse.jsonBody,
+                                              infosGetSupaResponse.jsonBody,
                                             )!,
                                             defaultColor:
                                                 FlutterFlowTheme.of(context)
@@ -569,7 +572,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 fontFamily: 'Manrope',
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorButtonText(
-                                                    columnGetSupaResponse
+                                                    infosGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor:
@@ -685,7 +688,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                       ),
                                                       TextSpan(
                                                         text: GetSupaCall.brand(
-                                                          columnGetSupaResponse
+                                                          infosGetSupaResponse
                                                               .jsonBody,
                                                         )!,
                                                         style: const TextStyle(),
@@ -734,7 +737,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 Icons.stars_rounded,
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorButton(
-                                                    columnGetSupaResponse
+                                                    infosGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor:
@@ -753,8 +756,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               itemSize: 40.0,
                                               glowColor: colorFromCssString(
                                                 GetSupaCall.colorButton(
-                                                  columnGetSupaResponse
-                                                      .jsonBody,
+                                                  infosGetSupaResponse.jsonBody,
                                                 )!,
                                                 defaultColor:
                                                     FlutterFlowTheme.of(context)
@@ -813,7 +815,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: colorFromCssString(
                                             GetSupaCall.colorButton(
-                                              columnGetSupaResponse.jsonBody,
+                                              infosGetSupaResponse.jsonBody,
                                             )!,
                                             defaultColor:
                                                 FlutterFlowTheme.of(context)
@@ -826,7 +828,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 fontFamily: 'Manrope',
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorButtonText(
-                                                    columnGetSupaResponse
+                                                    infosGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor:
@@ -1173,7 +1175,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: colorFromCssString(
                                               GetSupaCall.colorButton(
-                                                columnGetSupaResponse.jsonBody,
+                                                infosGetSupaResponse.jsonBody,
                                               )!,
                                               defaultColor:
                                                   FlutterFlowTheme.of(context)
@@ -1186,7 +1188,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   fontFamily: 'Manrope',
                                                   color: colorFromCssString(
                                                     GetSupaCall.colorButtonText(
-                                                      columnGetSupaResponse
+                                                      infosGetSupaResponse
                                                           .jsonBody,
                                                     )!,
                                                     defaultColor:
@@ -1226,7 +1228,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: colorFromCssString(
                                               GetSupaCall.colorButton(
-                                                columnGetSupaResponse.jsonBody,
+                                                infosGetSupaResponse.jsonBody,
                                               )!,
                                               defaultColor:
                                                   FlutterFlowTheme.of(context)
@@ -1239,7 +1241,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   fontFamily: 'Manrope',
                                                   color: colorFromCssString(
                                                     GetSupaCall.colorButtonText(
-                                                      columnGetSupaResponse
+                                                      infosGetSupaResponse
                                                           .jsonBody,
                                                     )!,
                                                     defaultColor:
@@ -1266,11 +1268,11 @@ class _InfosWidgetState extends State<InfosWidget>
                           ),
                       ].addToStart(const SizedBox(height: 16.0)),
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
-            ),
-          ),
-        ));
+            ));
+      },
+    );
   }
 }
