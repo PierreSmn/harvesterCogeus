@@ -106,6 +106,7 @@ class PostSubmissionFgCall {
     String? slug = '',
     String? brand = '',
     String? time = '',
+    double? rating,
   }) async {
     final ffApiRequestBody = '''
 {
@@ -115,7 +116,8 @@ class PostSubmissionFgCall {
   "video": "$video",
   "slug": "$slug",
   "brand": "$brand",
-  "time": "$time"
+  "time": "$time",
+  "rating": $rating
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',
