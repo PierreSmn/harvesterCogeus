@@ -256,7 +256,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       kBreakpointSmall)
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 48.0),
+                                          0.0, 0.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [

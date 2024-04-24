@@ -625,7 +625,9 @@ class _InfosWidgetState extends State<InfosWidget>
                                               size: 22.0,
                                             ),
                                             onPressed: () async {
-                                              context.pop();
+                                              setState(() {
+                                                _model.step = _model.step! + -1;
+                                              });
                                             },
                                           ),
                                           Text(
@@ -738,7 +740,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   defaultColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .rougeMalongo,
+                                                          .secondary,
                                                 ),
                                               ),
                                               direction: Axis.horizontal,
@@ -756,7 +758,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 )!,
                                                 defaultColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .rougeMalongo,
+                                                        .secondary,
                                               ),
                                             ).animateOnActionTrigger(
                                               animationsMap[
