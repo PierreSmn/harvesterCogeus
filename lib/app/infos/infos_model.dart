@@ -38,6 +38,8 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
     return null;
   }
 
+  // State field(s) for RatingBar widget.
+  double? ratingBarValue;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;

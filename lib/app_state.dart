@@ -49,6 +49,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _validatedDone = prefs.getBool('ff_validatedDone') ?? _validatedDone;
     });
+    _safeInit(() {
+      _rating = prefs.getDouble('ff_rating') ?? _rating;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -168,6 +171,13 @@ class FFAppState extends ChangeNotifier {
   set validatedDone(bool value) {
     _validatedDone = value;
     prefs.setBool('ff_validatedDone', value);
+  }
+
+  double _rating = 0.0;
+  double get rating => _rating;
+  set rating(double value) {
+    _rating = value;
+    prefs.setDouble('ff_rating', value);
   }
 
   final _apiManager = FutureRequestManager<ApiCallResponse>();
