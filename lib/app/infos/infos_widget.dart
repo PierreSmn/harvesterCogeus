@@ -680,7 +680,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     children: [
                                                       const TextSpan(
                                                         text:
-                                                            'Quelle note donneriez vous à ',
+                                                            'Quelle note donneriez-vous à ',
                                                         style: TextStyle(),
                                                       ),
                                                       TextSpan(
