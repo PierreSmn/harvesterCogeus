@@ -200,8 +200,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                   ),
                                                 ),
                                                 const TextSpan(
-                                                  text:
-                                                      ' vous offre un code pour ',
+                                                  text: ' vous offre ',
                                                   style: TextStyle(),
                                                 ),
                                                 TextSpan(
@@ -211,6 +210,10 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                         .jsonBody,
                                                   )!,
                                                   style: const TextStyle(),
+                                                ),
+                                                const TextSpan(
+                                                  text: ' avec le code :',
+                                                  style: TextStyle(),
                                                 )
                                               ],
                                               style:
