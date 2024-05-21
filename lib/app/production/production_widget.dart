@@ -154,7 +154,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             children: [
                                               FlutterFlowTimer(
                                                 initialTime:
-                                                    _model.timerMilliseconds,
+                                                    _model.timerInitialTimeMs,
                                                 getDisplayTime: (value) =>
                                                     StopWatchTimer
                                                         .getDisplayTime(value,
