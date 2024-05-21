@@ -130,6 +130,10 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+  fonts:
+    - family: 'modal'
+      fonts:
+        - asset: assets/fonts/fonnts.com-Modal_Regular.ttf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

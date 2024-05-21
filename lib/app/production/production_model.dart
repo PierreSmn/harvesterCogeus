@@ -17,6 +17,7 @@ class ProductionModel extends FlutterFlowModel<ProductionWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for Timer widget.
+  final timerInitialTimeMs = 0;
   int timerMilliseconds = 0;
   String timerValue = StopWatchTimer.getDisplayTime(0, milliSecond: false);
   FlutterFlowTimerController timerController =

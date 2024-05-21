@@ -78,7 +78,7 @@ class _CameraRecordState extends State<CameraRecord>
           FFAppState().isRecording = false;
         });
         final dateFolderName =
-            DateFormat('_HH:mm:ss_dd-MM-yyyy').format(DateTime.now());
+            DateFormat('dd-MM-yyyy_HH:mm:ss_').format(DateTime.now());
         final videoPrefix = FFAppState().slug;
         final fileName = "/$videoPrefix/$dateFolderName-" + file.name;
 

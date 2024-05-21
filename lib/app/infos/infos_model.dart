@@ -55,6 +55,8 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
     return null;
   }
 
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
   // Stores action output result for [Backend Call - API (post submission fg)] action in Button widget.
   ApiCallResponse? apiResultro6;
 
