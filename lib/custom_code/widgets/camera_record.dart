@@ -105,7 +105,7 @@ class _CameraRecordState extends State<CameraRecord>
               if (controller == null) {
                 controller = CameraController(
                   snapshot.data![widget.control],
-                  ResolutionPreset.max,
+                  ResolutionPreset.high,
                 );
                 controller!.initialize().then((_) {
                   if (!mounted) {
