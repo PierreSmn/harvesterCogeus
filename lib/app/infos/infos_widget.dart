@@ -1199,7 +1199,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   children: const [
                                                     TextSpan(
                                                       text:
-                                                          'Vous acceptez de recevoir les informations des festivals We Love Green (communication, promotion, informations pratiques)',
+                                                          'Vous acceptez de recevoir les informations des festivals WE LOVE GREEN (communication, promotion, informations pratiques)',
                                                       style: TextStyle(),
                                                     )
                                                   ],
