@@ -52,6 +52,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _rating = prefs.getDouble('ff_rating') ?? _rating;
     });
+    _safeInit(() {
+      _questionAsked = prefs.getString('ff_questionAsked') ?? _questionAsked;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -178,6 +181,13 @@ class FFAppState extends ChangeNotifier {
   set rating(double value) {
     _rating = value;
     prefs.setDouble('ff_rating', value);
+  }
+
+  String _questionAsked = '';
+  String get questionAsked => _questionAsked;
+  set questionAsked(String value) {
+    _questionAsked = value;
+    prefs.setString('ff_questionAsked', value);
   }
 
   final _apiManager = FutureRequestManager<ApiCallResponse>();

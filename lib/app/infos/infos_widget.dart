@@ -1270,6 +1270,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                               rating: FFAppState().rating,
                                               boolmail:
                                                   _model.checkboxValue ?? false,
+                                              question:
+                                                  FFAppState().questionAsked,
                                             );
                                             shouldSetState = true;
                                             if ((_model
