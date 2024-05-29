@@ -109,6 +109,7 @@ class PostSubmissionFgCall {
     String? time = '',
     double? rating,
     bool? boolmail,
+    String? question = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -120,7 +121,8 @@ class PostSubmissionFgCall {
   "brand": "$brand",
   "time": "$time",
   "rating": $rating,
-  "boolmail": $boolmail
+  "boolmail": $boolmail,
+  "question": "$question"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',

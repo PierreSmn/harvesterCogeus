@@ -576,6 +576,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                   FFAppState().update(() {
                                     FFAppState().videoUrl =
                                         'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                    FFAppState().questionAsked =
+                                        GetSupaCall.expla(
+                                      containerGetSupaResponse.jsonBody,
+                                    )!;
                                   });
 
                                   context.pushNamed('infos');
