@@ -227,15 +227,12 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                                 .checkboxValue =
                                                             newValue!);
                                                         if (newValue!) {
-                                                          setState(() {
-                                                            _model.checked =
-                                                                true;
-                                                          });
+                                                          _model.checked = true;
+                                                          setState(() {});
                                                         } else {
-                                                          setState(() {
-                                                            _model.checked =
-                                                                false;
-                                                          });
+                                                          _model.checked =
+                                                              false;
+                                                          setState(() {});
                                                         }
                                                       },
                                                       side: BorderSide(
@@ -324,10 +321,9 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                             children: [
                                               FFButtonWidget(
                                                 onPressed: () async {
-                                                  setState(() {
-                                                    _model.checked =
-                                                        _model.checkboxValue;
-                                                  });
+                                                  _model.checked =
+                                                      _model.checkboxValue;
+                                                  setState(() {});
                                                   if (!_model.checked!) {
                                                     if (animationsMap[
                                                             'checkboxOnActionTriggerAnimation'] !=
@@ -346,26 +342,25 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                     }
                                                     return;
                                                   }
-                                                  setState(() {
-                                                    FFAppState().slug =
-                                                        'lovegreentest';
-                                                    FFAppState().brandName =
-                                                        valueOrDefault<String>(
-                                                      GetSupaCall.brand(
-                                                        lovegreenGetSupaResponse
-                                                            .jsonBody,
-                                                      ),
-                                                      'unset',
-                                                    );
-                                                    FFAppState().validatedDone =
-                                                        false;
-                                                    FFAppState().isRecording =
-                                                        false;
-                                                    FFAppState()
-                                                        .recordVideoFBStorage = '';
-                                                    FFAppState().videoReady =
-                                                        false;
-                                                  });
+                                                  FFAppState().slug =
+                                                      'lovegreentest';
+                                                  FFAppState().brandName =
+                                                      valueOrDefault<String>(
+                                                    GetSupaCall.brand(
+                                                      lovegreenGetSupaResponse
+                                                          .jsonBody,
+                                                    ),
+                                                    'unset',
+                                                  );
+                                                  FFAppState().validatedDone =
+                                                      false;
+                                                  FFAppState().isRecording =
+                                                      false;
+                                                  FFAppState()
+                                                      .recordVideoFBStorage = '';
+                                                  FFAppState().videoReady =
+                                                      false;
+                                                  setState(() {});
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(

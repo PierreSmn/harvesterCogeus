@@ -11,11 +11,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'home_model.dart';
-export 'home_model.dart';
+import 'home_copy_model.dart';
+export 'home_copy_model.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({
+class HomeCopyWidget extends StatefulWidget {
+  const HomeCopyWidget({
     super.key,
     String? slug,
   }) : slug = slug ?? '';
@@ -23,11 +23,12 @@ class HomeWidget extends StatefulWidget {
   final String slug;
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<HomeCopyWidget> createState() => _HomeCopyWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
-  late HomeModel _model;
+class _HomeCopyWidgetState extends State<HomeCopyWidget>
+    with TickerProviderStateMixin {
+  late HomeCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasCheckboxTriggered = false;
@@ -36,7 +37,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomeModel());
+    _model = createModel(context, () => HomeCopyModel());
 
     animationsMap.addAll({
       'checkboxOnActionTriggerAnimation': AnimationInfo(
@@ -92,7 +93,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: const Color(0xFF3F084D),
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -105,9 +106,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             ),
           );
         }
-        final homeGetSupaResponse = snapshot.data!;
+        final homeCopyGetSupaResponse = snapshot.data!;
         return Title(
-            title: 'home',
+            title: 'homeCopy',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => _model.unfocusNode.canRequestFocus
@@ -115,7 +116,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   : FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
-                backgroundColor: const Color(0xFF3F084D),
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: SafeArea(
                   top: true,
                   child: Column(
@@ -131,7 +132,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           child: Image.network(
                             valueOrDefault<String>(
                               GetSupaCall.logoURL(
-                                homeGetSupaResponse.jsonBody,
+                                homeCopyGetSupaResponse.jsonBody,
                               ),
                               'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
                             ),
@@ -163,7 +164,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         ),
                                         TextSpan(
                                           text: GetSupaCall.gift(
-                                            homeGetSupaResponse.jsonBody,
+                                            homeCopyGetSupaResponse.jsonBody,
                                           )!,
                                           style: const TextStyle(),
                                         )
@@ -171,12 +172,33 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            fontFamily: 'modal',
+                                            color: GetSupaCall.colorTitle(
+                                                          homeCopyGetSupaResponse
+                                                              .jsonBody,
+                                                        ) !=
+                                                        null &&
+                                                    GetSupaCall.colorTitle(
+                                                          homeCopyGetSupaResponse
+                                                              .jsonBody,
+                                                        ) !=
+                                                        ''
+                                                ? colorFromCssString(
+                                                    GetSupaCall.colorTitle(
+                                                      homeCopyGetSupaResponse
+                                                          .jsonBody,
+                                                    )!,
+                                                    defaultColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .appleTxt1,
+                                                  )
+                                                : FlutterFlowTheme.of(context)
+                                                    .appleTxt1,
                                             fontSize: 27.0,
                                             letterSpacing: -1,
                                             fontWeight: FontWeight.w600,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                     textAlign: TextAlign.center,
@@ -186,7 +208,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     child: Image.network(
                                       valueOrDefault<String>(
                                         GetSupaCall.imageURL(
-                                          homeGetSupaResponse.jsonBody,
+                                          homeCopyGetSupaResponse.jsonBody,
                                         ),
                                         'https://picsum.photos/seed/548/600',
                                       ),
@@ -196,7 +218,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   if (GetSupaCall.slug(
-                                        homeGetSupaResponse.jsonBody,
+                                        homeCopyGetSupaResponse.jsonBody,
                                       ) !=
                                       'lovegreentest')
                                     Column(
@@ -210,7 +232,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 fontFamily: 'Manrope',
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorText(
-                                                    homeGetSupaResponse
+                                                    homeCopyGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor: Colors.black,
@@ -227,7 +249,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 fontFamily: 'Manrope',
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorText(
-                                                    homeGetSupaResponse
+                                                    homeCopyGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor: Colors.black,
@@ -279,7 +301,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       unselectedWidgetColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryBackground,
+                                                              .appleTxt1,
                                                     ),
                                                     child: Checkbox(
                                                       value: _model
@@ -301,9 +323,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       },
                                                       side: BorderSide(
                                                         width: 2,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .appleTxt1,
                                                       ),
                                                       activeColor:
                                                           FlutterFlowTheme.of(
@@ -311,20 +334,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               .secondaryBackground,
                                                       checkColor: GetSupaCall
                                                                       .colorButton(
-                                                                    homeGetSupaResponse
+                                                                    homeCopyGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   null &&
                                                               GetSupaCall
                                                                       .colorButton(
-                                                                    homeGetSupaResponse
+                                                                    homeCopyGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   ''
                                                           ? colorFromCssString(
                                                               GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                homeCopyGetSupaResponse
                                                                     .jsonBody,
                                                               )!,
                                                               defaultColor:
@@ -360,20 +383,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           style: TextStyle(
                                                             color: GetSupaCall
                                                                             .colorButton(
-                                                                          homeGetSupaResponse
+                                                                          homeCopyGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButton(
-                                                                          homeGetSupaResponse
+                                                                          homeCopyGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButton(
-                                                                      homeGetSupaResponse
+                                                                      homeCopyGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:
@@ -404,7 +427,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           text: valueOrDefault<
                                                               String>(
                                                             GetSupaCall.brand(
-                                                              homeGetSupaResponse
+                                                              homeCopyGetSupaResponse
                                                                   .jsonBody,
                                                             ),
                                                             'brandName',
@@ -412,20 +435,15 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           style: const TextStyle(),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Manrope',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                fontSize: 13.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Manrope',
+                                                            fontSize: 13.0,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),
@@ -473,7 +491,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
-                                                      homeGetSupaResponse
+                                                      homeCopyGetSupaResponse
                                                           .jsonBody,
                                                     ),
                                                     'unset',
@@ -516,20 +534,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               0.0, 0.0),
                                                   color: GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                homeCopyGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               null &&
                                                           GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                homeCopyGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               ''
                                                       ? colorFromCssString(
                                                           GetSupaCall
                                                               .colorButton(
-                                                            homeGetSupaResponse
+                                                            homeCopyGetSupaResponse
                                                                 .jsonBody,
                                                           )!,
                                                           defaultColor:
@@ -549,20 +567,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                 'Manrope',
                                                             color: GetSupaCall
                                                                             .colorButtonText(
-                                                                          homeGetSupaResponse
+                                                                          homeCopyGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButtonText(
-                                                                          homeGetSupaResponse
+                                                                          homeCopyGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButtonText(
-                                                                      homeGetSupaResponse
+                                                                      homeCopyGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:

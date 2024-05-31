@@ -198,11 +198,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            setState(() {
-                                              FFAppState().lastFileName =
-                                                  getCurrentTimestamp
-                                                      .toString();
-                                            });
+                                            FFAppState().lastFileName =
+                                                getCurrentTimestamp.toString();
+                                            setState(() {});
                                           },
                                           child: Material(
                                             color: Colors.transparent,
@@ -393,10 +391,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            setState(() {
-                                              FFAppState().isRecording = true;
-                                              FFAppState().videoReady = false;
-                                            });
+                                            FFAppState().isRecording = true;
+                                            FFAppState().videoReady = false;
+                                            setState(() {});
                                             _model.timerController
                                                 .onResetTimer();
 
@@ -453,12 +450,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           onTap: () async {
                                             _model.timerController
                                                 .onStopTimer();
-                                            setState(() {
-                                              _model.waitforUrl = true;
-                                            });
-                                            setState(() {
-                                              FFAppState().isRecording = false;
-                                            });
+                                            _model.waitforUrl = true;
+                                            setState(() {});
+                                            FFAppState().isRecording = false;
+                                            setState(() {});
                                             while (_model.countTry! < 30) {
                                               if (FFAppState().videoReady) {
                                                 break;
@@ -470,9 +465,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                         milliseconds: 2500));
                                               }
                                             }
-                                            setState(() {
-                                              _model.waitforUrl = false;
-                                            });
+                                            _model.waitforUrl = false;
+                                            setState(() {});
                                           },
                                           child: Container(
                                             width: 80.0,
@@ -538,9 +532,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  setState(() {
-                                    FFAppState().videoReady = false;
-                                  });
+                                  FFAppState().videoReady = false;
+                                  setState(() {});
                                 },
                                 text: 'Recommencer',
                                 icon: const Icon(
@@ -573,14 +566,13 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  FFAppState().update(() {
-                                    FFAppState().videoUrl =
-                                        'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
-                                    FFAppState().questionAsked =
-                                        GetSupaCall.expla(
-                                      containerGetSupaResponse.jsonBody,
-                                    )!;
-                                  });
+                                  FFAppState().videoUrl =
+                                      'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
+                                  FFAppState().questionAsked =
+                                      GetSupaCall.expla(
+                                    containerGetSupaResponse.jsonBody,
+                                  )!;
+                                  FFAppState().update(() {});
 
                                   context.pushNamed('infos');
                                 },
