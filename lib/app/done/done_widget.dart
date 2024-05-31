@@ -133,7 +133,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                             style: TextStyle(),
                                           ),
                                           const TextSpan(
-                                            text: '\n Bonne chance ',
+                                            text: '\n Bon festival ',
                                             style: TextStyle(),
                                           ),
                                           TextSpan(

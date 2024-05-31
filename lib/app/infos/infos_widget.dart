@@ -556,9 +556,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                       ''))) {
                                             return;
                                           }
-                                          setState(() {
-                                            _model.step = _model.step! + 1;
-                                          });
+                                          _model.step = _model.step! + 1;
+                                          setState(() {});
                                         },
                                         text: 'Continuer',
                                         options: FFButtonOptions(
@@ -641,9 +640,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                               size: 22.0,
                                             ),
                                             onPressed: () async {
-                                              setState(() {
-                                                _model.step = _model.step! + -1;
-                                              });
+                                              _model.step = _model.step! + -1;
+                                              setState(() {});
                                             },
                                           ),
                                           Text(
@@ -812,9 +810,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                           if (!(FFAppState().rating != null)) {
                                             return;
                                           }
-                                          setState(() {
-                                            _model.step = _model.step! + 1;
-                                          });
+                                          _model.step = _model.step! + 1;
+                                          setState(() {});
                                         },
                                         text: 'Continuer',
                                         options: FFButtonOptions(
@@ -897,9 +894,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                               size: 22.0,
                                             ),
                                             onPressed: () async {
-                                              setState(() {
-                                                _model.step = _model.step! + -1;
-                                              });
+                                              _model.step = _model.step! + -1;
+                                              setState(() {});
                                             },
                                           ),
                                           Text(
@@ -1277,10 +1273,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                             if ((_model
                                                     .apiResultro6?.succeeded ??
                                                 true)) {
-                                              setState(() {
-                                                FFAppState().validatedDone =
-                                                    true;
-                                              });
+                                              FFAppState().validatedDone = true;
+                                              setState(() {});
 
                                               context.pushNamed('done');
                                             }
