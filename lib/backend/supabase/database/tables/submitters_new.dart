@@ -1,18 +1,19 @@
 import '../database.dart';
 
-class SubmissionsTable extends SupabaseTable<SubmissionsRow> {
+class SubmittersNewTable extends SupabaseTable<SubmittersNewRow> {
   @override
-  String get tableName => 'submissions';
+  String get tableName => 'submittersNew';
 
   @override
-  SubmissionsRow createRow(Map<String, dynamic> data) => SubmissionsRow(data);
+  SubmittersNewRow createRow(Map<String, dynamic> data) =>
+      SubmittersNewRow(data);
 }
 
-class SubmissionsRow extends SupabaseDataRow {
-  SubmissionsRow(super.data);
+class SubmittersNewRow extends SupabaseDataRow {
+  SubmittersNewRow(super.data);
 
   @override
-  SupabaseTable get table => SubmissionsTable();
+  SupabaseTable get table => SubmittersNewTable();
 
   int get id => getField<int>('id')!;
   set id(int value) => setField<int>('id', value);
@@ -20,14 +21,8 @@ class SubmissionsRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  String? get mediaType => getField<String>('media_type');
-  set mediaType(String? value) => setField<String>('media_type', value);
-
   String? get mediaLink => getField<String>('media_link');
   set mediaLink(String? value) => setField<String>('media_link', value);
-
-  String get phoneNumber => getField<String>('phone_number')!;
-  set phoneNumber(String value) => setField<String>('phone_number', value);
 
   String? get brandName => getField<String>('brand_name');
   set brandName(String? value) => setField<String>('brand_name', value);
@@ -51,4 +46,13 @@ class SubmissionsRow extends SupabaseDataRow {
   dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
   set transcriptionJson(dynamic value) =>
       setField<dynamic>('transcriptionJson', value);
+
+  int? get rating => getField<int>('rating');
+  set rating(int? value) => setField<int>('rating', value);
+
+  bool? get boolMail => getField<bool>('boolMail');
+  set boolMail(bool? value) => setField<bool>('boolMail', value);
+
+  String? get question => getField<String>('question');
+  set question(String? value) => setField<String>('question', value);
 }

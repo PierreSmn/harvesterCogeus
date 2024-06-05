@@ -124,7 +124,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 1.0,
-                                            control: 0,
+                                            control: GetSupaCall.cameraSelect(
+                                              containerGetSupaResponse.jsonBody,
+                                            )!,
                                           ),
                                         ),
                                       ],

@@ -76,6 +76,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
 
     return FutureBuilder<ApiCallResponse>(
       future: FFAppState().api(
+        uniqueQueryKey: widget.slug,
         requestFn: () => GetSupaCall.call(
           slug: () {
             if (widget.slug != '') {
@@ -92,7 +93,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: const Color(0xFF3F084D),
+            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -115,7 +116,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   : FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
-                backgroundColor: const Color(0xFF3F084D),
+                backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: SafeArea(
                   top: true,
                   child: Column(
@@ -172,8 +173,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Manrope',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
+                                            color: GetSupaCall.colorTitle(
+                                                          homeGetSupaResponse
+                                                              .jsonBody,
+                                                        ) !=
+                                                        null &&
+                                                    GetSupaCall.colorTitle(
+                                                          homeGetSupaResponse
+                                                              .jsonBody,
+                                                        ) !=
+                                                        ''
+                                                ? colorFromCssString(
+                                                    GetSupaCall.colorTitle(
+                                                      homeGetSupaResponse
+                                                          .jsonBody,
+                                                    )!,
+                                                    defaultColor: Colors.black,
+                                                  )
+                                                : FlutterFlowTheme.of(context)
+                                                    .primaryText,
                                             fontSize: 27.0,
                                             letterSpacing: -1,
                                             fontWeight: FontWeight.w600,
@@ -195,49 +213,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       fit: BoxFit.contain,
                                     ),
                                   ),
-                                  if (GetSupaCall.slug(
-                                        homeGetSupaResponse.jsonBody,
-                                      ) !=
-                                      'lovegreentest')
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Une récompense par participant.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                color: colorFromCssString(
-                                                  GetSupaCall.colorText(
-                                                    homeGetSupaResponse
-                                                        .jsonBody,
-                                                  )!,
-                                                  defaultColor: Colors.black,
-                                                ),
-                                                fontSize: 17.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                        Text(
-                                          'Et un grand gagnant tiré au sort. ',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                color: colorFromCssString(
-                                                  GetSupaCall.colorText(
-                                                    homeGetSupaResponse
-                                                        .jsonBody,
-                                                  )!,
-                                                  defaultColor: Colors.black,
-                                                ),
-                                                fontSize: 17.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ].divide(const SizedBox(height: 11.0)),
-                                    ),
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
@@ -279,7 +254,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       unselectedWidgetColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryBackground,
+                                                              .secondaryText,
                                                     ),
                                                     child: Checkbox(
                                                       value: _model
@@ -301,9 +276,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       },
                                                       side: BorderSide(
                                                         width: 2,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
                                                       ),
                                                       activeColor:
                                                           FlutterFlowTheme.of(
@@ -421,7 +397,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     'Manrope',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryBackground,
+                                                                    .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,

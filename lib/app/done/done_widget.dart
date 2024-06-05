@@ -50,6 +50,7 @@ class _DoneWidgetState extends State<DoneWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: FFAppState().api(
+        uniqueQueryKey: FFAppState().slug,
         requestFn: () => GetSupaCall.call(
           slug: FFAppState().slug,
         ),
@@ -129,11 +130,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                         children: [
                                           const TextSpan(
                                             text:
-                                                'Votre participation est validée !',
-                                            style: TextStyle(),
-                                          ),
-                                          const TextSpan(
-                                            text: '\n Bon festival ',
+                                                'Merci de votre participation ',
                                             style: TextStyle(),
                                           ),
                                           TextSpan(
@@ -174,7 +171,10 @@ class _DoneWidgetState extends State<DoneWidget> {
                                       fit: BoxFit.contain,
                                     ),
                                   ),
-                                  if (FFAppState().slug != 'lovegreentest')
+                                  if (GetSupaCall.twogifts(
+                                        doneGetSupaResponse.jsonBody,
+                                      ) ==
+                                      false)
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 60.0, 0.0, 0.0),
@@ -191,29 +191,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                 children: [
                                                   const TextSpan(
                                                     text:
-                                                        'En attendant le tirage ',
-                                                    style: TextStyle(),
-                                                  ),
-                                                  TextSpan(
-                                                    text: GetSupaCall.brand(
-                                                      doneGetSupaResponse
-                                                          .jsonBody,
-                                                    )!,
-                                                    style: TextStyle(
-                                                      color: colorFromCssString(
-                                                        GetSupaCall.colorButton(
-                                                          doneGetSupaResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                        defaultColor:
-                                                            Colors.black,
-                                                      ),
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                                  ),
-                                                  const TextSpan(
-                                                    text: ' vous offre ',
+                                                        'Cliquez ci dessous pour copier le code qui vous offre ',
                                                     style: TextStyle(),
                                                   ),
                                                   TextSpan(
@@ -223,10 +201,6 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                           .jsonBody,
                                                     )!,
                                                     style: const TextStyle(),
-                                                  ),
-                                                  const TextSpan(
-                                                    text: ' avec le code :',
-                                                    style: TextStyle(),
                                                   )
                                                 ],
                                                 style:

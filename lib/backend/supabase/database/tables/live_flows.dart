@@ -91,4 +91,19 @@ class LiveFlowsRow extends SupabaseDataRow {
   String? get descriptionCodePromo => getField<String>('descriptionCodePromo');
   set descriptionCodePromo(String? value) =>
       setField<String>('descriptionCodePromo', value);
+
+  String? get ctaUrl => getField<String>('ctaUrl');
+  set ctaUrl(String? value) => setField<String>('ctaUrl', value);
+
+  dynamic get jsonVideo => getField<dynamic>('jsonVideo');
+  set jsonVideo(dynamic value) => setField<dynamic>('jsonVideo', value);
+
+  List<String> get select => getListField<String>('select');
+  set select(List<String>? value) => setListField<String>('select', value);
+
+  int? get requests => getField<int>('requests');
+  set requests(int? value) => setField<int>('requests', value);
+
+  int? get cameraSelect => getField<int>('cameraSelect');
+  set cameraSelect(int? value) => setField<int>('cameraSelect', value);
 }
