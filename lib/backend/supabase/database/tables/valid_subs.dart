@@ -1,18 +1,18 @@
 import '../database.dart';
 
-class SubmissionsTable extends SupabaseTable<SubmissionsRow> {
+class ValidSubsTable extends SupabaseTable<ValidSubsRow> {
   @override
-  String get tableName => 'submissions';
+  String get tableName => 'validSubs';
 
   @override
-  SubmissionsRow createRow(Map<String, dynamic> data) => SubmissionsRow(data);
+  ValidSubsRow createRow(Map<String, dynamic> data) => ValidSubsRow(data);
 }
 
-class SubmissionsRow extends SupabaseDataRow {
-  SubmissionsRow(super.data);
+class ValidSubsRow extends SupabaseDataRow {
+  ValidSubsRow(super.data);
 
   @override
-  SupabaseTable get table => SubmissionsTable();
+  SupabaseTable get table => ValidSubsTable();
 
   int get id => getField<int>('id')!;
   set id(int value) => setField<int>('id', value);
@@ -20,14 +20,8 @@ class SubmissionsRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  String? get mediaType => getField<String>('media_type');
-  set mediaType(String? value) => setField<String>('media_type', value);
-
   String? get mediaLink => getField<String>('media_link');
   set mediaLink(String? value) => setField<String>('media_link', value);
-
-  String get phoneNumber => getField<String>('phone_number')!;
-  set phoneNumber(String value) => setField<String>('phone_number', value);
 
   String? get brandName => getField<String>('brand_name');
   set brandName(String? value) => setField<String>('brand_name', value);
@@ -35,8 +29,8 @@ class SubmissionsRow extends SupabaseDataRow {
   String? get submitterName => getField<String>('submitter_name');
   set submitterName(String? value) => setField<String>('submitter_name', value);
 
-  String? get flowDone => getField<String>('flow_done');
-  set flowDone(String? value) => setField<String>('flow_done', value);
+  String? get slugDone => getField<String>('slugDone');
+  set slugDone(String? value) => setField<String>('slugDone', value);
 
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
@@ -51,4 +45,13 @@ class SubmissionsRow extends SupabaseDataRow {
   dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
   set transcriptionJson(dynamic value) =>
       setField<dynamic>('transcriptionJson', value);
+
+  int? get rating => getField<int>('rating');
+  set rating(int? value) => setField<int>('rating', value);
+
+  bool? get boolMail => getField<bool>('boolMail');
+  set boolMail(bool? value) => setField<bool>('boolMail', value);
+
+  String? get question => getField<String>('question');
+  set question(String? value) => setField<String>('question', value);
 }

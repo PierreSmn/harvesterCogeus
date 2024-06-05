@@ -34,4 +34,7 @@ class UsersRow extends SupabaseDataRow {
 
   List<int> get selection => getListField<int>('selection');
   set selection(List<int>? value) => setListField<int>('selection', value);
+
+  int? get listIDs => getField<int>('listIDs');
+  set listIDs(int? value) => setField<int>('listIDs', value);
 }

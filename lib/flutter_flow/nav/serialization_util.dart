@@ -205,20 +205,36 @@ dynamic deserializeParam<T>(
         switch (T) {
           case OfflineFlowsRow:
             return OfflineFlowsRow(data);
-          case CompaniesRow:
-            return CompaniesRow(data);
           case SubmittersRow:
             return SubmittersRow(data);
+          case SubmittersNewRow:
+            return SubmittersNewRow(data);
+          case NewSubsRow:
+            return NewSubsRow(data);
           case SelectedRow:
             return SelectedRow(data);
+          case IntegrationsRow:
+            return IntegrationsRow(data);
           case UnSelectedRow:
             return UnSelectedRow(data);
           case SubmissionsRow:
             return SubmissionsRow(data);
+          case SelectionsRow:
+            return SelectionsRow(data);
+          case WebAppActivationsRow:
+            return WebAppActivationsRow(data);
           case UsersRow:
             return UsersRow(data);
+          case RejectedSubsRow:
+            return RejectedSubsRow(data);
+          case HostedSubsRow:
+            return HostedSubsRow(data);
           case LiveFlowsRow:
             return LiveFlowsRow(data);
+          case ListsRow:
+            return ListsRow(data);
+          case ValidSubsRow:
+            return ValidSubsRow(data);
           default:
             return null;
         }

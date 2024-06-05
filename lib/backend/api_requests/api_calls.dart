@@ -96,6 +96,14 @@ class GetSupaCall {
         response,
         r'''$[:].ctaUrl''',
       ));
+  static int? cameraSelect(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].cameraSelect''',
+      ));
+  static bool? twogifts(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:].twogifts''',
+      ));
 }
 
 class PostSubmissionFgCall {

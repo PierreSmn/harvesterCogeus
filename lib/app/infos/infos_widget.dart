@@ -95,6 +95,7 @@ class _InfosWidgetState extends State<InfosWidget>
 
     return FutureBuilder<ApiCallResponse>(
       future: FFAppState().api(
+        uniqueQueryKey: FFAppState().slug,
         requestFn: () => GetSupaCall.call(
           slug: FFAppState().slug,
         ),
@@ -694,7 +695,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     children: [
                                                       const TextSpan(
                                                         text:
-                                                            'Quelle note donneriez-vous à ',
+                                                            'Quelle note globale donneriez-vous à ',
                                                         style: TextStyle(),
                                                       ),
                                                       TextSpan(
