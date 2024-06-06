@@ -191,7 +191,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                 children: [
                                                   const TextSpan(
                                                     text:
-                                                        'Cliquez ci dessous pour copier le code qui vous offre ',
+                                                        'Cliquez ci-dessous pour copier le code qui vous offre ',
                                                     style: TextStyle(),
                                                   ),
                                                   TextSpan(
