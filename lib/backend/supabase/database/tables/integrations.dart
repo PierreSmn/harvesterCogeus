@@ -43,4 +43,7 @@ class IntegrationsRow extends SupabaseDataRow {
 
   int? get vid5 => getField<int>('vid5');
   set vid5(int? value) => setField<int>('vid5', value);
+
+  bool? get max3vids => getField<bool>('max3vids');
+  set max3vids(bool? value) => setField<bool>('max3vids', value);
 }

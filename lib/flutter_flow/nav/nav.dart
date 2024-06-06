@@ -71,16 +71,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
-        ),
-        FFRoute(
-          name: 'homeCopy',
-          path: '/homeCopy',
-          builder: (context, params) => HomeCopyWidget(
-            slug: params.getParam(
-              'slug',
-              ParamType.String,
-            ),
-          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

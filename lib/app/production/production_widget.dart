@@ -217,7 +217,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .revoSearchIconColor,
+                                                        .secondary,
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
                                                 border: Border.all(

@@ -529,83 +529,86 @@ class _InfosWidgetState extends State<InfosWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          if (_model.formKey2.currentState ==
-                                                  null ||
-                                              !_model.formKey2.currentState!
-                                                  .validate()) {
-                                            return;
-                                          }
-                                          if (_model.formKey1.currentState ==
-                                                  null ||
-                                              !_model.formKey1.currentState!
-                                                  .validate()) {
-                                            return;
-                                          }
-                                          FFAppState().name =
-                                              _model.nameTextController.text;
-                                          FFAppState().surname =
-                                              _model.surnameTextController.text;
-                                          if (!((FFAppState().name != '') &&
-                                              (FFAppState().surname !=
-                                                      ''))) {
-                                            return;
-                                          }
-                                          _model.step = _model.step! + 1;
-                                          setState(() {});
-                                        },
-                                        text: 'Continuer',
-                                        options: FFButtonOptions(
-                                          width: 300.0,
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: colorFromCssString(
-                                            GetSupaCall.colorButton(
-                                              infosGetSupaResponse.jsonBody,
-                                            )!,
-                                            defaultColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .appleButton,
-                                          ),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                color: colorFromCssString(
-                                                  GetSupaCall.colorButtonText(
-                                                    infosGetSupaResponse
-                                                        .jsonBody,
-                                                  )!,
-                                                  defaultColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 1.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            if (_model.formKey2.currentState ==
+                                                    null ||
+                                                !_model.formKey2.currentState!
+                                                    .validate()) {
+                                              return;
+                                            }
+                                            if (_model.formKey1.currentState ==
+                                                    null ||
+                                                !_model.formKey1.currentState!
+                                                    .validate()) {
+                                              return;
+                                            }
+                                            FFAppState().name =
+                                                _model.nameTextController.text;
+                                            FFAppState().surname = _model
+                                                .surnameTextController.text;
+                                            if (!((FFAppState().name != '') &&
+                                                (FFAppState().surname !=
+                                                        ''))) {
+                                              return;
+                                            }
+                                            _model.step = _model.step! + 1;
+                                            setState(() {});
+                                          },
+                                          text: 'Continuer',
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 40.0,
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: colorFromCssString(
+                                              GetSupaCall.colorButton(
+                                                infosGetSupaResponse.jsonBody,
+                                              )!,
+                                              defaultColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .appleButton,
+                                            ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  color: colorFromCssString(
+                                                    GetSupaCall.colorButtonText(
+                                                      infosGetSupaResponse
+                                                          .jsonBody,
+                                                    )!,
+                                                    defaultColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.normal,
                                                 ),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
+                                            elevation: 0.0,
+                                            borderSide: const BorderSide(
+                                              color: Colors.transparent,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(7.0),
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(7.0),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ].divide(const SizedBox(height: 36.0)),
@@ -1193,10 +1196,20 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     MediaQuery.of(context)
                                                         .textScaler,
                                                 text: TextSpan(
-                                                  children: const [
-                                                    TextSpan(
+                                                  children: [
+                                                    const TextSpan(
                                                       text:
-                                                          'Vous acceptez de recevoir les informations des festivals WE LOVE GREEN (communication, promotion, informations pratiques)',
+                                                          'Vous acceptez de partaget vos informations avec ',
+                                                      style: TextStyle(),
+                                                    ),
+                                                    TextSpan(
+                                                      text: FFAppState()
+                                                          .brandName,
+                                                      style: const TextStyle(),
+                                                    ),
+                                                    const TextSpan(
+                                                      text:
+                                                          ' (communication, promotion, informations pratiques)',
                                                       style: TextStyle(),
                                                     )
                                                   ],
