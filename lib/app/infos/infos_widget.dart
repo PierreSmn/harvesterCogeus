@@ -1108,124 +1108,117 @@ class _InfosWidgetState extends State<InfosWidget>
                                           ),
                                         ),
                                       ),
-                                      if (FFAppState().slug == 'lovegreentest')
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Theme(
-                                                data: ThemeData(
-                                                  checkboxTheme:
-                                                      CheckboxThemeData(
-                                                    visualDensity:
-                                                        VisualDensity.compact,
-                                                    materialTapTargetSize:
-                                                        MaterialTapTargetSize
-                                                            .shrinkWrap,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4.0),
-                                                    ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 10.0, 0.0),
+                                            child: Theme(
+                                              data: ThemeData(
+                                                checkboxTheme:
+                                                    CheckboxThemeData(
+                                                  visualDensity:
+                                                      VisualDensity.compact,
+                                                  materialTapTargetSize:
+                                                      MaterialTapTargetSize
+                                                          .shrinkWrap,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            4.0),
                                                   ),
-                                                  unselectedWidgetColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .appleTxt1,
                                                 ),
-                                                child: Checkbox(
-                                                  value: _model
-                                                      .checkboxValue ??= false,
-                                                  onChanged: (newValue) async {
-                                                    setState(() =>
-                                                        _model.checkboxValue =
-                                                            newValue!);
-                                                  },
-                                                  side: BorderSide(
-                                                    width: 2,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
+                                                unselectedWidgetColor:
+                                                    FlutterFlowTheme.of(context)
                                                         .appleTxt1,
-                                                  ),
-                                                  activeColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondaryBackground,
-                                                  checkColor: GetSupaCall
-                                                                  .colorButton(
-                                                                infosGetSupaResponse
-                                                                    .jsonBody,
-                                                              ) !=
-                                                              null &&
-                                                          GetSupaCall
-                                                                  .colorButton(
-                                                                infosGetSupaResponse
-                                                                    .jsonBody,
-                                                              ) !=
-                                                              ''
-                                                      ? colorFromCssString(
-                                                          GetSupaCall
-                                                              .colorButton(
-                                                            infosGetSupaResponse
-                                                                .jsonBody,
-                                                          )!,
-                                                          defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .appleButton,
-                                                        )
-                                                      : FlutterFlowTheme.of(
-                                                              context)
-                                                          .appleButton,
-                                                ),
-                                              ).animateOnActionTrigger(
-                                                  animationsMap[
-                                                      'checkboxOnActionTriggerAnimation']!,
-                                                  hasBeenTriggered:
-                                                      hasCheckboxTriggered),
-                                            ),
-                                            Flexible(
-                                              child: RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    const TextSpan(
-                                                      text:
-                                                          'Vous acceptez de partaget vos informations avec ',
-                                                      style: TextStyle(),
-                                                    ),
-                                                    TextSpan(
-                                                      text: FFAppState()
-                                                          .brandName,
-                                                      style: const TextStyle(),
-                                                    ),
-                                                    const TextSpan(
-                                                      text:
-                                                          ' (communication, promotion, informations pratiques)',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
+                                              ),
+                                              child: Checkbox(
+                                                value: _model.checkboxValue ??=
+                                                    false,
+                                                onChanged: (newValue) async {
+                                                  setState(() =>
+                                                      _model.checkboxValue =
+                                                          newValue!);
+                                                },
+                                                side: BorderSide(
+                                                  width: 2,
+                                                  color: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        fontSize: 13.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .appleTxt1,
                                                 ),
+                                                activeColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                checkColor: GetSupaCall
+                                                                .colorButton(
+                                                              infosGetSupaResponse
+                                                                  .jsonBody,
+                                                            ) !=
+                                                            null &&
+                                                        GetSupaCall.colorButton(
+                                                              infosGetSupaResponse
+                                                                  .jsonBody,
+                                                            ) !=
+                                                            ''
+                                                    ? colorFromCssString(
+                                                        GetSupaCall.colorButton(
+                                                          infosGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .appleButton,
+                                                      )
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .appleButton,
+                                              ),
+                                            ).animateOnActionTrigger(
+                                                animationsMap[
+                                                    'checkboxOnActionTriggerAnimation']!,
+                                                hasBeenTriggered:
+                                                    hasCheckboxTriggered),
+                                          ),
+                                          Flexible(
+                                            child: RichText(
+                                              textScaler: MediaQuery.of(context)
+                                                  .textScaler,
+                                              text: TextSpan(
+                                                children: [
+                                                  const TextSpan(
+                                                    text:
+                                                        'Vous acceptez de partager vos informations avec ',
+                                                    style: TextStyle(),
+                                                  ),
+                                                  TextSpan(
+                                                    text:
+                                                        FFAppState().brandName,
+                                                    style: const TextStyle(),
+                                                  ),
+                                                  const TextSpan(
+                                                    text:
+                                                        ' (communication, promotion, informations pratiques)',
+                                                    style: TextStyle(),
+                                                  )
+                                                ],
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
+                                      ),
                                     ].divide(const SizedBox(height: 24.0)),
                                   ),
                                 ),
