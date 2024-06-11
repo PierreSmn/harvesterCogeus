@@ -71,6 +71,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'substance',
+          path: '/substance',
+          builder: (context, params) => SubstanceWidget(
+            slug: params.getParam(
+              'slug',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
