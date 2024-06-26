@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,7 +15,7 @@ class GetSupaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get supa',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/live_flows?slug=eq.${slug}',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/live_flows?slug=eq.$slug',
       callType: ApiCallType.GET,
       headers: {
         'Authorization':
@@ -123,16 +122,16 @@ class PostSubmissionFgCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "name": "${name}",
-  "surname": "${surname}",
-  "email": "${email}",
-  "video": "${video}",
-  "slug": "${slug}",
-  "brand": "${brand}",
-  "time": "${time}",
-  "rating": ${rating},
-  "boolmail": ${boolmail},
-  "question": "${question}"
+  "name": "$name",
+  "surname": "$surname",
+  "email": "$email",
+  "video": "$video",
+  "slug": "$slug",
+  "brand": "$brand",
+  "time": "$time",
+  "rating": $rating,
+  "boolmail": $boolmail,
+  "question": "$question"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',
@@ -160,9 +159,9 @@ class NewStartCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "slug": "${slug}",
-  "brand": "${brand}",
-  "time": "${time}"
+  "slug": "$slug",
+  "brand": "$brand",
+  "time": "$time"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'New start',

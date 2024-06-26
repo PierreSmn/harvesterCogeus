@@ -4,14 +4,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
-import 'dart:math';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'substance_model.dart';
 export 'substance_model.dart';
@@ -20,7 +18,7 @@ class SubstanceWidget extends StatefulWidget {
   const SubstanceWidget({
     super.key,
     String? slug,
-  }) : this.slug = slug ?? 'substance';
+  }) : slug = slug ?? 'substance';
 
   final String slug;
 
@@ -50,8 +48,8 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: Offset(0.7, 0.7),
-            end: Offset(1.2, 1.2),
+            begin: const Offset(0.7, 0.7),
+            end: const Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -82,9 +80,9 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
         uniqueQueryKey: widget.slug,
         requestFn: () => GetSupaCall.call(
           slug: () {
-            if (widget.slug != null && widget.slug != '') {
+            if (widget.slug != '') {
               return widget.slug;
-            } else if (FFAppState().slug != null && FFAppState().slug != '') {
+            } else if (FFAppState().slug != '') {
               return FFAppState().slug;
             } else {
               return 'test';
@@ -128,7 +126,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -141,9 +139,9 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                       ),
                       Flexible(
                         child: Container(
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -155,7 +153,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
-                                      children: [
+                                      children: const [
                                         TextSpan(
                                           text: 'Gagnez 2 brumes',
                                           style: TextStyle(),
@@ -205,9 +203,9 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           40.0, 0.0, 40.0, 0.0),
                                       child: Text(
                                         'Le gagnant des 2 brumes sera révélé suite au tirage au sort du 22 juillet.',
@@ -224,21 +222,21 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
                                             width: 280.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Theme(
@@ -333,7 +331,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                             .textScaler,
                                                     text: TextSpan(
                                                       children: [
-                                                        TextSpan(
+                                                        const TextSpan(
                                                           text:
                                                               'J\'accepte les ',
                                                           style: TextStyle(),
@@ -379,7 +377,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                                       'https://www.cogeus.com/terms-of-use');
                                                                 },
                                                         ),
-                                                        TextSpan(
+                                                        const TextSpan(
                                                           text:
                                                               ' et que ma vidéo apparaisse dans les communications de ',
                                                           style: TextStyle(),
@@ -393,7 +391,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                             ),
                                                             'brandName',
                                                           ),
-                                                          style: TextStyle(),
+                                                          style: const TextStyle(),
                                                         )
                                                       ],
                                                       style:
@@ -483,11 +481,11 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                 options: FFButtonOptions(
                                                   width: 300.0,
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: GetSupaCall
@@ -554,7 +552,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                                     .normal,
                                                           ),
                                                   elevation: 0.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                   ),
                                                   borderRadius:
@@ -564,13 +562,13 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                               ),
                                             ],
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -579,7 +577,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -587,7 +585,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                               children: [
                                                 BarcodeWidget(
                                                   data:
-                                                      'https://app.cogeus.com/home?slug=${widget.slug != null && widget.slug != '' ? widget.slug : FFAppState().slug}',
+                                                      'https://app.cogeus.com/home?slug=${widget.slug != '' ? widget.slug : FFAppState().slug}',
                                                   barcode: Barcode.qrCode(),
                                                   width: 240.0,
                                                   height: 160.0,
@@ -597,8 +595,8 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   errorBuilder:
-                                                      (_context, _error) =>
-                                                          SizedBox(
+                                                      (context, error) =>
+                                                          const SizedBox(
                                                     width: 240.0,
                                                     height: 160.0,
                                                   ),
@@ -617,18 +615,18 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 24.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToStart(SizedBox(height: 10.0)),
+                        .divide(const SizedBox(height: 16.0))
+                        .addToStart(const SizedBox(height: 10.0)),
                   ),
                 ),
               ),

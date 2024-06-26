@@ -9,7 +9,7 @@ class IntegrationsTable extends SupabaseTable<IntegrationsRow> {
 }
 
 class IntegrationsRow extends SupabaseDataRow {
-  IntegrationsRow(Map<String, dynamic> data) : super(data);
+  IntegrationsRow(super.data);
 
   @override
   SupabaseTable get table => IntegrationsTable();

@@ -2,12 +2,10 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'done_model.dart';
 export 'done_model.dart';
@@ -93,7 +91,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -112,9 +110,9 @@ class _DoneWidgetState extends State<DoneWidget> {
                       Flexible(
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          decoration: BoxDecoration(),
+                          decoration: const BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 30.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -124,22 +122,22 @@ class _DoneWidgetState extends State<DoneWidget> {
                                 children: [
                                   Container(
                                     width: 400.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: RichText(
                                       textScaler:
                                           MediaQuery.of(context).textScaler,
                                       text: TextSpan(
                                         children: [
-                                          TextSpan(
+                                          const TextSpan(
                                             text:
                                                 'Merci de votre participation ',
                                             style: TextStyle(),
                                           ),
                                           TextSpan(
                                             text: FFAppState().name,
-                                            style: TextStyle(),
+                                            style: const TextStyle(),
                                           ),
-                                          TextSpan(
+                                          const TextSpan(
                                             text: ' !',
                                             style: TextStyle(),
                                           )
@@ -178,11 +176,11 @@ class _DoneWidgetState extends State<DoneWidget> {
                                       ) ==
                                       false)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 60.0, 0.0, 0.0),
                                       child: Container(
                                         width: 400.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -191,7 +189,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                   .textScaler,
                                               text: TextSpan(
                                                 children: [
-                                                  TextSpan(
+                                                  const TextSpan(
                                                     text:
                                                         'Cliquez ci-dessous pour copier le code qui vous offre ',
                                                     style: TextStyle(),
@@ -202,7 +200,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                       doneGetSupaResponse
                                                           .jsonBody,
                                                     )!,
-                                                    style: TextStyle(),
+                                                    style: const TextStyle(),
                                                   )
                                                 ],
                                                 style:
@@ -254,7 +252,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                         ),
                                                       ),
                                                     ),
-                                                    duration: Duration(
+                                                    duration: const Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         colorFromCssString(
@@ -311,11 +309,11 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                               FontWeight.w600,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(width: 6.0)),
+                                                ].divide(const SizedBox(width: 6.0)),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -334,17 +332,17 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                   )!);
                                                 },
                                                 text: 'Aller sur le site',
-                                                icon: Icon(
+                                                icon: const Icon(
                                                   Icons.exit_to_app,
                                                   size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      EdgeInsetsDirectional
+                                                      const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: colorFromCssString(
@@ -377,7 +375,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                   elevation: 0.0,
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Colors.transparent,
                                                     width: 0.0,
                                                   ),
@@ -387,19 +385,19 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 12.0)),
+                                          ].divide(const SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     ),
-                                ].divide(SizedBox(height: 14.0)),
+                                ].divide(const SizedBox(height: 14.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToStart(SizedBox(height: 10.0)),
+                        .divide(const SizedBox(height: 16.0))
+                        .addToStart(const SizedBox(height: 10.0)),
                   ),
                 ),
               ),
