@@ -9,7 +9,7 @@ class SelectedTable extends SupabaseTable<SelectedRow> {
 }
 
 class SelectedRow extends SupabaseDataRow {
-  SelectedRow(super.data);
+  SelectedRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => SelectedTable();

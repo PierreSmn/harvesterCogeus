@@ -10,6 +10,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'production_model.dart';
@@ -55,7 +56,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
               : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: const Color(0xFF020109),
+            backgroundColor: Color(0xFF020109),
             body: FutureBuilder<ApiCallResponse>(
               future: FFAppState().api(
                 uniqueQueryKey: FFAppState().slug,
@@ -81,16 +82,16 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                 return Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Stack(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         children: [
                           Stack(
-                            alignment: const AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             children: [
                               Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -114,7 +115,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        SizedBox(
+                                        Container(
                                           width: 420.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
@@ -135,7 +136,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                               ),
                               if (!FFAppState().videoReady)
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 24.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -145,7 +146,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           width: 100.0,
                                           height: 40.0,
                                           decoration: BoxDecoration(
-                                            color: const Color(0xFFEB4D3D),
+                                            color: Color(0xFFEB4D3D),
                                             borderRadius:
                                                 BorderRadius.circular(6.0),
                                           ),
@@ -163,7 +164,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                             milliSecond: false),
                                                 controller:
                                                     _model.timerController,
-                                                updateStateInterval: const Duration(
+                                                updateStateInterval: Duration(
                                                     milliseconds: 1000),
                                                 onChanged: (value, displayTime,
                                                     shouldUpdate) {
@@ -171,9 +172,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                       value;
                                                   _model.timerValue =
                                                       displayTime;
-                                                  if (shouldUpdate) {
+                                                  if (shouldUpdate)
                                                     setState(() {});
-                                                  }
                                                 },
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -231,7 +231,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     child: Text(
@@ -375,10 +375,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 40.0),
                             child: Stack(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               children: [
                                 if (!FFAppState().videoReady)
                                   Column(
@@ -410,7 +410,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                   BorderRadius.circular(100.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(4.0),
+                                              padding: EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 100.0,
                                                 height: 100.0,
@@ -426,12 +426,12 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(2.0),
+                                                  padding: EdgeInsets.all(2.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 100.0,
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xFFEB4D3D),
+                                                      color: Color(0xFFEB4D3D),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               100.0),
@@ -478,7 +478,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                   BorderRadius.circular(100.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(4.0),
+                                              padding: EdgeInsets.all(4.0),
                                               child: Container(
                                                 width: 100.0,
                                                 height: 100.0,
@@ -494,12 +494,12 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(21.0),
+                                                  padding: EdgeInsets.all(21.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 100.0,
                                                     decoration: BoxDecoration(
-                                                      color: const Color(0xFFEB4D3D),
+                                                      color: Color(0xFFEB4D3D),
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               7.0),
@@ -527,7 +527,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                       ),
                       if (FFAppState().videoReady)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -538,16 +538,16 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                   setState(() {});
                                 },
                                 text: 'Recommencer',
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.restart_alt,
                                   size: 15.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 170.0,
                                   height: 30.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .revoCardTextColor,
@@ -559,7 +559,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -582,9 +582,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color:
                                       FlutterFlowTheme.of(context).rougeMalongo,
@@ -596,17 +596,17 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(7.0),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 24.0)),
+                            ].divide(SizedBox(height: 24.0)),
                           ),
                         ),
-                    ].divide(const SizedBox(height: 6.0)),
+                    ].divide(SizedBox(height: 6.0)),
                   ),
                 );
               },

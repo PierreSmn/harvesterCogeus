@@ -9,7 +9,7 @@ class NewSubsTable extends SupabaseTable<NewSubsRow> {
 }
 
 class NewSubsRow extends SupabaseDataRow {
-  NewSubsRow(super.data);
+  NewSubsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => NewSubsTable();
@@ -42,8 +42,8 @@ class NewSubsRow extends SupabaseDataRow {
   String? get transcription => getField<String>('transcription');
   set transcription(String? value) => setField<String>('transcription', value);
 
-  dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
-  set transcriptionJson(dynamic value) =>
+  dynamic? get transcriptionJson => getField<dynamic>('transcriptionJson');
+  set transcriptionJson(dynamic? value) =>
       setField<dynamic>('transcriptionJson', value);
 
   int? get rating => getField<int>('rating');
