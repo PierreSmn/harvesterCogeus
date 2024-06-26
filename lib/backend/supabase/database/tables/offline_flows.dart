@@ -9,7 +9,7 @@ class OfflineFlowsTable extends SupabaseTable<OfflineFlowsRow> {
 }
 
 class OfflineFlowsRow extends SupabaseDataRow {
-  OfflineFlowsRow(Map<String, dynamic> data) : super(data);
+  OfflineFlowsRow(super.data);
 
   @override
   SupabaseTable get table => OfflineFlowsTable();

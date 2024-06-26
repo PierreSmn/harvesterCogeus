@@ -9,7 +9,7 @@ class HostedSubsTable extends SupabaseTable<HostedSubsRow> {
 }
 
 class HostedSubsRow extends SupabaseDataRow {
-  HostedSubsRow(Map<String, dynamic> data) : super(data);
+  HostedSubsRow(super.data);
 
   @override
   SupabaseTable get table => HostedSubsTable();

@@ -9,7 +9,7 @@ class UnSelectedTable extends SupabaseTable<UnSelectedRow> {
 }
 
 class UnSelectedRow extends SupabaseDataRow {
-  UnSelectedRow(Map<String, dynamic> data) : super(data);
+  UnSelectedRow(super.data);
 
   @override
   SupabaseTable get table => UnSelectedTable();
