@@ -5,3 +5,5 @@ export '/app/infos/infos_widget.dart' show InfosWidget;
 export '/app/done/done_widget.dart' show DoneWidget;
 export '/app/lovegreen/lovegreen_widget.dart' show LovegreenWidget;
 export '/app/substance/substance_widget.dart' show SubstanceWidget;
+export '/app/meetadidas/meetadidas_widget.dart' show MeetadidasWidget;
+export '/app/clubadidas/clubadidas_widget.dart' show ClubadidasWidget;

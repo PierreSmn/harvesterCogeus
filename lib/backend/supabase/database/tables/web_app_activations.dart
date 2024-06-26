@@ -10,7 +10,7 @@ class WebAppActivationsTable extends SupabaseTable<WebAppActivationsRow> {
 }
 
 class WebAppActivationsRow extends SupabaseDataRow {
-  WebAppActivationsRow(super.data);
+  WebAppActivationsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => WebAppActivationsTable();

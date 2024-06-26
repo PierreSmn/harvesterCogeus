@@ -9,7 +9,7 @@ class RejectedSubsTable extends SupabaseTable<RejectedSubsRow> {
 }
 
 class RejectedSubsRow extends SupabaseDataRow {
-  RejectedSubsRow(super.data);
+  RejectedSubsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => RejectedSubsTable();
@@ -42,8 +42,8 @@ class RejectedSubsRow extends SupabaseDataRow {
   String? get transcription => getField<String>('transcription');
   set transcription(String? value) => setField<String>('transcription', value);
 
-  dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
-  set transcriptionJson(dynamic value) =>
+  dynamic? get transcriptionJson => getField<dynamic>('transcriptionJson');
+  set transcriptionJson(dynamic? value) =>
       setField<dynamic>('transcriptionJson', value);
 
   int? get rating => getField<int>('rating');

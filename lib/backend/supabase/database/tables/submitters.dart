@@ -9,7 +9,7 @@ class SubmittersTable extends SupabaseTable<SubmittersRow> {
 }
 
 class SubmittersRow extends SupabaseDataRow {
-  SubmittersRow(super.data);
+  SubmittersRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => SubmittersTable();

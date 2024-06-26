@@ -13,11 +13,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'home_model.dart';
-export 'home_model.dart';
+import 'meetadidas_model.dart';
+export 'meetadidas_model.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({
+class MeetadidasWidget extends StatefulWidget {
+  const MeetadidasWidget({
     super.key,
     String? slug,
   }) : this.slug = slug ?? '';
@@ -25,11 +25,12 @@ class HomeWidget extends StatefulWidget {
   final String slug;
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<MeetadidasWidget> createState() => _MeetadidasWidgetState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
-  late HomeModel _model;
+class _MeetadidasWidgetState extends State<MeetadidasWidget>
+    with TickerProviderStateMixin {
+  late MeetadidasModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasCheckboxTriggered = false;
@@ -38,7 +39,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomeModel());
+    _model = createModel(context, () => MeetadidasModel());
 
     animationsMap.addAll({
       'checkboxOnActionTriggerAnimation': AnimationInfo(
@@ -80,15 +81,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       future: FFAppState().api(
         uniqueQueryKey: widget.slug,
         requestFn: () => GetSupaCall.call(
-          slug: () {
-            if (widget.slug != null && widget.slug != '') {
-              return widget.slug;
-            } else if (FFAppState().slug != null && FFAppState().slug != '') {
-              return FFAppState().slug;
-            } else {
-              return 'test';
-            }
-          }(),
+          slug: 'meetadidas',
         ),
       ),
       builder: (context, snapshot) {
@@ -108,9 +101,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             ),
           );
         }
-        final homeGetSupaResponse = snapshot.data!;
+        final meetadidasGetSupaResponse = snapshot.data!;
         return Title(
-            title: 'home',
+            title: 'meetadidas',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => _model.unfocusNode.canRequestFocus
@@ -132,12 +125,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            valueOrDefault<String>(
-                              GetSupaCall.logoURL(
-                                homeGetSupaResponse.jsonBody,
-                              ),
-                              'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
-                            ),
+                            'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1719416098551000.png',
                             height: 110.0,
                             fit: BoxFit.contain,
                           ),
@@ -161,12 +149,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: 'Gagnez ',
+                                          text: 'Try to win ',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
                                           text: GetSupaCall.gift(
-                                            homeGetSupaResponse.jsonBody,
+                                            meetadidasGetSupaResponse.jsonBody,
                                           )!,
                                           style: TextStyle(),
                                         )
@@ -176,18 +164,18 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           .override(
                                             fontFamily: 'Manrope',
                                             color: GetSupaCall.colorTitle(
-                                                          homeGetSupaResponse
+                                                          meetadidasGetSupaResponse
                                                               .jsonBody,
                                                         ) !=
                                                         null &&
                                                     GetSupaCall.colorTitle(
-                                                          homeGetSupaResponse
+                                                          meetadidasGetSupaResponse
                                                               .jsonBody,
                                                         ) !=
                                                         ''
                                                 ? colorFromCssString(
                                                     GetSupaCall.colorTitle(
-                                                      homeGetSupaResponse
+                                                      meetadidasGetSupaResponse
                                                           .jsonBody,
                                                     )!,
                                                     defaultColor: Colors.black,
@@ -204,12 +192,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(16.0),
                                     child: Image.network(
-                                      valueOrDefault<String>(
-                                        GetSupaCall.imageURL(
-                                          homeGetSupaResponse.jsonBody,
-                                        ),
-                                        'https://picsum.photos/seed/548/600',
-                                      ),
+                                      'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1719416577477000.jpg',
                                       width: 350.0,
                                       height: 250.0,
                                       fit: BoxFit.contain,
@@ -289,20 +272,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               .secondaryBackground,
                                                       checkColor: GetSupaCall
                                                                       .colorButton(
-                                                                    homeGetSupaResponse
+                                                                    meetadidasGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   null &&
                                                               GetSupaCall
                                                                       .colorButton(
-                                                                    homeGetSupaResponse
+                                                                    meetadidasGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   ''
                                                           ? colorFromCssString(
                                                               GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                meetadidasGetSupaResponse
                                                                     .jsonBody,
                                                               )!,
                                                               defaultColor:
@@ -328,30 +311,29 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     text: TextSpan(
                                                       children: [
                                                         TextSpan(
-                                                          text:
-                                                              'J\'accepte les ',
+                                                          text: 'I accept the ',
                                                           style: TextStyle(),
                                                         ),
                                                         TextSpan(
                                                           text:
-                                                              'Conditions Générales',
+                                                              'General Terms and Conditions ',
                                                           style: TextStyle(
                                                             color: GetSupaCall
                                                                             .colorButton(
-                                                                          homeGetSupaResponse
+                                                                          meetadidasGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButton(
-                                                                          homeGetSupaResponse
+                                                                          meetadidasGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButton(
-                                                                      homeGetSupaResponse
+                                                                      meetadidasGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:
@@ -375,18 +357,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         ),
                                                         TextSpan(
                                                           text:
-                                                              ' et que ma vidéo apparaisse dans les communications de ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        TextSpan(
-                                                          text: valueOrDefault<
-                                                              String>(
-                                                            GetSupaCall.brand(
-                                                              homeGetSupaResponse
-                                                                  .jsonBody,
-                                                            ),
-                                                            'brandName',
-                                                          ),
+                                                              'and that my video might be used by Adidas',
                                                           style: TextStyle(),
                                                         )
                                                       ],
@@ -399,7 +370,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     'Manrope',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryText,
+                                                                    .secondary,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
@@ -438,24 +409,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     }
                                                     return;
                                                   }
-                                                  FFAppState().slug = () {
-                                                    if (widget.slug != null &&
-                                                        widget.slug != '') {
-                                                      return widget.slug;
-                                                    } else if (FFAppState()
-                                                                .slug !=
-                                                            null &&
-                                                        FFAppState().slug !=
-                                                            '') {
-                                                      return FFAppState().slug;
-                                                    } else {
-                                                      return 'test';
-                                                    }
-                                                  }();
+                                                  FFAppState().slug =
+                                                      'meetadidas';
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
-                                                      homeGetSupaResponse
+                                                      meetadidasGetSupaResponse
                                                           .jsonBody,
                                                     ),
                                                     'unset',
@@ -472,7 +431,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(
-                                                        slug: FFAppState().slug,
+                                                        slug: 'meetadidas',
                                                         brand: FFAppState()
                                                             .brandName,
                                                         time:
@@ -485,7 +444,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   context
                                                       .pushNamed('production');
                                                 },
-                                                text: 'J’enregistre ma vidéo',
+                                                text: 'Record my video',
                                                 options: FFButtonOptions(
                                                   width: 300.0,
                                                   height: 40.0,
@@ -498,20 +457,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               0.0, 0.0),
                                                   color: GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                meetadidasGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               null &&
                                                           GetSupaCall
                                                                   .colorButton(
-                                                                homeGetSupaResponse
+                                                                meetadidasGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               ''
                                                       ? colorFromCssString(
                                                           GetSupaCall
                                                               .colorButton(
-                                                            homeGetSupaResponse
+                                                            meetadidasGetSupaResponse
                                                                 .jsonBody,
                                                           )!,
                                                           defaultColor:
@@ -531,20 +490,20 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                 'Manrope',
                                                             color: GetSupaCall
                                                                             .colorButtonText(
-                                                                          homeGetSupaResponse
+                                                                          meetadidasGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButtonText(
-                                                                          homeGetSupaResponse
+                                                                          meetadidasGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButtonText(
-                                                                      homeGetSupaResponse
+                                                                      meetadidasGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:

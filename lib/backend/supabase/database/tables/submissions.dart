@@ -9,7 +9,7 @@ class SubmissionsTable extends SupabaseTable<SubmissionsRow> {
 }
 
 class SubmissionsRow extends SupabaseDataRow {
-  SubmissionsRow(super.data);
+  SubmissionsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => SubmissionsTable();
@@ -48,7 +48,7 @@ class SubmissionsRow extends SupabaseDataRow {
   String? get transcription => getField<String>('transcription');
   set transcription(String? value) => setField<String>('transcription', value);
 
-  dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
-  set transcriptionJson(dynamic value) =>
+  dynamic? get transcriptionJson => getField<dynamic>('transcriptionJson');
+  set transcriptionJson(dynamic? value) =>
       setField<dynamic>('transcriptionJson', value);
 }

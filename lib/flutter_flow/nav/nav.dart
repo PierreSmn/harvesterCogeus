@@ -1,11 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/supabase/supabase.dart';
 
 import '/index.dart';
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -30,12 +39,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const HomeWidget(),
+      errorBuilder: (context, state) => HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const HomeWidget(),
+          builder: (context, _) => HomeWidget(),
         ),
         FFRoute(
           name: 'home',
@@ -50,17 +59,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'production',
           path: '/production',
-          builder: (context, params) => const ProductionWidget(),
+          builder: (context, params) => ProductionWidget(),
         ),
         FFRoute(
           name: 'infos',
           path: '/infos',
-          builder: (context, params) => const InfosWidget(),
+          builder: (context, params) => InfosWidget(),
         ),
         FFRoute(
           name: 'done',
           path: '/done',
-          builder: (context, params) => const DoneWidget(),
+          builder: (context, params) => DoneWidget(),
         ),
         FFRoute(
           name: 'lovegreen',
@@ -76,6 +85,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'substance',
           path: '/substance',
           builder: (context, params) => SubstanceWidget(
+            slug: params.getParam(
+              'slug',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'meetadidas',
+          path: '/meetadidas',
+          builder: (context, params) => MeetadidasWidget(
+            slug: params.getParam(
+              'slug',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'clubadidas',
+          path: '/clubadidas',
+          builder: (context, params) => ClubadidasWidget(
             slug: params.getParam(
               'slug',
               ParamType.String,
@@ -245,7 +274,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(
+  static TransitionInfo appDefault() => TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.fade,
         duration: Duration(milliseconds: 0),
