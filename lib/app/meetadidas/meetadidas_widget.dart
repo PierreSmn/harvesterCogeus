@@ -196,6 +196,20 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
                                       fit: BoxFit.contain,
                                     ),
                                   ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        30.0, 0.0, 40.0, 0.0),
+                                    child: Text(
+                                      'The winner of the draw will be annouced on August 20th',
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
