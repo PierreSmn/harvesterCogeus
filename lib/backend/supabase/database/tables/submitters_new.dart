@@ -43,10 +43,6 @@ class SubmittersNewRow extends SupabaseDataRow {
   String? get transcription => getField<String>('transcription');
   set transcription(String? value) => setField<String>('transcription', value);
 
-  dynamic get transcriptionJson => getField<dynamic>('transcriptionJson');
-  set transcriptionJson(dynamic value) =>
-      setField<dynamic>('transcriptionJson', value);
-
   int? get rating => getField<int>('rating');
   set rating(int? value) => setField<int>('rating', value);
 

@@ -53,14 +53,27 @@ class _CameraRecordState extends State<CameraRecord>
           print('Error reinitializing the camera: $error');
         });
       }
+    } else if (state == AppLifecycleState.hidden) {
+      // When the app is paused, stop and dispose the camera
+      stopAndDisposeCameraController();
     }
   }
 
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    controller?.dispose();
+    stopAndDisposeCameraController(); // Call to stop and dispose the camera
     super.dispose();
+  }
+
+  void stopAndDisposeCameraController() async {
+    if (controller != null) {
+      if (controller!.value.isRecordingVideo) {
+        await controller!.stopVideoRecording();
+      }
+      await controller!.dispose();
+      controller = null;
+    }
   }
 
   @override
@@ -91,7 +104,9 @@ class _CameraRecordState extends State<CameraRecord>
             .uploadBinary(fileName, fileAsBytes, fileOptions: fileOptions);
         FFAppState().recordVideoFBStorage = await url ?? '';
         FFAppState().videoReady = true;
-      }).catchError((error) {});
+      }).catchError((error) {
+        print('Error stopping video recording or uploading: $error');
+      });
     }
   }
 
@@ -125,8 +140,6 @@ class _CameraRecordState extends State<CameraRecord>
           } else {
             return Center(child: CircularProgressIndicator());
           }
-          // No additional curly braces needed here
-        } // Correctly closes the builder: (context, snapshot) {
-        ); // Correctly closes the FutureBuilder and the return statement
+        });
   }
 }

@@ -7,3 +7,4 @@ export '/app/lovegreen/lovegreen_widget.dart' show LovegreenWidget;
 export '/app/substance/substance_widget.dart' show SubstanceWidget;
 export '/app/meetadidas/meetadidas_widget.dart' show MeetadidasWidget;
 export '/app/clubadidas/clubadidas_widget.dart' show ClubadidasWidget;
+export '/app/carousel/carousel_widget.dart' show CarouselWidget;

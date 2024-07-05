@@ -211,6 +211,8 @@ dynamic deserializeParam<T>(
             return SubmittersRow(data);
           case SubmittersNewRow:
             return SubmittersNewRow(data);
+          case ClientsRow:
+            return ClientsRow(data);
           case NewSubsRow:
             return NewSubsRow(data);
           case SelectedRow:

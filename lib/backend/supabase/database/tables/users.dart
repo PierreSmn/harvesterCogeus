@@ -37,4 +37,18 @@ class UsersRow extends SupabaseDataRow {
 
   int? get listIDs => getField<int>('listIDs');
   set listIDs(int? value) => setField<int>('listIDs', value);
+
+  String? get subscriptionStatus => getField<String>('subscription_status');
+  set subscriptionStatus(String? value) =>
+      setField<String>('subscription_status', value);
+
+  String? get subscriptionId => getField<String>('subscription_id');
+  set subscriptionId(String? value) =>
+      setField<String>('subscription_id', value);
+
+  String? get customerId => getField<String>('customer_id');
+  set customerId(String? value) => setField<String>('customer_id', value);
+
+  String? get planId => getField<String>('plan_id');
+  set planId(String? value) => setField<String>('plan_id', value);
 }
