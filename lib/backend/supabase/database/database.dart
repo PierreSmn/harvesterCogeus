@@ -8,6 +8,7 @@ export 'table.dart';
 export 'tables/offline_flows.dart';
 export 'tables/submitters.dart';
 export 'tables/submitters_new.dart';
+export 'tables/clients.dart';
 export 'tables/new_subs.dart';
 export 'tables/selected.dart';
 export 'tables/integrations.dart';

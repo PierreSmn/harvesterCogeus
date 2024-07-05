@@ -13,6 +13,8 @@ class ProductionModel extends FlutterFlowModel<ProductionWidget> {
 
   bool waitforUrl = false;
 
+  bool hideInstruct = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

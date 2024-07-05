@@ -44,6 +44,18 @@ class IntegrationsRow extends SupabaseDataRow {
   int? get vid5 => getField<int>('vid5');
   set vid5(int? value) => setField<int>('vid5', value);
 
-  bool? get max3vids => getField<bool>('max3vids');
-  set max3vids(bool? value) => setField<bool>('max3vids', value);
+  bool? get isStory => getField<bool>('is_story');
+  set isStory(bool? value) => setField<bool>('is_story', value);
+
+  String? get ownerBrand => getField<String>('ownerBrand');
+  set ownerBrand(String? value) => setField<String>('ownerBrand', value);
+
+  String? get title1 => getField<String>('title1');
+  set title1(String? value) => setField<String>('title1', value);
+
+  String? get title2 => getField<String>('title2');
+  set title2(String? value) => setField<String>('title2', value);
+
+  String? get title3 => getField<String>('title3');
+  set title3(String? value) => setField<String>('title3', value);
 }
