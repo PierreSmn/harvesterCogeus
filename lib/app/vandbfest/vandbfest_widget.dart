@@ -12,11 +12,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'carousel_model.dart';
-export 'carousel_model.dart';
+import 'vandbfest_model.dart';
+export 'vandbfest_model.dart';
 
-class CarouselWidget extends StatefulWidget {
-  const CarouselWidget({
+class VandbfestWidget extends StatefulWidget {
+  const VandbfestWidget({
     super.key,
     String? slug,
   }) : slug = slug ?? '';
@@ -24,12 +24,12 @@ class CarouselWidget extends StatefulWidget {
   final String slug;
 
   @override
-  State<CarouselWidget> createState() => _CarouselWidgetState();
+  State<VandbfestWidget> createState() => _VandbfestWidgetState();
 }
 
-class _CarouselWidgetState extends State<CarouselWidget>
+class _VandbfestWidgetState extends State<VandbfestWidget>
     with TickerProviderStateMixin {
-  late CarouselModel _model;
+  late VandbfestModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasCheckboxTriggered = false;
@@ -38,7 +38,7 @@ class _CarouselWidgetState extends State<CarouselWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CarouselModel());
+    _model = createModel(context, () => VandbfestModel());
 
     animationsMap.addAll({
       'checkboxOnActionTriggerAnimation': AnimationInfo(
@@ -80,15 +80,7 @@ class _CarouselWidgetState extends State<CarouselWidget>
       future: FFAppState().api(
         uniqueQueryKey: widget.slug,
         requestFn: () => GetSupaCall.call(
-          slug: () {
-            if (widget.slug != '') {
-              return widget.slug;
-            } else if (FFAppState().slug != '') {
-              return FFAppState().slug;
-            } else {
-              return 'test';
-            }
-          }(),
+          slug: 'vandbfest',
         ),
       ),
       builder: (context, snapshot) {
@@ -108,9 +100,9 @@ class _CarouselWidgetState extends State<CarouselWidget>
             ),
           );
         }
-        final carouselGetSupaResponse = snapshot.data!;
+        final vandbfestGetSupaResponse = snapshot.data!;
         return Title(
-            title: 'carousel',
+            title: 'vandbfest',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => _model.unfocusNode.canRequestFocus
@@ -134,7 +126,7 @@ class _CarouselWidgetState extends State<CarouselWidget>
                           child: Image.network(
                             valueOrDefault<String>(
                               GetSupaCall.logoURL(
-                                carouselGetSupaResponse.jsonBody,
+                                vandbfestGetSupaResponse.jsonBody,
                               ),
                               'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
                             ),
@@ -159,16 +151,23 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
-                                      children: [
-                                        const TextSpan(
+                                      children: const [
+                                        TextSpan(
                                           text: 'Gagnez ',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: GetSupaCall.gift(
-                                            carouselGetSupaResponse.jsonBody,
-                                          )!,
-                                          style: const TextStyle(),
+                                          text:
+                                              ' deux pass pour la prochaine edition',
+                                          style: TextStyle(),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              '\nEn envoyant vous aussi votre vidéo',
+                                          style: TextStyle(
+                                            color: Color(0xFF50B088),
+                                            fontSize: 18.0,
+                                          ),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
@@ -176,18 +175,18 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                           .override(
                                             fontFamily: 'Manrope',
                                             color: GetSupaCall.colorTitle(
-                                                          carouselGetSupaResponse
+                                                          vandbfestGetSupaResponse
                                                               .jsonBody,
                                                         ) !=
                                                         null &&
                                                     GetSupaCall.colorTitle(
-                                                          carouselGetSupaResponse
+                                                          vandbfestGetSupaResponse
                                                               .jsonBody,
                                                         ) !=
                                                         ''
                                                 ? colorFromCssString(
                                                     GetSupaCall.colorTitle(
-                                                      carouselGetSupaResponse
+                                                      vandbfestGetSupaResponse
                                                           .jsonBody,
                                                     )!,
                                                     defaultColor: Colors.black,
@@ -203,7 +202,7 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                   ),
                                   const FlutterFlowWebView(
                                     content:
-                                        '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'26\',        numVideos: 5  };   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>\n',
+                                        '<div id=\"carousel-container\" class=\"carousel-container\">\n  <script>\n    window.MyVideoCarouselConfig = {\n      integrationId: \'44\',\n      numVideos: 5,\n      disableClick: true// New variable to disable click\n    };\n  </script>\n  <script src=\"https://embeded-pi.vercel.app/embed.js\"></script>\n</div>\n',
                                     height: 280.0,
                                     verticalScroll: false,
                                     horizontalScroll: false,
@@ -283,20 +282,20 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                               .secondaryBackground,
                                                       checkColor: GetSupaCall
                                                                       .colorButton(
-                                                                    carouselGetSupaResponse
+                                                                    vandbfestGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   null &&
                                                               GetSupaCall
                                                                       .colorButton(
-                                                                    carouselGetSupaResponse
+                                                                    vandbfestGetSupaResponse
                                                                         .jsonBody,
                                                                   ) !=
                                                                   ''
                                                           ? colorFromCssString(
                                                               GetSupaCall
                                                                   .colorButton(
-                                                                carouselGetSupaResponse
+                                                                vandbfestGetSupaResponse
                                                                     .jsonBody,
                                                               )!,
                                                               defaultColor:
@@ -332,20 +331,20 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                           style: TextStyle(
                                                             color: GetSupaCall
                                                                             .colorButton(
-                                                                          carouselGetSupaResponse
+                                                                          vandbfestGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButton(
-                                                                          carouselGetSupaResponse
+                                                                          vandbfestGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButton(
-                                                                      carouselGetSupaResponse
+                                                                      vandbfestGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:
@@ -376,7 +375,7 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                           text: valueOrDefault<
                                                               String>(
                                                             GetSupaCall.brand(
-                                                              carouselGetSupaResponse
+                                                              vandbfestGetSupaResponse
                                                                   .jsonBody,
                                                             ),
                                                             'brandName',
@@ -432,20 +431,12 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                     }
                                                     return;
                                                   }
-                                                  FFAppState().slug = () {
-                                                    if (widget.slug != '') {
-                                                      return widget.slug;
-                                                    } else if (FFAppState().slug !=
-                                                            '') {
-                                                      return FFAppState().slug;
-                                                    } else {
-                                                      return 'test';
-                                                    }
-                                                  }();
+                                                  FFAppState().slug =
+                                                      'vandbfest';
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
-                                                      carouselGetSupaResponse
+                                                      vandbfestGetSupaResponse
                                                           .jsonBody,
                                                     ),
                                                     'unset',
@@ -488,20 +479,20 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                               0.0, 0.0),
                                                   color: GetSupaCall
                                                                   .colorButton(
-                                                                carouselGetSupaResponse
+                                                                vandbfestGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               null &&
                                                           GetSupaCall
                                                                   .colorButton(
-                                                                carouselGetSupaResponse
+                                                                vandbfestGetSupaResponse
                                                                     .jsonBody,
                                                               ) !=
                                                               ''
                                                       ? colorFromCssString(
                                                           GetSupaCall
                                                               .colorButton(
-                                                            carouselGetSupaResponse
+                                                            vandbfestGetSupaResponse
                                                                 .jsonBody,
                                                           )!,
                                                           defaultColor:
@@ -521,20 +512,20 @@ class _CarouselWidgetState extends State<CarouselWidget>
                                                                 'Manrope',
                                                             color: GetSupaCall
                                                                             .colorButtonText(
-                                                                          carouselGetSupaResponse
+                                                                          vandbfestGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         null &&
                                                                     GetSupaCall
                                                                             .colorButtonText(
-                                                                          carouselGetSupaResponse
+                                                                          vandbfestGetSupaResponse
                                                                               .jsonBody,
                                                                         ) !=
                                                                         ''
                                                                 ? colorFromCssString(
                                                                     GetSupaCall
                                                                         .colorButtonText(
-                                                                      carouselGetSupaResponse
+                                                                      vandbfestGetSupaResponse
                                                                           .jsonBody,
                                                                     )!,
                                                                     defaultColor:

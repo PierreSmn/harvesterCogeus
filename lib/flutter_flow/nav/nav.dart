@@ -103,9 +103,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'carousel',
-          path: '/carousel',
-          builder: (context, params) => CarouselWidget(
+          name: 'vandbfest',
+          path: '/vandbfest',
+          builder: (context, params) => VandbfestWidget(
             slug: params.getParam(
               'slug',
               ParamType.String,

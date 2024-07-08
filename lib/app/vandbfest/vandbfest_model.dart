@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'carousel_widget.dart' show CarouselWidget;
+import 'vandbfest_widget.dart' show VandbfestWidget;
 import 'package:flutter/material.dart';
 
-class CarouselModel extends FlutterFlowModel<CarouselWidget> {
+class VandbfestModel extends FlutterFlowModel<VandbfestWidget> {
   ///  Local state fields for this page.
 
   bool? checked;
