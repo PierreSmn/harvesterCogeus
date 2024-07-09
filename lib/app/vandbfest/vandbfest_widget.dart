@@ -158,7 +158,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                         ),
                                         TextSpan(
                                           text:
-                                              ' deux pass pour la prochaine edition',
+                                              ' deux pass pour la prochaine édition',
                                           style: TextStyle(),
                                         ),
                                         TextSpan(
