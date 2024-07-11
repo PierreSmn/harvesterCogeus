@@ -73,6 +73,7 @@ class _DoneWidgetState extends State<DoneWidget> {
           );
         }
         final doneGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'done',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

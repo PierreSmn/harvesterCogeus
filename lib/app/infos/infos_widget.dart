@@ -118,6 +118,7 @@ class _InfosWidgetState extends State<InfosWidget>
           );
         }
         final infosGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'infos',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

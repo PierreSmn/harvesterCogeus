@@ -100,6 +100,7 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
           );
         }
         final meetadidasGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'meetadidas',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

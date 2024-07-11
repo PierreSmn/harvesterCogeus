@@ -105,6 +105,15 @@ class GetSupaCall {
         response,
         r'''$[:].twogifts''',
       ));
+  static bool? carouselBool(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:].carousel_bool''',
+      ));
+  static String? carouselCode(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$[:].carousel_code''',
+      ));
 }
 
 class PostSubmissionFgCall {

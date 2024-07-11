@@ -100,6 +100,7 @@ class _ClubadidasWidgetState extends State<ClubadidasWidget>
           );
         }
         final clubadidasGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'clubadidas',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

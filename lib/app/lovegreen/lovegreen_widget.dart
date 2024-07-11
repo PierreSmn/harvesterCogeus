@@ -99,6 +99,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
           );
         }
         final lovegreenGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'lovegreen',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
