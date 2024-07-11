@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:barcode_widget/barcode_widget.dart';
@@ -107,6 +108,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           );
         }
         final homeGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'home',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -199,25 +201,91 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.network(
-                                      valueOrDefault<String>(
-                                        GetSupaCall.imageURL(
-                                          homeGetSupaResponse.jsonBody,
+                                  if (!GetSupaCall.carouselBool(
+                                    homeGetSupaResponse.jsonBody,
+                                  )!)
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 24.0, 0.0, 0.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            GetSupaCall.imageURL(
+                                              homeGetSupaResponse.jsonBody,
+                                            ),
+                                            'https://picsum.photos/seed/548/600',
+                                          ),
+                                          width: 350.0,
+                                          height: 250.0,
+                                          fit: BoxFit.contain,
                                         ),
-                                        'https://picsum.photos/seed/548/600',
                                       ),
-                                      width: 350.0,
-                                      height: 250.0,
-                                      fit: BoxFit.contain,
                                     ),
-                                  ),
+                                  if (GetSupaCall.carouselBool(
+                                        homeGetSupaResponse.jsonBody,
+                                      ) ??
+                                      true)
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Text(
+                                          'En envoyant vous aussi votre vidéo',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Manrope',
+                                                color: GetSupaCall.colorText(
+                                                              homeGetSupaResponse
+                                                                  .jsonBody,
+                                                            ) !=
+                                                            null &&
+                                                        GetSupaCall.colorText(
+                                                              homeGetSupaResponse
+                                                                  .jsonBody,
+                                                            ) !=
+                                                            ''
+                                                    ? colorFromCssString(
+                                                        GetSupaCall.colorText(
+                                                          homeGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        defaultColor:
+                                                            Colors.black,
+                                                      )
+                                                    : FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 24.0, 0.0, 0.0),
+                                          child: FlutterFlowWebView(
+                                            content: valueOrDefault<String>(
+                                              GetSupaCall.carouselCode(
+                                                homeGetSupaResponse.jsonBody,
+                                              ),
+                                              'noCode',
+                                            ),
+                                            width: 350.0,
+                                            height: 250.0,
+                                            verticalScroll: false,
+                                            horizontalScroll: false,
+                                            html: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 18.0),
+                                          0.0, 24.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -620,7 +688,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 0.0)),
                               ),
                             ),
                           ),

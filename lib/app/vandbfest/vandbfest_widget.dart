@@ -101,6 +101,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
           );
         }
         final vandbfestGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'vandbfest',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),

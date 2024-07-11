@@ -108,6 +108,7 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
           );
         }
         final substanceGetSupaResponse = snapshot.data!;
+
         return Title(
             title: 'substance',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
