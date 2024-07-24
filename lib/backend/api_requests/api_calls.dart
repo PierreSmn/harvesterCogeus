@@ -126,7 +126,7 @@ class PostSubmissionFgCall {
     String? brand = '',
     String? time = '',
     double? rating,
-    bool? boolmail,
+    bool? boolmail = false,
     String? question = '',
   }) async {
     final ffApiRequestBody = '''
