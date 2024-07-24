@@ -34,7 +34,7 @@ dependencies:
   chewie: 1.8.1
   collection: 1.18.0
   equatable: 2.0.5
-  file_picker: 8.0.3
+  file_picker: ^8.0.3
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.3.1
   flutter_plugin_android_lifecycle: 2.0.20
@@ -64,7 +64,7 @@ dependencies:
   path_provider_foundation: 2.4.0
   path_provider_platform_interface: 2.1.2
   plugin_platform_interface: 2.1.8
-  pointer_interceptor: 0.10.1
+  pointer_interceptor: ^0.10.1+1
   postgrest: 1.5.2
   provider: 6.1.2
   realtime_client: 1.4.0
@@ -105,7 +105,7 @@ dependencies:
 
 dependency_overrides:
   http: 1.2.1
-  pointer_interceptor: 0.10.1
+
   rxdart: 0.27.7
   uuid: ^4.0.0
   win32: 5.5.1
