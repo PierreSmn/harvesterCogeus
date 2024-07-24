@@ -1287,57 +1287,51 @@ class _InfosWidgetState extends State<InfosWidget>
                                               const AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              if (_model.formKey3
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey3.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
+                                              var shouldSetState = false;
                                               FFAppState().email = _model
                                                   .emailTextController.text;
+                                              FFAppState().update(() {});
+                                              if (!((FFAppState().name !=
+                                                          '') &&
+                                                  (FFAppState().surname !=
+                                                          '') &&
+                                                  (FFAppState().email !=
+                                                          '') &&
+                                                  (FFAppState().videoUrl !=
+                                                          '') &&
+                                                  (FFAppState().slug !=
+                                                          '') &&
+                                                  (FFAppState().brandName !=
+                                                          '') &&
+                                                  (FFAppState().rating !=
+                                                      null) &&
+                                                  (FFAppState()
+                                                              .questionAsked !=
+                                                          ''))) {
+                                                if (shouldSetState) {
+                                                  setState(() {});
+                                                }
+                                                return;
+                                              }
                                               _model.apiResultro6 =
                                                   await PostSubmissionFgCall
                                                       .call(
-                                                name: valueOrDefault<String>(
-                                                  FFAppState().name,
-                                                  'noName',
-                                                ),
-                                                surname: valueOrDefault<String>(
-                                                  FFAppState().surname,
-                                                  'noSurname',
-                                                ),
-                                                email: valueOrDefault<String>(
-                                                  FFAppState().email,
-                                                  'noEmail',
-                                                ),
-                                                video: valueOrDefault<String>(
-                                                  FFAppState().videoUrl,
-                                                  'noVideo',
-                                                ),
-                                                slug: valueOrDefault<String>(
-                                                  FFAppState().slug,
-                                                  'noSlug',
-                                                ),
-                                                brand: valueOrDefault<String>(
-                                                  FFAppState().brandName,
-                                                  'noBrand',
-                                                ),
+                                                name: FFAppState().name,
+                                                surname: FFAppState().surname,
+                                                email: FFAppState().email,
+                                                video: FFAppState().videoUrl,
+                                                slug: FFAppState().slug,
+                                                brand: FFAppState().brandName,
+                                                boolmail: _model.checkboxValue!
+                                                    ? true
+                                                    : false,
+                                                question: 'notWorking',
+                                                rating: FFAppState().rating,
                                                 time: getCurrentTimestamp
                                                     .toString(),
-                                                rating: valueOrDefault<double>(
-                                                  FFAppState().rating,
-                                                  5.0,
-                                                ),
-                                                boolmail:
-                                                    _model.checkboxValue ?? false,
-                                                question:
-                                                    valueOrDefault<String>(
-                                                  FFAppState().questionAsked,
-                                                  'noQuestion',
-                                                ),
                                               );
 
+                                              shouldSetState = true;
                                               if ((_model.apiResultro6
                                                       ?.succeeded ??
                                                   true)) {
@@ -1346,9 +1340,35 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 setState(() {});
 
                                                 context.pushNamed('done');
+                                              } else {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      (_model.apiResultro6
+                                                                  ?.jsonBody ??
+                                                              '')
+                                                          .toString(),
+                                                      style: TextStyle(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                    ),
+                                                    duration: const Duration(
+                                                        milliseconds: 4000),
+                                                    backgroundColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondary,
+                                                  ),
+                                                );
                                               }
 
-                                              setState(() {});
+                                              if (shouldSetState) {
+                                                setState(() {});
+                                              }
                                             },
                                             text: 'Continuer',
                                             options: FFButtonOptions(
