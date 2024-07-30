@@ -8,3 +8,4 @@ export '/app/substance/substance_widget.dart' show SubstanceWidget;
 export '/app/meetadidas/meetadidas_widget.dart' show MeetadidasWidget;
 export '/app/clubadidas/clubadidas_widget.dart' show ClubadidasWidget;
 export '/app/vandbfest/vandbfest_widget.dart' show VandbfestWidget;
+export '/app/plages/plages_widget.dart' show PlagesWidget;
