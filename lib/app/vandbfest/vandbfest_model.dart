@@ -9,7 +9,6 @@ class VandbfestModel extends FlutterFlowModel<VandbfestWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
@@ -17,7 +16,5 @@ class VandbfestModel extends FlutterFlowModel<VandbfestWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }
