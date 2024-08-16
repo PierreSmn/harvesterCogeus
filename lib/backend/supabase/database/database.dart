@@ -22,3 +22,4 @@ export 'tables/hosted_subs.dart';
 export 'tables/live_flows.dart';
 export 'tables/lists.dart';
 export 'tables/valid_subs.dart';
+export 'tables/photos.dart';

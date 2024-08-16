@@ -162,7 +162,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                         ),
                                         TextSpan(
                                           text:
-                                              '\nEn envoyant vous aussi votre vidéo',
+                                              '\nEn partageant ton expérience sur le festival',
                                           style: TextStyle(
                                             color: Color(0xFF50B088),
                                             fontSize: 18.0,

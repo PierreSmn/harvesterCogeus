@@ -51,4 +51,10 @@ class UsersRow extends SupabaseDataRow {
 
   String? get planId => getField<String>('plan_id');
   set planId(String? value) => setField<String>('plan_id', value);
+
+  String? get phoneNumber => getField<String>('phone_number');
+  set phoneNumber(String? value) => setField<String>('phone_number', value);
+
+  String? get siteUrl => getField<String>('site_url');
+  set siteUrl(String? value) => setField<String>('site_url', value);
 }

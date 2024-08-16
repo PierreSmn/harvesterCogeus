@@ -79,7 +79,10 @@ class _PlagesWidgetState extends State<PlagesWidget>
     return FutureBuilder<ApiCallResponse>(
       future: FFAppState().api(
         requestFn: () => GetSupaCall.call(
-          slug: 'lovegreentest',
+          slug: valueOrDefault<String>(
+            widget.slug,
+            'lesplages',
+          ),
         ),
       ),
       builder: (context, snapshot) {
@@ -144,11 +147,12 @@ class _PlagesWidgetState extends State<PlagesWidget>
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
-                                      children: const [
+                                      children: [
                                         TextSpan(
-                                          text:
-                                              'Gagne 2 places pour l\'édition 2025',
-                                          style: TextStyle(),
+                                          text: GetSupaCall.slug(
+                                            plagesGetSupaResponse.jsonBody,
+                                          )!,
+                                          style: const TextStyle(),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
@@ -344,7 +348,10 @@ class _PlagesWidgetState extends State<PlagesWidget>
                                                     return;
                                                   }
                                                   FFAppState().slug =
-                                                      'lesplages';
+                                                      valueOrDefault<String>(
+                                                    widget.slug,
+                                                    'lesplages',
+                                                  );
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
@@ -365,7 +372,11 @@ class _PlagesWidgetState extends State<PlagesWidget>
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(
-                                                        slug: FFAppState().slug,
+                                                        slug: valueOrDefault<
+                                                            String>(
+                                                          FFAppState().slug,
+                                                          'lesplages',
+                                                        ),
                                                         brand: FFAppState()
                                                             .brandName,
                                                         time:

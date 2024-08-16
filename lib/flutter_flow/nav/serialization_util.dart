@@ -239,6 +239,8 @@ dynamic deserializeParam<T>(
             return ListsRow(data);
           case ValidSubsRow:
             return ValidSubsRow(data);
+          case PhotosRow:
+            return PhotosRow(data);
           default:
             return null;
         }
