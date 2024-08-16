@@ -30,41 +30,14 @@ class LiveFlowsRow extends SupabaseDataRow {
   set giftImageLink(String? value) =>
       setField<String>('gift_image_link', value);
 
-  String? get option1 => getField<String>('option1');
-  set option1(String? value) => setField<String>('option1', value);
-
-  String? get option2 => getField<String>('option2');
-  set option2(String? value) => setField<String>('option2', value);
-
-  String? get expla1 => getField<String>('expla1');
-  set expla1(String? value) => setField<String>('expla1', value);
-
   String? get expla2 => getField<String>('expla2');
   set expla2(String? value) => setField<String>('expla2', value);
 
   String? get name => getField<String>('name');
   set name(String? value) => setField<String>('name', value);
 
-  String? get webflowId => getField<String>('webflow_id');
-  set webflowId(String? value) => setField<String>('webflow_id', value);
-
   String? get slug => getField<String>('slug');
   set slug(String? value) => setField<String>('slug', value);
-
-  String? get expla3 => getField<String>('expla3');
-  set expla3(String? value) => setField<String>('expla3', value);
-
-  String? get webhookURL => getField<String>('webhookURL');
-  set webhookURL(String? value) => setField<String>('webhookURL', value);
-
-  String? get endMessage => getField<String>('end_message');
-  set endMessage(String? value) => setField<String>('end_message', value);
-
-  String? get assistant => getField<String>('assistant');
-  set assistant(String? value) => setField<String>('assistant', value);
-
-  String? get chathook => getField<String>('chathook');
-  set chathook(String? value) => setField<String>('chathook', value);
 
   String? get qrId => getField<String>('qr_id');
   set qrId(String? value) => setField<String>('qr_id', value);
@@ -100,4 +73,13 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   bool? get twogifts => getField<bool>('twogifts');
   set twogifts(bool? value) => setField<bool>('twogifts', value);
+
+  bool? get carouselBool => getField<bool>('carousel_bool');
+  set carouselBool(bool? value) => setField<bool>('carousel_bool', value);
+
+  String? get carouselCode => getField<String>('carousel_code');
+  set carouselCode(String? value) => setField<String>('carousel_code', value);
+
+  String? get colorBG => getField<String>('colorBG');
+  set colorBG(String? value) => setField<String>('colorBG', value);
 }

@@ -50,4 +50,7 @@ class ValidSubsRow extends SupabaseDataRow {
 
   String? get question => getField<String>('question');
   set question(String? value) => setField<String>('question', value);
+
+  String? get playbackId => getField<String>('playback_id');
+  set playbackId(String? value) => setField<String>('playback_id', value);
 }
