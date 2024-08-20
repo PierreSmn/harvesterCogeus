@@ -114,6 +114,10 @@ class GetSupaCall {
         response,
         r'''$[:].carousel_code''',
       ));
+  static bool? mailOnlyBool(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:].mail_only_bool''',
+      ));
 }
 
 class PostSubmissionFgCall {

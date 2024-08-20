@@ -252,23 +252,44 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      FlutterFlowIconButton(
-                                                        borderRadius: 20.0,
-                                                        borderWidth: 1.0,
-                                                        buttonSize: 40.0,
-                                                        icon: Icon(
-                                                          Icons.close_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          size: 24.0,
+                                                      if (!_model.hideInstruct)
+                                                        FlutterFlowIconButton(
+                                                          borderRadius: 20.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 40.0,
+                                                          icon: Icon(
+                                                            Icons.close_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            size: 24.0,
+                                                          ),
+                                                          onPressed: () async {
+                                                            _model.hideInstruct =
+                                                                true;
+                                                            setState(() {});
+                                                          },
                                                         ),
-                                                        onPressed: () async {
-                                                          _model.hideInstruct =
-                                                              true;
-                                                          setState(() {});
-                                                        },
-                                                      ),
+                                                      if (_model.hideInstruct)
+                                                        FlutterFlowIconButton(
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderRadius: 20.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 40.0,
+                                                          icon: Icon(
+                                                            Icons.comment,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                            size: 24.0,
+                                                          ),
+                                                          onPressed: () async {
+                                                            _model.hideInstruct =
+                                                                false;
+                                                            setState(() {});
+                                                          },
+                                                        ),
                                                     ],
                                                   ),
                                                 ),

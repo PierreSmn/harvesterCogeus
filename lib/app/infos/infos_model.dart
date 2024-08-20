@@ -10,9 +10,8 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final formKey2 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
-  final formKey3 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   // State field(s) for name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;
@@ -20,18 +19,6 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Votre prénom est obligatoire.';
-    }
-
-    return null;
-  }
-
-  // State field(s) for surname widget.
-  FocusNode? surnameFocusNode;
-  TextEditingController? surnameTextController;
-  String? Function(BuildContext, String?)? surnameTextControllerValidator;
-  String? _surnameTextControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Votre nom est obligatoire.';
     }
 
     return null;
@@ -62,7 +49,6 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
   @override
   void initState(BuildContext context) {
     nameTextControllerValidator = _nameTextControllerValidator;
-    surnameTextControllerValidator = _surnameTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
   }
 
@@ -70,9 +56,6 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
   void dispose() {
     nameFocusNode?.dispose();
     nameTextController?.dispose();
-
-    surnameFocusNode?.dispose();
-    surnameTextController?.dispose();
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();

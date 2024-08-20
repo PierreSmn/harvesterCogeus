@@ -36,10 +36,6 @@ class _InfosWidgetState extends State<InfosWidget>
         TextEditingController(text: FFAppState().name);
     _model.nameFocusNode ??= FocusNode();
 
-    _model.surnameTextController ??=
-        TextEditingController(text: FFAppState().surname);
-    _model.surnameFocusNode ??= FocusNode();
-
     _model.emailTextController ??=
         TextEditingController(text: FFAppState().email);
     _model.emailFocusNode ??= FocusNode();
@@ -133,7 +129,11 @@ class _InfosWidgetState extends State<InfosWidget>
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        if (_model.step == 1)
+                        if ((_model.step == 1) &&
+                            (GetSupaCall.mailOnlyBool(
+                                  infosGetSupaResponse.jsonBody,
+                                ) ==
+                                false))
                           SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -169,7 +169,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               },
                                             ),
                                             Text(
-                                              'Etape 1/3',
+                                              'Retour',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -197,7 +197,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Prénom et Nom',
+                                                    'Prénom',
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -212,7 +212,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                         ),
                                                   ),
                                                   Text(
-                                                    'Nous avons besoin de votre nom complet pour que l\'inscription soit validée.',
+                                                    'Nous avons besoin de votre prénom pour que l\'inscription soit validée.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -240,7 +240,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Form(
-                                            key: _model.formKey2,
+                                            key: _model.formKey1,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Row(
@@ -389,161 +389,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                             ),
                                           ),
                                         ),
-                                        Container(
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .revoSearchBarBg,
-                                            borderRadius:
-                                                BorderRadius.circular(6.0),
-                                            shape: BoxShape.rectangle,
-                                          ),
-                                          child: Form(
-                                            key: _model.formKey1,
-                                            autovalidateMode:
-                                                AutovalidateMode.disabled,
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 5.0,
-                                                                0.0, 5.0),
-                                                    child: TextFormField(
-                                                      controller: _model
-                                                          .surnameTextController,
-                                                      focusNode: _model
-                                                          .surnameFocusNode,
-                                                      autofocus: false,
-                                                      textCapitalization:
-                                                          TextCapitalization
-                                                              .words,
-                                                      textInputAction:
-                                                          TextInputAction.done,
-                                                      obscureText: false,
-                                                      decoration:
-                                                          InputDecoration(
-                                                        hintText: 'Nom',
-                                                        hintStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Manrope',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .revoSearchIconColor,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        enabledBorder:
-                                                            const UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .only(
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                            const UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .only(
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                          ),
-                                                        ),
-                                                        errorBorder:
-                                                            const UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .only(
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                          ),
-                                                        ),
-                                                        focusedErrorBorder:
-                                                            const UnderlineInputBorder(
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .only(
-                                                            topLeft:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                            topRight:
-                                                                Radius.circular(
-                                                                    4.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Manrope',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 17.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                      keyboardType:
-                                                          TextInputType.name,
-                                                      validator: _model
-                                                          .surnameTextControllerValidator
-                                                          .asValidator(context),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
                                       ].divide(const SizedBox(height: 24.0)),
                                     ),
                                   ),
@@ -560,13 +405,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                               const AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              if (_model.formKey2
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey2.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
                                               if (_model.formKey1
                                                           .currentState ==
                                                       null ||
@@ -576,12 +414,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               }
                                               FFAppState().name = _model
                                                   .nameTextController.text;
-                                              FFAppState().surname = _model
-                                                  .surnameTextController.text;
-                                              if (!((FFAppState().name !=
-                                                          '') &&
-                                                  (FFAppState().surname !=
-                                                          ''))) {
+                                              if (!(FFAppState().name != '')) {
                                                 return;
                                               }
                                               _model.step = _model.step! + 1;
@@ -677,7 +510,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             },
                                           ),
                                           Text(
-                                            'Etape 2/3',
+                                            'Retour',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -895,7 +728,11 @@ class _InfosWidgetState extends State<InfosWidget>
                               ),
                             ].divide(const SizedBox(height: 36.0)),
                           ),
-                        if (_model.step == 3)
+                        if ((_model.step == 3) ||
+                            (GetSupaCall.mailOnlyBool(
+                                  infosGetSupaResponse.jsonBody,
+                                ) ==
+                                true))
                           SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -932,7 +769,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               },
                                             ),
                                             Text(
-                                              'Etape 3/3',
+                                              'Retour',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1003,7 +840,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Form(
-                                            key: _model.formKey3,
+                                            key: _model.formKey2,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Row(
@@ -1289,9 +1126,16 @@ class _InfosWidgetState extends State<InfosWidget>
                                               FFAppState().email = _model
                                                   .emailTextController.text;
                                               FFAppState().update(() {});
+                                              if (GetSupaCall.mailOnlyBool(
+                                                    infosGetSupaResponse
+                                                        .jsonBody,
+                                                  ) ==
+                                                  true) {
+                                                FFAppState().name = 'mailOnly';
+                                                FFAppState().rating = 6.0;
+                                                setState(() {});
+                                              }
                                               if (!((FFAppState().name !=
-                                                          '') &&
-                                                  (FFAppState().surname !=
                                                           '') &&
                                                   (FFAppState().email !=
                                                           '') &&
@@ -1314,8 +1158,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                               _model.apiResultro6 =
                                                   await PostSubmissionFgCall
                                                       .call(
-                                                name: FFAppState().name,
-                                                surname: FFAppState().surname,
+                                                name: valueOrDefault<String>(
+                                                  FFAppState().name,
+                                                  'emailOnly',
+                                                ),
                                                 email: FFAppState().email,
                                                 video: FFAppState().videoUrl,
                                                 slug: FFAppState().slug,
@@ -1324,7 +1170,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     ? true
                                                     : false,
                                                 question: 'notWorking',
-                                                rating: FFAppState().rating,
+                                                rating: valueOrDefault<double>(
+                                                  FFAppState().rating,
+                                                  6.0,
+                                                ),
                                                 time: getCurrentTimestamp
                                                     .toString(),
                                               );

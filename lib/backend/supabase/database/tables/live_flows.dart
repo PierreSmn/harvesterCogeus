@@ -82,4 +82,7 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   String? get colorBG => getField<String>('colorBG');
   set colorBG(String? value) => setField<String>('colorBG', value);
+
+  bool? get mailOnlyBool => getField<bool>('mail_only_bool');
+  set mailOnlyBool(bool? value) => setField<bool>('mail_only_bool', value);
 }
