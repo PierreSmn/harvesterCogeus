@@ -123,12 +123,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            valueOrDefault<String>(
-                              GetSupaCall.logoURL(
-                                vandbfestGetSupaResponse.jsonBody,
-                              ),
-                              'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
-                            ),
+                            'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1720442986279000.png',
                             height: 110.0,
                             fit: BoxFit.contain,
                           ),
@@ -150,17 +145,17 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
-                                      children: const [
+                                      children: [
                                         TextSpan(
-                                          text: 'Gagnez ',
-                                          style: TextStyle(),
+                                          text: valueOrDefault<String>(
+                                            GetSupaCall.gift(
+                                              vandbfestGetSupaResponse.jsonBody,
+                                            ),
+                                            'Tentez de gagner deux pass',
+                                          ),
+                                          style: const TextStyle(),
                                         ),
-                                        TextSpan(
-                                          text:
-                                              ' deux pass pour la prochaine édition',
-                                          style: TextStyle(),
-                                        ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text:
                                               '\nEn partageant ton expérience sur le festival',
                                           style: TextStyle(
@@ -201,7 +196,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                   ),
                                   const FlutterFlowWebView(
                                     content:
-                                        '<div id=\"carousel-container\" class=\"carousel-container\">\n  <script>\n    window.MyVideoCarouselConfig = {\n      integrationId: \'44\',\n      numVideos: 5,\n      disableClick: true// New variable to disable click\n    };\n  </script>\n  <script src=\"https://embeded-pi.vercel.app/embed.js\"></script>\n</div>\n',
+                                        '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'83\',        numVideos: 5, disableClick: true};   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>',
                                     height: 280.0,
                                     verticalScroll: false,
                                     horizontalScroll: false,
@@ -606,7 +601,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                         ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 24.0)),
+                                ].divide(const SizedBox(height: 18.0)),
                               ),
                             ),
                           ),
