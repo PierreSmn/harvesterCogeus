@@ -426,7 +426,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                     return;
                                                   }
                                                   FFAppState().slug =
-                                                      'vandbfest';
+                                                      widget.slug;
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
