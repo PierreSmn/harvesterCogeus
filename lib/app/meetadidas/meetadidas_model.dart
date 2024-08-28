@@ -9,6 +9,7 @@ class MeetadidasModel extends FlutterFlowModel<MeetadidasWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 

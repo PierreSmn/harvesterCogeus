@@ -150,17 +150,19 @@ class _DoneWidgetState extends State<DoneWidget> {
                                         textAlign: TextAlign.center,
                                       ),
                                     ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        GetSupaCall.imageURL(
-                                          doneGetSupaResponse.jsonBody,
-                                        )!,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.contain,
+                                    if (FFAppState().slug != 'vandbfest')
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                        child: Image.network(
+                                          GetSupaCall.imageURL(
+                                            doneGetSupaResponse.jsonBody,
+                                          )!,
+                                          width: 300.0,
+                                          height: 200.0,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
-                                    ),
                                     if (GetSupaCall.twogifts(
                                           doneGetSupaResponse.jsonBody,
                                         ) ==
@@ -353,6 +355,112 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                                   context)
                                                               .primary,
                                                     ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              colorFromCssString(
+                                                            GetSupaCall
+                                                                .colorButtonText(
+                                                              doneGetSupaResponse
+                                                                  .jsonBody,
+                                                            )!,
+                                                            defaultColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                          ),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: const BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 0.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            7.0),
+                                                  ),
+                                                ),
+                                              ),
+                                            ].divide(const SizedBox(height: 12.0)),
+                                          ),
+                                        ),
+                                      ),
+                                    if (FFAppState().slug == 'vandbfest')
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 60.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: 400.0,
+                                          decoration: const BoxDecoration(),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              RichText(
+                                                textScaler:
+                                                    MediaQuery.of(context)
+                                                        .textScaler,
+                                                text: TextSpan(
+                                                  children: const [
+                                                    TextSpan(
+                                                      text:
+                                                          'Augmentez vos chances de gagner en envoyant une vidéo supplémentaire',
+                                                      style: TextStyle(),
+                                                    )
+                                                  ],
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .appleTxt1,
+                                                        fontSize: 16.7,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 12.0, 0.0, 0.0),
+                                                child: FFButtonWidget(
+                                                  onPressed: () async {
+                                                    context.pushNamed(
+                                                      'vandbfestCopy',
+                                                      queryParameters: {
+                                                        'slug': serializeParam(
+                                                          'vandbfest',
+                                                          ParamType.String,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  },
+                                                  text:
+                                                      'Envoyer une nouvelle vidéo',
+                                                  icon: const Icon(
+                                                    Icons.add,
+                                                    size: 15.0,
+                                                  ),
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(24.0, 0.0,
+                                                                24.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: const Color(0xFFED6F5E),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
