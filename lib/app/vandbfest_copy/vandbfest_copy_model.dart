@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'plages_copy_widget.dart' show PlagesCopyWidget;
+import 'vandbfest_copy_widget.dart' show VandbfestCopyWidget;
 import 'package:flutter/material.dart';
 
-class PlagesCopyModel extends FlutterFlowModel<PlagesCopyWidget> {
+class VandbfestCopyModel extends FlutterFlowModel<VandbfestCopyWidget> {
   ///  Local state fields for this page.
 
   bool? checked;
@@ -12,6 +12,10 @@ class PlagesCopyModel extends FlutterFlowModel<PlagesCopyWidget> {
   final unfocusNode = FocusNode();
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

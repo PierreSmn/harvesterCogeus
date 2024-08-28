@@ -10,6 +10,7 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
   // State field(s) for name widget.
