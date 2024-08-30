@@ -661,7 +661,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                               children: [
                                                 BarcodeWidget(
                                                   data:
-                                                      'https://app.cogeus.com/home?slug=${widget.slug != '' ? widget.slug : FFAppState().slug}',
+                                                      'https://app.cogeus.com/vnbupload?slug=vandbfest',
                                                   barcode: Barcode.qrCode(),
                                                   width: 240.0,
                                                   height: 160.0,
