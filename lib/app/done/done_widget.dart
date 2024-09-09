@@ -203,19 +203,24 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                     style: const TextStyle(),
                                                   )
                                                 ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .appleTxt1,
-                                                          fontSize: 16.7,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color: colorFromCssString(
+                                                        GetSupaCall.colorText(
+                                                          doneGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        defaultColor:
+                                                            Colors.black,
+                                                      ),
+                                                      fontSize: 16.7,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
                                               ),
                                               textAlign: TextAlign.center,
                                             ),
@@ -274,7 +279,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                   Icon(
                                                     Icons.content_copy_outlined,
                                                     color: colorFromCssString(
-                                                      GetSupaCall.colorButton(
+                                                      GetSupaCall.colorTitle(
                                                         doneGetSupaResponse
                                                             .jsonBody,
                                                       )!,
@@ -296,7 +301,7 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                           color:
                                                               colorFromCssString(
                                                             GetSupaCall
-                                                                .colorButton(
+                                                                .colorTitle(
                                                               doneGetSupaResponse
                                                                   .jsonBody,
                                                             )!,
@@ -410,19 +415,24 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                     style: TextStyle(),
                                                   )
                                                 ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .appleTxt1,
-                                                          fontSize: 16.7,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color: colorFromCssString(
+                                                        GetSupaCall.colorText(
+                                                          doneGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        defaultColor:
+                                                            Colors.black,
+                                                      ),
+                                                      fontSize: 16.7,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
                                               ),
                                               textAlign: TextAlign.center,
                                             ),
