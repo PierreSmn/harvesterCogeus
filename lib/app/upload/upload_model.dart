@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'clubadidas_widget.dart' show ClubadidasWidget;
+import 'upload_widget.dart' show UploadWidget;
 import 'package:flutter/material.dart';
 
-class ClubadidasModel extends FlutterFlowModel<ClubadidasWidget> {
+class UploadModel extends FlutterFlowModel<UploadWidget> {
   ///  Local state fields for this page.
 
   bool? checked;
@@ -11,6 +11,10 @@ class ClubadidasModel extends FlutterFlowModel<ClubadidasWidget> {
 
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   @override
   void initState(BuildContext context) {}

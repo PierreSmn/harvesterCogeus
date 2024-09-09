@@ -76,7 +76,7 @@ class _InfosWidgetState extends State<InfosWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -419,7 +419,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 return;
                                               }
                                               _model.step = _model.step! + 1;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             text: 'Continuer',
                                             options: FFButtonOptions(
@@ -507,7 +507,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             ),
                                             onPressed: () async {
                                               _model.step = _model.step! + -1;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                           ),
                                           Text(
@@ -606,7 +606,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                           children: [
                                             RatingBar.builder(
                                               onRatingUpdate: (newValue) =>
-                                                  setState(() =>
+                                                  safeSetState(() =>
                                                       _model.ratingBarValue =
                                                           newValue),
                                               itemBuilder: (context, index) =>
@@ -677,7 +677,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             return;
                                           }
                                           _model.step = _model.step! + 1;
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         text: 'Continuer',
                                         options: FFButtonOptions(
@@ -766,7 +766,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               ),
                                               onPressed: () async {
                                                 _model.step = _model.step! + -1;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                             ),
                                             Text(
@@ -1024,7 +1024,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   value: _model
                                                       .checkboxValue ??= false,
                                                   onChanged: (newValue) async {
-                                                    setState(() =>
+                                                    safeSetState(() =>
                                                         _model.checkboxValue =
                                                             newValue!);
                                                   },
@@ -1134,7 +1134,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   true) {
                                                 FFAppState().name = 'mailOnly';
                                                 FFAppState().rating = 6.0;
-                                                setState(() {});
+                                                safeSetState(() {});
                                               }
                                               if (!((FFAppState().name !=
                                                           '') &&
@@ -1172,7 +1172,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   },
                                                 );
                                                 if (shouldSetState) {
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 }
                                                 return;
                                               }
@@ -1205,7 +1205,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                   true)) {
                                                 FFAppState().validatedDone =
                                                     true;
-                                                setState(() {});
+                                                safeSetState(() {});
 
                                                 context.pushNamed('done');
                                               } else {
@@ -1235,7 +1235,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               }
 
                                               if (shouldSetState) {
-                                                setState(() {});
+                                                safeSetState(() {});
                                               }
                                             },
                                             text: 'Continuer',

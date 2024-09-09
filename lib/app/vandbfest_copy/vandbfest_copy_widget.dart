@@ -64,7 +64,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -254,16 +254,16 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                           false,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .checkboxValue =
                                                             newValue!);
                                                         if (newValue!) {
                                                           _model.checked = true;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         } else {
                                                           _model.checked =
                                                               false;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         }
                                                       },
                                                       side: BorderSide(
@@ -409,12 +409,12 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                 onPressed: () async {
                                                   _model.checked =
                                                       _model.checkboxValue;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   if (!_model.checked!) {
                                                     if (animationsMap[
                                                             'checkboxOnActionTriggerAnimation'] !=
                                                         null) {
-                                                      setState(() =>
+                                                      safeSetState(() =>
                                                           hasCheckboxTriggered =
                                                               true);
                                                       SchedulerBinding.instance
@@ -445,7 +445,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                           validateFileFormat(
                                                               m.storagePath,
                                                               context))) {
-                                                    setState(() =>
+                                                    safeSetState(() =>
                                                         _model.isDataUploading =
                                                             true);
                                                     var selectedUploadedFiles =
@@ -494,7 +494,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                         downloadUrls.length ==
                                                             selectedMedia
                                                                 .length) {
-                                                      setState(() {
+                                                      safeSetState(() {
                                                         _model.uploadedLocalFile =
                                                             selectedUploadedFiles
                                                                 .first;
@@ -502,7 +502,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                             downloadUrls.first;
                                                       });
                                                     } else {
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                       return;
                                                     }
                                                   }
@@ -518,7 +518,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                     )!;
                                                     FFAppState().videoUrl =
                                                         _model.uploadedFileUrl;
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   }
                                                   FFAppState().slug =
                                                       widget.slug;
@@ -536,7 +536,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                       false;
                                                   FFAppState()
                                                       .recordVideoFBStorage = '';
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(

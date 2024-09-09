@@ -61,7 +61,7 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -258,16 +258,16 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
                                                           false,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .checkboxValue =
                                                             newValue!);
                                                         if (newValue!) {
                                                           _model.checked = true;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         } else {
                                                           _model.checked =
                                                               false;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         }
                                                       },
                                                       side: BorderSide(
@@ -401,12 +401,12 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
                                                 onPressed: () async {
                                                   _model.checked =
                                                       _model.checkboxValue;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   if (!_model.checked!) {
                                                     if (animationsMap[
                                                             'checkboxOnActionTriggerAnimation'] !=
                                                         null) {
-                                                      setState(() =>
+                                                      safeSetState(() =>
                                                           hasCheckboxTriggered =
                                                               true);
                                                       SchedulerBinding.instance
@@ -438,7 +438,7 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
                                                       .recordVideoFBStorage = '';
                                                   FFAppState().videoReady =
                                                       false;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(

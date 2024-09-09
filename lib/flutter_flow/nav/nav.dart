@@ -133,14 +133,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'productionCopy',
-          path: '/upload',
-          builder: (context, params) => const ProductionCopyWidget(),
-        ),
-        FFRoute(
           name: 'vandbfestCopy',
           path: '/vnbupload',
           builder: (context, params) => VandbfestCopyWidget(
+            slug: params.getParam(
+              'slug',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'upload',
+          path: '/upload',
+          builder: (context, params) => UploadWidget(
             slug: params.getParam(
               'slug',
               ParamType.String,

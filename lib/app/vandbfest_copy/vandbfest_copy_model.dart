@@ -9,7 +9,6 @@ class VandbfestCopyModel extends FlutterFlowModel<VandbfestCopyWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
   bool isDataUploading = false;
