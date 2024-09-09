@@ -34,7 +34,7 @@ class _DoneWidgetState extends State<DoneWidget> {
       }
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -96,9 +96,12 @@ class _DoneWidgetState extends State<DoneWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              GetSupaCall.logoURL(
-                                doneGetSupaResponse.jsonBody,
-                              )!,
+                              valueOrDefault<String>(
+                                GetSupaCall.logoURL(
+                                  doneGetSupaResponse.jsonBody,
+                                ),
+                                'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1720442986279000.png',
+                              ),
                               height: 90.0,
                               fit: BoxFit.contain,
                             ),

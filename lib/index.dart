@@ -10,7 +10,6 @@ export '/app/clubadidas/clubadidas_widget.dart' show ClubadidasWidget;
 export '/app/vandbfest/vandbfest_widget.dart' show VandbfestWidget;
 export '/app/plages/plages_widget.dart' show PlagesWidget;
 export '/app/plages_copy/plages_copy_widget.dart' show PlagesCopyWidget;
-export '/app/production_copy/production_copy_widget.dart'
-    show ProductionCopyWidget;
 export '/app/vandbfest_copy/vandbfest_copy_widget.dart'
     show VandbfestCopyWidget;
+export '/app/upload/upload_widget.dart' show UploadWidget;

@@ -33,7 +33,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
     super.initState();
     _model = createModel(context, () => ProductionModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -149,7 +149,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       onTap: () async {
                                         FFAppState().lastFileName =
                                             getCurrentTimestamp.toString();
-                                        setState(() {});
+                                        safeSetState(() {});
                                       },
                                       child: Material(
                                         color: Colors.transparent,
@@ -219,7 +219,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                             _model.timerValue =
                                                                 displayTime;
                                                             if (shouldUpdate) {
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             }
                                                           },
                                                           textAlign:
@@ -267,7 +268,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                           onPressed: () async {
                                                             _model.hideInstruct =
                                                                 true;
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                           },
                                                         ),
                                                       if (_model.hideInstruct)
@@ -287,7 +288,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                           onPressed: () async {
                                                             _model.hideInstruct =
                                                                 false;
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                           },
                                                         ),
                                                     ],
@@ -348,7 +349,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                             validateFileFormat(
                                                                 m.storagePath,
                                                                 context))) {
-                                                      setState(() => _model
+                                                      safeSetState(() => _model
                                                               .isDataUploading =
                                                           true);
                                                       var selectedUploadedFiles =
@@ -397,7 +398,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                           downloadUrls.length ==
                                                               selectedMedia
                                                                   .length) {
-                                                        setState(() {
+                                                        safeSetState(() {
                                                           _model.uploadedLocalFile =
                                                               selectedUploadedFiles
                                                                   .first;
@@ -406,7 +407,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                                   .first;
                                                         });
                                                       } else {
-                                                        setState(() {});
+                                                        safeSetState(() {});
                                                         return;
                                                       }
                                                     }
@@ -454,7 +455,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           onTap: () async {
                                             FFAppState().isRecording = true;
                                             FFAppState().videoReady = false;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             _model.timerController
                                                 .onResetTimer();
 
@@ -512,9 +513,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             _model.timerController
                                                 .onStopTimer();
                                             _model.waitforUrl = true;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().isRecording = false;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             while (_model.countTry! < 30) {
                                               if (FFAppState().videoReady) {
                                                 break;
@@ -527,7 +528,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                               }
                                             }
                                             _model.waitforUrl = false;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: 80.0,
@@ -594,7 +595,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                               FFButtonWidget(
                                 onPressed: () async {
                                   FFAppState().videoReady = false;
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 text: 'Recommencer',
                                 icon: const Icon(

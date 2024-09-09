@@ -159,7 +159,8 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
       if (_videoPlayerController!.value.isPlaying) {
         for (var otherPlayer in _videoPlayers) {
           if (otherPlayer != _videoPlayerController &&
-              otherPlayer.value.isPlaying) {
+              otherPlayer.value.isPlaying &&
+              mounted) {
             setState(() {
               otherPlayer.pause();
             });
@@ -182,8 +183,9 @@ class _FlutterFlowVideoPlayerState extends State<FlutterFlowVideoPlayer>
       }
       _isFullScreen = _chewieController!.isFullScreen;
     });
-
-    setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 
   @override

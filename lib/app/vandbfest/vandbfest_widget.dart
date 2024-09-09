@@ -62,7 +62,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -251,16 +251,16 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                           false,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .checkboxValue =
                                                             newValue!);
                                                         if (newValue!) {
                                                           _model.checked = true;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         } else {
                                                           _model.checked =
                                                               false;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         }
                                                       },
                                                       side: BorderSide(
@@ -406,12 +406,12 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                 onPressed: () async {
                                                   _model.checked =
                                                       _model.checkboxValue;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   if (!_model.checked!) {
                                                     if (animationsMap[
                                                             'checkboxOnActionTriggerAnimation'] !=
                                                         null) {
-                                                      setState(() =>
+                                                      safeSetState(() =>
                                                           hasCheckboxTriggered =
                                                               true);
                                                       SchedulerBinding.instance
@@ -443,7 +443,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                       .recordVideoFBStorage = '';
                                                   FFAppState().videoReady =
                                                       false;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   unawaited(
                                                     () async {
                                                       await NewStartCall.call(

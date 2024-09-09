@@ -17,7 +17,6 @@ class ProductionModel extends FlutterFlowModel<ProductionWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Timer widget.
   final timerInitialTimeMs = 0;
   int timerMilliseconds = 0;
