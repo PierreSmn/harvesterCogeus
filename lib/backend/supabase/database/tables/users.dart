@@ -57,4 +57,10 @@ class UsersRow extends SupabaseDataRow {
 
   String? get siteUrl => getField<String>('site_url');
   set siteUrl(String? value) => setField<String>('site_url', value);
+
+  bool? get upToDate => getField<bool>('up_to_date');
+  set upToDate(bool? value) => setField<bool>('up_to_date', value);
+
+  int? get clientId => getField<int>('client_id');
+  set clientId(int? value) => setField<int>('client_id', value);
 }

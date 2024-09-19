@@ -129,7 +129,6 @@ class PostSubmissionFgCall {
     String? slug = '',
     String? brand = '',
     String? time = '',
-    double? rating,
     bool? boolmail = false,
     String? question = '',
   }) async {
@@ -142,7 +141,6 @@ class PostSubmissionFgCall {
   "slug": "$slug",
   "brand": "$brand",
   "time": "$time",
-  "rating": $rating,
   "boolmail": $boolmail,
   "question": "$question"
 }''';

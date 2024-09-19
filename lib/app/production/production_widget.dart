@@ -630,10 +630,11 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                 onPressed: () async {
                                   FFAppState().videoUrl =
                                       'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
-                                  FFAppState().questionAsked =
-                                      GetSupaCall.expla(
+                                  FFAppState().questionAsked = (String var1) {
+                                    return var1.replaceAll('\n', '\\n');
+                                  }(GetSupaCall.expla(
                                     containerGetSupaResponse.jsonBody,
-                                  )!;
+                                  )!);
                                   FFAppState().update(() {});
 
                                   context.pushNamed('infos');

@@ -1,18 +1,18 @@
 import '../database.dart';
 
-class LiveFlowsTable extends SupabaseTable<LiveFlowsRow> {
+class OffFlowsTable extends SupabaseTable<OffFlowsRow> {
   @override
-  String get tableName => 'live_flows';
+  String get tableName => 'off_flows';
 
   @override
-  LiveFlowsRow createRow(Map<String, dynamic> data) => LiveFlowsRow(data);
+  OffFlowsRow createRow(Map<String, dynamic> data) => OffFlowsRow(data);
 }
 
-class LiveFlowsRow extends SupabaseDataRow {
-  LiveFlowsRow(super.data);
+class OffFlowsRow extends SupabaseDataRow {
+  OffFlowsRow(super.data);
 
   @override
-  SupabaseTable get table => LiveFlowsTable();
+  SupabaseTable get table => OffFlowsTable();
 
   int get id => getField<int>('id')!;
   set id(int value) => setField<int>('id', value);
@@ -85,10 +85,4 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   bool? get mailOnlyBool => getField<bool>('mail_only_bool');
   set mailOnlyBool(bool? value) => setField<bool>('mail_only_bool', value);
-
-  bool? get isUpload => getField<bool>('isUpload');
-  set isUpload(bool? value) => setField<bool>('isUpload', value);
-
-  String? get title => getField<String>('title');
-  set title(String? value) => setField<String>('title', value);
 }
