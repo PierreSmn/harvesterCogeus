@@ -190,6 +190,12 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_questionAsked', value);
   }
 
+  dynamic _quest;
+  dynamic get quest => _quest;
+  set quest(dynamic value) {
+    _quest = value;
+  }
+
   final _apiManager = FutureRequestManager<ApiCallResponse>();
   Future<ApiCallResponse> api({
     String? uniqueQueryKey,

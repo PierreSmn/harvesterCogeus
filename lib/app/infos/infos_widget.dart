@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -42,19 +41,6 @@ class _InfosWidgetState extends State<InfosWidget>
     _model.emailFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'ratingBarOnActionTriggerAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onActionTrigger,
-        applyInitialState: true,
-        effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.1, 1.1),
-          ),
-        ],
-      ),
       'checkboxOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
@@ -475,261 +461,7 @@ class _InfosWidgetState extends State<InfosWidget>
                               ].divide(const SizedBox(height: 36.0)),
                             ),
                           ),
-                        if (_model.step == 2)
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 400.0,
-                                decoration: const BoxDecoration(),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      32.0, 0.0, 32.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          FlutterFlowIconButton(
-                                            borderColor: Colors.transparent,
-                                            borderRadius: 30.0,
-                                            buttonSize: 44.0,
-                                            icon: Icon(
-                                              Icons.arrow_back_rounded,
-                                              color: FlutterFlowTheme.of(
-                                                      context)
-                                                  .revoCardTextColorUnselected,
-                                              size: 22.0,
-                                            ),
-                                            onPressed: () async {
-                                              _model.step = _model.step! + -1;
-                                              safeSetState(() {});
-                                            },
-                                          ),
-                                          Text(
-                                            'Retour',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Manrope',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .revoCardTextColorUnselected,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Note',
-                                                  textAlign: TextAlign.start,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .revoCardTextColor,
-                                                        fontSize: 38.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                                RichText(
-                                                  textScaler:
-                                                      MediaQuery.of(context)
-                                                          .textScaler,
-                                                  text: TextSpan(
-                                                    children: [
-                                                      const TextSpan(
-                                                        text:
-                                                            'Quelle note globale donneriez-vous à ',
-                                                        style: TextStyle(),
-                                                      ),
-                                                      TextSpan(
-                                                        text: GetSupaCall.brand(
-                                                          infosGetSupaResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                        style: const TextStyle(),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .revoSearchTxtColor,
-                                                          fontSize: 16.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Container(
-                                        width: double.infinity,
-                                        height: 50.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .revoSearchBarBg,
-                                          borderRadius:
-                                              BorderRadius.circular(6.0),
-                                          shape: BoxShape.rectangle,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            RatingBar.builder(
-                                              onRatingUpdate: (newValue) =>
-                                                  safeSetState(() =>
-                                                      _model.ratingBarValue =
-                                                          newValue),
-                                              itemBuilder: (context, index) =>
-                                                  Icon(
-                                                Icons.stars_rounded,
-                                                color: colorFromCssString(
-                                                  GetSupaCall.colorButton(
-                                                    infosGetSupaResponse
-                                                        .jsonBody,
-                                                  )!,
-                                                  defaultColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .secondary,
-                                                ),
-                                              ),
-                                              direction: Axis.horizontal,
-                                              initialRating:
-                                                  _model.ratingBarValue ??= 0.0,
-                                              unratedColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              itemCount: 5,
-                                              itemSize: 40.0,
-                                              glowColor: colorFromCssString(
-                                                GetSupaCall.colorButton(
-                                                  infosGetSupaResponse.jsonBody,
-                                                )!,
-                                                defaultColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                              ),
-                                            ).animateOnActionTrigger(
-                                              animationsMap[
-                                                  'ratingBarOnActionTriggerAnimation']!,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ].divide(const SizedBox(height: 24.0)),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 12.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          if (_model.ratingBarValue == 0.0) {
-                                            if (animationsMap[
-                                                    'ratingBarOnActionTriggerAnimation'] !=
-                                                null) {
-                                              await animationsMap[
-                                                      'ratingBarOnActionTriggerAnimation']!
-                                                  .controller
-                                                  .forward(from: 0.0);
-                                            }
-                                            return;
-                                          }
-                                          FFAppState().rating =
-                                              _model.ratingBarValue!;
-                                          if (!(FFAppState().rating != null)) {
-                                            return;
-                                          }
-                                          _model.step = _model.step! + 1;
-                                          safeSetState(() {});
-                                        },
-                                        text: 'Continuer',
-                                        options: FFButtonOptions(
-                                          width: 300.0,
-                                          height: 40.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: colorFromCssString(
-                                            GetSupaCall.colorButton(
-                                              infosGetSupaResponse.jsonBody,
-                                            )!,
-                                            defaultColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .appleButton,
-                                          ),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Manrope',
-                                                color: colorFromCssString(
-                                                  GetSupaCall.colorButtonText(
-                                                    infosGetSupaResponse
-                                                        .jsonBody,
-                                                  )!,
-                                                  defaultColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryBackground,
-                                                ),
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(7.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ].divide(const SizedBox(height: 36.0)),
-                          ),
-                        if ((_model.step == 3) ||
+                        if ((_model.step == 2) ||
                             (GetSupaCall.mailOnlyBool(
                                   infosGetSupaResponse.jsonBody,
                                 ) ==
@@ -862,6 +594,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                       textCapitalization:
                                                           TextCapitalization
                                                               .none,
+                                                      textInputAction:
+                                                          TextInputAction.done,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -1124,6 +858,13 @@ class _InfosWidgetState extends State<InfosWidget>
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               var shouldSetState = false;
+                                              if (_model.formKey2
+                                                          .currentState ==
+                                                      null ||
+                                                  !_model.formKey2.currentState!
+                                                      .validate()) {
+                                                return;
+                                              }
                                               FFAppState().email = _model
                                                   .emailTextController.text;
                                               FFAppState().update(() {});
@@ -1146,8 +887,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           '') &&
                                                   (FFAppState().brandName !=
                                                           '') &&
-                                                  (FFAppState().rating !=
-                                                      null) &&
                                                   (FFAppState()
                                                               .questionAsked !=
                                                           ''))) {
@@ -1158,7 +897,9 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     return WebViewAware(
                                                       child: AlertDialog(
                                                         title: const Text(
-                                                            'soehting aint right'),
+                                                            'Une erreure s\'est produite'),
+                                                        content: const Text(
+                                                            'Veuilliez recommencer'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -1190,11 +931,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 boolmail: _model.checkboxValue!
                                                     ? true
                                                     : false,
-                                                question: 'notWorking',
-                                                rating: valueOrDefault<double>(
-                                                  FFAppState().rating,
-                                                  6.0,
-                                                ),
+                                                question:
+                                                    FFAppState().questionAsked,
                                                 time: getCurrentTimestamp
                                                     .toString(),
                                               );

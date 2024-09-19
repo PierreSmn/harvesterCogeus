@@ -24,19 +24,17 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
     return null;
   }
 
-  // State field(s) for RatingBar widget.
-  double? ratingBarValue;
   // State field(s) for email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Votre email est obligatoire';
+      return 'L\'adresse email  n\'est pas valide';
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Il ne s\'agit pas d\'une adresse email valide.';
+      return 'Vous devez entrer une adresse email au format valide. ';
     }
     return null;
   }
