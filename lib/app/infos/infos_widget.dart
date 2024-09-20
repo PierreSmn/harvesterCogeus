@@ -244,6 +244,27 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           .nameTextController,
                                                       focusNode:
                                                           _model.nameFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        if (_model.formKey1
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey1
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
+                                                        FFAppState().name = _model
+                                                            .nameTextController
+                                                            .text;
+                                                        if (!(FFAppState().name !=
+                                                                '')) {
+                                                          return;
+                                                        }
+                                                        _model.step =
+                                                            _model.step! + 1;
+                                                        safeSetState(() {});
+                                                      },
                                                       autofocus: false,
                                                       textCapitalization:
                                                           TextCapitalization
@@ -590,6 +611,154 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           .emailTextController,
                                                       focusNode:
                                                           _model.emailFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        var shouldSetState =
+                                                            false;
+                                                        if (_model.formKey2
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey2
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
+                                                        FFAppState().email = _model
+                                                            .emailTextController
+                                                            .text;
+                                                        FFAppState()
+                                                            .update(() {});
+                                                        if (GetSupaCall
+                                                                .mailOnlyBool(
+                                                              infosGetSupaResponse
+                                                                  .jsonBody,
+                                                            ) ==
+                                                            true) {
+                                                          FFAppState().name =
+                                                              'mailOnly';
+                                                          safeSetState(() {});
+                                                        }
+                                                        if (!((FFAppState()
+                                                                        .name !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .email !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .videoUrl !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .slug !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .brandName !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .questionAsked !=
+                                                                    ''))) {
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return WebViewAware(
+                                                                child:
+                                                                    AlertDialog(
+                                                                  title: const Text(
+                                                                      'Une erreure s\'est produite'),
+                                                                  content: const Text(
+                                                                      'Veuilliez recommencer'),
+                                                                  actions: [
+                                                                    TextButton(
+                                                                      onPressed:
+                                                                          () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                      child: const Text(
+                                                                          'Ok'),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              );
+                                                            },
+                                                          );
+                                                          if (shouldSetState) {
+                                                            safeSetState(() {});
+                                                          }
+                                                          return;
+                                                        }
+                                                        _model.alreadySent =
+                                                            true;
+                                                        safeSetState(() {});
+                                                        _model.apiResultro6Copy =
+                                                            await PostSubmissionFgCall
+                                                                .call(
+                                                          name: valueOrDefault<
+                                                              String>(
+                                                            FFAppState().name,
+                                                            'emailOnly',
+                                                          ),
+                                                          email: FFAppState()
+                                                              .email,
+                                                          video: FFAppState()
+                                                              .videoUrl,
+                                                          slug:
+                                                              FFAppState().slug,
+                                                          brand: FFAppState()
+                                                              .brandName,
+                                                          boolmail: _model
+                                                                  .checkboxValue!
+                                                              ? true
+                                                              : false,
+                                                          question: FFAppState()
+                                                              .questionAsked,
+                                                          time:
+                                                              getCurrentTimestamp
+                                                                  .toString(),
+                                                        );
+
+                                                        shouldSetState = true;
+                                                        if ((_model
+                                                                .apiResultro6Copy
+                                                                ?.succeeded ??
+                                                            true)) {
+                                                          FFAppState()
+                                                                  .validatedDone =
+                                                              true;
+                                                          safeSetState(() {});
+
+                                                          context.pushNamed(
+                                                              'done');
+                                                        } else {
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                              content: Text(
+                                                                (_model.apiResultro6Copy
+                                                                            ?.jsonBody ??
+                                                                        '')
+                                                                    .toString(),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                              ),
+                                                              duration: const Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                            ),
+                                                          );
+                                                        }
+
+                                                        if (shouldSetState) {
+                                                          safeSetState(() {});
+                                                        }
+                                                      },
                                                       autofocus: false,
                                                       textCapitalization:
                                                           TextCapitalization
@@ -856,126 +1025,139 @@ class _InfosWidgetState extends State<InfosWidget>
                                           alignment:
                                               const AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
-                                            onPressed: () async {
-                                              var shouldSetState = false;
-                                              if (_model.formKey2
-                                                          .currentState ==
-                                                      null ||
-                                                  !_model.formKey2.currentState!
-                                                      .validate()) {
-                                                return;
-                                              }
-                                              FFAppState().email = _model
-                                                  .emailTextController.text;
-                                              FFAppState().update(() {});
-                                              if (GetSupaCall.mailOnlyBool(
-                                                    infosGetSupaResponse
-                                                        .jsonBody,
-                                                  ) ==
-                                                  true) {
-                                                FFAppState().name = 'mailOnly';
-                                                FFAppState().rating = 6.0;
-                                                safeSetState(() {});
-                                              }
-                                              if (!((FFAppState().name !=
-                                                          '') &&
-                                                  (FFAppState().email !=
-                                                          '') &&
-                                                  (FFAppState().videoUrl !=
-                                                          '') &&
-                                                  (FFAppState().slug !=
-                                                          '') &&
-                                                  (FFAppState().brandName !=
-                                                          '') &&
-                                                  (FFAppState()
-                                                              .questionAsked !=
-                                                          ''))) {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return WebViewAware(
-                                                      child: AlertDialog(
-                                                        title: const Text(
-                                                            'Une erreure s\'est produite'),
-                                                        content: const Text(
-                                                            'Veuilliez recommencer'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: const Text('Ok'),
-                                                          ),
-                                                        ],
+                                            onPressed: _model.alreadySent
+                                                ? null
+                                                : () async {
+                                                    var shouldSetState = false;
+                                                    if (_model.formKey2
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey2
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
+                                                    FFAppState().email = _model
+                                                        .emailTextController
+                                                        .text;
+                                                    FFAppState().update(() {});
+                                                    if (GetSupaCall
+                                                            .mailOnlyBool(
+                                                          infosGetSupaResponse
+                                                              .jsonBody,
+                                                        ) ==
+                                                        true) {
+                                                      FFAppState().name =
+                                                          'mailOnly';
+                                                      safeSetState(() {});
+                                                    }
+                                                    if (!((FFAppState().name !=
+                                                                '') &&
+                                                        (FFAppState().email !=
+                                                                '') &&
+                                                        (FFAppState().videoUrl !=
+                                                                '') &&
+                                                        (FFAppState()
+                                                                    .slug !=
+                                                                '') &&
+                                                        (FFAppState()
+                                                                    .brandName !=
+                                                                '') &&
+                                                        (FFAppState()
+                                                                    .questionAsked !=
+                                                                ''))) {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return WebViewAware(
+                                                            child: AlertDialog(
+                                                              title: const Text(
+                                                                  'Une erreure s\'est produite'),
+                                                              content: const Text(
+                                                                  'Veuilliez recommencer'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: const Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                      if (shouldSetState) {
+                                                        safeSetState(() {});
+                                                      }
+                                                      return;
+                                                    }
+                                                    _model.apiResultro6 =
+                                                        await PostSubmissionFgCall
+                                                            .call(
+                                                      name: valueOrDefault<
+                                                          String>(
+                                                        FFAppState().name,
+                                                        'emailOnly',
                                                       ),
-                                                    );
-                                                  },
-                                                );
-                                                if (shouldSetState) {
-                                                  safeSetState(() {});
-                                                }
-                                                return;
-                                              }
-                                              _model.apiResultro6 =
-                                                  await PostSubmissionFgCall
-                                                      .call(
-                                                name: valueOrDefault<String>(
-                                                  FFAppState().name,
-                                                  'emailOnly',
-                                                ),
-                                                email: FFAppState().email,
-                                                video: FFAppState().videoUrl,
-                                                slug: FFAppState().slug,
-                                                brand: FFAppState().brandName,
-                                                boolmail: _model.checkboxValue!
-                                                    ? true
-                                                    : false,
-                                                question:
-                                                    FFAppState().questionAsked,
-                                                time: getCurrentTimestamp
-                                                    .toString(),
-                                              );
-
-                                              shouldSetState = true;
-                                              if ((_model.apiResultro6
-                                                      ?.succeeded ??
-                                                  true)) {
-                                                FFAppState().validatedDone =
-                                                    true;
-                                                safeSetState(() {});
-
-                                                context.pushNamed('done');
-                                              } else {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      (_model.apiResultro6
-                                                                  ?.jsonBody ??
-                                                              '')
+                                                      email: FFAppState().email,
+                                                      video:
+                                                          FFAppState().videoUrl,
+                                                      slug: FFAppState().slug,
+                                                      brand: FFAppState()
+                                                          .brandName,
+                                                      boolmail:
+                                                          _model.checkboxValue!
+                                                              ? true
+                                                              : false,
+                                                      question: FFAppState()
+                                                          .questionAsked,
+                                                      time: getCurrentTimestamp
                                                           .toString(),
-                                                      style: TextStyle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                      ),
-                                                    ),
-                                                    duration: const Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondary,
-                                                  ),
-                                                );
-                                              }
+                                                    );
 
-                                              if (shouldSetState) {
-                                                safeSetState(() {});
-                                              }
-                                            },
+                                                    shouldSetState = true;
+                                                    if ((_model.apiResultro6
+                                                            ?.succeeded ??
+                                                        true)) {
+                                                      FFAppState()
+                                                          .validatedDone = true;
+                                                      safeSetState(() {});
+
+                                                      context.pushNamed('done');
+                                                    } else {
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            (_model.apiResultro6
+                                                                        ?.jsonBody ??
+                                                                    '')
+                                                                .toString(),
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
+                                                          ),
+                                                          duration: const Duration(
+                                                              milliseconds:
+                                                                  4000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondary,
+                                                        ),
+                                                      );
+                                                    }
+
+                                                    if (shouldSetState) {
+                                                      safeSetState(() {});
+                                                    }
+                                                  },
                                             text: 'Continuer',
                                             options: FFButtonOptions(
                                               width: 300.0,
@@ -1020,6 +1202,12 @@ class _InfosWidgetState extends State<InfosWidget>
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(7.0),
+                                              disabledColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .revoSearchBarBg,
+                                              disabledTextColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                             ),
                                           ),
                                         ),
