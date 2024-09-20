@@ -8,6 +8,8 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
 
   int? step = 1;
 
+  bool alreadySent = false;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey1 = GlobalKey<FormState>();
@@ -39,6 +41,8 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
     return null;
   }
 
+  // Stores action output result for [Backend Call - API (post submission fg)] action in email widget.
+  ApiCallResponse? apiResultro6Copy;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
   // Stores action output result for [Backend Call - API (post submission fg)] action in Button widget.
