@@ -479,16 +479,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     }
                                                     return;
                                                   }
-                                                  FFAppState().slug = () {
-                                                    if (widget.slug != '') {
-                                                      return widget.slug;
-                                                    } else if (FFAppState().slug !=
-                                                            '') {
-                                                      return FFAppState().slug;
-                                                    } else {
-                                                      return 'test';
-                                                    }
-                                                  }();
+                                                  FFAppState().slug =
+                                                      valueOrDefault<String>(
+                                                    widget.slug,
+                                                    'test',
+                                                  );
                                                   FFAppState().brandName =
                                                       valueOrDefault<String>(
                                                     GetSupaCall.brand(
