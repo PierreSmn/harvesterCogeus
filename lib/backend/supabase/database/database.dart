@@ -5,6 +5,7 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
+export 'tables/daily_slug_activations_complete.dart';
 export 'tables/submitters.dart';
 export 'tables/submitters_new.dart';
 export 'tables/clients.dart';

@@ -9,6 +9,7 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -613,7 +614,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       kBreakpointSmall)
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 48.0),
+                                          0.0, 48.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -658,6 +659,119 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   fontFamily: 'Manrope',
                                                   letterSpacing: 0.0,
                                                 ),
+                                          ),
+                                          Text(
+                                            'Ou copiez le lien',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              await Clipboard.setData(ClipboardData(
+                                                  text:
+                                                      'webappreturn://webappreturn.com${GoRouterState.of(context).uri.toString()}'));
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Lien copié',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: const Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                ),
+                                              );
+                                            },
+                                            text: 'Copier le lien',
+                                            icon: const Icon(
+                                              Icons.content_copy,
+                                              size: 15.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 160.0,
+                                              height: 40.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color: GetSupaCall.colorButton(
+                                                            homeGetSupaResponse
+                                                                .jsonBody,
+                                                          ) !=
+                                                          null &&
+                                                      GetSupaCall.colorButton(
+                                                            homeGetSupaResponse
+                                                                .jsonBody,
+                                                          ) !=
+                                                          ''
+                                                  ? colorFromCssString(
+                                                      GetSupaCall.colorButton(
+                                                        homeGetSupaResponse
+                                                            .jsonBody,
+                                                      )!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .appleButton,
+                                                    )
+                                                  : FlutterFlowTheme.of(context)
+                                                      .appleButton,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color: GetSupaCall
+                                                                        .colorButtonText(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButtonText(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButtonText(
+                                                                  homeGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderSide: const BorderSide(
+                                                color: Colors.transparent,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(7.0),
+                                            ),
                                           ),
                                         ].divide(const SizedBox(height: 12.0)),
                                       ),
