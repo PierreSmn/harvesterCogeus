@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -55,11 +54,11 @@ class _ProductionWidgetState extends State<ProductionWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: const Color(0xFF020109),
-            body: FutureBuilder<ApiCallResponse>(
-              future: FFAppState().api(
-                uniqueQueryKey: FFAppState().slug,
-                requestFn: () => GetSupaCall.call(
-                  slug: FFAppState().slug,
+            body: FutureBuilder<List<LiveFlowsRow>>(
+              future: LiveFlowsTable().querySingleRow(
+                queryFn: (q) => q.eq(
+                  'slug',
+                  FFAppState().slug,
                 ),
               ),
               builder: (context, snapshot) {
@@ -76,7 +75,12 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                     ),
                   );
                 }
-                final containerGetSupaResponse = snapshot.data!;
+                List<LiveFlowsRow> containerLiveFlowsRowList = snapshot.data!;
+
+                final containerLiveFlowsRow =
+                    containerLiveFlowsRowList.isNotEmpty
+                        ? containerLiveFlowsRowList.first
+                        : null;
 
                 return Container(
                   width: double.infinity,
@@ -128,9 +132,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 1.0,
-                                            control: GetSupaCall.cameraSelect(
-                                              containerGetSupaResponse.jsonBody,
-                                            )!,
+                                            control: containerLiveFlowsRow!
+                                                .cameraSelect!,
                                           ),
                                         ),
                                       ],
@@ -302,11 +305,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                                 24.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
-                                                        GetSupaCall.expla(
-                                                          containerGetSupaResponse
-                                                              .jsonBody,
-                                                        ),
-                                                        'Erreur, rechargez la page.',
+                                                        containerLiveFlowsRow
+                                                            ?.expla2,
+                                                        'Not working go back to previous page',
                                                       ),
                                                       textAlign:
                                                           TextAlign.start,
@@ -632,9 +633,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/${FFAppState().recordVideoFBStorage}';
                                   FFAppState().questionAsked = (String var1) {
                                     return var1.replaceAll('\n', '\\n');
-                                  }(GetSupaCall.expla(
-                                    containerGetSupaResponse.jsonBody,
-                                  )!);
+                                  }(containerLiveFlowsRow!.expla2!);
                                   FFAppState().update(() {});
 
                                   context.pushNamed('infos');
