@@ -207,8 +207,12 @@ dynamic deserializeParam<T>(
         switch (T) {
           case DailySlugActivationsCompleteRow:
             return DailySlugActivationsCompleteRow(data);
+          case ExperiencesRow:
+            return ExperiencesRow(data);
           case SubmittersRow:
             return SubmittersRow(data);
+          case WidgetsRow:
+            return WidgetsRow(data);
           case SubmittersNewRow:
             return SubmittersNewRow(data);
           case ClientsRow:

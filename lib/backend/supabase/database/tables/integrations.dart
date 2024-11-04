@@ -58,4 +58,7 @@ class IntegrationsRow extends SupabaseDataRow {
 
   String? get title3 => getField<String>('title3');
   set title3(String? value) => setField<String>('title3', value);
+
+  bool? get isFounder => getField<bool>('is_founder');
+  set isFounder(bool? value) => setField<bool>('is_founder', value);
 }

@@ -151,6 +151,52 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'nps',
+          path: '/nps',
+          builder: (context, params) => NpsWidget(
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'thema',
+          path: '/thema',
+          builder: (context, params) => ThemaWidget(
+            nps: params.getParam(
+              'nps',
+              ParamType.int,
+            ),
+            xId: params.getParam(
+              'xId',
+              ParamType.int,
+            ),
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'redir',
+          path: '/redir',
+          builder: (context, params) => RedirWidget(
+            nps: params.getParam(
+              'nps',
+              ParamType.int,
+            ),
+            xId: params.getParam(
+              'xId',
+              ParamType.int,
+            ),
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

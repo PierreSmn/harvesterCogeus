@@ -25,4 +25,10 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get admin => getField<String>('admin');
   set admin(String? value) => setField<String>('admin', value);
+
+  String? get logoUrl => getField<String>('logo_url');
+  set logoUrl(String? value) => setField<String>('logo_url', value);
+
+  List<dynamic> get sondage => getListField<dynamic>('sondage');
+  set sondage(List<dynamic>? value) => setListField<dynamic>('sondage', value);
 }

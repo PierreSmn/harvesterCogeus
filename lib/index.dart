@@ -13,3 +13,6 @@ export '/app/plages_copy/plages_copy_widget.dart' show PlagesCopyWidget;
 export '/app/vandbfest_copy/vandbfest_copy_widget.dart'
     show VandbfestCopyWidget;
 export '/app/upload/upload_widget.dart' show UploadWidget;
+export '/nps/nps_widget.dart' show NpsWidget;
+export '/thema/thema_widget.dart' show ThemaWidget;
+export '/redir/redir_widget.dart' show RedirWidget;
