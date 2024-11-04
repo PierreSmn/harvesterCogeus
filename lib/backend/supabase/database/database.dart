@@ -6,7 +6,9 @@ export 'row.dart';
 export 'table.dart';
 
 export 'tables/daily_slug_activations_complete.dart';
+export 'tables/experiences.dart';
 export 'tables/submitters.dart';
+export 'tables/widgets.dart';
 export 'tables/submitters_new.dart';
 export 'tables/clients.dart';
 export 'tables/new_subs.dart';

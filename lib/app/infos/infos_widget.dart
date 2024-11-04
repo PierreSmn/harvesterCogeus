@@ -1028,7 +1028,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                             onPressed: _model.alreadySent
                                                 ? null
                                                 : () async {
-                                                    var shouldSetState = false;
                                                     if (_model.formKey2
                                                                 .currentState ==
                                                             null ||
@@ -1050,49 +1049,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                                       FFAppState().name =
                                                           'mailOnly';
                                                       safeSetState(() {});
-                                                    }
-                                                    if (!((FFAppState().name !=
-                                                                '') &&
-                                                        (FFAppState().email !=
-                                                                '') &&
-                                                        (FFAppState().videoUrl !=
-                                                                '') &&
-                                                        (FFAppState()
-                                                                    .slug !=
-                                                                '') &&
-                                                        (FFAppState()
-                                                                    .brandName !=
-                                                                '') &&
-                                                        (FFAppState()
-                                                                    .questionAsked !=
-                                                                ''))) {
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return WebViewAware(
-                                                            child: AlertDialog(
-                                                              title: const Text(
-                                                                  'Une erreure s\'est produite'),
-                                                              content: const Text(
-                                                                  'Veuilliez recommencer'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext),
-                                                                  child: const Text(
-                                                                      'Ok'),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          );
-                                                        },
-                                                      );
-                                                      if (shouldSetState) {
-                                                        safeSetState(() {});
-                                                      }
-                                                      return;
                                                     }
                                                     _model.apiResultro6 =
                                                         await PostSubmissionFgCall
@@ -1118,7 +1074,6 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           .toString(),
                                                     );
 
-                                                    shouldSetState = true;
                                                     if ((_model.apiResultro6
                                                             ?.succeeded ??
                                                         true)) {
@@ -1154,9 +1109,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                       );
                                                     }
 
-                                                    if (shouldSetState) {
-                                                      safeSetState(() {});
-                                                    }
+                                                    safeSetState(() {});
                                                   },
                                             text: 'Continuer',
                                             options: FFButtonOptions(

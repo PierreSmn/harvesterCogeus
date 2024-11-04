@@ -122,18 +122,29 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        SizedBox(
-                                          width: 420.0,
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width >
+                                                      435.0
+                                                  ? 435.0
+                                                  : MediaQuery.sizeOf(context)
+                                                      .width,
                                           height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              1.0,
-                                          child: custom_widgets.CameraRecord(
-                                            width: 420.0,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                1.0,
-                                            control: containerLiveFlowsRow!
-                                                .cameraSelect!,
+                                                      .height >
+                                                  930.0
+                                              ? 930.0
+                                              : MediaQuery.sizeOf(context)
+                                                  .height,
+                                          decoration: const BoxDecoration(),
+                                          child: SizedBox(
+                                            width: 430.0,
+                                            height: 930.0,
+                                            child: custom_widgets.CameraRecord(
+                                              width: 430.0,
+                                              height: 930.0,
+                                              control: containerLiveFlowsRow!
+                                                  .cameraSelect!,
+                                            ),
                                           ),
                                         ),
                                       ],

@@ -178,254 +178,240 @@ class _PlagesWidgetState extends State<PlagesWidget>
                                     horizontalScroll: false,
                                     html: true,
                                   ),
-                                  if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointSmall)
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 18.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            width: 280.0,
-                                            decoration: const BoxDecoration(),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: Theme(
-                                                    data: ThemeData(
-                                                      checkboxTheme:
-                                                          CheckboxThemeData(
-                                                        visualDensity:
-                                                            VisualDensity
-                                                                .compact,
-                                                        materialTapTargetSize:
-                                                            MaterialTapTargetSize
-                                                                .shrinkWrap,
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      4.0),
-                                                        ),
-                                                      ),
-                                                      unselectedWidgetColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBackground,
-                                                    ),
-                                                    child: Checkbox(
-                                                      value: _model
-                                                              .checkboxValue ??=
-                                                          false,
-                                                      onChanged:
-                                                          (newValue) async {
-                                                        safeSetState(() => _model
-                                                                .checkboxValue =
-                                                            newValue!);
-                                                        if (newValue!) {
-                                                          _model.checked = true;
-                                                          safeSetState(() {});
-                                                        } else {
-                                                          _model.checked =
-                                                              false;
-                                                          safeSetState(() {});
-                                                        }
-                                                      },
-                                                      side: BorderSide(
-                                                        width: 2,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                      ),
-                                                      activeColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryBackground,
-                                                      checkColor:
-                                                          const Color(0xFF00FE60),
-                                                    ),
-                                                  ).animateOnActionTrigger(
-                                                      animationsMap[
-                                                          'checkboxOnActionTriggerAnimation']!,
-                                                      hasBeenTriggered:
-                                                          hasCheckboxTriggered),
-                                                ),
-                                                Flexible(
-                                                  child: RichText(
-                                                    textScaler:
-                                                        MediaQuery.of(context)
-                                                            .textScaler,
-                                                    text: TextSpan(
-                                                      children: [
-                                                        const TextSpan(
-                                                          text:
-                                                              'J\'accepte les ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        TextSpan(
-                                                          text:
-                                                              'Conditions Générales',
-                                                          style: const TextStyle(
-                                                            color: Color(
-                                                                0xFF00FE60),
-                                                          ),
-                                                          mouseCursor:
-                                                              SystemMouseCursors
-                                                                  .click,
-                                                          recognizer:
-                                                              TapGestureRecognizer()
-                                                                ..onTap =
-                                                                    () async {
-                                                                  await launchURL(
-                                                                      'https://www.cogeus.com/terms-of-use');
-                                                                },
-                                                        ),
-                                                        const TextSpan(
-                                                          text:
-                                                              ' et que ma vidéo apparaisse dans les communications de ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        const TextSpan(
-                                                          text:
-                                                              'Les Plages Electro',
-                                                          style: TextStyle(),
-                                                        )
-                                                      ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Manrope',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                fontSize: 13.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Row(
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 18.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 280.0,
+                                          decoration: const BoxDecoration(),
+                                          child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  _model.checked =
-                                                      _model.checkboxValue;
-                                                  safeSetState(() {});
-                                                  if (!_model.checked!) {
-                                                    if (animationsMap[
-                                                            'checkboxOnActionTriggerAnimation'] !=
-                                                        null) {
-                                                      safeSetState(() =>
-                                                          hasCheckboxTriggered =
-                                                              true);
-                                                      SchedulerBinding.instance
-                                                          .addPostFrameCallback((_) async =>
-                                                              await animationsMap[
-                                                                      'checkboxOnActionTriggerAnimation']!
-                                                                  .controller
-                                                                  .forward(
-                                                                      from:
-                                                                          0.0));
-                                                    }
-                                                    return;
-                                                  }
-                                                  FFAppState().slug =
-                                                      valueOrDefault<String>(
-                                                    widget.slug,
-                                                    'lesplages',
-                                                  );
-                                                  FFAppState().brandName =
-                                                      valueOrDefault<String>(
-                                                    GetSupaCall.brand(
-                                                      plagesGetSupaResponse
-                                                          .jsonBody,
-                                                    ),
-                                                    'unset',
-                                                  );
-                                                  FFAppState().validatedDone =
-                                                      false;
-                                                  FFAppState().isRecording =
-                                                      false;
-                                                  FFAppState()
-                                                      .recordVideoFBStorage = '';
-                                                  FFAppState().videoReady =
-                                                      false;
-                                                  safeSetState(() {});
-                                                  unawaited(
-                                                    () async {
-                                                      await NewStartCall.call(
-                                                        slug: valueOrDefault<
-                                                            String>(
-                                                          FFAppState().slug,
-                                                          'lesplages',
-                                                        ),
-                                                        brand: FFAppState()
-                                                            .brandName,
-                                                        time:
-                                                            getCurrentTimestamp
-                                                                .toString(),
-                                                      );
-                                                    }(),
-                                                  );
-
-                                                  context
-                                                      .pushNamed('production');
-                                                },
-                                                text: 'J’enregistre ma vidéo',
-                                                options: FFButtonOptions(
-                                                  width: 300.0,
-                                                  height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: const Color(0xFFE84FBD),
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color:
-                                                            const Color(0xFFD2FD59),
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: Theme(
+                                                  data: ThemeData(
+                                                    checkboxTheme:
+                                                        CheckboxThemeData(
+                                                      visualDensity:
+                                                          VisualDensity.compact,
+                                                      materialTapTargetSize:
+                                                          MaterialTapTargetSize
+                                                              .shrinkWrap,
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(4.0),
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderSide: const BorderSide(
-                                                    color: Colors.transparent,
+                                                    ),
+                                                    unselectedWidgetColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          7.0),
+                                                  child: Checkbox(
+                                                    value:
+                                                        _model.checkboxValue ??=
+                                                            false,
+                                                    onChanged:
+                                                        (newValue) async {
+                                                      safeSetState(() =>
+                                                          _model.checkboxValue =
+                                                              newValue!);
+                                                      if (newValue!) {
+                                                        _model.checked = true;
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.checked = false;
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    side: BorderSide(
+                                                      width: 2,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                    ),
+                                                    activeColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .secondaryBackground,
+                                                    checkColor:
+                                                        const Color(0xFF00FE60),
+                                                  ),
+                                                ).animateOnActionTrigger(
+                                                    animationsMap[
+                                                        'checkboxOnActionTriggerAnimation']!,
+                                                    hasBeenTriggered:
+                                                        hasCheckboxTriggered),
+                                              ),
+                                              Flexible(
+                                                child: RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      const TextSpan(
+                                                        text: 'J\'accepte les ',
+                                                        style: TextStyle(),
+                                                      ),
+                                                      TextSpan(
+                                                        text:
+                                                            'Conditions Générales',
+                                                        style: const TextStyle(
+                                                          color:
+                                                              Color(0xFF00FE60),
+                                                        ),
+                                                        mouseCursor:
+                                                            SystemMouseCursors
+                                                                .click,
+                                                        recognizer:
+                                                            TapGestureRecognizer()
+                                                              ..onTap =
+                                                                  () async {
+                                                                await launchURL(
+                                                                    'https://www.cogeus.com/terms-of-use');
+                                                              },
+                                                      ),
+                                                      const TextSpan(
+                                                        text:
+                                                            ' et que ma vidéo apparaisse dans les communications de ',
+                                                        style: TextStyle(),
+                                                      ),
+                                                      const TextSpan(
+                                                        text:
+                                                            'Les Plages Electro',
+                                                        style: TextStyle(),
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
-                                      ),
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                _model.checked =
+                                                    _model.checkboxValue;
+                                                safeSetState(() {});
+                                                if (!_model.checked!) {
+                                                  if (animationsMap[
+                                                          'checkboxOnActionTriggerAnimation'] !=
+                                                      null) {
+                                                    safeSetState(() =>
+                                                        hasCheckboxTriggered =
+                                                            true);
+                                                    SchedulerBinding.instance
+                                                        .addPostFrameCallback((_) async =>
+                                                            await animationsMap[
+                                                                    'checkboxOnActionTriggerAnimation']!
+                                                                .controller
+                                                                .forward(
+                                                                    from: 0.0));
+                                                  }
+                                                  return;
+                                                }
+                                                FFAppState().slug =
+                                                    valueOrDefault<String>(
+                                                  widget.slug,
+                                                  'lesplages',
+                                                );
+                                                FFAppState().brandName =
+                                                    valueOrDefault<String>(
+                                                  GetSupaCall.brand(
+                                                    plagesGetSupaResponse
+                                                        .jsonBody,
+                                                  ),
+                                                  'unset',
+                                                );
+                                                FFAppState().validatedDone =
+                                                    false;
+                                                FFAppState().isRecording =
+                                                    false;
+                                                FFAppState()
+                                                    .recordVideoFBStorage = '';
+                                                FFAppState().videoReady = false;
+                                                safeSetState(() {});
+                                                unawaited(
+                                                  () async {
+                                                    await NewStartCall.call(
+                                                      slug: valueOrDefault<
+                                                          String>(
+                                                        FFAppState().slug,
+                                                        'lesplages',
+                                                      ),
+                                                      brand: FFAppState()
+                                                          .brandName,
+                                                      time: getCurrentTimestamp
+                                                          .toString(),
+                                                    );
+                                                  }(),
+                                                );
+
+                                                context.pushNamed('production');
+                                              },
+                                              text: 'J’enregistre ma vidéo',
+                                              options: FFButtonOptions(
+                                                width: 300.0,
+                                                height: 40.0,
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color: const Color(0xFFE84FBD),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              const Color(0xFFD2FD59),
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: const BorderSide(
+                                                  color: Colors.transparent,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(7.0),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ].divide(const SizedBox(height: 12.0)),
                                     ),
+                                  ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
