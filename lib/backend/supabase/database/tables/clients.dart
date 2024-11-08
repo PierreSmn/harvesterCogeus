@@ -31,4 +31,25 @@ class ClientsRow extends SupabaseDataRow {
 
   List<dynamic> get sondage => getListField<dynamic>('sondage');
   set sondage(List<dynamic>? value) => setListField<dynamic>('sondage', value);
+
+  String? get reviewLink => getField<String>('review_link');
+  set reviewLink(String? value) => setField<String>('review_link', value);
+
+  String? get slugHarvester => getField<String>('slug_harvester');
+  set slugHarvester(String? value) => setField<String>('slug_harvester', value);
+
+  String? get theme1 => getField<String>('theme1');
+  set theme1(String? value) => setField<String>('theme1', value);
+
+  String? get theme2 => getField<String>('theme2');
+  set theme2(String? value) => setField<String>('theme2', value);
+
+  String? get theme3 => getField<String>('theme3');
+  set theme3(String? value) => setField<String>('theme3', value);
+
+  String? get theme4 => getField<String>('theme4');
+  set theme4(String? value) => setField<String>('theme4', value);
+
+  String? get reviewSite => getField<String>('review_site');
+  set reviewSite(String? value) => setField<String>('review_site', value);
 }

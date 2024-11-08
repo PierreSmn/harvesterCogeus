@@ -63,7 +63,7 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
         });
 
         context.pushNamed(
-          'thema',
+          'redir',
           queryParameters: {
             'nps': serializeParam(
               widget.nps,
@@ -85,10 +85,10 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
       child: Container(
         height: 36.0,
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.sizeOf(context).width * 0.85,
+          maxWidth: MediaQuery.sizeOf(context).width * 0.75,
         ),
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).primary,
+          color: FlutterFlowTheme.of(context).accent4,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(

@@ -8,14 +8,12 @@ class RepsnapWidget extends StatefulWidget {
   const RepsnapWidget({
     super.key,
     String? content,
-    bool? isSystemTalking,
-    this.brandName,
+    bool? isUserTalking,
   })  : content = content ?? '',
-        isSystemTalking = isSystemTalking ?? true;
+        isUserTalking = isUserTalking ?? true;
 
   final String content;
-  final bool isSystemTalking;
-  final String? brandName;
+  final bool isUserTalking;
 
   @override
   State<RepsnapWidget> createState() => _RepsnapWidgetState();
@@ -53,30 +51,6 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
-          child: Text(
-            valueOrDefault<String>(
-              widget.isSystemTalking
-                  ? valueOrDefault<String>(
-                      widget.brandName,
-                      'noName',
-                    )
-                  : 'Moi',
-              'none',
-            ),
-            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Avenir Next',
-                  color: widget.isSystemTalking
-                      ? FlutterFlowTheme.of(context).accent4
-                      : FlutterFlowTheme.of(context).rougeMalongo,
-                  fontSize: 18.0,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.normal,
-                  useGoogleFonts: false,
-                ),
-          ),
-        ),
-        Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -94,7 +68,7 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 0.0,
-                            color: widget.isSystemTalking
+                            color: widget.isUserTalking
                                 ? FlutterFlowTheme.of(context).accent4
                                 : FlutterFlowTheme.of(context).rougeMalongo,
                             offset: const Offset(
@@ -117,10 +91,11 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Avenir Next',
-                                    fontSize: 16.0,
+                                    fontSize: 18.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                     useGoogleFonts: false,
+                                    lineHeight: 1.2,
                                   ),
                         ),
                       ),

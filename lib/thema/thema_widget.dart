@@ -171,11 +171,10 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                     child: wrapWithModel(
                                       model: _model.repsnapModel1,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: RepsnapWidget(
+                                      child: const RepsnapWidget(
                                         content:
                                             'Merci d\'avoir répondu à notre enquete.\nQu\'est-ce qui a le plus peser dans la balance ?',
-                                        isSystemTalking: true,
-                                        brandName: themaClientsRow.name,
+                                        isUserTalking: true,
                                       ),
                                     ),
                                   ),
@@ -669,7 +668,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                             _model.theme,
                                             'thematique',
                                           ),
-                                          isSystemTalking: false,
+                                          isUserTalking: false,
                                         ),
                                       ),
                                     ),
@@ -678,11 +677,10 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                     child: wrapWithModel(
                                       model: _model.repsnapModel3,
                                       updateCallback: () => safeSetState(() {}),
-                                      child: RepsnapWidget(
+                                      child: const RepsnapWidget(
                                         content:
                                             'Est-ce que tu peux nous en dire plus sur ton expérience ?',
-                                        isSystemTalking: true,
-                                        brandName: themaClientsRow.name,
+                                        isUserTalking: true,
                                       ),
                                     ),
                                   ).animateOnActionTrigger(
@@ -698,7 +696,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                             safeSetState(() {}),
                                         child: RepsnapWidget(
                                           content: _model.feedback!,
-                                          isSystemTalking: false,
+                                          isUserTalking: false,
                                         ),
                                       ),
                                     ),
@@ -709,11 +707,10 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                         model: _model.repsnapModel5,
                                         updateCallback: () =>
                                             safeSetState(() {}),
-                                        child: RepsnapWidget(
+                                        child: const RepsnapWidget(
                                           content:
                                               'Tu serais opposé à laisser un avis Google nous concernant ? ',
-                                          isSystemTalking: true,
-                                          brandName: themaClientsRow.name,
+                                          isUserTalking: true,
                                         ),
                                       ),
                                     ),
