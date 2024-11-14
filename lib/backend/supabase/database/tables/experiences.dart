@@ -43,4 +43,14 @@ class ExperiencesRow extends SupabaseDataRow {
 
   int? get clientId => getField<int>('client_id');
   set clientId(int? value) => setField<int>('client_id', value);
+
+  bool? get wantsContact => getField<bool>('wantsContact');
+  set wantsContact(bool? value) => setField<bool>('wantsContact', value);
+
+  String? get contactName => getField<String>('contactName');
+  set contactName(String? value) => setField<String>('contactName', value);
+
+  String? get contactMessage => getField<String>('contactMessage');
+  set contactMessage(String? value) =>
+      setField<String>('contactMessage', value);
 }

@@ -207,6 +207,8 @@ dynamic deserializeParam<T>(
         switch (T) {
           case DailySlugActivationsCompleteRow:
             return DailySlugActivationsCompleteRow(data);
+          case ThematiquesRow:
+            return ThematiquesRow(data);
           case ExperiencesRow:
             return ExperiencesRow(data);
           case SubmittersRow:
@@ -231,8 +233,6 @@ dynamic deserializeParam<T>(
             return SubmissionsRow(data);
           case TagsRow:
             return TagsRow(data);
-          case SelectionsRow:
-            return SelectionsRow(data);
           case WebAppActivationsRow:
             return WebAppActivationsRow(data);
           case UsersRow:
@@ -243,8 +243,6 @@ dynamic deserializeParam<T>(
             return HostedSubsRow(data);
           case LiveFlowsRow:
             return LiveFlowsRow(data);
-          case ListsRow:
-            return ListsRow(data);
           case ValidSubsRow:
             return ValidSubsRow(data);
           case PhotosRow:

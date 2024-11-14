@@ -55,6 +55,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _questionAsked = prefs.getString('ff_questionAsked') ?? _questionAsked;
     });
+    _safeInit(() {
+      _expId = prefs.getInt('ff_expId') ?? _expId;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -194,6 +197,13 @@ class FFAppState extends ChangeNotifier {
   dynamic get quest => _quest;
   set quest(dynamic value) {
     _quest = value;
+  }
+
+  int _expId = 0;
+  int get expId => _expId;
+  set expId(int value) {
+    _expId = value;
+    prefs.setInt('ff_expId', value);
   }
 
   final _apiManager = FutureRequestManager<ApiCallResponse>();
