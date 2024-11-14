@@ -1265,6 +1265,22 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      unawaited(
+                                                        () async {
+                                                          await ExperiencesTable()
+                                                              .update(
+                                                            data: {
+                                                              'saidNo': true,
+                                                            },
+                                                            matchingRows:
+                                                                (rows) =>
+                                                                    rows.eq(
+                                                              'id',
+                                                              widget.xId!,
+                                                            ),
+                                                          );
+                                                        }(),
+                                                      );
                                                       _model.saidNo = true;
                                                       safeSetState(() {});
                                                       if (animationsMap[
