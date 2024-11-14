@@ -160,6 +160,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'clid',
               ParamType.int,
             ),
+            nps: params.getParam(
+              'nps',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
@@ -182,8 +186,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: 'redir',
-          path: '/redir',
+          path: '/redirold',
           builder: (context, params) => RedirWidget(
+            nps: params.getParam(
+              'nps',
+              ParamType.int,
+            ),
+            xId: params.getParam(
+              'xId',
+              ParamType.int,
+            ),
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'chat',
+          path: '/chat',
+          builder: (context, params) => ChatWidget(
             nps: params.getParam(
               'nps',
               ParamType.int,

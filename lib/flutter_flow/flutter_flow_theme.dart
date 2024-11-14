@@ -67,6 +67,7 @@ abstract class FlutterFlowTheme {
   late Color appleButton;
   late Color rougeMalongo;
   late Color malonGold;
+  late Color niceGreen;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -191,6 +192,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color appleButton = const Color(0xFF0071E3);
   late Color rougeMalongo = const Color(0xFFE30613);
   late Color malonGold = const Color(0xFFCFB57B);
+  late Color niceGreen = const Color(0xFF52B58E);
 }
 
 abstract class Typography {

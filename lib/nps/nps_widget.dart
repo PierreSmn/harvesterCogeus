@@ -3,7 +3,9 @@ import '/components/nps_item_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'nps_model.dart';
 export 'nps_model.dart';
 
@@ -11,9 +13,11 @@ class NpsWidget extends StatefulWidget {
   const NpsWidget({
     super.key,
     required this.clid,
+    this.nps,
   });
 
   final int? clid;
+  final int? nps;
 
   @override
   State<NpsWidget> createState() => _NpsWidgetState();
@@ -29,6 +33,38 @@ class _NpsWidgetState extends State<NpsWidget> {
     super.initState();
     _model = createModel(context, () => NpsModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (widget.nps != null) {
+        _model.experience = await ExperiencesTable().insert({
+          'nps': widget.nps,
+          'client_id': widget.clid,
+        });
+        FFAppState().expId = _model.experience!.id;
+        safeSetState(() {});
+
+        context.pushNamed(
+          'chat',
+          queryParameters: {
+            'nps': serializeParam(
+              widget.nps,
+              ParamType.int,
+            ),
+            'xId': serializeParam(
+              _model.experience?.id,
+              ParamType.int,
+            ),
+            'clid': serializeParam(
+              widget.clid,
+              ParamType.int,
+            ),
+          }.withoutNulls,
+        );
+      } else {
+        return;
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -41,11 +77,13 @@ class _NpsWidgetState extends State<NpsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.clid,
+          widget.clid!,
         ),
       ),
       builder: (context, snapshot) {
@@ -80,180 +118,186 @@ class _NpsWidgetState extends State<NpsWidget> {
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: SafeArea(
                   top: true,
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 24.0),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                40.0, 0.0, 40.0, 0.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                npsClientsRow!.logoUrl!,
-                                height: 110.0,
-                                fit: BoxFit.contain,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 350.0,
+                        decoration: const BoxDecoration(),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    40.0, 0.0, 40.0, 0.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    npsClientsRow!.logoUrl!,
+                                    height: 110.0,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: RichText(
-                              textScaler: MediaQuery.of(context).textScaler,
-                              text: TextSpan(
-                                children: [
-                                  const TextSpan(
-                                    text:
-                                        'Sur une échelle de 0 à 10, quelle est la probabilité que vous recommandiez ',
-                                    style: TextStyle(),
-                                  ),
-                                  TextSpan(
-                                    text: valueOrDefault<String>(
-                                      npsClientsRow.name,
-                                      'brandName',
+                              Container(
+                                width: 350.0,
+                                decoration: const BoxDecoration(),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: RichText(
+                                    textScaler:
+                                        MediaQuery.of(context).textScaler,
+                                    text: TextSpan(
+                                      children: [
+                                        const TextSpan(
+                                          text:
+                                              'Sur une échelle de 0 à 10, quelle est la probabilité que vous recommandiez ',
+                                          style: TextStyle(),
+                                        ),
+                                        TextSpan(
+                                          text: valueOrDefault<String>(
+                                            npsClientsRow.name,
+                                            'brandName',
+                                          ),
+                                          style: const TextStyle(),
+                                        ),
+                                        const TextSpan(
+                                          text: ' à un ami ? ',
+                                          style: TextStyle(),
+                                        )
+                                      ],
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                     ),
-                                    style: const TextStyle(),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  const TextSpan(
-                                    text: ' à un ami ? ',
-                                    style: TextStyle(),
-                                  )
-                                ],
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Manrope',
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                ),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: Text(
-                              '10 = Très probable, 0 = Pas dutout',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Manrope',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    letterSpacing: 0.0,
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      wrapWithModel(
+                                        model: _model.npsItemModel1,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 10,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel2,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 9,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel3,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 8,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel4,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 7,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel5,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 6,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel6,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 5,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel7,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 4,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel8,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 3,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel9,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 2,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel10,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 1,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                      wrapWithModel(
+                                        model: _model.npsItemModel11,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: NpsItemWidget(
+                                          nps: 0,
+                                          clid: widget.clid!,
+                                        ),
+                                      ),
+                                    ].divide(const SizedBox(height: 12.0)),
                                   ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  wrapWithModel(
-                                    model: _model.npsItemModel1,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 10,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 9,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel3,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 8,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel4,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 7,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel5,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 6,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel6,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 5,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel7,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 4,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel8,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 3,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel9,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 2,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel10,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 1,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                  wrapWithModel(
-                                    model: _model.npsItemModel11,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: NpsItemWidget(
-                                      nps: 0,
-                                      clid: widget.clid!,
-                                    ),
-                                  ),
-                                ].divide(const SizedBox(height: 12.0)),
+                                ),
                               ),
-                            ),
+                            ].divide(const SizedBox(height: 12.0)),
                           ),
-                        ].divide(const SizedBox(height: 12.0)),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),

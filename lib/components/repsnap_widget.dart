@@ -83,21 +83,29 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                           width: 0.0,
                         ),
                       ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 0.0, 0.0),
-                        child: Text(
-                          widget.content,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                6.0, 2.0, 0.0, 1.0),
+                            child: Text(
+                              widget.content,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     fontFamily: 'Avenir Next',
                                     fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
+                                    letterSpacing: FFAppConstants.spacing,
+                                    fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                     lineHeight: 1.2,
                                   ),
-                        ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

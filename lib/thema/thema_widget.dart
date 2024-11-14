@@ -83,7 +83,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
       future: ClientsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.clid,
+          widget.clid!,
         ),
       ),
       builder: (context, snapshot) {
@@ -374,7 +374,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                                         matchingRows: (rows) =>
                                                             rows.eq(
                                                           'id',
-                                                          widget.xId,
+                                                          widget.xId!,
                                                         ),
                                                       );
                                                     },
@@ -475,7 +475,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                                         matchingRows: (rows) =>
                                                             rows.eq(
                                                           'id',
-                                                          widget.xId,
+                                                          widget.xId!,
                                                         ),
                                                       );
                                                     },
@@ -579,7 +579,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                                         matchingRows: (rows) =>
                                                             rows.eq(
                                                           'id',
-                                                          widget.xId,
+                                                          widget.xId!,
                                                         ),
                                                       );
                                                     },
@@ -934,7 +934,7 @@ class _ThemaWidgetState extends State<ThemaWidget>
                                     },
                                     matchingRows: (rows) => rows.eq(
                                       'id',
-                                      widget.xId,
+                                      widget.xId!,
                                     ),
                                   );
                                   safeSetState(() {

@@ -52,4 +52,7 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get reviewSite => getField<String>('review_site');
   set reviewSite(String? value) => setField<String>('review_site', value);
+
+  String? get siteUrl => getField<String>('site_url');
+  set siteUrl(String? value) => setField<String>('site_url', value);
 }

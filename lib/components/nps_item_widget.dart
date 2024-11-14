@@ -61,9 +61,11 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
             'noEmail',
           ),
         });
+        FFAppState().expId = _model.experience!.id;
+        safeSetState(() {});
 
         context.pushNamed(
-          'redir',
+          'chat',
           queryParameters: {
             'nps': serializeParam(
               widget.nps,

@@ -129,7 +129,7 @@ class _RedirWidgetState extends State<RedirWidget>
       future: ClientsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.clid,
+          widget.clid!,
         ),
       ),
       builder: (context, snapshot) {
@@ -634,7 +634,7 @@ class _RedirWidgetState extends State<RedirWidget>
                                     },
                                     matchingRows: (rows) => rows.eq(
                                       'id',
-                                      widget.xId,
+                                      widget.xId!,
                                     ),
                                   );
                                   safeSetState(() {
