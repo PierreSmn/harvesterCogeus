@@ -167,42 +167,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'thema',
-          path: '/thema',
-          builder: (context, params) => ThemaWidget(
-            nps: params.getParam(
-              'nps',
-              ParamType.int,
-            ),
-            xId: params.getParam(
-              'xId',
-              ParamType.int,
-            ),
-            clid: params.getParam(
-              'clid',
-              ParamType.int,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'redir',
-          path: '/redirold',
-          builder: (context, params) => RedirWidget(
-            nps: params.getParam(
-              'nps',
-              ParamType.int,
-            ),
-            xId: params.getParam(
-              'xId',
-              ParamType.int,
-            ),
-            clid: params.getParam(
-              'clid',
-              ParamType.int,
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'chat',
           path: '/chat',
           builder: (context, params) => ChatWidget(

@@ -1,8 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'avis_view_widget.dart' show AvisViewWidget;
+import 'stars_widget.dart' show StarsWidget;
 import 'package:flutter/material.dart';
 
-class AvisViewModel extends FlutterFlowModel<AvisViewWidget> {
+class StarsModel extends FlutterFlowModel<StarsWidget> {
+  ///  Local state fields for this component.
+
+  int? grade;
+
   @override
   void initState(BuildContext context) {}
 

@@ -10,13 +10,25 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();
+  // State field(s) for prenom widget.
+  FocusNode? prenomFocusNode;
+  TextEditingController? prenomTextController;
+  String? Function(BuildContext, String?)? prenomTextControllerValidator;
+  String? _prenomTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Vous devez entrer votre Prénom';
+    }
+
+    return null;
+  }
+
   // State field(s) for nom widget.
   FocusNode? nomFocusNode;
   TextEditingController? nomTextController;
   String? Function(BuildContext, String?)? nomTextControllerValidator;
   String? _nomTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Vous devez entrer votre nom';
+      return 'Vous devez entrer votre Nom';
     }
 
     return null;
@@ -37,6 +49,10 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
     return null;
   }
 
+  // State field(s) for phone widget.
+  FocusNode? phoneFocusNode;
+  TextEditingController? phoneTextController;
+  String? Function(BuildContext, String?)? phoneTextControllerValidator;
   // State field(s) for message widget.
   FocusNode? messageFocusNode;
   TextEditingController? messageTextController;
@@ -44,17 +60,24 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
 
   @override
   void initState(BuildContext context) {
+    prenomTextControllerValidator = _prenomTextControllerValidator;
     nomTextControllerValidator = _nomTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
   }
 
   @override
   void dispose() {
+    prenomFocusNode?.dispose();
+    prenomTextController?.dispose();
+
     nomFocusNode?.dispose();
     nomTextController?.dispose();
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();
+
+    phoneFocusNode?.dispose();
+    phoneTextController?.dispose();
 
     messageFocusNode?.dispose();
     messageTextController?.dispose();
