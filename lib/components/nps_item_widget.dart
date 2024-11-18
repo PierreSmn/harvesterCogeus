@@ -107,31 +107,33 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Avenir Next',
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       letterSpacing: 0.0,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w500,
                       useGoogleFonts: false,
                     ),
               ),
               if (widget.nps == 10)
                 Text(
                   '- Très probable',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Avenir Next',
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        fontSize: 18.0,
-                        letterSpacing: 0.0,
+                        fontSize: 16.0,
+                        letterSpacing: FFAppConstants.spacing,
+                        fontWeight: FontWeight.w500,
                         useGoogleFonts: false,
                       ),
                 ),
               if (widget.nps == 0)
                 Text(
                   '- Pas du tout probable',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Avenir Next',
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         fontSize: 16.0,
-                        letterSpacing: 0.0,
+                        letterSpacing: FFAppConstants.spacing,
+                        fontWeight: FontWeight.w500,
                         useGoogleFonts: false,
                       ),
                 ),

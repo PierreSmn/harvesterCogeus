@@ -32,11 +32,17 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
     super.initState();
     _model = createModel(context, () => FormDetractorModel());
 
+    _model.prenomTextController ??= TextEditingController();
+    _model.prenomFocusNode ??= FocusNode();
+
     _model.nomTextController ??= TextEditingController();
     _model.nomFocusNode ??= FocusNode();
 
     _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
+
+    _model.phoneTextController ??= TextEditingController();
+    _model.phoneFocusNode ??= FocusNode();
 
     _model.messageTextController ??= TextEditingController();
     _model.messageFocusNode ??= FocusNode();
@@ -94,7 +100,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     ),
                               ),
                               Text(
-                                'Vos informations vont nous permettre de vous recontacter.',
+                                'Informations pour vous contacter.',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
@@ -103,7 +109,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           .primaryText,
                                       fontSize: 18.0,
                                       letterSpacing: 0.0,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.normal,
                                       useGoogleFonts: false,
                                     ),
                               ),
@@ -120,6 +126,96 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                       children: [
                                         Text(
                                           'Prenom',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Avenir Next',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                        ),
+                                        TextFormField(
+                                          controller:
+                                              _model.prenomTextController,
+                                          focusNode: _model.prenomFocusNode,
+                                          autofocus: false,
+                                          textCapitalization:
+                                              TextCapitalization.words,
+                                          textInputAction: TextInputAction.next,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .revoSearchBarBg,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Manrope',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minLines: 1,
+                                          validator: _model
+                                              .prenomTextControllerValidator
+                                              .asValidator(context),
+                                        ),
+                                      ].divide(const SizedBox(height: 8.0)),
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Nom',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
@@ -298,6 +394,95 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
+                                          'N° Téléphone (Optionnel)',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Avenir Next',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 18.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                        ),
+                                        TextFormField(
+                                          controller:
+                                              _model.phoneTextController,
+                                          focusNode: _model.phoneFocusNode,
+                                          autofocus: false,
+                                          textInputAction: TextInputAction.next,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                            filled: true,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .revoSearchBarBg,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Manrope',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minLines: 1,
+                                          keyboardType: TextInputType.phone,
+                                          validator: _model
+                                              .phoneTextControllerValidator
+                                              .asValidator(context),
+                                        ),
+                                      ].divide(const SizedBox(height: 8.0)),
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
                                           'Message (Optionnel)',
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -394,11 +579,15 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                   await ExperiencesTable().update(
                                     data: {
                                       'email': _model.emailTextController.text,
-                                      'contactName':
-                                          _model.nomTextController.text,
                                       'contactMessage':
                                           _model.messageTextController.text,
                                       'wantsContact': true,
+                                      'last_name':
+                                          _model.nomTextController.text,
+                                      'first_name':
+                                          _model.prenomTextController.text,
+                                      'phone_number':
+                                          _model.phoneTextController.text,
                                     },
                                     matchingRows: (rows) => rows.eq(
                                       'id',
@@ -459,7 +648,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                 ),
                               ),
                               Text(
-                                'Vos informations ont bien été enregistré',
+                                'Vos informations ont bien été enregistrées',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
