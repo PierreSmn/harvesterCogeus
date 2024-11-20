@@ -35,22 +35,11 @@ class UsersRow extends SupabaseDataRow {
   List<int> get selection => getListField<int>('selection');
   set selection(List<int>? value) => setListField<int>('selection', value);
 
-  int? get listIDs => getField<int>('listIDs');
-  set listIDs(int? value) => setField<int>('listIDs', value);
-
-  String? get subscriptionStatus => getField<String>('subscription_status');
-  set subscriptionStatus(String? value) =>
-      setField<String>('subscription_status', value);
-
-  String? get subscriptionId => getField<String>('subscription_id');
-  set subscriptionId(String? value) =>
-      setField<String>('subscription_id', value);
-
   String? get customerId => getField<String>('customer_id');
   set customerId(String? value) => setField<String>('customer_id', value);
 
-  String? get planId => getField<String>('plan_id');
-  set planId(String? value) => setField<String>('plan_id', value);
+  String? get priceId => getField<String>('price_id');
+  set priceId(String? value) => setField<String>('price_id', value);
 
   String? get phoneNumber => getField<String>('phone_number');
   set phoneNumber(String? value) => setField<String>('phone_number', value);
@@ -63,4 +52,7 @@ class UsersRow extends SupabaseDataRow {
 
   int? get clientId => getField<int>('client_id');
   set clientId(int? value) => setField<int>('client_id', value);
+
+  bool? get activeSub => getField<bool>('activeSub');
+  set activeSub(bool? value) => setField<bool>('activeSub', value);
 }

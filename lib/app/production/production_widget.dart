@@ -124,27 +124,17 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       children: [
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width >
-                                                      435.0
-                                                  ? 435.0
-                                                  : MediaQuery.sizeOf(context)
-                                                      .width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
-                                                      .height >
-                                                  930.0
-                                              ? 930.0
-                                              : MediaQuery.sizeOf(context)
-                                                  .height,
+                                                  .height *
+                                              1.0,
                                           decoration: const BoxDecoration(),
-                                          child: SizedBox(
+                                          child: custom_widgets.CameraRecord(
                                             width: 430.0,
-                                            height: 930.0,
-                                            child: custom_widgets.CameraRecord(
-                                              width: 430.0,
-                                              height: 930.0,
-                                              control: containerLiveFlowsRow!
-                                                  .cameraSelect!,
-                                            ),
+                                            height: 900.0,
+                                            control: containerLiveFlowsRow!
+                                                .cameraSelect!,
                                           ),
                                         ),
                                       ],

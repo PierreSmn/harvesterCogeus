@@ -1263,8 +1263,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             safeSetState(() {}),
                                                         child: RepsnapWidget(
                                                           content: () {
-                                                            if (widget.nps! >=
-                                                                9) {
+                                                            if (widget.nps ==
+                                                                10) {
                                                               return 'On aimerait partager ce qui fait que votre expérience est si bonne avec notre communauté. Est-ce que vous êtes d’accord pour nous le raconter en vidéo ?';
                                                             } else if (widget
                                                                     .nps! <=
@@ -1308,8 +1308,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .transparent,
                                                               onTap: () async {
                                                                 if (widget
-                                                                        .nps! >=
-                                                                    9) {
+                                                                        .nps ==
+                                                                    10) {
                                                                   unawaited(
                                                                     () async {
                                                                       await ExperiencesTable()
@@ -1328,21 +1328,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     }(),
                                                                   );
-
-                                                                  context
-                                                                      .pushNamed(
-                                                                    'home',
-                                                                    queryParameters:
-                                                                        {
-                                                                      'slug':
-                                                                          serializeParam(
-                                                                        chatClientsRow
-                                                                            .slugHarvester,
-                                                                        ParamType
-                                                                            .String,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                  );
+                                                                  await launchURL(
+                                                                      'https://app.cogeus.com/home?slug=${chatClientsRow.slugHarvester}');
                                                                 } else if (widget
                                                                         .nps! <=
                                                                     6) {
@@ -1464,8 +1451,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     children: [
                                                                       Text(
                                                                         () {
-                                                                          if (widget.nps! >=
-                                                                              9) {
+                                                                          if (widget.nps ==
+                                                                              10) {
                                                                             return 'J\'enregistre une vidéo';
                                                                           } else if (widget.nps! <=
                                                                               6) {
@@ -1711,8 +1698,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .transparent,
                                                               onTap: () async {
                                                                 if (widget
-                                                                        .nps! >=
-                                                                    9) {
+                                                                        .nps ==
+                                                                    10) {
                                                                   unawaited(
                                                                     () async {
                                                                       await ExperiencesTable()
@@ -2031,8 +2018,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   content: _model.saidNo
                                                       ? 'Je refuse'
                                                       : () {
-                                                          if ((widget.nps! >=
-                                                                  9) &&
+                                                          if (((widget.nps! >=
+                                                                      7) &&
+                                                                  (widget.nps !=
+                                                                      10)) &&
                                                               (chatClientsRow
                                                                           .slugHarvester ==
                                                                       null ||
@@ -2041,8 +2030,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       '')) {
                                                             return 'Je poste un avis';
                                                           } else if ((widget
-                                                                      .nps! >=
-                                                                  9) &&
+                                                                      .nps ==
+                                                                  10) &&
                                                               (chatClientsRow
                                                                           .slugHarvester !=
                                                                       null &&
@@ -2149,8 +2138,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   () {}),
                                                           child: RepsnapWidget(
                                                             content: widget
-                                                                        .nps! >=
-                                                                    9
+                                                                        .nps ==
+                                                                    10
                                                                 ? 'Notre communauté grandit grâce aux avis en ligne. Aidez-nous à toucher plus de monde en partageant le vôtre !'
                                                                 : 'Nous améliorons nos services grâce aux retours de nos clients. Votre réponse à un questionnaire serait très appréciée.',
                                                             isUserTalking:
@@ -2189,8 +2178,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 onTap:
                                                                     () async {
                                                                   if (widget
-                                                                          .nps! >=
-                                                                      9) {
+                                                                          .nps ==
+                                                                      10) {
                                                                     unawaited(
                                                                       () async {
                                                                         await ExperiencesTable()
@@ -2317,7 +2306,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               .center,
                                                                       children: [
                                                                         Text(
-                                                                          widget.nps! >= 9
+                                                                          widget.nps == 10
                                                                               ? 'Je poste un avis'
                                                                               : 'Je réponds',
                                                                           style: FlutterFlowTheme.of(context)
@@ -2812,7 +2801,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 child: RepsnapWidget(
                                                   content: _model.saidNoTwice
                                                       ? 'Je refuse'
-                                                      : ((widget.nps! >= 9) &&
+                                                      : ((widget.nps == 10) &&
                                                               (chatClientsRow
                                                                           .slugHarvester !=
                                                                       null &&
@@ -2827,7 +2816,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                             ],
                                           ),
                                         ),
-                                      if ((widget.nps! > 8) &&
+                                      if ((widget.nps == 10) &&
                                           _model.saidNoTwice &&
                                           (chatClientsRow.slugHarvester !=
                                                   null &&
