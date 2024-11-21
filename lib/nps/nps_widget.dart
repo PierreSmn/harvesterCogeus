@@ -83,7 +83,7 @@ class _NpsWidgetState extends State<NpsWidget> {
       future: ClientsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.clid!,
+          widget.clid,
         ),
       ),
       builder: (context, snapshot) {
