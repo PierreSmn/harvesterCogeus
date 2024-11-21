@@ -591,7 +591,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     },
                                     matchingRows: (rows) => rows.eq(
                                       'id',
-                                      widget.xId!,
+                                      widget.xId,
                                     ),
                                   );
                                   _model.done = true;

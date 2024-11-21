@@ -73,7 +73,7 @@ dependencies:
   path_provider_foundation: 2.4.0
   path_provider_linux: 2.2.1
   path_provider_platform_interface: 2.1.2
-  path_provider_windows: 2.2.1
+  path_provider_windows: 2.3.0
   plugin_platform_interface: 2.1.8
   pointer_interceptor: 0.10.1+2
   pointer_interceptor_ios: 0.10.1

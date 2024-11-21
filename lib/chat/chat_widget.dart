@@ -136,7 +136,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
       future: ClientsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.clid!,
+          widget.clid,
         ),
       ),
       builder: (context, snapshot) {
@@ -1323,7 +1323,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 rows.eq(
                                                                           'id',
                                                                           widget
-                                                                              .xId!,
+                                                                              .xId,
                                                                         ),
                                                                       );
                                                                     }(),
@@ -1384,7 +1384,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 rows.eq(
                                                                           'id',
                                                                           widget
-                                                                              .xId!,
+                                                                              .xId,
                                                                         ),
                                                                       );
                                                                     }(),
@@ -1713,7 +1713,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 rows.eq(
                                                                           'id',
                                                                           widget
-                                                                              .xId!,
+                                                                              .xId,
                                                                         ),
                                                                       );
                                                                     }(),
@@ -1772,7 +1772,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 rows.eq(
                                                                           'id',
                                                                           widget
-                                                                              .xId!,
+                                                                              .xId,
                                                                         ),
                                                                       );
                                                                     }(),
@@ -2191,7 +2191,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           matchingRows: (rows) =>
                                                                               rows.eq(
                                                                             'id',
-                                                                            widget.xId!,
+                                                                            widget.xId,
                                                                           ),
                                                                         );
                                                                       }(),
@@ -3497,7 +3497,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'id',
-                                        widget.xId!,
+                                        widget.xId,
                                       ),
                                     );
                                     _model.feedback =
