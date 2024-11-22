@@ -36,30 +36,60 @@ class _NpsWidgetState extends State<NpsWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget.nps != null) {
-        _model.experience = await ExperiencesTable().insert({
-          'nps': widget.nps,
-          'client_id': widget.clid,
-        });
-        FFAppState().expId = _model.experience!.id;
-        safeSetState(() {});
+        if ((FFAppState().expId == 0) || (FFAppState().expId == null)) {
+          _model.experience = await ExperiencesTable().insert({
+            'nps': widget.nps,
+            'client_id': widget.clid,
+          });
+          FFAppState().expId = _model.experience!.id;
+          safeSetState(() {});
 
-        context.pushNamed(
-          'chat',
-          queryParameters: {
-            'nps': serializeParam(
-              widget.nps,
-              ParamType.int,
+          context.pushNamed(
+            'chat',
+            queryParameters: {
+              'nps': serializeParam(
+                widget.nps,
+                ParamType.int,
+              ),
+              'xId': serializeParam(
+                _model.experience?.id,
+                ParamType.int,
+              ),
+              'clid': serializeParam(
+                widget.clid,
+                ParamType.int,
+              ),
+            }.withoutNulls,
+          );
+        } else {
+          await ExperiencesTable().update(
+            data: {
+              'nps': widget.nps,
+            },
+            matchingRows: (rows) => rows.eq(
+              'id',
+              FFAppState().expId,
             ),
-            'xId': serializeParam(
-              _model.experience?.id,
-              ParamType.int,
-            ),
-            'clid': serializeParam(
-              widget.clid,
-              ParamType.int,
-            ),
-          }.withoutNulls,
-        );
+          );
+
+          context.pushNamed(
+            'chat',
+            queryParameters: {
+              'nps': serializeParam(
+                widget.nps,
+                ParamType.int,
+              ),
+              'xId': serializeParam(
+                FFAppState().expId,
+                ParamType.int,
+              ),
+              'clid': serializeParam(
+                widget.clid,
+                ParamType.int,
+              ),
+            }.withoutNulls,
+          );
+        }
       } else {
         return;
       }
