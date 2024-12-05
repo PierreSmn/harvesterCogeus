@@ -164,6 +164,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'nps',
               ParamType.int,
             ),
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -178,6 +186,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'xId',
               ParamType.int,
             ),
+            clid: params.getParam(
+              'clid',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'optin',
+          path: '/optin',
+          builder: (context, params) => OptinWidget(
             clid: params.getParam(
               'clid',
               ParamType.int,

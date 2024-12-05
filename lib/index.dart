@@ -15,3 +15,4 @@ export '/app/vandbfest_copy/vandbfest_copy_widget.dart'
 export '/app/upload/upload_widget.dart' show UploadWidget;
 export '/nps/nps_widget.dart' show NpsWidget;
 export '/chat/chat_widget.dart' show ChatWidget;
+export '/app/optin/optin_widget.dart' show OptinWidget;

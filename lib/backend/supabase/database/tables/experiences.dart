@@ -78,4 +78,7 @@ class ExperiencesRow extends SupabaseDataRow {
   String? get feedbackCustomText => getField<String>('feedback_customText');
   set feedbackCustomText(String? value) =>
       setField<String>('feedback_customText', value);
+
+  String? get fullName => getField<String>('full_name');
+  set fullName(String? value) => setField<String>('full_name', value);
 }
