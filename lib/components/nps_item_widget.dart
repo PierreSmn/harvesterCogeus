@@ -11,11 +11,15 @@ class NpsItemWidget extends StatefulWidget {
     required this.nps,
     this.email,
     required this.clid,
+    this.name,
+    this.color,
   });
 
   final int? nps;
   final String? email;
   final int? clid;
+  final String? name;
+  final Color? color;
 
   @override
   State<NpsItemWidget> createState() => _NpsItemWidgetState();
@@ -60,6 +64,7 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
             widget.email,
             'noEmail',
           ),
+          'full_name': widget.name,
         });
         FFAppState().expId = _model.experience!.id;
         safeSetState(() {});
@@ -90,7 +95,10 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
           maxWidth: MediaQuery.sizeOf(context).width * 0.75,
         ),
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).accent4,
+          color: valueOrDefault<Color>(
+            widget.color,
+            FlutterFlowTheme.of(context).accent4,
+          ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(

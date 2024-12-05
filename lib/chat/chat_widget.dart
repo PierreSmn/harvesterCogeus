@@ -43,8 +43,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
     super.initState();
     _model = createModel(context, () => ChatModel());
 
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
+    _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
+
+    _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -1489,6 +1492,68 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
+                                                              if (widget.nps ==
+                                                                  10) {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'video_done':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              } else if (widget
+                                                                      .nps! <=
+                                                                  6) {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'feedback_answer':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              } else {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'review_done':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              }
+
                                                               _model.saidNo =
                                                                   true;
                                                               safeSetState(
@@ -1505,6 +1570,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           from:
                                                                               0.0);
                                                                 }
+                                                                _model.askEmail =
+                                                                    true;
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                             },
                                                             child: Container(
@@ -1750,8 +1819,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             onTap: () =>
                                                                                 FocusScope.of(dialogContext).unfocus(),
                                                                             child:
-                                                                                FormDetractorWidget(
-                                                                              xId: widget.xId!,
+                                                                                FeedbackWidget(
+                                                                              q1: chatClientsRow.theme1!,
+                                                                              q2: chatClientsRow.theme2!,
+                                                                              q3: chatClientsRow.theme3!,
+                                                                              q4: chatClientsRow.theme4!,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1870,6 +1942,68 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
+                                                              if (widget.nps ==
+                                                                  10) {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'review_done':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              } else if (widget
+                                                                      .nps! <=
+                                                                  6) {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'feedback_answer':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              } else {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'review_done':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                              }
+
                                                               _model.saidNo =
                                                                   true;
                                                               safeSetState(
@@ -1886,6 +2020,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           from:
                                                                               0.0);
                                                                 }
+                                                                _model.askEmail =
+                                                                    true;
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                             },
                                                             child: Container(
@@ -2337,6 +2475,48 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
+                                                                if (widget
+                                                                        .nps ==
+                                                                    10) {
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await ExperiencesTable()
+                                                                          .update(
+                                                                        data: {
+                                                                          'review_done':
+                                                                              false,
+                                                                        },
+                                                                        matchingRows:
+                                                                            (rows) =>
+                                                                                rows.eq(
+                                                                          'id',
+                                                                          widget
+                                                                              .xId,
+                                                                        ),
+                                                                      );
+                                                                    }(),
+                                                                  );
+                                                                } else {
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await ExperiencesTable()
+                                                                          .update(
+                                                                        data: {
+                                                                          'feedback_answer':
+                                                                              false,
+                                                                        },
+                                                                        matchingRows:
+                                                                            (rows) =>
+                                                                                rows.eq(
+                                                                          'id',
+                                                                          widget
+                                                                              .xId,
+                                                                        ),
+                                                                      );
+                                                                    }(),
+                                                                  );
+                                                                }
+
                                                                 _model.saidNoTwice =
                                                                     true;
                                                                 safeSetState(
@@ -2665,6 +2845,24 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
+                                                                unawaited(
+                                                                  () async {
+                                                                    await ExperiencesTable()
+                                                                        .update(
+                                                                      data: {
+                                                                        'feedback_answer':
+                                                                            false,
+                                                                      },
+                                                                      matchingRows:
+                                                                          (rows) =>
+                                                                              rows.eq(
+                                                                        'id',
+                                                                        widget
+                                                                            .xId,
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
                                                                 _model.saidNoTwice =
                                                                     true;
                                                                 safeSetState(
@@ -3049,6 +3247,23 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
+                                                          unawaited(
+                                                            () async {
+                                                              await ExperiencesTable()
+                                                                  .update(
+                                                                data: {
+                                                                  'feedback_answer':
+                                                                      false,
+                                                                },
+                                                                matchingRows:
+                                                                    (rows) =>
+                                                                        rows.eq(
+                                                                  'id',
+                                                                  widget.xId,
+                                                                ),
+                                                              );
+                                                            }(),
+                                                          );
                                                           _model.saidNoTrice =
                                                               true;
                                                           safeSetState(() {});
@@ -3255,206 +3470,9 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                           safeSetState(() {}),
                                                       child: const RepsnapWidget(
                                                         content:
-                                                            'Nous voulons améliorer votre expérience. Êtes-vous d\'accord pour être recontacté ?',
+                                                            'Nous voulons améliorer votre expérience. Partagez-nous votre email :',
                                                         isUserTalking: false,
                                                       ),
-                                                    ),
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            if (!_model
-                                                                .noRecontact)
-                                                              Builder(
-                                                                builder:
-                                                                    (context) =>
-                                                                        InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showDialog(
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (dialogContext) {
-                                                                        return Dialog(
-                                                                          elevation:
-                                                                              0,
-                                                                          insetPadding:
-                                                                              EdgeInsets.zero,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          alignment:
-                                                                              const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                          child:
-                                                                              WebViewAware(
-                                                                            child:
-                                                                                GestureDetector(
-                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
-                                                                              child: FormDetractorWidget(
-                                                                                xId: widget.xId!,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    );
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    height:
-                                                                        36.0,
-                                                                    constraints:
-                                                                        BoxConstraints(
-                                                                      maxWidth:
-                                                                          MediaQuery.sizeOf(context).width *
-                                                                              0.85,
-                                                                    ),
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .accent4,
-                                                                      ),
-                                                                    ),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        children: [
-                                                                          Text(
-                                                                            'Oui',
-                                                                            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                  fontFamily: 'Avenir Next',
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  fontSize: 18.0,
-                                                                                  letterSpacing: FFAppConstants.spacing,
-                                                                                  fontWeight: FontWeight.w500,
-                                                                                  useGoogleFonts: false,
-                                                                                ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                _model.noRecontact =
-                                                                    true;
-                                                                safeSetState(
-                                                                    () {});
-                                                              },
-                                                              child: Container(
-                                                                height: 36.0,
-                                                                constraints:
-                                                                    BoxConstraints(
-                                                                  maxWidth:
-                                                                      MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.85,
-                                                                ),
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
-                                                                  ),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          24.0,
-                                                                          0.0,
-                                                                          24.0,
-                                                                          0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Non, je ne veux pas être recontacté',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .headlineMedium
-                                                                            .override(
-                                                                              fontFamily: 'Avenir Next',
-                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 18.0,
-                                                                              letterSpacing: FFAppConstants.spacing,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              useGoogleFonts: false,
-                                                                            ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ]
-                                                              .divide(const SizedBox(
-                                                                  height: 6.0))
-                                                              .addToStart(
-                                                                  const SizedBox(
-                                                                      height:
-                                                                          12.0)),
-                                                        ),
-                                                      ],
                                                     ),
                                                   ],
                                                 ),
@@ -3483,17 +3501,17 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                               SizedBox(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 child: TextFormField(
-                                  controller: _model.textController,
-                                  focusNode: _model.textFieldFocusNode,
+                                  controller: _model.textController1,
+                                  focusNode: _model.textFieldFocusNode1,
                                   onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textController',
+                                    '_model.textController1',
                                     const Duration(milliseconds: 2000),
                                     () => safeSetState(() {}),
                                   ),
                                   onFieldSubmitted: (_) async {
                                     await ExperiencesTable().update(
                                       data: {
-                                        'feedback': _model.textController.text,
+                                        'feedback': _model.textController1.text,
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'id',
@@ -3501,13 +3519,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       ),
                                     );
                                     _model.feedback =
-                                        _model.textController.text;
+                                        _model.textController1.text;
                                     _model.themeComplete = true;
                                     _model.showThemeChoiceChat = true;
                                     _model.showchat = false;
                                     _model.showAutre = true;
                                     _model.autreExpressed =
-                                        _model.textController.text;
+                                        _model.textController1.text;
                                     safeSetState(() {});
                                     if (animationsMap[
                                             'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -3518,7 +3536,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           .forward(from: 0.0);
                                     }
                                     safeSetState(() {
-                                      _model.textController?.clear();
+                                      _model.textController1?.clear();
                                     });
                                   },
                                   autofocus: true,
@@ -3572,10 +3590,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     suffixIcon: _model
-                                            .textController!.text.isNotEmpty
+                                            .textController1!.text.isNotEmpty
                                         ? InkWell(
                                             onTap: () async {
-                                              _model.textController?.clear();
+                                              _model.textController1?.clear();
                                               safeSetState(() {});
                                             },
                                             child: const Icon(
@@ -3593,8 +3611,149 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  validator: _model.textControllerValidator
+                                  validator: _model.textController1Validator
                                       .asValidator(context),
+                                ),
+                              ),
+                            ],
+                          ),
+                        if (_model.askEmail)
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Divider(
+                                thickness: 1.0,
+                                color: FlutterFlowTheme.of(context).alternate,
+                              ),
+                              Builder(
+                                builder: (context) => SizedBox(
+                                  width: MediaQuery.sizeOf(context).width * 0.9,
+                                  child: TextFormField(
+                                    controller: _model.textController2,
+                                    focusNode: _model.textFieldFocusNode2,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.textController2',
+                                      const Duration(milliseconds: 2000),
+                                      () => safeSetState(() {}),
+                                    ),
+                                    onFieldSubmitted: (_) async {
+                                      await ExperiencesTable().update(
+                                        data: {
+                                          'email': _model.textController2.text,
+                                          'wantsContact': true,
+                                        },
+                                        matchingRows: (rows) => rows.eq(
+                                          'id',
+                                          widget.xId,
+                                        ),
+                                      );
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: const AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(dialogContext)
+                                                        .unfocus(),
+                                                child: FormDetractorWidget(
+                                                  xId: widget.xId!,
+                                                  email: _model
+                                                      .textController2.text,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                    autofocus: false,
+                                    autofillHints: const [AutofillHints.email],
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText: 'john@mail.com',
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Manrope',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      suffixIcon: _model
+                                              .textController2!.text.isNotEmpty
+                                          ? InkWell(
+                                              onTap: () async {
+                                                _model.textController2?.clear();
+                                                safeSetState(() {});
+                                              },
+                                              child: const Icon(
+                                                Icons.clear,
+                                                size: 18.0,
+                                              ),
+                                            )
+                                          : null,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    cursorColor: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    validator: _model.textController2Validator
+                                        .asValidator(context),
+                                  ),
                                 ),
                               ),
                             ],

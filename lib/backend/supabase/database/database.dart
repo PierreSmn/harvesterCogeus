@@ -21,6 +21,7 @@ export 'tables/submissions.dart';
 export 'tables/tags.dart';
 export 'tables/web_app_activations.dart';
 export 'tables/users.dart';
+export 'tables/optins.dart';
 export 'tables/rejected_subs.dart';
 export 'tables/hosted_subs.dart';
 export 'tables/live_flows.dart';

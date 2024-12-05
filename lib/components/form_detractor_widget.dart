@@ -10,9 +10,11 @@ class FormDetractorWidget extends StatefulWidget {
   const FormDetractorWidget({
     super.key,
     required this.xId,
+    this.email,
   });
 
   final int? xId;
+  final String? email;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();
@@ -38,7 +40,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
     _model.nomTextController ??= TextEditingController();
     _model.nomFocusNode ??= FocusNode();
 
-    _model.emailTextController ??= TextEditingController();
+    _model.emailTextController ??= TextEditingController(text: widget.email);
     _model.emailFocusNode ??= FocusNode();
 
     _model.phoneTextController ??= TextEditingController();

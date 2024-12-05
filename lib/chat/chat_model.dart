@@ -48,6 +48,8 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
 
   bool noRecontact = false;
 
+  bool askEmail = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for repsnap component.
@@ -89,9 +91,13 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
   // Model for repsnap component.
   late RepsnapModel repsnapModel19;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController2;
+  String? Function(BuildContext, String?)? textController2Validator;
 
   @override
   void initState(BuildContext context) {
@@ -137,7 +143,10 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
     repsnapModel17.dispose();
     repsnapModel18.dispose();
     repsnapModel19.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textFieldFocusNode1?.dispose();
+    textController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
+    textController2?.dispose();
   }
 }

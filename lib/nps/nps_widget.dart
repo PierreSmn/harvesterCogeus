@@ -14,10 +14,14 @@ class NpsWidget extends StatefulWidget {
     super.key,
     required this.clid,
     this.nps,
+    this.email,
+    this.name,
   });
 
   final int? clid;
   final int? nps;
+  final String? email;
+  final String? name;
 
   @override
   State<NpsWidget> createState() => _NpsWidgetState();
@@ -40,6 +44,8 @@ class _NpsWidgetState extends State<NpsWidget> {
           _model.experience = await ExperiencesTable().insert({
             'nps': widget.nps,
             'client_id': widget.clid,
+            'email': widget.email,
+            'full_name': widget.name,
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});
@@ -204,7 +210,7 @@ class _NpsWidgetState extends State<NpsWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Manrope',
-                                            fontSize: 16.0,
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -227,6 +233,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 10,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -236,6 +253,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 9,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -245,6 +273,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 8,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -254,6 +293,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 7,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -263,6 +313,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 6,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -272,6 +333,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 5,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -281,6 +353,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 4,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -290,6 +373,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 3,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -299,6 +393,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 2,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -308,6 +413,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 1,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                       wrapWithModel(
@@ -317,6 +433,17 @@ class _NpsWidgetState extends State<NpsWidget> {
                                         child: NpsItemWidget(
                                           nps: 0,
                                           clid: widget.clid!,
+                                          color: npsClientsRow.color != null &&
+                                                  npsClientsRow.color != ''
+                                              ? colorFromCssString(
+                                                  npsClientsRow.color!,
+                                                  defaultColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent4,
+                                                )
+                                              : FlutterFlowTheme.of(context)
+                                                  .accent4,
                                         ),
                                       ),
                                     ].divide(const SizedBox(height: 12.0)),

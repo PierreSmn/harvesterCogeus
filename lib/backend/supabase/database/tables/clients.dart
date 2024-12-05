@@ -52,4 +52,21 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get siteUrl => getField<String>('site_url');
   set siteUrl(String? value) => setField<String>('site_url', value);
+
+  String? get stripeLink => getField<String>('stripeLink');
+  set stripeLink(String? value) => setField<String>('stripeLink', value);
+
+  String? get color => getField<String>('color');
+  set color(String? value) => setField<String>('color', value);
+
+  String? get subscriptionFee => getField<String>('subscriptionFee');
+  set subscriptionFee(String? value) =>
+      setField<String>('subscriptionFee', value);
+
+  String? get optinText => getField<String>('optin_text');
+  set optinText(String? value) => setField<String>('optin_text', value);
+
+  String? get optinImageUrl => getField<String>('optin_image_url');
+  set optinImageUrl(String? value) =>
+      setField<String>('optin_image_url', value);
 }
