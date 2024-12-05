@@ -505,22 +505,6 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                                 () async {
                                                                               await launchURL('https://www.cogeus.com/terms-of-use');
                                                                             },
-                                                                    ),
-                                                                    const TextSpan(
-                                                                      text:
-                                                                          ' et que ma vidéo apparaisse dans les communications de ',
-                                                                      style:
-                                                                          TextStyle(),
-                                                                    ),
-                                                                    TextSpan(
-                                                                      text: valueOrDefault<
-                                                                          String>(
-                                                                        optinClientsRow
-                                                                            ?.name,
-                                                                        'name',
-                                                                      ),
-                                                                      style:
-                                                                          const TextStyle(),
                                                                     )
                                                                   ],
                                                                   style: FlutterFlowTheme.of(
@@ -614,7 +598,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                   children: [
                                                                     const TextSpan(
                                                                       text:
-                                                                          'Vous acceptez de partager vos informations avec ',
+                                                                          'Vous acceptez de partager votre mail avec ',
                                                                       style:
                                                                           TextStyle(),
                                                                     ),
@@ -629,8 +613,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                           const TextStyle(),
                                                                     ),
                                                                     const TextSpan(
-                                                                      text:
-                                                                          ' (communication, promotion, informations pratiques)',
+                                                                      text: '',
                                                                       style:
                                                                           TextStyle(),
                                                                     )
