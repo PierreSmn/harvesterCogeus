@@ -41,11 +41,19 @@ class _NpsWidgetState extends State<NpsWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget.nps != null) {
         if ((FFAppState().expId == 0) || (FFAppState().expId == null)) {
+          _model.client = await ClientsTable().queryRows(
+            queryFn: (q) => q.eq(
+              'id',
+              widget.clid,
+            ),
+          );
           _model.experience = await ExperiencesTable().insert({
             'nps': widget.nps,
             'client_id': widget.clid,
             'email': widget.email,
             'full_name': widget.name,
+            'np1_id': _model.client?.first.np1Id,
+            'np2_id': _model.client?.first.np2Id,
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});

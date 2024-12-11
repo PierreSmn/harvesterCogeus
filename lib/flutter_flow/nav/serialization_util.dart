@@ -243,6 +243,8 @@ dynamic deserializeParam<T>(
             return RejectedSubsRow(data);
           case HostedSubsRow:
             return HostedSubsRow(data);
+          case ClientsNp1Row:
+            return ClientsNp1Row(data);
           case LiveFlowsRow:
             return LiveFlowsRow(data);
           case ValidSubsRow:

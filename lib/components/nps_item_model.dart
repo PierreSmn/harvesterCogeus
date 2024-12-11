@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 class NpsItemModel extends FlutterFlowModel<NpsItemWidget> {
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Backend Call - Query Rows] action in Container widget.
+  List<ClientsRow>? client;
   // Stores action output result for [Backend Call - Insert Row] action in Container widget.
   ExperiencesRow? experience;
 
