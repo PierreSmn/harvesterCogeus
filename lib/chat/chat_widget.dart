@@ -168,7 +168,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
             title: 'chat',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1359,8 +1362,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             WebViewAware(
                                                                           child:
                                                                               GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(dialogContext).unfocus(),
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
                                                                                 FeedbackWidget(
                                                                               q1: chatClientsRow.theme1!,
@@ -1816,8 +1822,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             WebViewAware(
                                                                           child:
                                                                               GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(dialogContext).unfocus(),
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
                                                                                 FeedbackWidget(
                                                                               q1: chatClientsRow.theme1!,
@@ -2374,7 +2383,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               WebViewAware(
                                                                             child:
                                                                                 GestureDetector(
-                                                                              onTap: () => FocusScope.of(dialogContext).unfocus(),
+                                                                              onTap: () {
+                                                                                FocusScope.of(dialogContext).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
                                                                               child: FeedbackWidget(
                                                                                 q1: chatClientsRow.theme1!,
                                                                                 q2: chatClientsRow.theme2!,
@@ -2744,8 +2756,11 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             WebViewAware(
                                                                           child:
                                                                               GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(dialogContext).unfocus(),
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(dialogContext).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
                                                                                 FeedbackWidget(
                                                                               q1: chatClientsRow.theme1!,
@@ -3135,9 +3150,15 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       WebViewAware(
                                                                     child:
                                                                         GestureDetector(
-                                                                      onTap: () =>
-                                                                          FocusScope.of(dialogContext)
-                                                                              .unfocus(),
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(dialogContext)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
                                                                           FeedbackWidget(
                                                                         q1: chatClientsRow
@@ -3660,9 +3681,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     Directionality.of(context)),
                                             child: WebViewAware(
                                               child: GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(dialogContext)
-                                                        .unfocus(),
+                                                onTap: () {
+                                                  FocusScope.of(dialogContext)
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
                                                 child: FormDetractorWidget(
                                                   xId: widget.xId!,
                                                   email: _model

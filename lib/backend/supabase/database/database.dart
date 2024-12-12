@@ -24,6 +24,7 @@ export 'tables/users.dart';
 export 'tables/optins.dart';
 export 'tables/rejected_subs.dart';
 export 'tables/hosted_subs.dart';
+export 'tables/clients_np1.dart';
 export 'tables/live_flows.dart';
 export 'tables/valid_subs.dart';
 export 'tables/photos.dart';

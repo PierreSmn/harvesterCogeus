@@ -57,6 +57,12 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
       hoverColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () async {
+        _model.client = await ClientsTable().queryRows(
+          queryFn: (q) => q.eq(
+            'id',
+            widget.clid,
+          ),
+        );
         _model.experience = await ExperiencesTable().insert({
           'nps': widget.nps,
           'client_id': widget.clid,
@@ -65,6 +71,8 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
             'noEmail',
           ),
           'full_name': widget.name,
+          'np1_id': _model.client?.firstOrNull?.np1Id,
+          'np2_id': _model.client?.firstOrNull?.np2Id,
         });
         FFAppState().expId = _model.experience!.id;
         safeSetState(() {});

@@ -41,11 +41,19 @@ class _NpsWidgetState extends State<NpsWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (widget.nps != null) {
         if ((FFAppState().expId == 0) || (FFAppState().expId == null)) {
+          _model.client = await ClientsTable().queryRows(
+            queryFn: (q) => q.eq(
+              'id',
+              widget.clid,
+            ),
+          );
           _model.experience = await ExperiencesTable().insert({
             'nps': widget.nps,
             'client_id': widget.clid,
             'email': widget.email,
             'full_name': widget.name,
+            'np1_id': _model.client?.firstOrNull?.np1Id,
+            'np2_id': _model.client?.firstOrNull?.np2Id,
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});
@@ -148,7 +156,10 @@ class _NpsWidgetState extends State<NpsWidget> {
             title: 'nps',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
+              onTap: () {
+                FocusScope.of(context).unfocus();
+                FocusManager.instance.primaryFocus?.unfocus();
+              },
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,

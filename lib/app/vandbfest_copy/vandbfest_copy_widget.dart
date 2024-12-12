@@ -57,7 +57,10 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                 .resolve(Directionality.of(context)),
             child: WebViewAware(
               child: GestureDetector(
-                onTap: () => FocusScope.of(dialogContext).unfocus(),
+                onTap: () {
+                  FocusScope.of(dialogContext).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
                 child: const SizedBox(
                   height: 200.0,
                   width: 160.0,
@@ -137,7 +140,10 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
               title: 'vandbfestCopy',
               color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
               child: GestureDetector(
-                onTap: () => FocusScope.of(context).unfocus(),
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
                 child: Scaffold(
                   key: scaffoldKey,
                   backgroundColor:
