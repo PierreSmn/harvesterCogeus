@@ -71,8 +71,8 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
             'noEmail',
           ),
           'full_name': widget.name,
-          'np1_id': _model.client?.first.np1Id,
-          'np2_id': _model.client?.first.np2Id,
+          'np1_id': _model.client?.firstOrNull?.np1Id,
+          'np2_id': _model.client?.firstOrNull?.np2Id,
         });
         FFAppState().expId = _model.experience!.id;
         safeSetState(() {});
