@@ -72,4 +72,8 @@ class ClientsNp1Row extends SupabaseDataRow {
 
   bool? get activeSub => getField<bool>('active_sub');
   set activeSub(bool? value) => setField<bool>('active_sub', value);
+
+  int? get clientPrincipalId => getField<int>('client_principal_id');
+  set clientPrincipalId(int? value) =>
+      setField<int>('client_principal_id', value);
 }
