@@ -1417,6 +1417,14 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           from:
                                                                               0.0);
                                                                 }
+                                                                if (widget
+                                                                        .nps! <=
+                                                                    6) {
+                                                                  _model.askEmail =
+                                                                      true;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
                                                               },
                                                               child: Container(
                                                                 height: 36.0,
