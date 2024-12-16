@@ -211,6 +211,8 @@ dynamic deserializeParam<T>(
             return ThematiquesRow(data);
           case ExperiencesRow:
             return ExperiencesRow(data);
+          case RecontactRow:
+            return RecontactRow(data);
           case SubmittersRow:
             return SubmittersRow(data);
           case WidgetsRow:

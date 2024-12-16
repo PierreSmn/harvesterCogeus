@@ -8,6 +8,7 @@ export 'table.dart';
 export 'tables/daily_slug_activations_complete.dart';
 export 'tables/thematiques.dart';
 export 'tables/experiences.dart';
+export 'tables/recontact.dart';
 export 'tables/submitters.dart';
 export 'tables/widgets.dart';
 export 'tables/submitters_new.dart';
