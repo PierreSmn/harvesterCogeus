@@ -589,6 +589,18 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     widget.xId,
                                   ),
                                 );
+                                await RecontactTable().insert({
+                                  'email': _model.emailTextController.text,
+                                  'contactMessage':
+                                      _model.messageTextController.text,
+                                  'wantsContact': true,
+                                  'last_name': _model.nomTextController.text,
+                                  'first_name':
+                                      _model.prenomTextController.text,
+                                  'phone_number':
+                                      _model.phoneTextController.text,
+                                  'exp_id': widget.xId,
+                                });
                                 _model.done = true;
                                 safeSetState(() {});
                               },
