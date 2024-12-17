@@ -11,10 +11,16 @@ class FormDetractorWidget extends StatefulWidget {
     super.key,
     required this.xId,
     this.email,
+    required this.clid,
+    this.np1Id,
+    required this.np2id,
   });
 
   final int? xId;
   final String? email;
+  final int? clid;
+  final int? np1Id;
+  final int? np2id;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();
@@ -43,7 +49,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
     _model.emailTextController ??= TextEditingController(text: widget.email);
     _model.emailFocusNode ??= FocusNode();
 
-    _model.phoneTextController ??= TextEditingController();
+    _model.phoneTextController ??= TextEditingController(text: '+33');
     _model.phoneFocusNode ??= FocusNode();
 
     _model.messageTextController ??= TextEditingController();
@@ -392,7 +398,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'N° Téléphone (Optionnel)',
+                                        'Téléphone',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
@@ -413,6 +419,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                         textInputAction: TextInputAction.next,
                                         obscureText: false,
                                         decoration: InputDecoration(
+                                          hintText: '+33',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyLarge
@@ -480,7 +487,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Message (Optionnel)',
+                                        'Message additionnel (Optionnel)',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
@@ -499,6 +506,8 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             _model.messageTextController,
                                         focusNode: _model.messageFocusNode,
                                         autofocus: false,
+                                        textCapitalization:
+                                            TextCapitalization.sentences,
                                         textInputAction: TextInputAction.done,
                                         obscureText: false,
                                         decoration: InputDecoration(
@@ -600,6 +609,9 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                   'phone_number':
                                       _model.phoneTextController.text,
                                   'exp_id': widget.xId,
+                                  'client_id': widget.clid,
+                                  'np1_id': widget.np1Id,
+                                  'np2_id': widget.np2id,
                                 });
                                 _model.done = true;
                                 safeSetState(() {});

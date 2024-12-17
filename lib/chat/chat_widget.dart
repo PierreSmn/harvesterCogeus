@@ -3569,6 +3569,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                     });
                                   },
                                   autofocus: true,
+                                  textCapitalization:
+                                      TextCapitalization.sentences,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
@@ -3700,6 +3702,9 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   xId: widget.xId!,
                                                   email: _model
                                                       .textController2.text,
+                                                  clid: chatClientsRow.id,
+                                                  np1Id: chatClientsRow.np1Id,
+                                                  np2id: chatClientsRow.np2Id!,
                                                 ),
                                               ),
                                             ),
