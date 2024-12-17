@@ -654,7 +654,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             onPressed: () async {
                                               await Clipboard.setData(ClipboardData(
                                                   text:
-                                                      'webappreturn://webappreturn.com${GoRouterState.of(context).uri.toString()}'));
+                                                      'appcogeus://appcogeus.com${GoRouterState.of(context).uri.toString()}'));
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
                                                 SnackBar(
