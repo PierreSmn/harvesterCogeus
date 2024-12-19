@@ -42,18 +42,20 @@ class _NpsWidgetState extends State<NpsWidget> {
       if (widget.nps != null) {
         if ((FFAppState().expId == 0) || (FFAppState().expId == null)) {
           _model.client = await ClientsTable().queryRows(
-            queryFn: (q) => q.eq(
+            queryFn: (q) => q.eqOrNull(
               'id',
               widget.clid,
             ),
           );
           _model.experience = await ExperiencesTable().insert({
             'nps': widget.nps,
-            'client_id': widget.clid,
+            'client_id': _model.client?.firstOrNull?.brandId ?? widget.clid,
             'email': widget.email,
             'full_name': widget.name,
             'np1_id': _model.client?.firstOrNull?.np1Id,
             'np2_id': _model.client?.firstOrNull?.np2Id,
+            'bu_id': _model.client?.firstOrNull?.buId,
+            'loc_id': _model.client?.firstOrNull?.locId,
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});
@@ -80,7 +82,7 @@ class _NpsWidgetState extends State<NpsWidget> {
             data: {
               'nps': widget.nps,
             },
-            matchingRows: (rows) => rows.eq(
+            matchingRows: (rows) => rows.eqOrNull(
               'id',
               FFAppState().expId,
             ),
@@ -125,7 +127,7 @@ class _NpsWidgetState extends State<NpsWidget> {
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.clid,
         ),

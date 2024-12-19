@@ -58,14 +58,14 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
       highlightColor: Colors.transparent,
       onTap: () async {
         _model.client = await ClientsTable().queryRows(
-          queryFn: (q) => q.eq(
+          queryFn: (q) => q.eqOrNull(
             'id',
             widget.clid,
           ),
         );
         _model.experience = await ExperiencesTable().insert({
           'nps': widget.nps,
-          'client_id': widget.clid,
+          'client_id': _model.client?.firstOrNull?.brandId ?? widget.clid,
           'email': valueOrDefault<String>(
             widget.email,
             'noEmail',
@@ -73,6 +73,8 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
           'full_name': widget.name,
           'np1_id': _model.client?.firstOrNull?.np1Id,
           'np2_id': _model.client?.firstOrNull?.np2Id,
+          'bu_id': _model.client?.firstOrNull?.buId,
+          'loc_id': _model.client?.firstOrNull?.locId,
         });
         FFAppState().expId = _model.experience!.id;
         safeSetState(() {});

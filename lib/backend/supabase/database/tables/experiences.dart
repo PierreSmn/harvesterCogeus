@@ -87,4 +87,10 @@ class ExperiencesRow extends SupabaseDataRow {
 
   int? get np2Id => getField<int>('np2_id');
   set np2Id(int? value) => setField<int>('np2_id', value);
+
+  int? get buId => getField<int>('bu_id');
+  set buId(int? value) => setField<int>('bu_id', value);
+
+  int? get locId => getField<int>('loc_id');
+  set locId(int? value) => setField<int>('loc_id', value);
 }

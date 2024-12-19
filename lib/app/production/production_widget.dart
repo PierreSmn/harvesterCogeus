@@ -59,7 +59,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
             backgroundColor: const Color(0xFF020109),
             body: FutureBuilder<List<LiveFlowsRow>>(
               future: LiveFlowsTable().querySingleRow(
-                queryFn: (q) => q.eq(
+                queryFn: (q) => q.eqOrNull(
                   'slug',
                   FFAppState().slug,
                 ),
