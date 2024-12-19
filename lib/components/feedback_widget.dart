@@ -616,7 +616,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 'feedback_customText':
                                     _model.messageTextController.text,
                               },
-                              matchingRows: (rows) => rows.eq(
+                              matchingRows: (rows) => rows.eqOrNull(
                                 'id',
                                 FFAppState().expId,
                               ),

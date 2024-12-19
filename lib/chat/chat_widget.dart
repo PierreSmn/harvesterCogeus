@@ -137,7 +137,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
 
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.clid,
         ),
@@ -350,8 +350,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               },
                                                               matchingRows:
-                                                                  (rows) =>
-                                                                      rows.eq(
+                                                                  (rows) => rows
+                                                                      .eqOrNull(
                                                                 'id',
                                                                 FFAppState()
                                                                     .expId,
@@ -386,18 +386,27 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent4,
+                                                          color: chatClientsRow
+                                                                          .color !=
+                                                                      null &&
+                                                                  chatClientsRow
+                                                                          .color !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  chatClientsRow
+                                                                      .color!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent4,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent4,
-                                                          ),
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -487,8 +496,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               },
                                                               matchingRows:
-                                                                  (rows) =>
-                                                                      rows.eq(
+                                                                  (rows) => rows
+                                                                      .eqOrNull(
                                                                 'id',
                                                                 FFAppState()
                                                                     .expId,
@@ -523,18 +532,27 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent4,
+                                                          color: chatClientsRow
+                                                                          .color !=
+                                                                      null &&
+                                                                  chatClientsRow
+                                                                          .color !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  chatClientsRow
+                                                                      .color!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent4,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent4,
-                                                          ),
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -624,8 +642,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               },
                                                               matchingRows:
-                                                                  (rows) =>
-                                                                      rows.eq(
+                                                                  (rows) => rows
+                                                                      .eqOrNull(
                                                                 'id',
                                                                 FFAppState()
                                                                     .expId,
@@ -660,18 +678,27 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent4,
+                                                          color: chatClientsRow
+                                                                          .color !=
+                                                                      null &&
+                                                                  chatClientsRow
+                                                                          .color !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  chatClientsRow
+                                                                      .color!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent4,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent4,
-                                                          ),
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -767,8 +794,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               },
                                                               matchingRows:
-                                                                  (rows) =>
-                                                                      rows.eq(
+                                                                  (rows) => rows
+                                                                      .eqOrNull(
                                                                 'id',
                                                                 FFAppState()
                                                                     .expId,
@@ -803,18 +830,27 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent4,
+                                                          color: chatClientsRow
+                                                                          .color !=
+                                                                      null &&
+                                                                  chatClientsRow
+                                                                          .color !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  chatClientsRow
+                                                                      .color!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent4,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent4,
-                                                          ),
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -895,8 +931,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     'Autre',
                                                               },
                                                               matchingRows:
-                                                                  (rows) =>
-                                                                      rows.eq(
+                                                                  (rows) => rows
+                                                                      .eqOrNull(
                                                                 'id',
                                                                 FFAppState()
                                                                     .expId,
@@ -922,18 +958,27 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         decoration:
                                                             BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent4,
+                                                          color: chatClientsRow
+                                                                          .color !=
+                                                                      null &&
+                                                                  chatClientsRow
+                                                                          .color !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  chatClientsRow
+                                                                      .color!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent4,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .accent4,
-                                                          ),
                                                         ),
                                                         child: Padding(
                                                           padding:
@@ -1326,7 +1371,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -1390,7 +1435,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -1437,19 +1482,23 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                                  color: chatClientsRow.color !=
+                                                                              null &&
+                                                                          chatClientsRow.color !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          chatClientsRow
+                                                                              .color!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).accent4,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
                                                                               8.0),
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
-                                                                  ),
                                                                 ),
                                                                 child: Padding(
                                                                   padding: const EdgeInsetsDirectional
@@ -1518,7 +1567,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -1539,7 +1588,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -1558,7 +1607,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -1607,9 +1656,19 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                                  color: chatClientsRow.color !=
+                                                                              null &&
+                                                                          chatClientsRow.color !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          chatClientsRow
+                                                                              .color!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).accent4,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
                                                                 ),
                                                               ),
                                                               child: Padding(
@@ -1793,7 +1852,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -1858,7 +1917,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -1897,19 +1956,23 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                                 decoration:
                                                                     BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                                  color: chatClientsRow.color !=
+                                                                              null &&
+                                                                          chatClientsRow.color !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          chatClientsRow
+                                                                              .color!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).accent4,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
                                                                               8.0),
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
-                                                                  ),
                                                                 ),
                                                                 child: Padding(
                                                                   padding: const EdgeInsetsDirectional
@@ -1971,7 +2034,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -1992,7 +2055,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -2011,7 +2074,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -2060,9 +2123,19 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             8.0),
                                                                 border:
                                                                     Border.all(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .accent4,
+                                                                  color: chatClientsRow.color !=
+                                                                              null &&
+                                                                          chatClientsRow.color !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          chatClientsRow
+                                                                              .color!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).accent4,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .accent4,
                                                                 ),
                                                               ),
                                                               child: Padding(
@@ -2344,7 +2417,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 true,
                                                                           },
                                                                           matchingRows: (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                             'id',
                                                                             widget.xId,
                                                                           ),
@@ -2433,19 +2506,20 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
+                                                                    color: chatClientsRow.color !=
+                                                                                null &&
+                                                                            chatClientsRow.color !=
+                                                                                ''
+                                                                        ? colorFromCssString(
+                                                                            chatClientsRow.color!,
+                                                                            defaultColor:
+                                                                                FlutterFlowTheme.of(context).accent4,
+                                                                          )
+                                                                        : FlutterFlowTheme.of(context)
+                                                                            .accent4,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             8.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                    ),
                                                                   ),
                                                                   child:
                                                                       Padding(
@@ -2508,7 +2582,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -2527,7 +2601,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         },
                                                                         matchingRows:
                                                                             (rows) =>
-                                                                                rows.eq(
+                                                                                rows.eqOrNull(
                                                                           'id',
                                                                           widget
                                                                               .xId,
@@ -2573,9 +2647,17 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               8.0),
                                                                   border: Border
                                                                       .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
+                                                                    color: chatClientsRow.color !=
+                                                                                null &&
+                                                                            chatClientsRow.color !=
+                                                                                ''
+                                                                        ? colorFromCssString(
+                                                                            chatClientsRow.color!,
+                                                                            defaultColor:
+                                                                                FlutterFlowTheme.of(context).accent4,
+                                                                          )
+                                                                        : FlutterFlowTheme.of(context)
+                                                                            .accent4,
                                                                   ),
                                                                 ),
                                                                 child: Padding(
@@ -2808,19 +2890,20 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   decoration:
                                                                       BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
+                                                                    color: chatClientsRow.color !=
+                                                                                null &&
+                                                                            chatClientsRow.color !=
+                                                                                ''
+                                                                        ? colorFromCssString(
+                                                                            chatClientsRow.color!,
+                                                                            defaultColor:
+                                                                                FlutterFlowTheme.of(context).accent4,
+                                                                          )
+                                                                        : FlutterFlowTheme.of(context)
+                                                                            .accent4,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
                                                                             8.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .accent4,
-                                                                    ),
                                                                   ),
                                                                   child:
                                                                       Padding(
@@ -2878,7 +2961,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       },
                                                                       matchingRows:
                                                                           (rows) =>
-                                                                              rows.eq(
+                                                                              rows.eqOrNull(
                                                                         'id',
                                                                         widget
                                                                             .xId,
@@ -2918,9 +3001,17 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               8.0),
                                                                   border: Border
                                                                       .all(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .accent4,
+                                                                    color: chatClientsRow.color !=
+                                                                                null &&
+                                                                            chatClientsRow.color !=
+                                                                                ''
+                                                                        ? colorFromCssString(
+                                                                            chatClientsRow.color!,
+                                                                            defaultColor:
+                                                                                FlutterFlowTheme.of(context).accent4,
+                                                                          )
+                                                                        : FlutterFlowTheme.of(context)
+                                                                            .accent4,
                                                                   ),
                                                                 ),
                                                                 child: Padding(
@@ -3210,19 +3301,26 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             ),
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent4,
+                                                              color: chatClientsRow
+                                                                              .color !=
+                                                                          null &&
+                                                                      chatClientsRow
+                                                                              .color !=
+                                                                          ''
+                                                                  ? colorFromCssString(
+                                                                      chatClientsRow
+                                                                          .color!,
+                                                                      defaultColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .accent4,
+                                                                    )
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent4,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
                                                                           8.0),
-                                                              border:
-                                                                  Border.all(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .accent4,
-                                                              ),
                                                             ),
                                                             child: Padding(
                                                               padding:
@@ -3285,8 +3383,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       false,
                                                                 },
                                                                 matchingRows:
-                                                                    (rows) =>
-                                                                        rows.eq(
+                                                                    (rows) => rows
+                                                                        .eqOrNull(
                                                                   'id',
                                                                   widget.xId,
                                                                 ),
@@ -3323,9 +3421,22 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     .circular(
                                                                         8.0),
                                                             border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent4,
+                                                              color: chatClientsRow
+                                                                              .color !=
+                                                                          null &&
+                                                                      chatClientsRow
+                                                                              .color !=
+                                                                          ''
+                                                                  ? colorFromCssString(
+                                                                      chatClientsRow
+                                                                          .color!,
+                                                                      defaultColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .accent4,
+                                                                    )
+                                                                  : FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent4,
                                                             ),
                                                           ),
                                                           child: Padding(
@@ -3542,7 +3653,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       data: {
                                         'feedback': _model.textController1.text,
                                       },
-                                      matchingRows: (rows) => rows.eq(
+                                      matchingRows: (rows) => rows.eqOrNull(
                                         'id',
                                         widget.xId,
                                       ),
@@ -3673,7 +3784,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           'email': _model.textController2.text,
                                           'wantsContact': true,
                                         },
-                                        matchingRows: (rows) => rows.eq(
+                                        matchingRows: (rows) => rows.eqOrNull(
                                           'id',
                                           widget.xId,
                                         ),

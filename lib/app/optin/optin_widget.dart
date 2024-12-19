@@ -75,7 +75,7 @@ class _OptinWidgetState extends State<OptinWidget>
   Widget build(BuildContext context) {
     return FutureBuilder<List<ClientsRow>>(
       future: ClientsTable().querySingleRow(
-        queryFn: (q) => q.eq(
+        queryFn: (q) => q.eqOrNull(
           'id',
           widget.clid,
         ),

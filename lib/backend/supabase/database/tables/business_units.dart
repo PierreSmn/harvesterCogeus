@@ -1,18 +1,19 @@
 import '../database.dart';
 
-class ClientsTable extends SupabaseTable<ClientsRow> {
+class BusinessUnitsTable extends SupabaseTable<BusinessUnitsRow> {
   @override
-  String get tableName => 'clients';
+  String get tableName => 'business_units';
 
   @override
-  ClientsRow createRow(Map<String, dynamic> data) => ClientsRow(data);
+  BusinessUnitsRow createRow(Map<String, dynamic> data) =>
+      BusinessUnitsRow(data);
 }
 
-class ClientsRow extends SupabaseDataRow {
-  ClientsRow(super.data);
+class BusinessUnitsRow extends SupabaseDataRow {
+  BusinessUnitsRow(super.data);
 
   @override
-  SupabaseTable get table => ClientsTable();
+  SupabaseTable get table => BusinessUnitsTable();
 
   int get id => getField<int>('id')!;
   set id(int value) => setField<int>('id', value);
@@ -79,12 +80,6 @@ class ClientsRow extends SupabaseDataRow {
   int? get np2Id => getField<int>('np2_id');
   set np2Id(int? value) => setField<int>('np2_id', value);
 
-  int? get brandId => getField<int>('brand_id');
-  set brandId(int? value) => setField<int>('brand_id', value);
-
-  int? get buId => getField<int>('bu_id');
-  set buId(int? value) => setField<int>('bu_id', value);
-
-  int? get locId => getField<int>('loc_id');
-  set locId(int? value) => setField<int>('loc_id', value);
+  int? get clid => getField<int>('clid');
+  set clid(int? value) => setField<int>('clid', value);
 }

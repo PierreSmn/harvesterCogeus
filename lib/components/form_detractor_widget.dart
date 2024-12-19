@@ -593,7 +593,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     'phone_number':
                                         _model.phoneTextController.text,
                                   },
-                                  matchingRows: (rows) => rows.eq(
+                                  matchingRows: (rows) => rows.eqOrNull(
                                     'id',
                                     widget.xId,
                                   ),
