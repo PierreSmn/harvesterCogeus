@@ -610,8 +610,6 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                       _model.phoneTextController.text,
                                   'exp_id': widget.xId,
                                   'client_id': widget.clid,
-                                  'np1_id': widget.np1Id,
-                                  'np2_id': widget.np2id,
                                 });
                                 _model.done = true;
                                 safeSetState(() {});
