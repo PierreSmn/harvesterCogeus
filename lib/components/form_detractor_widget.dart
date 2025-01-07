@@ -12,15 +12,11 @@ class FormDetractorWidget extends StatefulWidget {
     required this.xId,
     this.email,
     required this.clid,
-    this.np1Id,
-    required this.np2id,
   });
 
   final int? xId;
   final String? email;
   final int? clid;
-  final int? np1Id;
-  final int? np2id;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();

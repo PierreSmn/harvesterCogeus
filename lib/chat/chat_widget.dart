@@ -3814,8 +3814,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   email: _model
                                                       .textController2.text,
                                                   clid: chatClientsRow.id,
-                                                  np1Id: chatClientsRow.np1Id,
-                                                  np2id: chatClientsRow.np2Id!,
                                                 ),
                                               ),
                                             ),
