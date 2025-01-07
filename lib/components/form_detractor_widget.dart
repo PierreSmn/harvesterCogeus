@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -12,15 +13,11 @@ class FormDetractorWidget extends StatefulWidget {
     required this.xId,
     this.email,
     required this.clid,
-    this.np1Id,
-    required this.np2id,
   });
 
   final int? xId;
   final String? email;
   final int? clid;
-  final int? np1Id;
-  final int? np2id;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();
@@ -598,7 +595,8 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     widget.xId,
                                   ),
                                 );
-                                await RecontactTable().insert({
+                                _model.recontact =
+                                    await RecontactTable().insert({
                                   'email': _model.emailTextController.text,
                                   'contactMessage':
                                       _model.messageTextController.text,
@@ -611,7 +609,19 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                   'exp_id': widget.xId,
                                   'client_id': widget.clid,
                                 });
+                                await RecontactRequestCall.call(
+                                  clientId: widget.clid,
+                                  email: _model.emailTextController.text,
+                                  firstName: _model.prenomTextController.text,
+                                  lastName: _model.nomTextController.text,
+                                  phoneNumber: _model.phoneTextController.text,
+                                  message: _model.messageTextController.text,
+                                  recontactId: _model.recontact?.id,
+                                );
+
                                 _model.done = true;
+                                safeSetState(() {});
+
                                 safeSetState(() {});
                               },
                               text: 'Envoyer',

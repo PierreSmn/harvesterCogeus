@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'form_detractor_widget.dart' show FormDetractorWidget;
 import 'package:flutter/material.dart';
@@ -57,6 +58,8 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
   FocusNode? messageFocusNode;
   TextEditingController? messageTextController;
   String? Function(BuildContext, String?)? messageTextControllerValidator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  RecontactRow? recontact;
 
   @override
   void initState(BuildContext context) {
