@@ -162,6 +162,44 @@ class PostSubmissionFgCall {
   }
 }
 
+class RecontactRequestCall {
+  static Future<ApiCallResponse> call({
+    int? clientId,
+    String? email = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? phoneNumber = '',
+    String? message = '',
+    int? recontactId,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "client_id": $clientId,
+  "recontact_id": $recontactId,
+  "email": "$email",
+  "first_name": "$firstName",
+  "last_name": "$lastName",
+  "phone_number": "$phoneNumber",
+  "message": "$message"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Recontact request',
+      apiUrl: 'https://tryinit.fastgenapp.com/recontact',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class NewStartCall {
   static Future<ApiCallResponse> call({
     String? slug = '',
