@@ -61,4 +61,7 @@ class UsersRow extends SupabaseDataRow {
 
   int? get np2Id => getField<int>('np2_id');
   set np2Id(int? value) => setField<int>('np2_id', value);
+
+  String? get accountType => getField<String>('account_type');
+  set accountType(String? value) => setField<String>('account_type', value);
 }
