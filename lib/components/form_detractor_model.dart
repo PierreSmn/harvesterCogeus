@@ -58,6 +58,8 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
   FocusNode? messageFocusNode;
   TextEditingController? messageTextController;
   String? Function(BuildContext, String?)? messageTextControllerValidator;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<ExperiencesRow>? expItem;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   RecontactRow? recontact;
 

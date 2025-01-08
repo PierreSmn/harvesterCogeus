@@ -164,7 +164,7 @@ class PostSubmissionFgCall {
 
 class RecontactRequestCall {
   static Future<ApiCallResponse> call({
-    int? clientId,
+    int? notifId,
     String? email = '',
     String? firstName = '',
     String? lastName = '',
@@ -174,7 +174,7 @@ class RecontactRequestCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "client_id": $clientId,
+  "notif_id": $notifId,
   "recontact_id": $recontactId,
   "email": "$email",
   "first_name": "$firstName",
