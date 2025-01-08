@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/repsnap_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'chat_widget.dart' show ChatWidget;
@@ -98,6 +99,8 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // Stores action output result for [Backend Call - Update Row(s)] action in TextField widget.
+  List<ExperiencesRow>? expItem;
 
   @override
   void initState(BuildContext context) {
