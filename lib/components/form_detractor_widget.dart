@@ -13,15 +13,11 @@ class FormDetractorWidget extends StatefulWidget {
     required this.xId,
     this.email,
     required this.clid,
-    required this.buid,
-    required this.locid,
   });
 
   final int? xId;
   final String? email;
   final int? clid;
-  final int? buid;
-  final int? locid;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();
@@ -582,7 +578,8 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     !_model.formKey.currentState!.validate()) {
                                   return;
                                 }
-                                await ExperiencesTable().update(
+                                _model.expItem =
+                                    await ExperiencesTable().update(
                                   data: {
                                     'email': _model.emailTextController.text,
                                     'contactMessage':
@@ -598,6 +595,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                     'id',
                                     widget.xId,
                                   ),
+                                  returnRows: true,
                                 );
                                 _model.recontact =
                                     await RecontactTable().insert({
@@ -611,10 +609,21 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                   'phone_number':
                                       _model.phoneTextController.text,
                                   'exp_id': widget.xId,
-                                  'client_id': widget.clid,
+                                  'client_id':
+                                      _model.expItem?.firstOrNull?.clientId,
+                                  'bu_id': _model.expItem?.firstOrNull?.buId,
+                                  'loc_id': _model.expItem?.firstOrNull?.locId,
                                 });
                                 await RecontactRequestCall.call(
-                                  clientId: widget.clid,
+                                  notifId: () {
+                                    if (_model.recontact?.locId != null) {
+                                      return _model.recontact?.locId;
+                                    } else if (_model.recontact?.buId != null) {
+                                      return _model.recontact?.buId;
+                                    } else {
+                                      return _model.recontact?.clientId;
+                                    }
+                                  }(),
                                   email: _model.emailTextController.text,
                                   firstName: _model.prenomTextController.text,
                                   lastName: _model.nomTextController.text,
