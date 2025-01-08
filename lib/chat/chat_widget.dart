@@ -3813,13 +3813,18 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   xId: widget.xId!,
                                                   email: _model
                                                       .textController2.text,
-                                                  clid: chatClientsRow.id,
+                                                  clid:
+                                                      chatClientsRow.brandId!,
+                                                  buid: chatClientsRow.buId!,
+                                                  locid: chatClientsRow.locId!,
                                                 ),
                                               ),
                                             ),
                                           );
                                         },
                                       );
+
+                                      safeSetState(() {});
                                     },
                                     autofocus: false,
                                     autofillHints: const [AutofillHints.email],
