@@ -87,4 +87,14 @@ class ClientsRow extends SupabaseDataRow {
 
   int? get locId => getField<int>('loc_id');
   set locId(int? value) => setField<int>('loc_id', value);
+
+  String? get notificationEmail => getField<String>('notification_email');
+  set notificationEmail(String? value) =>
+      setField<String>('notification_email', value);
+
+  String? get medium => getField<String>('medium');
+  set medium(String? value) => setField<String>('medium', value);
+
+  String? get emailTool => getField<String>('email_tool');
+  set emailTool(String? value) => setField<String>('email_tool', value);
 }

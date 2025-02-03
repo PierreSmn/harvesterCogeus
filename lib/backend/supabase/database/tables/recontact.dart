@@ -96,4 +96,7 @@ class RecontactRow extends SupabaseDataRow {
 
   int? get locId => getField<int>('loc_id');
   set locId(int? value) => setField<int>('loc_id', value);
+
+  bool? get contacted => getField<bool>('contacted');
+  set contacted(bool? value) => setField<bool>('contacted', value);
 }

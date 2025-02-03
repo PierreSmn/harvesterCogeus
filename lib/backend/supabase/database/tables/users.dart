@@ -64,4 +64,10 @@ class UsersRow extends SupabaseDataRow {
 
   String? get accountType => getField<String>('account_type');
   set accountType(String? value) => setField<String>('account_type', value);
+
+  bool? get limitedToBu => getField<bool>('limitedToBu');
+  set limitedToBu(bool? value) => setField<bool>('limitedToBu', value);
+
+  bool? get limitedToLoc => getField<bool>('limitedToLoc');
+  set limitedToLoc(bool? value) => setField<bool>('limitedToLoc', value);
 }

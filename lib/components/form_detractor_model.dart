@@ -54,6 +54,14 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
   FocusNode? phoneFocusNode;
   TextEditingController? phoneTextController;
   String? Function(BuildContext, String?)? phoneTextControllerValidator;
+  String? _phoneTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Vous devez entrer un numéro de téléphone';
+    }
+
+    return null;
+  }
+
   // State field(s) for message widget.
   FocusNode? messageFocusNode;
   TextEditingController? messageTextController;
@@ -68,6 +76,7 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
     prenomTextControllerValidator = _prenomTextControllerValidator;
     nomTextControllerValidator = _nomTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
+    phoneTextControllerValidator = _phoneTextControllerValidator;
   }
 
   @override

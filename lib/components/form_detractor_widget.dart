@@ -46,7 +46,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
     _model.emailTextController ??= TextEditingController(text: widget.email);
     _model.emailFocusNode ??= FocusNode();
 
-    _model.phoneTextController ??= TextEditingController(text: '+33');
+    _model.phoneTextController ??= TextEditingController();
     _model.phoneFocusNode ??= FocusNode();
 
     _model.messageTextController ??= TextEditingController();
@@ -416,7 +416,6 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                         textInputAction: TextInputAction.next,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          hintText: '+33',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyLarge

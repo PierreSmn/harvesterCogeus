@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/components/repsnap_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'chat_widget.dart' show ChatWidget;
@@ -89,18 +88,10 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
   late RepsnapModel repsnapModel17;
   // Model for repsnap component.
   late RepsnapModel repsnapModel18;
-  // Model for repsnap component.
-  late RepsnapModel repsnapModel19;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // Stores action output result for [Backend Call - Update Row(s)] action in TextField widget.
-  List<ExperiencesRow>? expItem;
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -122,7 +113,6 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
     repsnapModel16 = createModel(context, () => RepsnapModel());
     repsnapModel17 = createModel(context, () => RepsnapModel());
     repsnapModel18 = createModel(context, () => RepsnapModel());
-    repsnapModel19 = createModel(context, () => RepsnapModel());
   }
 
   @override
@@ -145,11 +135,7 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
     repsnapModel16.dispose();
     repsnapModel17.dispose();
     repsnapModel18.dispose();
-    repsnapModel19.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
-
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 }
