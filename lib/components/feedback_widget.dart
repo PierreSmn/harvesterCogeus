@@ -1,10 +1,11 @@
 import '/backend/supabase/supabase.dart';
+import '/components/form_detractor_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'feedback_model.dart';
 export 'feedback_model.dart';
 
@@ -15,12 +16,16 @@ class FeedbackWidget extends StatefulWidget {
     required this.q2,
     required this.q3,
     required this.q4,
+    required this.xId,
+    required this.clid,
   });
 
   final String? q1;
   final String? q2;
   final String? q3;
   final String? q4;
+  final int? xId;
+  final int? clid;
 
   @override
   State<FeedbackWidget> createState() => _FeedbackWidgetState();
@@ -602,49 +607,145 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 0.0, 0.0, 100.0),
-                        child: FFButtonWidget(
-                          onPressed: () async {
-                            await ExperiencesTable().update(
-                              data: {
-                                'feedback_general':
-                                    _model.ratingBarValue1?.round(),
-                                'feedback_1': _model.ratingBarValue2?.round(),
-                                'feedback_2': _model.ratingBarValue3?.round(),
-                                'feedback_3': _model.ratingBarValue4?.round(),
-                                'feedback_4': _model.ratingBarValue5?.round(),
-                                'feedback_answer': true,
-                                'feedback_customText':
-                                    _model.messageTextController.text,
-                              },
-                              matchingRows: (rows) => rows.eqOrNull(
-                                'id',
-                                FFAppState().expId,
-                              ),
-                            );
-                            Navigator.pop(context);
-                          },
-                          text: 'Envoyer',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).appleButton,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Manrope',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.normal,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Builder(
+                              builder: (context) => InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await ExperiencesTable().update(
+                                    data: {
+                                      'feedback_general':
+                                          _model.ratingBarValue1?.round(),
+                                      'feedback_1':
+                                          _model.ratingBarValue2?.round(),
+                                      'feedback_2':
+                                          _model.ratingBarValue3?.round(),
+                                      'feedback_3':
+                                          _model.ratingBarValue4?.round(),
+                                      'feedback_4':
+                                          _model.ratingBarValue5?.round(),
+                                      'feedback_answer': true,
+                                      'feedback_customText':
+                                          _model.messageTextController.text,
+                                      'wantsContact': true,
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'id',
+                                      FFAppState().expId,
+                                    ),
+                                  );
+                                  Navigator.pop(context);
+                                  await showDialog(
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: WebViewAware(
+                                          child: FormDetractorWidget(
+                                            xId: widget.xId!,
+                                            clid: widget.clid!,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  height: 36.0,
+                                  constraints: BoxConstraints(
+                                    maxWidth:
+                                        MediaQuery.sizeOf(context).width * 0.75,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).accent4,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'J\'aimerais être recontacté',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Avenir Next',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                                useGoogleFonts: false,
+                                              ),
+                                        ),
+                                      ].divide(const SizedBox(width: 6.0)),
+                                    ),
+                                  ),
                                 ),
-                            elevation: 0.0,
-                            borderSide: const BorderSide(
-                              color: Colors.transparent,
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(7.0),
-                          ),
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await ExperiencesTable().update(
+                                  data: {
+                                    'feedback_general':
+                                        _model.ratingBarValue1?.round(),
+                                    'feedback_1':
+                                        _model.ratingBarValue2?.round(),
+                                    'feedback_2':
+                                        _model.ratingBarValue3?.round(),
+                                    'feedback_3':
+                                        _model.ratingBarValue4?.round(),
+                                    'feedback_4':
+                                        _model.ratingBarValue5?.round(),
+                                    'feedback_answer': true,
+                                    'feedback_customText':
+                                        _model.messageTextController.text,
+                                    'wantsContact': false,
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'id',
+                                    FFAppState().expId,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                'J’envoi anonymement mon feedback',
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: 'Avenir Next',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 17.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.normal,
+                                      useGoogleFonts: false,
+                                    ),
+                              ),
+                            ),
+                          ].divide(const SizedBox(height: 16.0)),
                         ),
                       ),
                     ].divide(const SizedBox(height: 16.0)),

@@ -1,6 +1,5 @@
 import '/backend/supabase/supabase.dart';
 import '/components/feedback_widget.dart';
-import '/components/form_detractor_widget.dart';
 import '/components/repsnap_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -43,11 +42,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
     super.initState();
     _model = createModel(context, () => ChatModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
-
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -176,7 +172,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -1418,6 +1414,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               q2: chatClientsRow.theme2!,
                                                                               q3: chatClientsRow.theme3!,
                                                                               q4: chatClientsRow.theme4!,
+                                                                              xId: widget.xId!,
+                                                                              clid: widget.clid!,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1900,6 +1898,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               q2: chatClientsRow.theme2!,
                                                                               q3: chatClientsRow.theme3!,
                                                                               q4: chatClientsRow.theme4!,
+                                                                              xId: widget.xId!,
+                                                                              clid: widget.clid!,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -2473,6 +2473,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 q2: chatClientsRow.theme2!,
                                                                                 q3: chatClientsRow.theme3!,
                                                                                 q4: chatClientsRow.theme4!,
+                                                                                xId: widget.xId!,
+                                                                                clid: widget.clid!,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -2857,6 +2859,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               q2: chatClientsRow.theme2!,
                                                                               q3: chatClientsRow.theme3!,
                                                                               q4: chatClientsRow.theme4!,
+                                                                              xId: widget.xId!,
+                                                                              clid: widget.clid!,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -3268,6 +3272,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             .theme3!,
                                                                         q4: chatClientsRow
                                                                             .theme4!,
+                                                                        xId: widget
+                                                                            .xId!,
+                                                                        clid: widget
+                                                                            .clid!,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -3597,26 +3605,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 isUserTalking: false,
                                               ),
                                             ),
-                                            if (widget.nps! < 7)
-                                              Container(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    wrapWithModel(
-                                                      model:
-                                                          _model.repsnapModel19,
-                                                      updateCallback: () =>
-                                                          safeSetState(() {}),
-                                                      child: const RepsnapWidget(
-                                                        content:
-                                                            'Nous voulons améliorer votre expérience. Partagez-nous votre email :',
-                                                        isUserTalking: false,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
                                           ],
                                         ),
                                       ).animateOnActionTrigger(
@@ -3641,17 +3629,17 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                               SizedBox(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 child: TextFormField(
-                                  controller: _model.textController1,
-                                  focusNode: _model.textFieldFocusNode1,
+                                  controller: _model.textController,
+                                  focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textController1',
+                                    '_model.textController',
                                     const Duration(milliseconds: 2000),
                                     () => safeSetState(() {}),
                                   ),
                                   onFieldSubmitted: (_) async {
                                     await ExperiencesTable().update(
                                       data: {
-                                        'feedback': _model.textController1.text,
+                                        'feedback': _model.textController.text,
                                       },
                                       matchingRows: (rows) => rows.eqOrNull(
                                         'id',
@@ -3659,13 +3647,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       ),
                                     );
                                     _model.feedback =
-                                        _model.textController1.text;
+                                        _model.textController.text;
                                     _model.themeComplete = true;
                                     _model.showThemeChoiceChat = true;
                                     _model.showchat = false;
                                     _model.showAutre = true;
                                     _model.autreExpressed =
-                                        _model.textController1.text;
+                                        _model.textController.text;
                                     safeSetState(() {});
                                     if (animationsMap[
                                             'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -3676,7 +3664,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           .forward(from: 0.0);
                                     }
                                     safeSetState(() {
-                                      _model.textController1?.clear();
+                                      _model.textController?.clear();
                                     });
                                   },
                                   autofocus: true,
@@ -3732,10 +3720,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     suffixIcon: _model
-                                            .textController1!.text.isNotEmpty
+                                            .textController!.text.isNotEmpty
                                         ? InkWell(
                                             onTap: () async {
-                                              _model.textController1?.clear();
+                                              _model.textController?.clear();
                                               safeSetState(() {});
                                             },
                                             child: const Icon(
@@ -3753,160 +3741,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  validator: _model.textController1Validator
+                                  validator: _model.textControllerValidator
                                       .asValidator(context),
-                                ),
-                              ),
-                            ],
-                          ),
-                        if (_model.askEmail)
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Divider(
-                                thickness: 1.0,
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
-                              Builder(
-                                builder: (context) => SizedBox(
-                                  width: MediaQuery.sizeOf(context).width * 0.9,
-                                  child: TextFormField(
-                                    controller: _model.textController2,
-                                    focusNode: _model.textFieldFocusNode2,
-                                    onChanged: (_) => EasyDebounce.debounce(
-                                      '_model.textController2',
-                                      const Duration(milliseconds: 2000),
-                                      () => safeSetState(() {}),
-                                    ),
-                                    onFieldSubmitted: (_) async {
-                                      await ExperiencesTable().update(
-                                        data: {
-                                          'email': _model.textController2.text,
-                                          'wantsContact': true,
-                                        },
-                                        matchingRows: (rows) => rows.eqOrNull(
-                                          'id',
-                                          widget.xId,
-                                        ),
-                                      );
-                                      await showDialog(
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment: const AlignmentDirectional(
-                                                    0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                            child: WebViewAware(
-                                              child: GestureDetector(
-                                                onTap: () {
-                                                  FocusScope.of(dialogContext)
-                                                      .unfocus();
-                                                  FocusManager
-                                                      .instance.primaryFocus
-                                                      ?.unfocus();
-                                                },
-                                                child: FormDetractorWidget(
-                                                  xId: widget.xId!,
-                                                  email: _model
-                                                      .textController2.text,
-                                                  clid: chatClientsRow
-                                                              .brandId !=
-                                                          null
-                                                      ? chatClientsRow.brandId!
-                                                      : widget.clid!,
-                                                ),
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                      );
-
-                                      safeSetState(() {});
-                                    },
-                                    autofocus: false,
-                                    autofillHints: const [AutofillHints.email],
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      hintText: 'john@mail.com',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .error,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                      filled: true,
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      suffixIcon: _model
-                                              .textController2!.text.isNotEmpty
-                                          ? InkWell(
-                                              onTap: () async {
-                                                _model.textController2?.clear();
-                                                safeSetState(() {});
-                                              },
-                                              child: const Icon(
-                                                Icons.clear,
-                                                size: 18.0,
-                                              ),
-                                            )
-                                          : null,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Manrope',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    cursorColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    validator: _model.textController2Validator
-                                        .asValidator(context),
-                                  ),
                                 ),
                               ),
                             ],
