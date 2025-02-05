@@ -99,7 +99,7 @@ dependencies:
   storage_client: 2.0.3
   supabase: 2.3.0
   supabase_flutter: 2.6.0
-  timeago: 3.7.0
+  timeago: ^3.2.2
   url_launcher: 6.3.0
   url_launcher_android: 6.3.10
   url_launcher_ios: 6.3.1
