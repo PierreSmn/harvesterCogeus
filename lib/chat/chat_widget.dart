@@ -344,6 +344,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .theme1,
                                                                   'Qualité',
                                                                 ),
+                                                                'theme_choice':
+                                                                    1,
                                                               },
                                                               matchingRows:
                                                                   (rows) => rows
@@ -490,6 +492,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .theme2,
                                                                   'Fiabilité',
                                                                 ),
+                                                                'theme_choice':
+                                                                    2,
                                                               },
                                                               matchingRows:
                                                                   (rows) => rows
@@ -636,6 +640,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .theme3,
                                                                   'Service Client',
                                                                 ),
+                                                                'theme_choice':
+                                                                    3,
                                                               },
                                                               matchingRows:
                                                                   (rows) => rows
@@ -788,6 +794,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       .theme4,
                                                                   'Facilité d\'utilisation',
                                                                 ),
+                                                                'theme_choice':
+                                                                    4,
                                                               },
                                                               matchingRows:
                                                                   (rows) => rows
@@ -925,6 +933,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                               data: {
                                                                 'theme':
                                                                     'Autre',
+                                                                'theme_choice':
+                                                                    5,
                                                               },
                                                               matchingRows:
                                                                   (rows) => rows
