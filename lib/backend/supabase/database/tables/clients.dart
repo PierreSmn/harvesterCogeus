@@ -97,4 +97,7 @@ class ClientsRow extends SupabaseDataRow {
 
   String? get emailTool => getField<String>('email_tool');
   set emailTool(String? value) => setField<String>('email_tool', value);
+
+  double? get noteAvis => getField<double>('note_avis');
+  set noteAvis(double? value) => setField<double>('note_avis', value);
 }
