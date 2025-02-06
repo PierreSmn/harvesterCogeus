@@ -18,6 +18,7 @@ class FeedbackWidget extends StatefulWidget {
     required this.q4,
     required this.xId,
     required this.clid,
+    required this.nps,
   });
 
   final String? q1;
@@ -26,6 +27,7 @@ class FeedbackWidget extends StatefulWidget {
   final String? q4;
   final int? xId;
   final int? clid;
+  final int? nps;
 
   @override
   State<FeedbackWidget> createState() => _FeedbackWidgetState();
@@ -655,6 +657,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           child: FormDetractorWidget(
                                             xId: widget.xId!,
                                             clid: widget.clid!,
+                                            nps: widget.nps!,
                                           ),
                                         ),
                                       );
