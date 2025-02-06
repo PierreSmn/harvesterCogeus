@@ -13,11 +13,13 @@ class FormDetractorWidget extends StatefulWidget {
     required this.xId,
     this.email,
     required this.clid,
+    required this.nps,
   });
 
   final int? xId;
   final String? email;
   final int? clid;
+  final int? nps;
 
   @override
   State<FormDetractorWidget> createState() => _FormDetractorWidgetState();
@@ -612,6 +614,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                       _model.expItem?.firstOrNull?.clientId,
                                   'bu_id': _model.expItem?.firstOrNull?.buId,
                                   'loc_id': _model.expItem?.firstOrNull?.locId,
+                                  'nps': widget.nps,
                                 });
                                 await RecontactRequestCall.call(
                                   notifId: () {
