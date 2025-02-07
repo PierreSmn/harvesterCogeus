@@ -21,6 +21,7 @@ export 'tables/integrations.dart';
 export 'tables/un_selected.dart';
 export 'tables/off_flows.dart';
 export 'tables/submissions.dart';
+export 'tables/score_history.dart';
 export 'tables/tags.dart';
 export 'tables/web_app_activations.dart';
 export 'tables/users.dart';
