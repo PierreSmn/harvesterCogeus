@@ -734,7 +734,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 Navigator.pop(context);
                               },
                               child: Text(
-                                'J’envoi anonymement mon feedback',
+                                'J’envoie anonymement mon feedback',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(

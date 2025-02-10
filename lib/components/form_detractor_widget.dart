@@ -719,6 +719,42 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    _model.expItemCopy = await ExperiencesTable().update(
+                      data: {
+                        'wantsContact': false,
+                      },
+                      matchingRows: (rows) => rows.eqOrNull(
+                        'id',
+                        widget.xId,
+                      ),
+                      returnRows: true,
+                    );
+                    _model.done = true;
+                    safeSetState(() {});
+
+                    safeSetState(() {});
+                  },
+                  child: Text(
+                    'J’envoie anonymement mon feedback',
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Avenir Next',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 17.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.normal,
+                          useGoogleFonts: false,
+                        ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

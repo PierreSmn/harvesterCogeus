@@ -70,6 +70,8 @@ class FormDetractorModel extends FlutterFlowModel<FormDetractorWidget> {
   List<ExperiencesRow>? expItem;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   RecontactRow? recontact;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Text widget.
+  List<ExperiencesRow>? expItemCopy;
 
   @override
   void initState(BuildContext context) {
