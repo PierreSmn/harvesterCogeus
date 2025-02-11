@@ -80,4 +80,88 @@ class ScoreHistoryRow extends SupabaseDataRow {
 
   int? get raisonConnu => getField<int>('raison_connu');
   set raisonConnu(int? value) => setField<int>('raison_connu', value);
+
+  int? get raison1Count => getField<int>('raison1_count');
+  set raison1Count(int? value) => setField<int>('raison1_count', value);
+
+  int? get raison2Count => getField<int>('raison2_count');
+  set raison2Count(int? value) => setField<int>('raison2_count', value);
+
+  int? get raison3Count => getField<int>('raison3_count');
+  set raison3Count(int? value) => setField<int>('raison3_count', value);
+
+  int? get raison4Count => getField<int>('raison4_count');
+  set raison4Count(int? value) => setField<int>('raison4_count', value);
+
+  int? get raison5Count => getField<int>('raison5_count');
+  set raison5Count(int? value) => setField<int>('raison5_count', value);
+
+  int? get promotRaison1Count => getField<int>('promot_raison1_count');
+  set promotRaison1Count(int? value) =>
+      setField<int>('promot_raison1_count', value);
+
+  int? get promotRaison2Count => getField<int>('promot_raison2_count');
+  set promotRaison2Count(int? value) =>
+      setField<int>('promot_raison2_count', value);
+
+  int? get promotRaison3Count => getField<int>('promot_raison3_count');
+  set promotRaison3Count(int? value) =>
+      setField<int>('promot_raison3_count', value);
+
+  int? get promotRaison4Count => getField<int>('promot_raison4_count');
+  set promotRaison4Count(int? value) =>
+      setField<int>('promot_raison4_count', value);
+
+  int? get promotRaison5Count => getField<int>('promot_raison5_count');
+  set promotRaison5Count(int? value) =>
+      setField<int>('promot_raison5_count', value);
+
+  int? get detracRaison1Count => getField<int>('detrac_raison1_count');
+  set detracRaison1Count(int? value) =>
+      setField<int>('detrac_raison1_count', value);
+
+  int? get detracRaison2Count => getField<int>('detrac_raison2_count');
+  set detracRaison2Count(int? value) =>
+      setField<int>('detrac_raison2_count', value);
+
+  int? get detracRaison3Count => getField<int>('detrac_raison3_count');
+  set detracRaison3Count(int? value) =>
+      setField<int>('detrac_raison3_count', value);
+
+  int? get detracRaison4Count => getField<int>('detrac_raison4_count');
+  set detracRaison4Count(int? value) =>
+      setField<int>('detrac_raison4_count', value);
+
+  int? get detracRaison5Count => getField<int>('detrac_raison5_count');
+  set detracRaison5Count(int? value) =>
+      setField<int>('detrac_raison5_count', value);
+
+  int? get passiveRaison1Count => getField<int>('passive_raison1_count');
+  set passiveRaison1Count(int? value) =>
+      setField<int>('passive_raison1_count', value);
+
+  int? get passiveRaison2Count => getField<int>('passive_raison2_count');
+  set passiveRaison2Count(int? value) =>
+      setField<int>('passive_raison2_count', value);
+
+  int? get passiveRaison3Count => getField<int>('passive_raison3_count');
+  set passiveRaison3Count(int? value) =>
+      setField<int>('passive_raison3_count', value);
+
+  int? get passiveRaison4Count => getField<int>('passive_raison4_count');
+  set passiveRaison4Count(int? value) =>
+      setField<int>('passive_raison4_count', value);
+
+  int? get passiveRaison5Count => getField<int>('passive_raison5_count');
+  set passiveRaison5Count(int? value) =>
+      setField<int>('passive_raison5_count', value);
+
+  int? get buId => getField<int>('bu_id');
+  set buId(int? value) => setField<int>('bu_id', value);
+
+  int? get locId => getField<int>('loc_id');
+  set locId(int? value) => setField<int>('loc_id', value);
+
+  String? get columnType => getField<String>('column_type');
+  set columnType(String? value) => setField<String>('column_type', value);
 }
