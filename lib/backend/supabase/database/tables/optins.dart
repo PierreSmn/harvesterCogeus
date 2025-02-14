@@ -9,7 +9,7 @@ class OptinsTable extends SupabaseTable<OptinsRow> {
 }
 
 class OptinsRow extends SupabaseDataRow {
-  OptinsRow(super.data);
+  OptinsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => OptinsTable();

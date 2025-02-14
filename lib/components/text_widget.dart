@@ -47,18 +47,18 @@ class _TextWidgetState extends State<TextWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(),
+      decoration: BoxDecoration(),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           if (widget.gptResponse == true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
+                  Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 5.0, 0.0),
                     child: Icon(
                       Icons.auto_awesome,
@@ -71,26 +71,20 @@ class _TextWidgetState extends State<TextWidget> {
                     child: MouseRegion(
                       opaque: false,
                       cursor: MouseCursor.defer ?? MouseCursor.defer,
-                      onEnter: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered = true);
-                      }),
-                      onExit: ((event) async {
-                        safeSetState(() => _model.mouseRegionHovered = false);
-                      }),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Flexible(
                             child: Container(
                               decoration: BoxDecoration(
-                                color: const Color(0xB2272A32),
+                                color: Color(0xB2272A32),
                                 borderRadius: BorderRadius.circular(18.0),
                                 border: Border.all(
-                                  color: const Color(0xB2272A32),
+                                  color: Color(0xB2272A32),
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 10.0, 15.0, 10.0),
                                 child: Text(
                                   widget.messageText!,
@@ -109,6 +103,12 @@ class _TextWidgetState extends State<TextWidget> {
                           ),
                         ],
                       ),
+                      onEnter: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered = true);
+                      }),
+                      onExit: ((event) async {
+                        safeSetState(() => _model.mouseRegionHovered = false);
+                      }),
                     ),
                   ),
                   Expanded(
@@ -116,7 +116,7 @@ class _TextWidgetState extends State<TextWidget> {
                     child: Container(
                       width: 100.0,
                       height: 20.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                     ),
                   ),
                 ],
@@ -124,7 +124,7 @@ class _TextWidgetState extends State<TextWidget> {
             ),
           if (widget.userMessage == true)
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +134,7 @@ class _TextWidgetState extends State<TextWidget> {
                     child: Container(
                       width: 100.0,
                       height: 20.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                     ),
                   ),
                   Expanded(
@@ -146,14 +146,14 @@ class _TextWidgetState extends State<TextWidget> {
                         Flexible(
                           child: Container(
                             decoration: BoxDecoration(
-                              color: const Color(0x0FFFFFFF),
+                              color: Color(0x0FFFFFFF),
                               borderRadius: BorderRadius.circular(18.0),
                               border: Border.all(
-                                color: const Color(0x0FFFFFFF),
+                                color: Color(0x0FFFFFFF),
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 10.0, 15.0, 10.0),
                               child: Text(
                                 widget.messageText!,
@@ -175,7 +175,7 @@ class _TextWidgetState extends State<TextWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(7.0, 4.0, 7.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(7.0, 4.0, 7.0, 0.0),
                     child: Container(
                       width: 30.0,
                       height: 30.0,

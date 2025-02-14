@@ -9,8 +9,8 @@ class RepsnapWidget extends StatefulWidget {
     super.key,
     String? content,
     bool? isUserTalking,
-  })  : content = content ?? '',
-        isUserTalking = isUserTalking ?? true;
+  })  : this.content = content ?? '',
+        this.isUserTalking = isUserTalking ?? true;
 
   final String content;
   final bool isUserTalking;
@@ -51,14 +51,14 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 0.0,
@@ -71,7 +71,7 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                             color: widget.isUserTalking
                                 ? FlutterFlowTheme.of(context).accent4
                                 : FlutterFlowTheme.of(context).rougeMalongo,
-                            offset: const Offset(
+                            offset: Offset(
                               -2.5,
                               0.0,
                             ),
@@ -89,7 +89,7 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 6.0, 2.0, 0.0, 1.0),
                             child: Text(
                               widget.content,
@@ -111,7 +111,7 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                   ),
                 ),
               ),
-            ].divide(const SizedBox(width: 6.0)),
+            ].divide(SizedBox(width: 6.0)),
           ),
         ),
       ],

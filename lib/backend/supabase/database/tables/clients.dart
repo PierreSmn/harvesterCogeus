@@ -9,7 +9,7 @@ class ClientsTable extends SupabaseTable<ClientsRow> {
 }
 
 class ClientsRow extends SupabaseDataRow {
-  ClientsRow(super.data);
+  ClientsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ClientsTable();
@@ -229,4 +229,26 @@ class ClientsRow extends SupabaseDataRow {
   int? get passiveRaison5Count => getField<int>('passive_raison5_count');
   set passiveRaison5Count(int? value) =>
       setField<int>('passive_raison5_count', value);
+
+  int? get countVideoNotDone => getField<int>('count_video_not_done');
+  set countVideoNotDone(int? value) =>
+      setField<int>('count_video_not_done', value);
+
+  int? get countReviewNotDone => getField<int>('count_review_not_done');
+  set countReviewNotDone(int? value) =>
+      setField<int>('count_review_not_done', value);
+
+  int? get countFeedbackNotAnswered =>
+      getField<int>('count_feedback_not_answered');
+  set countFeedbackNotAnswered(int? value) =>
+      setField<int>('count_feedback_not_answered', value);
+
+  int? get totalPromoters => getField<int>('total_promoters');
+  set totalPromoters(int? value) => setField<int>('total_promoters', value);
+
+  int? get totalIndifferent => getField<int>('total_indifferent');
+  set totalIndifferent(int? value) => setField<int>('total_indifferent', value);
+
+  int? get totalDetractors => getField<int>('total_detractors');
+  set totalDetractors(int? value) => setField<int>('total_detractors', value);
 }

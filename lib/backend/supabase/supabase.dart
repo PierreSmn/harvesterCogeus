@@ -21,6 +21,6 @@ class SupaFlow {
         anonKey: _kSupabaseAnonKey,
         debug: false,
         authOptions:
-            const FlutterAuthClientOptions(authFlowType: AuthFlowType.implicit),
+            FlutterAuthClientOptions(authFlowType: AuthFlowType.implicit),
       );
 }

@@ -20,7 +20,7 @@ class HomeWidget extends StatefulWidget {
   const HomeWidget({
     super.key,
     String? slug,
-  }) : slug = slug ?? '';
+  }) : this.slug = slug ?? '';
 
   final String slug;
 
@@ -49,8 +49,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -137,7 +137,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -155,9 +155,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       ),
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -174,7 +174,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           text: GetSupaCall.gift(
                                             homeGetSupaResponse.jsonBody,
                                           )!,
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
@@ -200,7 +200,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     homeGetSupaResponse.jsonBody,
                                   )!)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -247,7 +247,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: FlutterFlowWebView(
                                             content: valueOrDefault<String>(
@@ -266,21 +266,21 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       ],
                                     ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 24.0, 0.0, 18.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
                                           width: 280.0,
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
                                                 child: Theme(
@@ -372,7 +372,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           .textScaler,
                                                   text: TextSpan(
                                                     children: [
-                                                      const TextSpan(
+                                                      TextSpan(
                                                         text: 'J\'accepte les ',
                                                         style: TextStyle(),
                                                       ),
@@ -404,7 +404,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     'https://www.cogeus.com/terms-of-use');
                                                               },
                                                       ),
-                                                      const TextSpan(
+                                                      TextSpan(
                                                         text:
                                                             ' et que ma vidéo apparaisse dans les communications de ',
                                                         style: TextStyle(),
@@ -418,7 +418,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           ),
                                                           'brandName',
                                                         ),
-                                                        style: const TextStyle(),
+                                                        style: TextStyle(),
                                                       )
                                                     ],
                                                     style: FlutterFlowTheme.of(
@@ -513,11 +513,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               options: FFButtonOptions(
                                                 width: 300.0,
                                                 height: 40.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color: GetSupaCall.colorButton(
@@ -579,7 +579,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               FontWeight.normal,
                                                         ),
                                                 elevation: 0.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                 ),
                                                 borderRadius:
@@ -588,13 +588,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             ),
                                           ],
                                         ),
-                                      ].divide(const SizedBox(height: 12.0)),
+                                      ].divide(SizedBox(height: 12.0)),
                                     ),
                                   ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 48.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -603,7 +603,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -621,8 +621,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   errorBuilder:
-                                                      (context, error) =>
-                                                          const SizedBox(
+                                                      (_context, _error) =>
+                                                          SizedBox(
                                                     width: 240.0,
                                                     height: 160.0,
                                                   ),
@@ -667,7 +667,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               .primaryText,
                                                     ),
                                                   ),
-                                                  duration: const Duration(
+                                                  duration: Duration(
                                                       milliseconds: 4000),
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
@@ -677,17 +677,17 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               );
                                             },
                                             text: 'Copier le lien',
-                                            icon: const Icon(
+                                            icon: Icon(
                                               Icons.content_copy,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 160.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: GetSupaCall.colorButton(
                                                             homeGetSupaResponse
@@ -747,25 +747,25 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             FontWeight.normal,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(7.0),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 0.0)),
+                                ].divide(SizedBox(height: 0.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 16.0))
-                        .addToStart(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 16.0))
+                        .addToStart(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

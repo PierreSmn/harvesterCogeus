@@ -9,7 +9,7 @@ class LiveFlowsTable extends SupabaseTable<LiveFlowsRow> {
 }
 
 class LiveFlowsRow extends SupabaseDataRow {
-  LiveFlowsRow(super.data);
+  LiveFlowsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => LiveFlowsTable();

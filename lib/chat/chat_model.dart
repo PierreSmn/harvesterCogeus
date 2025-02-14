@@ -50,6 +50,10 @@ class ChatModel extends FlutterFlowModel<ChatWidget> {
 
   bool askEmail = false;
 
+  bool saidYesTwice = false;
+
+  bool saidYesTrice = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for repsnap component.

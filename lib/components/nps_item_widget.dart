@@ -65,7 +65,9 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
         );
         _model.experience = await ExperiencesTable().insert({
           'nps': widget.nps,
-          'client_id': _model.client?.firstOrNull?.brandId ?? widget.clid,
+          'client_id': _model.client?.firstOrNull?.brandId != null
+              ? _model.client?.firstOrNull?.brandId
+              : widget.clid,
           'email': valueOrDefault<String>(
             widget.email,
             'noEmail',
@@ -112,7 +114,7 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -155,7 +157,7 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
                         useGoogleFonts: false,
                       ),
                 ),
-            ].divide(const SizedBox(width: 6.0)),
+            ].divide(SizedBox(width: 6.0)),
           ),
         ),
       ),

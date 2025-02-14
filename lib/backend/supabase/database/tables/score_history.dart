@@ -9,7 +9,7 @@ class ScoreHistoryTable extends SupabaseTable<ScoreHistoryRow> {
 }
 
 class ScoreHistoryRow extends SupabaseDataRow {
-  ScoreHistoryRow(super.data);
+  ScoreHistoryRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ScoreHistoryTable();

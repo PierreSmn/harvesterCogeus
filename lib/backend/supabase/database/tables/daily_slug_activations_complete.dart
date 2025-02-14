@@ -11,7 +11,7 @@ class DailySlugActivationsCompleteTable
 }
 
 class DailySlugActivationsCompleteRow extends SupabaseDataRow {
-  DailySlugActivationsCompleteRow(super.data);
+  DailySlugActivationsCompleteRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => DailySlugActivationsCompleteTable();

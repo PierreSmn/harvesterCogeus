@@ -9,7 +9,7 @@ class WidgetsTable extends SupabaseTable<WidgetsRow> {
 }
 
 class WidgetsRow extends SupabaseDataRow {
-  WidgetsRow(super.data);
+  WidgetsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => WidgetsTable();

@@ -18,7 +18,7 @@ class LovegreenWidget extends StatefulWidget {
   const LovegreenWidget({
     super.key,
     String? slug,
-  }) : slug = slug ?? '';
+  }) : this.slug = slug ?? '';
 
   final String slug;
 
@@ -48,8 +48,8 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -85,7 +85,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: const Color(0xFF3F084D),
+            backgroundColor: Color(0xFF3F084D),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -110,7 +110,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
               },
               child: Scaffold(
                 key: scaffoldKey,
-                backgroundColor: const Color(0xFF3F084D),
+                backgroundColor: Color(0xFF3F084D),
                 body: SafeArea(
                   top: true,
                   child: Column(
@@ -119,7 +119,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -132,9 +132,9 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                       ),
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -146,7 +146,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
-                                      children: const [
+                                      children: [
                                         TextSpan(
                                           text:
                                               'GAGNE TES PASS POUR L\'ÉDITION 2025',
@@ -179,21 +179,21 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
                                             width: 280.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Theme(
@@ -248,7 +248,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                                   context)
                                                               .secondaryBackground,
                                                       checkColor:
-                                                          const Color(0xFF00FE60),
+                                                          Color(0xFF00FE60),
                                                     ),
                                                   ).animateOnActionTrigger(
                                                       animationsMap[
@@ -263,7 +263,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                             .textScaler,
                                                     text: TextSpan(
                                                       children: [
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               'J\'accepte les ',
                                                           style: TextStyle(),
@@ -271,7 +271,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                         TextSpan(
                                                           text:
                                                               'Conditions Générales',
-                                                          style: const TextStyle(
+                                                          style: TextStyle(
                                                             color: Color(
                                                                 0xFF00FE60),
                                                           ),
@@ -286,12 +286,12 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                                       'https://www.cogeus.com/terms-of-use');
                                                                 },
                                                         ),
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               ' et que ma vidéo apparaisse dans les communications de ',
                                                           style: TextStyle(),
                                                         ),
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text: 'WE LOVE GREEN',
                                                           style: TextStyle(),
                                                         )
@@ -383,14 +383,14 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                 options: FFButtonOptions(
                                                   width: 300.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: const Color(0xFF00FE60),
+                                                  color: Color(0xFF00FE60),
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .titleSmall
@@ -402,7 +402,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                             FontWeight.normal,
                                                       ),
                                                   elevation: 0.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                   ),
                                                   borderRadius:
@@ -412,13 +412,13 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                               ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -427,7 +427,7 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -445,8 +445,8 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   errorBuilder:
-                                                      (context, error) =>
-                                                          const SizedBox(
+                                                      (_context, _error) =>
+                                                          SizedBox(
                                                     width: 240.0,
                                                     height: 160.0,
                                                   ),
@@ -465,18 +465,18 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 24.0)),
+                                ].divide(SizedBox(height: 24.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 16.0))
-                        .addToStart(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 16.0))
+                        .addToStart(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

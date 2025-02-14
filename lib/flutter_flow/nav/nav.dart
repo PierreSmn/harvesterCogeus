@@ -33,12 +33,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => const HomeWidget(),
+      errorBuilder: (context, state) => HomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const HomeWidget(),
+          builder: (context, _) => HomeWidget(),
         ),
         FFRoute(
           name: 'home',
@@ -53,17 +53,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'production',
           path: '/production',
-          builder: (context, params) => const ProductionWidget(),
+          builder: (context, params) => ProductionWidget(),
         ),
         FFRoute(
           name: 'infos',
           path: '/infos',
-          builder: (context, params) => const InfosWidget(),
+          builder: (context, params) => InfosWidget(),
         ),
         FFRoute(
           name: 'done',
           path: '/done',
-          builder: (context, params) => const DoneWidget(),
+          builder: (context, params) => DoneWidget(),
         ),
         FFRoute(
           name: 'lovegreen',
@@ -368,7 +368,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(
+  static TransitionInfo appDefault() => TransitionInfo(
         hasTransition: true,
         transitionType: PageTransitionType.fade,
         duration: Duration(milliseconds: 0),

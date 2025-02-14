@@ -49,8 +49,8 @@ class _InfosWidgetState extends State<InfosWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -131,9 +131,9 @@ class _InfosWidgetState extends State<InfosWidget>
                               children: [
                                 Container(
                                   width: 400.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         32.0, 0.0, 32.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -239,7 +239,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: TextFormField(
@@ -294,7 +294,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                                       0.0,
                                                                 ),
                                                         enabledBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -302,7 +302,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -313,7 +313,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         focusedBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -321,7 +321,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -332,7 +332,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         errorBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -340,7 +340,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -351,7 +351,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         focusedErrorBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -359,7 +359,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -400,12 +400,12 @@ class _InfosWidgetState extends State<InfosWidget>
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 24.0)),
+                                      ].divide(SizedBox(height: 24.0)),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: SingleChildScrollView(
                                     child: Column(
@@ -413,7 +413,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               if (_model.formKey1
@@ -435,10 +435,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: colorFromCssString(
                                                 GetSupaCall.colorButton(
@@ -470,7 +470,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             FontWeight.normal,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                               ),
                                               borderRadius:
@@ -482,7 +482,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                     ),
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 36.0)),
+                              ].divide(SizedBox(height: 36.0)),
                             ),
                           ),
                         if ((_model.step == 2) ||
@@ -497,9 +497,9 @@ class _InfosWidgetState extends State<InfosWidget>
                               children: [
                                 Container(
                                   width: 400.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         32.0, 0.0, 32.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -606,7 +606,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 5.0,
                                                                 0.0, 5.0),
                                                     child: TextFormField(
@@ -616,7 +616,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           _model.emailFocusNode,
                                                       onFieldSubmitted:
                                                           (_) async {
-                                                        var shouldSetState =
+                                                        var _shouldSetState =
                                                             false;
                                                         if (_model.formKey2
                                                                     .currentState ==
@@ -666,16 +666,16 @@ class _InfosWidgetState extends State<InfosWidget>
                                                               return WebViewAware(
                                                                 child:
                                                                     AlertDialog(
-                                                                  title: const Text(
+                                                                  title: Text(
                                                                       'Une erreure s\'est produite'),
-                                                                  content: const Text(
+                                                                  content: Text(
                                                                       'Veuilliez recommencer'),
                                                                   actions: [
                                                                     TextButton(
                                                                       onPressed:
                                                                           () =>
                                                                               Navigator.pop(alertDialogContext),
-                                                                      child: const Text(
+                                                                      child: Text(
                                                                           'Ok'),
                                                                     ),
                                                                   ],
@@ -683,9 +683,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                               );
                                                             },
                                                           );
-                                                          if (shouldSetState) {
+                                                          if (_shouldSetState)
                                                             safeSetState(() {});
-                                                          }
                                                           return;
                                                         }
                                                         _model.alreadySent =
@@ -718,7 +717,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                                   .toString(),
                                                         );
 
-                                                        shouldSetState = true;
+                                                        _shouldSetState = true;
                                                         if ((_model
                                                                 .apiResultro6Copy
                                                                 ?.succeeded ??
@@ -747,7 +746,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: const Duration(
+                                                              duration: Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
@@ -758,9 +757,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           );
                                                         }
 
-                                                        if (shouldSetState) {
+                                                        if (_shouldSetState)
                                                           safeSetState(() {});
-                                                        }
                                                       },
                                                       autofocus: false,
                                                       textCapitalization:
@@ -789,7 +787,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                                       0.0,
                                                                 ),
                                                         enabledBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -797,7 +795,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -808,7 +806,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         focusedBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -816,7 +814,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -827,7 +825,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         errorBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -835,7 +833,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -846,7 +844,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           ),
                                                         ),
                                                         focusedErrorBorder:
-                                                            const UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
                                                             color: Color(
@@ -854,7 +852,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
-                                                              BorderRadius
+                                                              const BorderRadius
                                                                   .only(
                                                             topLeft:
                                                                 Radius.circular(
@@ -902,7 +900,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Theme(
@@ -984,7 +982,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                         .textScaler,
                                                 text: TextSpan(
                                                   children: [
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text:
                                                           'Vous acceptez de partager vos informations avec ',
                                                       style: TextStyle(),
@@ -992,9 +990,9 @@ class _InfosWidgetState extends State<InfosWidget>
                                                     TextSpan(
                                                       text: FFAppState()
                                                           .brandName,
-                                                      style: const TextStyle(),
+                                                      style: TextStyle(),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text:
                                                           ' (communication, promotion, informations pratiques)',
                                                       style: TextStyle(),
@@ -1013,12 +1011,12 @@ class _InfosWidgetState extends State<InfosWidget>
                                             ),
                                           ],
                                         ),
-                                      ].divide(const SizedBox(height: 24.0)),
+                                      ].divide(SizedBox(height: 24.0)),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -1026,7 +1024,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                       if (!FFAppState().validatedDone)
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: _model.alreadySent
                                                 ? null
@@ -1101,7 +1099,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                                   .primaryText,
                                                             ),
                                                           ),
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
@@ -1118,10 +1116,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: colorFromCssString(
                                                 GetSupaCall.colorButton(
@@ -1153,7 +1151,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             FontWeight.normal,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                               ),
                                               borderRadius:
@@ -1170,7 +1168,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                       if (FFAppState().validatedDone)
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 1.0),
+                                              AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               context.pushNamed('done');
@@ -1179,10 +1177,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: colorFromCssString(
                                                 GetSupaCall.colorButton(
@@ -1214,7 +1212,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                                             FontWeight.normal,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                               ),
                                               borderRadius:
@@ -1225,10 +1223,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                     ],
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 36.0)),
+                              ].divide(SizedBox(height: 36.0)),
                             ),
                           ),
-                      ].addToStart(const SizedBox(height: 16.0)),
+                      ].addToStart(SizedBox(height: 16.0)),
                     ),
                   ),
                 ),
