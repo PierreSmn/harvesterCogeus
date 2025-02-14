@@ -9,7 +9,7 @@ class RecontactTable extends SupabaseTable<RecontactRow> {
 }
 
 class RecontactRow extends SupabaseDataRow {
-  RecontactRow(super.data);
+  RecontactRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => RecontactTable();

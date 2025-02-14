@@ -172,7 +172,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -192,7 +192,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           MediaQuery.sizeOf(context).width *
                                               0.65,
                                     ),
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -215,7 +215,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                 color: FlutterFlowTheme.of(context).alternate,
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 16.0, 0.0),
                                 child: SingleChildScrollView(
                                   child: Column(
@@ -231,7 +231,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 4.0),
                                                   child: Text(
@@ -261,7 +261,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               ],
                                             ),
                                             Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: wrapWithModel(
                                                 model: _model.repsnapModel1,
                                                 updateCallback: () =>
@@ -408,7 +408,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
@@ -556,7 +556,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
@@ -704,7 +704,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
@@ -858,7 +858,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
@@ -988,7 +988,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
@@ -1056,8 +1056,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ),
                                                   ]
                                                       .divide(
-                                                          const SizedBox(height: 6.0))
-                                                      .addToStart(const SizedBox(
+                                                          SizedBox(height: 6.0))
+                                                      .addToStart(SizedBox(
                                                           height: 12.0)),
                                                 ),
                                               ],
@@ -1065,7 +1065,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 'rowOnPageLoadAnimation']!),
                                           if (_model.showThemeChoiceChat)
                                             Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1075,7 +1075,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1122,7 +1122,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           if (_model.showThemeChoiceChat &&
                                               (_model.themeSelected == 'Autre'))
                                             Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1132,7 +1132,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1172,7 +1172,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     model: _model.repsnapModel4,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: const RepsnapWidget(
+                                                    child: RepsnapWidget(
                                                       content:
                                                           'Quelle-est cette \"Autre\" raison ? ',
                                                       isUserTalking: false,
@@ -1183,7 +1183,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                             ),
                                           if (_model.showAutre)
                                             Container(
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1193,7 +1193,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1237,7 +1237,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 ],
                                               ),
                                             ),
-                                        ].divide(const SizedBox(height: 16.0)),
+                                        ].divide(SizedBox(height: 16.0)),
                                       ),
                                       Builder(
                                         builder: (context) {
@@ -1258,7 +1258,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1297,13 +1297,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ),
                                                     Container(
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: wrapWithModel(
                                                         model: _model
                                                             .repsnapModel6,
                                                         updateCallback: () =>
                                                             safeSetState(() {}),
-                                                        child: const RepsnapWidget(
+                                                        child: RepsnapWidget(
                                                           content:
                                                               'Merci de partager ces précisions avec nous.',
                                                           isUserTalking: false,
@@ -1312,7 +1312,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ),
                                                     Container(
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: wrapWithModel(
                                                         model: _model
                                                             .repsnapModel7,
@@ -1385,6 +1385,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     }(),
                                                                   );
+                                                                  _model.saidYes =
+                                                                      true;
+                                                                  safeSetState(
+                                                                      () {});
                                                                   await launchURL(
                                                                       'https://app.cogeus.com/home?slug=${chatClientsRow.slugHarvester}');
                                                                 } else if (widget
@@ -1408,7 +1412,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         backgroundColor:
                                                                             Colors.transparent,
                                                                         alignment:
-                                                                            const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                         child:
                                                                             WebViewAware(
                                                                           child:
@@ -1433,6 +1437,21 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     },
                                                                   );
+
+                                                                  _model.saidYes =
+                                                                      true;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  if (animationsMap[
+                                                                          'containerOnActionTriggerAnimation'] !=
+                                                                      null) {
+                                                                    await animationsMap[
+                                                                            'containerOnActionTriggerAnimation']!
+                                                                        .controller
+                                                                        .forward(
+                                                                            from:
+                                                                                0.0);
+                                                                  }
                                                                 } else {
                                                                   unawaited(
                                                                     () async {
@@ -1452,32 +1471,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     }(),
                                                                   );
-                                                                  await launchURL(
-                                                                      chatClientsRow
-                                                                          .reviewLink!);
-                                                                }
-
-                                                                _model.saidYes =
-                                                                    true;
-                                                                safeSetState(
-                                                                    () {});
-                                                                if (animationsMap[
-                                                                        'containerOnActionTriggerAnimation'] !=
-                                                                    null) {
-                                                                  await animationsMap[
-                                                                          'containerOnActionTriggerAnimation']!
-                                                                      .controller
-                                                                      .forward(
-                                                                          from:
-                                                                              0.0);
-                                                                }
-                                                                if (widget
-                                                                        .nps! <=
-                                                                    6) {
-                                                                  _model.askEmail =
+                                                                  _model.saidYes =
                                                                       true;
                                                                   safeSetState(
                                                                       () {});
+                                                                  await launchURL(
+                                                                      chatClientsRow
+                                                                          .reviewLink!);
                                                                 }
                                                               },
                                                               child: Container(
@@ -1510,7 +1510,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               8.0),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -1681,7 +1681,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -1724,16 +1724,16 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             ),
                                                           ),
                                                         ]
-                                                            .divide(const SizedBox(
+                                                            .divide(SizedBox(
                                                                 height: 6.0))
                                                             .addToStart(
-                                                                const SizedBox(
+                                                                SizedBox(
                                                                     height:
                                                                         12.0)),
                                                       ),
                                                     ],
                                                   ),
-                                              ].divide(const SizedBox(height: 7.0)),
+                                              ].divide(SizedBox(height: 7.0)),
                                             );
                                           } else {
                                             return Column(
@@ -1749,7 +1749,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1788,13 +1788,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ),
                                                     Container(
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: wrapWithModel(
                                                         model: _model
                                                             .repsnapModel8,
                                                         updateCallback: () =>
                                                             safeSetState(() {}),
-                                                        child: const RepsnapWidget(
+                                                        child: RepsnapWidget(
                                                           content:
                                                               'Merci de partager ces précisions avec nous.',
                                                           isUserTalking: false,
@@ -1803,7 +1803,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ),
                                                     Container(
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: wrapWithModel(
                                                         model: _model
                                                             .repsnapModel9,
@@ -1893,7 +1893,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         backgroundColor:
                                                                             Colors.transparent,
                                                                         alignment:
-                                                                            const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                         child:
                                                                             WebViewAware(
                                                                           child:
@@ -1918,6 +1918,17 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       );
                                                                     },
                                                                   );
+
+                                                                  if (animationsMap[
+                                                                          'containerOnActionTriggerAnimation'] !=
+                                                                      null) {
+                                                                    await animationsMap[
+                                                                            'containerOnActionTriggerAnimation']!
+                                                                        .controller
+                                                                        .forward(
+                                                                            from:
+                                                                                0.0);
+                                                                  }
                                                                 } else {
                                                                   unawaited(
                                                                     () async {
@@ -1946,16 +1957,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     true;
                                                                 safeSetState(
                                                                     () {});
-                                                                if (animationsMap[
-                                                                        'containerOnActionTriggerAnimation'] !=
-                                                                    null) {
-                                                                  await animationsMap[
-                                                                          'containerOnActionTriggerAnimation']!
-                                                                      .controller
-                                                                      .forward(
-                                                                          from:
-                                                                              0.0);
-                                                                }
                                                               },
                                                               child: Container(
                                                                 height: 36.0,
@@ -1987,7 +1988,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               8.0),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -2151,7 +2152,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -2194,16 +2195,16 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             ),
                                                           ),
                                                         ]
-                                                            .divide(const SizedBox(
+                                                            .divide(SizedBox(
                                                                 height: 6.0))
                                                             .addToStart(
-                                                                const SizedBox(
+                                                                SizedBox(
                                                                     height:
                                                                         12.0)),
                                                       ),
                                                     ],
                                                   ),
-                                              ].divide(const SizedBox(height: 7.0)),
+                                              ].divide(SizedBox(height: 7.0)),
                                             );
                                           }
                                         },
@@ -2221,7 +2222,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -2293,7 +2294,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                             ],
                                           ),
                                         ),
-                                      if (_model.saidNo && (widget.nps! > 6))
+                                      if ((_model.saidNo &&
+                                              (widget.nps! > 6)) ||
+                                          (_model.saidYes &&
+                                              (widget.nps! > 6)))
                                         Builder(
                                           builder: (context) {
                                             if (chatClientsRow.slugHarvester !=
@@ -2313,7 +2317,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2352,16 +2356,18 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Container(
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: wrapWithModel(
                                                           model: _model
                                                               .repsnapModel11,
                                                           updateCallback: () =>
                                                               safeSetState(
                                                                   () {}),
-                                                          child: const RepsnapWidget(
-                                                            content:
-                                                                'Pas de problème, on comprend tout à fait.',
+                                                          child: RepsnapWidget(
+                                                            content: _model
+                                                                    .saidNo
+                                                                ? 'Pas de problème, on comprend tout à fait.'
+                                                                : 'Merci de votre participation !',
                                                             isUserTalking:
                                                                 false,
                                                           ),
@@ -2369,7 +2375,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Container(
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: wrapWithModel(
                                                           model: _model
                                                               .repsnapModel12,
@@ -2390,7 +2396,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ],
                                                   ),
                                                   if (!_model.saidNoTwice &&
-                                                      !_model.saidYes)
+                                                      !_model.saidYesTwice)
                                                     Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2441,17 +2447,10 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             .reviewLink!);
                                                                     _model.saidYes =
                                                                         true;
+                                                                    _model.saidYesTwice =
+                                                                        true;
                                                                     safeSetState(
                                                                         () {});
-                                                                    if (animationsMap[
-                                                                            'containerOnActionTriggerAnimation'] !=
-                                                                        null) {
-                                                                      await animationsMap[
-                                                                              'containerOnActionTriggerAnimation']!
-                                                                          .controller
-                                                                          .forward(
-                                                                              from: 0.0);
-                                                                    }
                                                                   } else {
                                                                     await showDialog(
                                                                       barrierColor:
@@ -2471,7 +2470,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                           backgroundColor:
                                                                               Colors.transparent,
                                                                           alignment:
-                                                                              const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                           child:
                                                                               WebViewAware(
                                                                             child:
@@ -2496,6 +2495,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     );
 
                                                                     _model.saidYes =
+                                                                        true;
+                                                                    _model.saidYesTwice =
                                                                         true;
                                                                     safeSetState(
                                                                         () {});
@@ -2538,7 +2539,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
@@ -2676,7 +2677,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -2712,16 +2713,16 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 6.0))
                                                               .addToStart(
-                                                                  const SizedBox(
+                                                                  SizedBox(
                                                                       height:
                                                                           12.0)),
                                                         ),
                                                       ],
                                                     ),
-                                                ].divide(const SizedBox(height: 7.0)),
+                                                ].divide(SizedBox(height: 7.0)),
                                               );
                                             } else {
                                               return Column(
@@ -2737,7 +2738,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2776,16 +2777,18 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Container(
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: wrapWithModel(
                                                           model: _model
                                                               .repsnapModel13,
                                                           updateCallback: () =>
                                                               safeSetState(
                                                                   () {}),
-                                                          child: const RepsnapWidget(
-                                                            content:
-                                                                'Pas de problème, on comprend tout à fait.',
+                                                          child: RepsnapWidget(
+                                                            content: _model
+                                                                    .saidNo
+                                                                ? 'Pas de problème, on comprend tout à fait.'
+                                                                : 'Merci de votre participation !',
                                                             isUserTalking:
                                                                 false,
                                                           ),
@@ -2793,14 +2796,14 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                       ),
                                                       Container(
                                                         decoration:
-                                                            const BoxDecoration(),
+                                                            BoxDecoration(),
                                                         child: wrapWithModel(
                                                           model: _model
                                                               .repsnapModel14,
                                                           updateCallback: () =>
                                                               safeSetState(
                                                                   () {}),
-                                                          child: const RepsnapWidget(
+                                                          child: RepsnapWidget(
                                                             content:
                                                                 'Nous améliorons nos services grâce aux retours de nos clients. Votre réponse à un questionnaire serait très appréciée.',
                                                             isUserTalking:
@@ -2811,7 +2814,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                     ],
                                                   ),
                                                   if (!_model.saidNoTwice &&
-                                                      !_model.saidYes)
+                                                      !_model.saidYesTwice)
                                                     Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2856,7 +2859,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                         backgroundColor:
                                                                             Colors.transparent,
                                                                         alignment:
-                                                                            const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                         child:
                                                                             WebViewAware(
                                                                           child:
@@ -2883,6 +2886,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   );
 
                                                                   _model.saidYes =
+                                                                      true;
+                                                                  _model.saidYesTwice =
                                                                       true;
                                                                   safeSetState(
                                                                       () {});
@@ -2925,7 +2930,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
@@ -3033,7 +3038,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   ),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -3069,16 +3074,16 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                               ),
                                                             ),
                                                           ]
-                                                              .divide(const SizedBox(
+                                                              .divide(SizedBox(
                                                                   height: 6.0))
                                                               .addToStart(
-                                                                  const SizedBox(
+                                                                  SizedBox(
                                                                       height:
                                                                           12.0)),
                                                         ),
                                                       ],
                                                     ),
-                                                ].divide(const SizedBox(height: 7.0)),
+                                                ].divide(SizedBox(height: 7.0)),
                                               );
                                             }
                                           },
@@ -3086,7 +3091,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                       if (_model.saidNoTwice ||
                                           (_model.saidNo && _model.saidYes))
                                         Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -3095,7 +3100,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -3146,12 +3151,20 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                             ],
                                           ),
                                         ),
-                                      if ((widget.nps == 10) &&
-                                          _model.saidNoTwice &&
-                                          (chatClientsRow.slugHarvester !=
-                                                  null &&
-                                              chatClientsRow.slugHarvester !=
-                                                  ''))
+                                      if (((widget.nps == 10) &&
+                                              _model.saidNoTwice &&
+                                              (chatClientsRow.slugHarvester !=
+                                                      null &&
+                                                  chatClientsRow
+                                                          .slugHarvester !=
+                                                      '')) ||
+                                          ((widget.nps == 10) &&
+                                              _model.saidYesTwice &&
+                                              (chatClientsRow.slugHarvester !=
+                                                      null &&
+                                                  chatClientsRow
+                                                          .slugHarvester !=
+                                                      '')))
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -3164,7 +3177,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -3201,13 +3214,13 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                   ],
                                                 ),
                                                 Container(
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: wrapWithModel(
                                                     model:
                                                         _model.repsnapModel16,
                                                     updateCallback: () =>
                                                         safeSetState(() {}),
-                                                    child: const RepsnapWidget(
+                                                    child: RepsnapWidget(
                                                       content:
                                                           'Nous améliorons nos services grâce aux retours de nos clients. Votre réponse à un questionnaire serait très appréciée.',
                                                       isUserTalking: false,
@@ -3217,7 +3230,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               ],
                                             ),
                                             if (!_model.saidNoTrice &&
-                                                !_model.saidYes)
+                                                !_model.saidYesTrice)
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -3257,7 +3270,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   backgroundColor:
                                                                       Colors
                                                                           .transparent,
-                                                                  alignment: const AlignmentDirectional(
+                                                                  alignment: AlignmentDirectional(
                                                                           0.0,
                                                                           0.0)
                                                                       .resolve(
@@ -3299,7 +3312,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                               },
                                                             );
 
-                                                            _model.saidYes =
+                                                            _model.saidYesTrice =
                                                                 true;
                                                             safeSetState(() {});
                                                             if (animationsMap[
@@ -3348,7 +3361,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
@@ -3465,7 +3478,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         24.0,
                                                                         0.0,
@@ -3508,21 +3521,21 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                         ),
                                                       ),
                                                     ]
-                                                        .divide(const SizedBox(
+                                                        .divide(SizedBox(
                                                             height: 6.0))
-                                                        .addToStart(const SizedBox(
+                                                        .addToStart(SizedBox(
                                                             height: 12.0)),
                                                   ),
                                                 ],
                                               ),
-                                          ].divide(const SizedBox(height: 7.0)),
+                                          ].divide(SizedBox(height: 7.0)),
                                         ),
                                       if (_model.saidNoTrice ||
                                           (_model.saidNo &&
                                               _model.saidYes &&
                                               _model.saidNoTwice))
                                         Container(
-                                          decoration: const BoxDecoration(),
+                                          decoration: BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -3531,7 +3544,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
@@ -3582,7 +3595,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 4.0),
                                                   child: Text(
@@ -3615,7 +3628,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               model: _model.repsnapModel18,
                                               updateCallback: () =>
                                                   safeSetState(() {}),
-                                              child: const RepsnapWidget(
+                                              child: RepsnapWidget(
                                                 content:
                                                     'Merci de votre participation !',
                                                 isUserTalking: false,
@@ -3627,7 +3640,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                         animationsMap[
                                             'containerOnActionTriggerAnimation']!,
                                       ),
-                                    ].divide(const SizedBox(height: 7.0)),
+                                    ].divide(SizedBox(height: 7.0)),
                                   ),
                                 ),
                               ),
@@ -3642,14 +3655,14 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                 thickness: 1.0,
                                 color: FlutterFlowTheme.of(context).alternate,
                               ),
-                              SizedBox(
+                              Container(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 child: TextFormField(
                                   controller: _model.textController,
                                   focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textController',
-                                    const Duration(milliseconds: 2000),
+                                    Duration(milliseconds: 2000),
                                     () => safeSetState(() {}),
                                   ),
                                   onFieldSubmitted: (_) async {
@@ -3703,14 +3716,14 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Color(0x00000000),
                                         width: 1.0,
                                       ),
@@ -3742,7 +3755,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                               _model.textController?.clear();
                                               safeSetState(() {});
                                             },
-                                            child: const Icon(
+                                            child: Icon(
                                               Icons.clear,
                                               size: 18.0,
                                             ),

@@ -22,7 +22,7 @@ class UploadWidget extends StatefulWidget {
   const UploadWidget({
     super.key,
     String? slug,
-  }) : slug = slug ?? '';
+  }) : this.slug = slug ?? '';
 
   final String slug;
 
@@ -52,8 +52,8 @@ class _UploadWidgetState extends State<UploadWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -140,7 +140,7 @@ class _UploadWidgetState extends State<UploadWidget>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -158,9 +158,9 @@ class _UploadWidgetState extends State<UploadWidget>
                       ),
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -177,7 +177,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                           text: GetSupaCall.gift(
                                             uploadGetSupaResponse.jsonBody,
                                           )!,
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
@@ -203,7 +203,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                     uploadGetSupaResponse.jsonBody,
                                   )!)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -250,7 +250,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
                                           child: FlutterFlowWebView(
                                             content: valueOrDefault<String>(
@@ -271,21 +271,21 @@ class _UploadWidgetState extends State<UploadWidget>
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 24.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
                                             width: 280.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Theme(
@@ -380,7 +380,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                                             .textScaler,
                                                     text: TextSpan(
                                                       children: [
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               'J\'accepte les ',
                                                           style: TextStyle(),
@@ -413,7 +413,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                       'https://www.cogeus.com/terms-of-use');
                                                                 },
                                                         ),
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               ' et que ma vidéo apparaisse dans les communications de ',
                                                           style: TextStyle(),
@@ -427,7 +427,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                                             ),
                                                             'brandName',
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(),
                                                         )
                                                       ],
                                                       style: FlutterFlowTheme
@@ -571,15 +571,15 @@ class _UploadWidgetState extends State<UploadWidget>
                                                       (alertDialogContext) {
                                                     return WebViewAware(
                                                       child: AlertDialog(
-                                                        title: const Text('Erreur'),
-                                                        content: const Text(
+                                                        title: Text('Erreur'),
+                                                        content: Text(
                                                             'Vous devez séléctionner une vidéo'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
                                                                 Navigator.pop(
                                                                     alertDialogContext),
-                                                            child: const Text('Ok'),
+                                                            child: Text('Ok'),
                                                           ),
                                                         ],
                                                       ),
@@ -618,10 +618,10 @@ class _UploadWidgetState extends State<UploadWidget>
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color: GetSupaCall.colorButton(
                                                             uploadGetSupaResponse
@@ -681,20 +681,20 @@ class _UploadWidgetState extends State<UploadWidget>
                                                             FontWeight.normal,
                                                       ),
                                               elevation: 0.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(7.0),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -703,7 +703,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -721,8 +721,8 @@ class _UploadWidgetState extends State<UploadWidget>
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   errorBuilder:
-                                                      (context, error) =>
-                                                          const SizedBox(
+                                                      (_context, _error) =>
+                                                          SizedBox(
                                                     width: 240.0,
                                                     height: 160.0,
                                                   ),
@@ -741,18 +741,18 @@ class _UploadWidgetState extends State<UploadWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 0.0)),
+                                ].divide(SizedBox(height: 0.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 16.0))
-                        .addToStart(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 16.0))
+                        .addToStart(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

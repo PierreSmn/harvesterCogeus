@@ -9,7 +9,7 @@ class PhotosTable extends SupabaseTable<PhotosRow> {
 }
 
 class PhotosRow extends SupabaseDataRow {
-  PhotosRow(super.data);
+  PhotosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => PhotosTable();

@@ -15,7 +15,7 @@ class GetSupaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'get supa',
       apiUrl:
-          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/live_flows?slug=eq.$slug',
+          'https://pifcxlqwffdrqcwggoqb.supabase.co/rest/v1/live_flows?slug=eq.${slug}',
       callType: ApiCallType.GET,
       headers: {
         'Authorization':
@@ -134,15 +134,15 @@ class PostSubmissionFgCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "name": "$name",
-  "surname": "$surname",
-  "email": "$email",
-  "video": "$video",
-  "slug": "$slug",
-  "brand": "$brand",
-  "time": "$time",
-  "boolmail": $boolmail,
-  "question": "$question"
+  "name": "${name}",
+  "surname": "${surname}",
+  "email": "${email}",
+  "video": "${video}",
+  "slug": "${slug}",
+  "brand": "${brand}",
+  "time": "${time}",
+  "boolmail": ${boolmail},
+  "question": "${question}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',
@@ -174,13 +174,13 @@ class RecontactRequestCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "notif_id": $notifId,
-  "recontact_id": $recontactId,
-  "email": "$email",
-  "first_name": "$firstName",
-  "last_name": "$lastName",
-  "phone_number": "$phoneNumber",
-  "message": "$message"
+  "notif_id": ${notifId},
+  "recontact_id": ${recontactId},
+  "email": "${email}",
+  "first_name": "${firstName}",
+  "last_name": "${lastName}",
+  "phone_number": "${phoneNumber}",
+  "message": "${message}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Recontact request',
@@ -208,9 +208,9 @@ class NewStartCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "slug": "$slug",
-  "brand": "$brand",
-  "time": "$time"
+  "slug": "${slug}",
+  "brand": "${brand}",
+  "time": "${time}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'New start',

@@ -9,7 +9,7 @@ class OffFlowsTable extends SupabaseTable<OffFlowsRow> {
 }
 
 class OffFlowsRow extends SupabaseDataRow {
-  OffFlowsRow(super.data);
+  OffFlowsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => OffFlowsTable();

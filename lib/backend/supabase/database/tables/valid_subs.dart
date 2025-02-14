@@ -9,7 +9,7 @@ class ValidSubsTable extends SupabaseTable<ValidSubsRow> {
 }
 
 class ValidSubsRow extends SupabaseDataRow {
-  ValidSubsRow(super.data);
+  ValidSubsRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => ValidSubsTable();

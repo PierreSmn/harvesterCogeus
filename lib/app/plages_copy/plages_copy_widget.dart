@@ -19,7 +19,7 @@ class PlagesCopyWidget extends StatefulWidget {
   const PlagesCopyWidget({
     super.key,
     String? slug,
-  }) : slug = slug ?? '';
+  }) : this.slug = slug ?? '';
 
   final String slug;
 
@@ -49,8 +49,8 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -114,19 +114,19 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
               child: Scaffold(
                 key: scaffoldKey,
                 body: Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFF6970F6),
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               40.0, 0.0, 40.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
@@ -139,9 +139,9 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                         ),
                         Flexible(
                           child: Container(
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
@@ -159,7 +159,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                               plagesCopyGetSupaResponse
                                                   .jsonBody,
                                             )!,
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -177,7 +177,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                       ),
                                       textAlign: TextAlign.center,
                                     ),
-                                    const FlutterFlowWebView(
+                                    FlutterFlowWebView(
                                       content:
                                           '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'83\',        numVideos: 5, disableClick: true};   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>\n',
                                       width: 350.0,
@@ -189,14 +189,14 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                     if (MediaQuery.sizeOf(context).width <
                                         kBreakpointSmall)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 18.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Container(
                                               width: 280.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -204,7 +204,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Theme(
@@ -260,7 +260,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                                     context)
                                                                 .secondaryBackground,
                                                         checkColor:
-                                                            const Color(0xFF00FE60),
+                                                            Color(0xFF00FE60),
                                                       ),
                                                     ).animateOnActionTrigger(
                                                         animationsMap[
@@ -275,7 +275,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                               .textScaler,
                                                       text: TextSpan(
                                                         children: [
-                                                          const TextSpan(
+                                                          TextSpan(
                                                             text:
                                                                 'J\'accepte les ',
                                                             style: TextStyle(),
@@ -283,7 +283,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                           TextSpan(
                                                             text:
                                                                 'Conditions Générales',
-                                                            style: const TextStyle(
+                                                            style: TextStyle(
                                                               color: Color(
                                                                   0xFF00FE60),
                                                             ),
@@ -298,12 +298,12 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                                         'https://www.cogeus.com/terms-of-use');
                                                                   },
                                                           ),
-                                                          const TextSpan(
+                                                          TextSpan(
                                                             text:
                                                                 ' et que ma vidéo apparaisse dans les communications de ',
                                                             style: TextStyle(),
                                                           ),
-                                                          const TextSpan(
+                                                          TextSpan(
                                                             text:
                                                                 'Les Plages Electro',
                                                             style: TextStyle(),
@@ -406,27 +406,27 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                     width: 300.0,
                                                     height: 40.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFFE84FBD),
+                                                    color: Color(0xFFE84FBD),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily: 'Manrope',
                                                           color:
-                                                              const Color(0xFFD2FD59),
+                                                              Color(0xFFD2FD59),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
                                                     elevation: 0.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                     ),
                                                     borderRadius:
@@ -436,13 +436,13 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                 ),
                                               ],
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     if (MediaQuery.sizeOf(context).width >
                                         kBreakpointSmall)
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 48.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -451,7 +451,7 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
-                                              decoration: const BoxDecoration(),
+                                              decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -469,8 +469,8 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     errorBuilder:
-                                                        (context, error) =>
-                                                            const SizedBox(
+                                                        (_context, _error) =>
+                                                            SizedBox(
                                                       width: 240.0,
                                                       height: 160.0,
                                                     ),
@@ -490,18 +490,18 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12.0)),
                                         ),
                                       ),
-                                  ].divide(const SizedBox(height: 24.0)),
+                                  ].divide(SizedBox(height: 24.0)),
                                 ),
                               ),
                             ),
                           ),
                         ),
                       ]
-                          .divide(const SizedBox(height: 16.0))
-                          .addToStart(const SizedBox(height: 10.0)),
+                          .divide(SizedBox(height: 16.0))
+                          .addToStart(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),

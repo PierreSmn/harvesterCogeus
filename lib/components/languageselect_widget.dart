@@ -45,8 +45,8 @@ class _LanguageselectWidgetState extends State<LanguageselectWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(30.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(30.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -71,12 +71,12 @@ class _LanguageselectWidgetState extends State<LanguageselectWidget>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 12.0, 12.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 12.0, 12.0),
       child: Container(
         width: 230.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x34090F13),
@@ -89,7 +89,7 @@ class _LanguageselectWidgetState extends State<LanguageselectWidget>
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,

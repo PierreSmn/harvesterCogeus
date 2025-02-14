@@ -73,14 +73,14 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 34.0, 0.0, 34.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 34.0, 0.0, 34.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
                 width: 300.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -171,7 +171,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -179,7 +179,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -188,7 +188,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -211,7 +211,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             .prenomTextControllerValidator
                                             .asValidator(context),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -260,7 +260,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -268,7 +268,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -277,7 +277,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -300,7 +300,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             .nomTextControllerValidator
                                             .asValidator(context),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -347,7 +347,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -355,7 +355,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -364,7 +364,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -389,7 +389,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             .emailTextControllerValidator
                                             .asValidator(context),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -436,7 +436,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -444,7 +444,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -453,7 +453,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -477,7 +477,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             .phoneTextControllerValidator
                                             .asValidator(context),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -527,7 +527,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -535,7 +535,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           errorBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -544,7 +544,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                           ),
                                           focusedErrorBorder:
                                               OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 1.0,
                                             ),
@@ -568,9 +568,9 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                             .messageTextControllerValidator
                                             .asValidator(context),
                                       ),
-                                    ].divide(const SizedBox(height: 8.0)),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
-                                ].divide(const SizedBox(height: 6.0)),
+                                ].divide(SizedBox(height: 6.0)),
                               ),
                             ),
                             FFButtonWidget(
@@ -643,9 +643,9 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).accent4,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -658,19 +658,19 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                       useGoogleFonts: false,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                 ),
                                 borderRadius: BorderRadius.circular(7.0),
                               ),
                             ),
                           ]
-                              .divide(const SizedBox(height: 16.0))
-                              .addToStart(const SizedBox(height: 2.0)),
+                              .divide(SizedBox(height: 16.0))
+                              .addToStart(SizedBox(height: 2.0)),
                         ),
                       if (_model.done)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 100.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -712,7 +712,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                            ].divide(const SizedBox(height: 24.0)),
+                            ].divide(SizedBox(height: 24.0)),
                           ),
                         ),
                     ],
@@ -720,7 +720,7 @@ class _FormDetractorWidgetState extends State<FormDetractorWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,

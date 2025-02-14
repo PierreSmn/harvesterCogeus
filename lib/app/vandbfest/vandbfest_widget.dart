@@ -19,7 +19,7 @@ class VandbfestWidget extends StatefulWidget {
   const VandbfestWidget({
     super.key,
     String? slug,
-  }) : slug = slug ?? '';
+  }) : this.slug = slug ?? '';
 
   final String slug;
 
@@ -49,8 +49,8 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -121,7 +121,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             40.0, 0.0, 40.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
@@ -134,9 +134,9 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                       ),
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -156,9 +156,9 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                             ),
                                             'Tentez de gagner deux pass',
                                           ),
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         ),
-                                        const TextSpan(
+                                        TextSpan(
                                           text:
                                               '\nEn partageant ton expérience sur le festival',
                                           style: TextStyle(
@@ -197,7 +197,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  const FlutterFlowWebView(
+                                  FlutterFlowWebView(
                                     content:
                                         '<div id=\"carousel-container\" class=\"carousel-container\">   <script>     window.MyVideoCarouselConfig = {       integrationId: \'83\',        numVideos: 5, disableClick: true};   </script>      <script src=\"https://embeded-pi.vercel.app/embed.js\"></script> </div>',
                                     height: 280.0,
@@ -208,21 +208,21 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                   if (MediaQuery.sizeOf(context).width <
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 18.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
                                             width: 280.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Theme(
@@ -317,7 +317,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                             .textScaler,
                                                     text: TextSpan(
                                                       children: [
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               'J\'accepte les ',
                                                           style: TextStyle(),
@@ -363,7 +363,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                                       'https://www.cogeus.com/terms-of-use');
                                                                 },
                                                         ),
-                                                        const TextSpan(
+                                                        TextSpan(
                                                           text:
                                                               ' et que ma vidéo apparaisse dans les communications de ',
                                                           style: TextStyle(),
@@ -377,7 +377,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                             ),
                                                             'brandName',
                                                           ),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(),
                                                         )
                                                       ],
                                                       style:
@@ -467,11 +467,11 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                 options: FFButtonOptions(
                                                   width: 300.0,
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: GetSupaCall
@@ -538,7 +538,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                                     .normal,
                                                           ),
                                                   elevation: 0.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                   ),
                                                   borderRadius:
@@ -548,13 +548,13 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                               ),
                                             ],
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   if (MediaQuery.sizeOf(context).width >
                                       kBreakpointSmall)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 48.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -563,7 +563,7 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -581,8 +581,8 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                   backgroundColor:
                                                       Colors.transparent,
                                                   errorBuilder:
-                                                      (context, error) =>
-                                                          const SizedBox(
+                                                      (_context, _error) =>
+                                                          SizedBox(
                                                     width: 240.0,
                                                     height: 160.0,
                                                   ),
@@ -601,18 +601,18 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                        ].divide(const SizedBox(height: 12.0)),
+                                        ].divide(SizedBox(height: 12.0)),
                                       ),
                                     ),
-                                ].divide(const SizedBox(height: 18.0)),
+                                ].divide(SizedBox(height: 18.0)),
                               ),
                             ),
                           ),
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(height: 16.0))
-                        .addToStart(const SizedBox(height: 10.0)),
+                        .divide(SizedBox(height: 16.0))
+                        .addToStart(SizedBox(height: 10.0)),
                   ),
                 ),
               ),

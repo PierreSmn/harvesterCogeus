@@ -75,7 +75,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
               child: Container(
                 width: 300.0,
                 height: MediaQuery.sizeOf(context).height * 0.95,
@@ -109,7 +109,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +141,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         direction: Axis.horizontal,
                                         initialRating:
                                             _model.ratingBarValue1 ??= 0.0,
-                                        unratedColor: const Color(0x671C4494),
+                                        unratedColor: Color(0x671C4494),
                                         itemCount: 5,
                                         itemSize: 24.0,
                                         glowColor: FlutterFlowTheme.of(context)
@@ -174,9 +174,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
@@ -189,7 +189,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +224,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         direction: Axis.horizontal,
                                         initialRating:
                                             _model.ratingBarValue2 ??= 0.0,
-                                        unratedColor: const Color(0x671C4494),
+                                        unratedColor: Color(0x671C4494),
                                         itemCount: 5,
                                         itemSize: 24.0,
                                         glowColor: FlutterFlowTheme.of(context)
@@ -257,9 +257,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
@@ -272,7 +272,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -307,7 +307,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         direction: Axis.horizontal,
                                         initialRating:
                                             _model.ratingBarValue3 ??= 0.0,
-                                        unratedColor: const Color(0x671C4494),
+                                        unratedColor: Color(0x671C4494),
                                         itemCount: 5,
                                         itemSize: 24.0,
                                         glowColor: FlutterFlowTheme.of(context)
@@ -340,9 +340,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
@@ -355,7 +355,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -390,7 +390,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         direction: Axis.horizontal,
                                         initialRating:
                                             _model.ratingBarValue4 ??= 0.0,
-                                        unratedColor: const Color(0x671C4494),
+                                        unratedColor: Color(0x671C4494),
                                         itemCount: 5,
                                         itemSize: 24.0,
                                         glowColor: FlutterFlowTheme.of(context)
@@ -423,9 +423,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
@@ -438,7 +438,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -473,7 +473,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         direction: Axis.horizontal,
                                         initialRating:
                                             _model.ratingBarValue5 ??= 0.0,
-                                        unratedColor: const Color(0x671C4494),
+                                        unratedColor: Color(0x671C4494),
                                         itemCount: 5,
                                         itemSize: 24.0,
                                         glowColor: FlutterFlowTheme.of(context)
@@ -506,9 +506,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(const SizedBox(width: 6.0)),
+                                    ].divide(SizedBox(width: 6.0)),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
@@ -521,7 +521,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -561,7 +561,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
@@ -569,7 +569,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
@@ -577,7 +577,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
@@ -600,14 +600,14 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         .messageTextControllerValidator
                                         .asValidator(context),
                                   ),
-                                ].divide(const SizedBox(height: 4.0)),
+                                ].divide(SizedBox(height: 4.0)),
                               ),
                             ),
                           ),
-                        ].divide(const SizedBox(height: 16.0)),
+                        ].divide(SizedBox(height: 16.0)),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 0.0, 0.0, 100.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -650,7 +650,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
+                                            AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         child: WebViewAware(
@@ -675,7 +675,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -697,7 +697,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                                 useGoogleFonts: false,
                                               ),
                                         ),
-                                      ].divide(const SizedBox(width: 6.0)),
+                                      ].divide(SizedBox(width: 6.0)),
                                     ),
                                   ),
                                 ),
@@ -748,10 +748,10 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 16.0)),
+                    ].divide(SizedBox(height: 16.0)),
                   ),
                 ),
               ),

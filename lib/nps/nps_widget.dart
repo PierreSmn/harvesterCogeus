@@ -49,7 +49,9 @@ class _NpsWidgetState extends State<NpsWidget> {
           );
           _model.experience = await ExperiencesTable().insert({
             'nps': widget.nps,
-            'client_id': _model.client?.firstOrNull?.brandId ?? widget.clid,
+            'client_id': _model.client?.firstOrNull?.brandId != null
+                ? _model.client?.firstOrNull?.brandId
+                : widget.clid,
             'email': widget.email,
             'full_name': widget.name,
             'np1_id': _model.client?.firstOrNull?.np1Id,
@@ -173,14 +175,14 @@ class _NpsWidgetState extends State<NpsWidget> {
                     children: [
                       Container(
                         width: 350.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     40.0, 0.0, 40.0, 0.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -193,16 +195,16 @@ class _NpsWidgetState extends State<NpsWidget> {
                               ),
                               Container(
                                 width: 350.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: RichText(
                                     textScaler:
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
+                                        TextSpan(
                                           text:
                                               'Sur une échelle de 0 à 10, quelle est la probabilité que vous recommandiez ',
                                           style: TextStyle(),
@@ -212,9 +214,9 @@ class _NpsWidgetState extends State<NpsWidget> {
                                             npsClientsRow.name,
                                             'brandName',
                                           ),
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         ),
-                                        const TextSpan(
+                                        TextSpan(
                                           text: ' à un ami ? ',
                                           style: TextStyle(),
                                         )
@@ -233,7 +235,7 @@ class _NpsWidgetState extends State<NpsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
                                 child: SingleChildScrollView(
                                   child: Column(
@@ -459,11 +461,11 @@ class _NpsWidgetState extends State<NpsWidget> {
                                                   .accent4,
                                         ),
                                       ),
-                                    ].divide(const SizedBox(height: 12.0)),
+                                    ].divide(SizedBox(height: 12.0)),
                                   ),
                                 ),
                               ),
-                            ].divide(const SizedBox(height: 12.0)),
+                            ].divide(SizedBox(height: 12.0)),
                           ),
                         ),
                       ),

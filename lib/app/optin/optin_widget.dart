@@ -48,8 +48,8 @@ class _OptinWidgetState extends State<OptinWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 720.0.ms,
-            begin: const Offset(0.7, 0.7),
-            end: const Offset(1.2, 1.2),
+            begin: Offset(0.7, 0.7),
+            end: Offset(1.2, 1.2),
           ),
         ],
       ),
@@ -114,7 +114,7 @@ class _OptinWidgetState extends State<OptinWidget>
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -122,7 +122,7 @@ class _OptinWidgetState extends State<OptinWidget>
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               40.0, 0.0, 40.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
@@ -140,15 +140,15 @@ class _OptinWidgetState extends State<OptinWidget>
                           Flexible(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
                                     width: 360.0,
-                                    decoration: const BoxDecoration(),
+                                    decoration: BoxDecoration(),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       child: SingleChildScrollView(
                                         child: Column(
@@ -170,7 +170,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                           ?.optinText,
                                                       'Tentez de gagner en vous inscrivant',
                                                     ),
-                                                    style: const TextStyle(),
+                                                    style: TextStyle(),
                                                   )
                                                 ],
                                                 style:
@@ -196,7 +196,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                         ?.optinImageUrl !=
                                                     '')
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -213,7 +213,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                 ),
                                               ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 24.0, 0.0, 18.0),
                                               child: Column(
@@ -221,7 +221,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(32.0, 0.0,
                                                                 32.0, 0.0),
                                                     child: Column(
@@ -259,7 +259,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             10.0,
                                                                             5.0,
@@ -275,7 +275,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                               .emailFocusNode,
                                                                       autofocus:
                                                                           false,
-                                                                      autofillHints: const [
+                                                                      autofillHints: [
                                                                         AutofillHints
                                                                             .email
                                                                       ],
@@ -300,7 +300,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         enabledBorder:
-                                                                            const UnderlineInputBorder(
+                                                                            UnderlineInputBorder(
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
@@ -309,7 +309,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                                 1.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.only(
+                                                                              const BorderRadius.only(
                                                                             topLeft:
                                                                                 Radius.circular(4.0),
                                                                             topRight:
@@ -317,7 +317,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                           ),
                                                                         ),
                                                                         focusedBorder:
-                                                                            const UnderlineInputBorder(
+                                                                            UnderlineInputBorder(
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
@@ -326,7 +326,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                                 1.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.only(
+                                                                              const BorderRadius.only(
                                                                             topLeft:
                                                                                 Radius.circular(4.0),
                                                                             topRight:
@@ -334,7 +334,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                           ),
                                                                         ),
                                                                         errorBorder:
-                                                                            const UnderlineInputBorder(
+                                                                            UnderlineInputBorder(
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
@@ -343,7 +343,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                                 1.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.only(
+                                                                              const BorderRadius.only(
                                                                             topLeft:
                                                                                 Radius.circular(4.0),
                                                                             topRight:
@@ -351,7 +351,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                           ),
                                                                         ),
                                                                         focusedErrorBorder:
-                                                                            const UnderlineInputBorder(
+                                                                            UnderlineInputBorder(
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
@@ -360,7 +360,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                                 1.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.only(
+                                                                              const BorderRadius.only(
                                                                             topLeft:
                                                                                 Radius.circular(4.0),
                                                                             topRight:
@@ -408,7 +408,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -485,7 +485,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                     .textScaler,
                                                                 text: TextSpan(
                                                                   children: [
-                                                                    const TextSpan(
+                                                                    TextSpan(
                                                                       text:
                                                                           'J\'accepte les ',
                                                                       style:
@@ -537,7 +537,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -599,7 +599,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                     .textScaler,
                                                                 text: TextSpan(
                                                                   children: [
-                                                                    const TextSpan(
+                                                                    TextSpan(
                                                                       text:
                                                                           'Vous acceptez de partager votre mail avec ',
                                                                       style:
@@ -613,9 +613,9 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                         'name',
                                                                       ),
                                                                       style:
-                                                                          const TextStyle(),
+                                                                          TextStyle(),
                                                                     ),
-                                                                    const TextSpan(
+                                                                    TextSpan(
                                                                       text: '',
                                                                       style:
                                                                           TextStyle(),
@@ -637,7 +637,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                             ),
                                                           ],
                                                         ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 24.0)),
                                                     ),
                                                   ),
@@ -696,14 +696,14 @@ class _OptinWidgetState extends State<OptinWidget>
                                                           width: 300.0,
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       24.0,
                                                                       0.0,
                                                                       24.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -729,7 +729,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                                   ),
                                                           elevation: 0.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                           ),
@@ -742,10 +742,10 @@ class _OptinWidgetState extends State<OptinWidget>
                                                     ],
                                                   ),
                                                 ].divide(
-                                                    const SizedBox(height: 12.0)),
+                                                    SizedBox(height: 12.0)),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 0.0)),
+                                          ].divide(SizedBox(height: 0.0)),
                                         ),
                                       ),
                                     ),
@@ -758,18 +758,18 @@ class _OptinWidgetState extends State<OptinWidget>
                           Flexible(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 50.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         child: SingleChildScrollView(
                                           child: Column(
@@ -792,7 +792,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                         .textScaler,
                                                 text: TextSpan(
                                                   children: [
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text:
                                                           'Votre participation est enregistrée',
                                                       style: TextStyle(),
@@ -828,7 +828,7 @@ class _OptinWidgetState extends State<OptinWidget>
                                                 ),
                                                 textAlign: TextAlign.center,
                                               ),
-                                            ].divide(const SizedBox(height: 0.0)),
+                                            ].divide(SizedBox(height: 0.0)),
                                           ),
                                         ),
                                       ),
@@ -839,8 +839,8 @@ class _OptinWidgetState extends State<OptinWidget>
                             ),
                           ),
                       ]
-                          .divide(const SizedBox(height: 16.0))
-                          .addToStart(const SizedBox(height: 10.0)),
+                          .divide(SizedBox(height: 16.0))
+                          .addToStart(SizedBox(height: 10.0)),
                     ),
                   ),
                 ),
