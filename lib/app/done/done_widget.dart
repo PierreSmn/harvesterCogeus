@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +13,9 @@ export 'done_model.dart';
 
 class DoneWidget extends StatefulWidget {
   const DoneWidget({super.key});
+
+  static String routeName = 'done';
+  static String routePath = '/done';
 
   @override
   State<DoneWidget> createState() => _DoneWidgetState();
@@ -446,7 +450,8 @@ class _DoneWidgetState extends State<DoneWidget> {
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                    'vandbfestCopy',
+                                                    VandbfestCopyWidget
+                                                        .routeName,
                                                     queryParameters: {
                                                       'slug': serializeParam(
                                                         'vandbfest',

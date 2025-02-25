@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'meetadidas_widget.dart' show MeetadidasWidget;
 import 'package:flutter/material.dart';
 

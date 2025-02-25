@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class SubstanceWidget extends StatefulWidget {
   }) : this.slug = slug ?? 'substance';
 
   final String slug;
+
+  static String routeName = 'substance';
+  static String routePath = '/substance';
 
   @override
   State<SubstanceWidget> createState() => _SubstanceWidgetState();
@@ -476,8 +480,9 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                     }(),
                                                   );
 
-                                                  context
-                                                      .pushNamed('production');
+                                                  context.pushNamed(
+                                                      ProductionWidget
+                                                          .routeName);
                                                 },
                                                 text: 'J’enregistre ma vidéo',
                                                 options: FFButtonOptions(

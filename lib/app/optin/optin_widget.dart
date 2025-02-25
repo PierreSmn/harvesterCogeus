@@ -19,6 +19,9 @@ class OptinWidget extends StatefulWidget {
 
   final int? clid;
 
+  static String routeName = 'optin';
+  static String routePath = '/optin';
+
   @override
   State<OptinWidget> createState() => _OptinWidgetState();
 }

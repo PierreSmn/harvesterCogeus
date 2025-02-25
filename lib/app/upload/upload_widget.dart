@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,9 @@ class UploadWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'upload';
+  static String routePath = '/upload';
 
   @override
   State<UploadWidget> createState() => _UploadWidgetState();
@@ -612,7 +616,8 @@ class _UploadWidgetState extends State<UploadWidget>
                                                 }(),
                                               );
 
-                                              context.pushNamed('infos');
+                                              context.pushNamed(
+                                                  InfosWidget.routeName);
                                             },
                                             text: 'Je selectionne une vidéo',
                                             options: FFButtonOptions(

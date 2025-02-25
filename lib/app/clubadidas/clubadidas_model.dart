@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'clubadidas_widget.dart' show ClubadidasWidget;
 import 'package:flutter/material.dart';
 

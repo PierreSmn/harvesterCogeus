@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,9 @@ class PlagesWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'plages';
+  static String routePath = '/plages';
 
   @override
   State<PlagesWidget> createState() => _PlagesWidgetState();
@@ -377,7 +381,8 @@ class _PlagesWidgetState extends State<PlagesWidget>
                                                   }(),
                                                 );
 
-                                                context.pushNamed('production');
+                                                context.pushNamed(
+                                                    ProductionWidget.routeName);
                                               },
                                               text: 'J’enregistre ma vidéo',
                                               options: FFButtonOptions(

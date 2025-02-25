@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,9 @@ class PlagesCopyWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'plagesCopy';
+  static String routePath = '/plagesCopy';
 
   @override
   State<PlagesCopyWidget> createState() => _PlagesCopyWidgetState();
@@ -399,7 +403,8 @@ class _PlagesCopyWidgetState extends State<PlagesCopyWidget>
                                                     );
 
                                                     context.pushNamed(
-                                                        'production');
+                                                        ProductionWidget
+                                                            .routeName);
                                                   },
                                                   text: 'J’enregistre ma vidéo',
                                                   options: FFButtonOptions(

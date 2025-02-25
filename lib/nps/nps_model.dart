@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/nps_item_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'nps_widget.dart' show NpsWidget;
 import 'package:flutter/material.dart';
 

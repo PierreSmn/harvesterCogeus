@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class LovegreenWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'lovegreen';
+  static String routePath = '/lovegreen';
 
   @override
   State<LovegreenWidget> createState() => _LovegreenWidgetState();
@@ -376,8 +380,9 @@ class _LovegreenWidgetState extends State<LovegreenWidget>
                                                     }(),
                                                   );
 
-                                                  context
-                                                      .pushNamed('production');
+                                                  context.pushNamed(
+                                                      ProductionWidget
+                                                          .routeName);
                                                 },
                                                 text: 'J’enregistre ma vidéo',
                                                 options: FFButtonOptions(

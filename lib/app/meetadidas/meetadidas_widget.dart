@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class MeetadidasWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'meetadidas';
+  static String routePath = '/meetadidas';
 
   @override
   State<MeetadidasWidget> createState() => _MeetadidasWidgetState();
@@ -455,8 +459,9 @@ class _MeetadidasWidgetState extends State<MeetadidasWidget>
                                                     }(),
                                                   );
 
-                                                  context
-                                                      .pushNamed('production');
+                                                  context.pushNamed(
+                                                      ProductionWidget
+                                                          .routeName);
                                                 },
                                                 text: 'Record my video',
                                                 options: FFButtonOptions(
