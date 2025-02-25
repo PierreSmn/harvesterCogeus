@@ -19,6 +19,7 @@ class FeedbackWidget extends StatefulWidget {
     required this.xId,
     required this.clid,
     required this.nps,
+    this.autreRaison,
   });
 
   final String? q1;
@@ -28,6 +29,7 @@ class FeedbackWidget extends StatefulWidget {
   final int? xId;
   final int? clid;
   final int? nps;
+  final String? autreRaison;
 
   @override
   State<FeedbackWidget> createState() => _FeedbackWidgetState();
@@ -47,7 +49,8 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
     super.initState();
     _model = createModel(context, () => FeedbackModel());
 
-    _model.messageTextController ??= TextEditingController();
+    _model.messageTextController ??=
+        TextEditingController(text: widget.autreRaison);
     _model.messageFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));

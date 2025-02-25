@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ class VandbfestCopyWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'vandbfestCopy';
+  static String routePath = '/vnbupload';
 
   @override
   State<VandbfestCopyWidget> createState() => _VandbfestCopyWidgetState();
@@ -593,7 +597,8 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                       }(),
                                                     );
 
-                                                    context.pushNamed('infos');
+                                                    context.pushNamed(
+                                                        InfosWidget.routeName);
                                                   },
                                                   text:
                                                       'Je selectionne une vidéo',

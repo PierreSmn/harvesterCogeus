@@ -26,6 +26,9 @@ class ChatWidget extends StatefulWidget {
   final int? xId;
   final int? clid;
 
+  static String routeName = 'chat';
+  static String routePath = '/chat';
+
   @override
   State<ChatWidget> createState() => _ChatWidgetState();
 }
@@ -1431,6 +1434,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               xId: widget.xId!,
                                                                               clid: widget.clid!,
                                                                               nps: widget.nps!,
+                                                                              autreRaison: '',
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1912,6 +1916,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               xId: widget.xId!,
                                                                               clid: widget.clid!,
                                                                               nps: widget.nps!,
+                                                                              autreRaison: _model.feedback,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -2487,6 +2492,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 xId: widget.xId!,
                                                                                 clid: widget.clid!,
                                                                                 nps: widget.nps!,
+                                                                                autreRaison: _model.feedback,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -2878,6 +2884,7 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               xId: widget.xId!,
                                                                               clid: widget.clid!,
                                                                               nps: widget.nps!,
+                                                                              autreRaison: _model.feedback,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -3305,6 +3312,8 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             .clid!,
                                                                         nps: widget
                                                                             .nps!,
+                                                                        autreRaison:
+                                                                            _model.feedback,
                                                                       ),
                                                                     ),
                                                                   ),

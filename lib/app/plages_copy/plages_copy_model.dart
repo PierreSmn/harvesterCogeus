@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'plages_copy_widget.dart' show PlagesCopyWidget;
 import 'package:flutter/material.dart';
 

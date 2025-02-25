@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,6 +18,9 @@ export 'production_model.dart';
 
 class ProductionWidget extends StatefulWidget {
   const ProductionWidget({super.key});
+
+  static String routeName = 'production';
+  static String routePath = '/production';
 
   @override
   State<ProductionWidget> createState() => _ProductionWidgetState();
@@ -639,7 +643,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                   }(containerLiveFlowsRow!.expla2!);
                                   FFAppState().update(() {});
 
-                                  context.pushNamed('infos');
+                                  context.pushNamed(InfosWidget.routeName);
                                 },
                                 text: 'Valider ma participation',
                                 options: FFButtonOptions(

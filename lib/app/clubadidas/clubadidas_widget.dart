@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class ClubadidasWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'clubadidas';
+  static String routePath = '/clubadidas';
 
   @override
   State<ClubadidasWidget> createState() => _ClubadidasWidgetState();
@@ -441,8 +445,9 @@ class _ClubadidasWidgetState extends State<ClubadidasWidget>
                                                     }(),
                                                   );
 
-                                                  context
-                                                      .pushNamed('production');
+                                                  context.pushNamed(
+                                                      ProductionWidget
+                                                          .routeName);
                                                 },
                                                 text: 'Record my video',
                                                 options: FFButtonOptions(

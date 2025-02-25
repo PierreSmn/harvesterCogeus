@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/nps_item_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -22,6 +23,9 @@ class NpsWidget extends StatefulWidget {
   final int? nps;
   final String? email;
   final String? name;
+
+  static String routeName = 'nps';
+  static String routePath = '/nps';
 
   @override
   State<NpsWidget> createState() => _NpsWidgetState();
@@ -63,7 +67,7 @@ class _NpsWidgetState extends State<NpsWidget> {
           safeSetState(() {});
 
           context.pushNamed(
-            'chat',
+            ChatWidget.routeName,
             queryParameters: {
               'nps': serializeParam(
                 widget.nps,
@@ -91,7 +95,7 @@ class _NpsWidgetState extends State<NpsWidget> {
           );
 
           context.pushNamed(
-            'chat',
+            ChatWidget.routeName,
             queryParameters: {
               'nps': serializeParam(
                 widget.nps,

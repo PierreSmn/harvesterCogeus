@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,6 +15,9 @@ export 'infos_model.dart';
 
 class InfosWidget extends StatefulWidget {
   const InfosWidget({super.key});
+
+  static String routeName = 'infos';
+  static String routePath = '/infos';
 
   @override
   State<InfosWidget> createState() => _InfosWidgetState();
@@ -728,7 +732,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           safeSetState(() {});
 
                                                           context.pushNamed(
-                                                              'done');
+                                                              DoneWidget
+                                                                  .routeName);
                                                         } else {
                                                           ScaffoldMessenger.of(
                                                                   context)
@@ -1082,7 +1087,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           .validatedDone = true;
                                                       safeSetState(() {});
 
-                                                      context.pushNamed('done');
+                                                      context.pushNamed(
+                                                          DoneWidget.routeName);
                                                     } else {
                                                       ScaffoldMessenger.of(
                                                               context)
@@ -1171,7 +1177,8 @@ class _InfosWidgetState extends State<InfosWidget>
                                               AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              context.pushNamed('done');
+                                              context.pushNamed(
+                                                  DoneWidget.routeName);
                                             },
                                             text: 'Voir ma récompense',
                                             options: FFButtonOptions(

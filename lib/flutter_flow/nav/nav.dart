@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -41,8 +42,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => HomeWidget(),
         ),
         FFRoute(
-          name: 'home',
-          path: '/home',
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
           builder: (context, params) => HomeWidget(
             slug: params.getParam(
               'slug',
@@ -51,23 +52,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'production',
-          path: '/production',
+          name: ProductionWidget.routeName,
+          path: ProductionWidget.routePath,
           builder: (context, params) => ProductionWidget(),
         ),
         FFRoute(
-          name: 'infos',
-          path: '/infos',
+          name: InfosWidget.routeName,
+          path: InfosWidget.routePath,
           builder: (context, params) => InfosWidget(),
         ),
         FFRoute(
-          name: 'done',
-          path: '/done',
+          name: DoneWidget.routeName,
+          path: DoneWidget.routePath,
           builder: (context, params) => DoneWidget(),
         ),
         FFRoute(
-          name: 'lovegreen',
-          path: '/lovegreen',
+          name: LovegreenWidget.routeName,
+          path: LovegreenWidget.routePath,
           builder: (context, params) => LovegreenWidget(
             slug: params.getParam(
               'slug',
@@ -76,8 +77,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'substance',
-          path: '/substance',
+          name: SubstanceWidget.routeName,
+          path: SubstanceWidget.routePath,
           builder: (context, params) => SubstanceWidget(
             slug: params.getParam(
               'slug',
@@ -86,8 +87,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'meetadidas',
-          path: '/meetadidas',
+          name: MeetadidasWidget.routeName,
+          path: MeetadidasWidget.routePath,
           builder: (context, params) => MeetadidasWidget(
             slug: params.getParam(
               'slug',
@@ -96,8 +97,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'clubadidas',
-          path: '/clubadidas',
+          name: ClubadidasWidget.routeName,
+          path: ClubadidasWidget.routePath,
           builder: (context, params) => ClubadidasWidget(
             slug: params.getParam(
               'slug',
@@ -106,8 +107,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'vandbfest',
-          path: '/vandbfest',
+          name: VandbfestWidget.routeName,
+          path: VandbfestWidget.routePath,
           builder: (context, params) => VandbfestWidget(
             slug: params.getParam(
               'slug',
@@ -116,8 +117,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'plages',
-          path: '/plages',
+          name: PlagesWidget.routeName,
+          path: PlagesWidget.routePath,
           builder: (context, params) => PlagesWidget(
             slug: params.getParam(
               'slug',
@@ -126,8 +127,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'plagesCopy',
-          path: '/plagesCopy',
+          name: PlagesCopyWidget.routeName,
+          path: PlagesCopyWidget.routePath,
           builder: (context, params) => PlagesCopyWidget(
             slug: params.getParam(
               'slug',
@@ -136,8 +137,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'vandbfestCopy',
-          path: '/vnbupload',
+          name: VandbfestCopyWidget.routeName,
+          path: VandbfestCopyWidget.routePath,
           builder: (context, params) => VandbfestCopyWidget(
             slug: params.getParam(
               'slug',
@@ -146,8 +147,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'upload',
-          path: '/upload',
+          name: UploadWidget.routeName,
+          path: UploadWidget.routePath,
           builder: (context, params) => UploadWidget(
             slug: params.getParam(
               'slug',
@@ -156,8 +157,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'nps',
-          path: '/nps',
+          name: NpsWidget.routeName,
+          path: NpsWidget.routePath,
           builder: (context, params) => NpsWidget(
             clid: params.getParam(
               'clid',
@@ -178,8 +179,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'chat',
-          path: '/chat',
+          name: ChatWidget.routeName,
+          path: ChatWidget.routePath,
           builder: (context, params) => ChatWidget(
             nps: params.getParam(
               'nps',
@@ -196,8 +197,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'optin',
-          path: '/optin',
+          name: OptinWidget.routeName,
+          path: OptinWidget.routePath,
           builder: (context, params) => OptinWidget(
             clid: params.getParam(
               'clid',

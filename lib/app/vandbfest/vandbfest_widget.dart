@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,9 @@ class VandbfestWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'vandbfest';
+  static String routePath = '/vandbfest';
 
   @override
   State<VandbfestWidget> createState() => _VandbfestWidgetState();
@@ -460,8 +464,9 @@ class _VandbfestWidgetState extends State<VandbfestWidget>
                                                     }(),
                                                   );
 
-                                                  context
-                                                      .pushNamed('production');
+                                                  context.pushNamed(
+                                                      ProductionWidget
+                                                          .routeName);
                                                 },
                                                 text: 'J’enregistre ma vidéo',
                                                 options: FFButtonOptions(

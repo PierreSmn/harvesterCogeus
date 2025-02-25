@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/index.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,9 @@ class HomeWidget extends StatefulWidget {
   }) : this.slug = slug ?? '';
 
   final String slug;
+
+  static String routeName = 'home';
+  static String routePath = '/home';
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
@@ -507,7 +511,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   }(),
                                                 );
 
-                                                context.pushNamed('production');
+                                                context.pushNamed(
+                                                    ProductionWidget.routeName);
                                               },
                                               text: 'J’enregistre ma vidéo',
                                               options: FFButtonOptions(
