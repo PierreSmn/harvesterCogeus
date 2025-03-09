@@ -14,6 +14,7 @@ export 'tables/widgets.dart';
 export 'tables/submitters_new.dart';
 export 'tables/clients.dart';
 export 'tables/locations.dart';
+export 'tables/trustpilot_full.dart';
 export 'tables/business_units.dart';
 export 'tables/new_subs.dart';
 export 'tables/selected.dart';

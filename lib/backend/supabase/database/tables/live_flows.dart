@@ -91,4 +91,7 @@ class LiveFlowsRow extends SupabaseDataRow {
 
   String? get title => getField<String>('title');
   set title(String? value) => setField<String>('title', value);
+
+  bool? get isRugby => getField<bool>('is_rugby');
+  set isRugby(bool? value) => setField<bool>('is_rugby', value);
 }

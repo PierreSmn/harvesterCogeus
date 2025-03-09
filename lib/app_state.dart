@@ -202,6 +202,18 @@ class FFAppState extends ChangeNotifier {
     _expId = value;
   }
 
+  String _nomClub = '';
+  String get nomClub => _nomClub;
+  set nomClub(String value) {
+    _nomClub = value;
+  }
+
+  String _instagramProfile = '';
+  String get instagramProfile => _instagramProfile;
+  set instagramProfile(String value) {
+    _instagramProfile = value;
+  }
+
   final _apiManager = FutureRequestManager<ApiCallResponse>();
   Future<ApiCallResponse> api({
     String? uniqueQueryKey,
