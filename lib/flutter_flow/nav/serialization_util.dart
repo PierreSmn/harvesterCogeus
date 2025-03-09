@@ -223,6 +223,8 @@ dynamic deserializeParam<T>(
             return ClientsRow(data);
           case LocationsRow:
             return LocationsRow(data);
+          case TrustpilotFullRow:
+            return TrustpilotFullRow(data);
           case BusinessUnitsRow:
             return BusinessUnitsRow(data);
           case NewSubsRow:

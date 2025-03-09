@@ -51,4 +51,10 @@ class SubmittersNewRow extends SupabaseDataRow {
 
   String? get question => getField<String>('question');
   set question(String? value) => setField<String>('question', value);
+
+  String? get clubRugby => getField<String>('club_rugby');
+  set clubRugby(String? value) => setField<String>('club_rugby', value);
+
+  String? get instagram => getField<String>('instagram');
+  set instagram(String? value) => setField<String>('instagram', value);
 }

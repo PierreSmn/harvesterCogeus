@@ -13,13 +13,41 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final formKey1 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
+  final formKey4 = GlobalKey<FormState>();
   // State field(s) for name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   String? _nameTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Votre prénom est obligatoire.';
+    }
+
+    return null;
+  }
+
+  // State field(s) for nomDuClub widget.
+  FocusNode? nomDuClubFocusNode;
+  TextEditingController? nomDuClubTextController;
+  String? Function(BuildContext, String?)? nomDuClubTextControllerValidator;
+  String? _nomDuClubTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Votre prénom est obligatoire.';
+    }
+
+    return null;
+  }
+
+  // State field(s) for instagramHandle widget.
+  FocusNode? instagramHandleFocusNode;
+  TextEditingController? instagramHandleTextController;
+  String? Function(BuildContext, String?)?
+      instagramHandleTextControllerValidator;
+  String? _instagramHandleTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Votre prénom est obligatoire.';
     }
@@ -52,6 +80,9 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
   @override
   void initState(BuildContext context) {
     nameTextControllerValidator = _nameTextControllerValidator;
+    nomDuClubTextControllerValidator = _nomDuClubTextControllerValidator;
+    instagramHandleTextControllerValidator =
+        _instagramHandleTextControllerValidator;
     emailTextControllerValidator = _emailTextControllerValidator;
   }
 
@@ -59,6 +90,12 @@ class InfosModel extends FlutterFlowModel<InfosWidget> {
   void dispose() {
     nameFocusNode?.dispose();
     nameTextController?.dispose();
+
+    nomDuClubFocusNode?.dispose();
+    nomDuClubTextController?.dispose();
+
+    instagramHandleFocusNode?.dispose();
+    instagramHandleTextController?.dispose();
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();

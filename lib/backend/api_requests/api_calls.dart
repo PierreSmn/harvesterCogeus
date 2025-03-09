@@ -118,6 +118,10 @@ class GetSupaCall {
         response,
         r'''$[:].mail_only_bool''',
       ));
+  static bool? isrugby(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:].is_rugby''',
+      ));
 }
 
 class PostSubmissionFgCall {
@@ -131,6 +135,8 @@ class PostSubmissionFgCall {
     String? time = '',
     bool? boolmail = false,
     String? question = '',
+    String? nomClub = '',
+    String? instagram = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -142,7 +148,9 @@ class PostSubmissionFgCall {
   "brand": "${brand}",
   "time": "${time}",
   "boolmail": ${boolmail},
-  "question": "${question}"
+  "question": "${question}",
+  "nomClub": "${nomClub}",
+  "instagram": "${instagram}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',

@@ -1,3 +1,4 @@
+import '';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -39,6 +40,12 @@ class _InfosWidgetState extends State<InfosWidget>
     _model.nameTextController ??=
         TextEditingController(text: FFAppState().name);
     _model.nameFocusNode ??= FocusNode();
+
+    _model.nomDuClubTextController ??= TextEditingController();
+    _model.nomDuClubFocusNode ??= FocusNode();
+
+    _model.instagramHandleTextController ??= TextEditingController();
+    _model.instagramHandleFocusNode ??= FocusNode();
 
     _model.emailTextController ??=
         TextEditingController(text: FFAppState().email);
@@ -234,7 +241,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Form(
-                                            key: _model.formKey1,
+                                            key: _model.formKey3,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Row(
@@ -253,10 +260,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           _model.nameFocusNode,
                                                       onFieldSubmitted:
                                                           (_) async {
-                                                        if (_model.formKey1
+                                                        if (_model.formKey3
                                                                     .currentState ==
                                                                 null ||
-                                                            !_model.formKey1
+                                                            !_model.formKey3
                                                                 .currentState!
                                                                 .validate()) {
                                                           return;
@@ -420,10 +427,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                               AlignmentDirectional(0.0, 1.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              if (_model.formKey1
+                                              if (_model.formKey3
                                                           .currentState ==
                                                       null ||
-                                                  !_model.formKey1.currentState!
+                                                  !_model.formKey3.currentState!
                                                       .validate()) {
                                                 return;
                                               }
@@ -432,7 +439,749 @@ class _InfosWidgetState extends State<InfosWidget>
                                               if (!(FFAppState().name != '')) {
                                                 return;
                                               }
+                                              if (GetSupaCall.isrugby(
+                                                infosGetSupaResponse.jsonBody,
+                                              )!) {
+                                                _model.step = 3;
+                                                safeSetState(() {});
+                                              } else {
+                                                _model.step = _model.step! + 1;
+                                                safeSetState(() {});
+                                              }
+                                            },
+                                            text: 'Continuer',
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color: colorFromCssString(
+                                                GetSupaCall.colorButton(
+                                                  infosGetSupaResponse.jsonBody,
+                                                )!,
+                                                defaultColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .appleButton,
+                                              ),
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            colorFromCssString(
+                                                          GetSupaCall
+                                                              .colorButtonText(
+                                                            infosGetSupaResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(7.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ].divide(SizedBox(height: 36.0)),
+                            ),
+                          ),
+                        if ((_model.step == 3) &&
+                            (GetSupaCall.mailOnlyBool(
+                                  infosGetSupaResponse.jsonBody,
+                                ) ==
+                                false))
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  width: 400.0,
+                                  decoration: BoxDecoration(),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        32.0, 0.0, 32.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30.0,
+                                              buttonSize: 44.0,
+                                              icon: Icon(
+                                                Icons.arrow_back_rounded,
+                                                color: FlutterFlowTheme.of(
+                                                        context)
+                                                    .revoCardTextColorUnselected,
+                                                size: 22.0,
+                                              ),
+                                              onPressed: () async {
+                                                _model.step = 1;
+                                                safeSetState(() {});
+                                              },
+                                            ),
+                                            Text(
+                                              'Retour',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .revoCardTextColorUnselected,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Nom du club',
+                                                    textAlign: TextAlign.start,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .displaySmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .revoCardTextColor,
+                                                          fontSize: 38.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Entrez le nom de votre club pour qu\'il soit possible de retrouver les participations.',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .revoCardTextColorUnselected,
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .revoSearchBarBg,
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Form(
+                                            key: _model.formKey2,
+                                            autovalidateMode:
+                                                AutovalidateMode.disabled,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(10.0, 5.0,
+                                                                0.0, 5.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .nomDuClubTextController,
+                                                      focusNode: _model
+                                                          .nomDuClubFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        if (_model.formKey2
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey2
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
+                                                        FFAppState().name = _model
+                                                            .nomDuClubTextController
+                                                            .text;
+                                                        if (!(FFAppState().name !=
+                                                                '')) {
+                                                          return;
+                                                        }
+                                                        _model.step =
+                                                            _model.step! + 1;
+                                                        safeSetState(() {});
+                                                      },
+                                                      autofocus: false,
+                                                      textCapitalization:
+                                                          TextCapitalization
+                                                              .words,
+                                                      textInputAction:
+                                                          TextInputAction.next,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        hintText: 'Nom du club',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .revoSearchIconColor,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        errorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 17.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                      maxLines: null,
+                                                      keyboardType:
+                                                          TextInputType.name,
+                                                      validator: _model
+                                                          .nomDuClubTextControllerValidator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ].divide(SizedBox(height: 24.0)),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 0.0),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 1.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              if (_model.formKey2
+                                                          .currentState ==
+                                                      null ||
+                                                  !_model.formKey2.currentState!
+                                                      .validate()) {
+                                                return;
+                                              }
+                                              FFAppState().nomClub = _model
+                                                  .nomDuClubTextController.text;
+                                              if (!(FFAppState().name != '')) {
+                                                return;
+                                              }
                                               _model.step = _model.step! + 1;
+                                              safeSetState(() {});
+                                            },
+                                            text: 'Continuer',
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color: colorFromCssString(
+                                                GetSupaCall.colorButton(
+                                                  infosGetSupaResponse.jsonBody,
+                                                )!,
+                                                defaultColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .appleButton,
+                                              ),
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            colorFromCssString(
+                                                          GetSupaCall
+                                                              .colorButtonText(
+                                                            infosGetSupaResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primaryBackground,
+                                                        ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(7.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ].divide(SizedBox(height: 36.0)),
+                            ),
+                          ),
+                        if ((_model.step == 4) &&
+                            (GetSupaCall.mailOnlyBool(
+                                  infosGetSupaResponse.jsonBody,
+                                ) ==
+                                false))
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  width: 400.0,
+                                  decoration: BoxDecoration(),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        32.0, 0.0, 32.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30.0,
+                                              buttonSize: 44.0,
+                                              icon: Icon(
+                                                Icons.arrow_back_rounded,
+                                                color: FlutterFlowTheme.of(
+                                                        context)
+                                                    .revoCardTextColorUnselected,
+                                                size: 22.0,
+                                              ),
+                                              onPressed: () async {
+                                                _model.step = _model.step! + -1;
+                                                safeSetState(() {});
+                                              },
+                                            ),
+                                            Text(
+                                              'Retour',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .revoCardTextColorUnselected,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Instagram',
+                                                    textAlign: TextAlign.start,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .displaySmall
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .revoCardTextColor,
+                                                          fontSize: 38.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Si vous souhaitez être associé à la publication en cas de sélection, n\'hésitez pas à partager votre profil Instagram avec nous.',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .revoCardTextColorUnselected,
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .revoSearchBarBg,
+                                            borderRadius:
+                                                BorderRadius.circular(6.0),
+                                            shape: BoxShape.rectangle,
+                                          ),
+                                          child: Form(
+                                            key: _model.formKey1,
+                                            autovalidateMode:
+                                                AutovalidateMode.disabled,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(10.0, 5.0,
+                                                                0.0, 5.0),
+                                                    child: TextFormField(
+                                                      controller: _model
+                                                          .instagramHandleTextController,
+                                                      focusNode: _model
+                                                          .instagramHandleFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        if (_model.formKey1
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey1
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
+                                                        FFAppState().name = _model
+                                                            .instagramHandleTextController
+                                                            .text;
+                                                        if (!(FFAppState().name !=
+                                                                '')) {
+                                                          return;
+                                                        }
+                                                        _model.step =
+                                                            _model.step! + 1;
+                                                        safeSetState(() {});
+                                                      },
+                                                      autofocus: false,
+                                                      textCapitalization:
+                                                          TextCapitalization
+                                                              .words,
+                                                      textInputAction:
+                                                          TextInputAction.next,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        hintText: '@johndoe',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Manrope',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .revoSearchIconColor,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        errorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    4.0),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 17.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                              ),
+                                                      maxLines: null,
+                                                      keyboardType:
+                                                          TextInputType.name,
+                                                      validator: _model
+                                                          .instagramHandleTextControllerValidator
+                                                          .asValidator(context),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ].divide(SizedBox(height: 24.0)),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 12.0, 0.0, 0.0),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 1.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              if (_model.formKey1
+                                                          .currentState ==
+                                                      null ||
+                                                  !_model.formKey1.currentState!
+                                                      .validate()) {
+                                                return;
+                                              }
+                                              FFAppState().instagramProfile = _model
+                                                  .instagramHandleTextController
+                                                  .text;
+                                              if (!(FFAppState().name != '')) {
+                                                return;
+                                              }
+                                              _model.step = 2;
                                               safeSetState(() {});
                                             },
                                             text: 'Continuer',
@@ -601,7 +1350,7 @@ class _InfosWidgetState extends State<InfosWidget>
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Form(
-                                            key: _model.formKey2,
+                                            key: _model.formKey4,
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Row(
@@ -622,10 +1371,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           (_) async {
                                                         var _shouldSetState =
                                                             false;
-                                                        if (_model.formKey2
+                                                        if (_model.formKey4
                                                                     .currentState ==
                                                                 null ||
-                                                            !_model.formKey2
+                                                            !_model.formKey4
                                                                 .currentState!
                                                                 .validate()) {
                                                           return;
@@ -1034,10 +1783,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                             onPressed: _model.alreadySent
                                                 ? null
                                                 : () async {
-                                                    if (_model.formKey2
+                                                    if (_model.formKey4
                                                                 .currentState ==
                                                             null ||
-                                                        !_model.formKey2
+                                                        !_model.formKey4
                                                             .currentState!
                                                             .validate()) {
                                                       return;
@@ -1078,6 +1827,10 @@ class _InfosWidgetState extends State<InfosWidget>
                                                           .questionAsked,
                                                       time: getCurrentTimestamp
                                                           .toString(),
+                                                      nomClub:
+                                                          FFAppState().nomClub,
+                                                      instagram: FFAppState()
+                                                          .instagramProfile,
                                                     );
 
                                                     if ((_model.apiResultro6
