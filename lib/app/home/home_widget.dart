@@ -329,7 +329,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               )
                                                             : FlutterFlowTheme
                                                                     .of(context)
-                                                                .secondary,
+                                                                .secondaryText,
                                                   ),
                                                   child: Checkbox(
                                                     value:
@@ -375,7 +375,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             )
                                                           : FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondary,
+                                                              .secondaryText,
                                                     ),
                                                     activeColor:
                                                         FlutterFlowTheme.of(

@@ -311,8 +311,30 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                       4.0),
                                                         ),
                                                       ),
-                                                      unselectedWidgetColor:
-                                                          FlutterFlowTheme.of(
+                                                      unselectedWidgetColor: GetSupaCall
+                                                                      .colorButton(
+                                                                    uploadGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  null &&
+                                                              GetSupaCall
+                                                                      .colorButton(
+                                                                    uploadGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  ''
+                                                          ? colorFromCssString(
+                                                              GetSupaCall
+                                                                  .colorButton(
+                                                                uploadGetSupaResponse
+                                                                    .jsonBody,
+                                                              )!,
+                                                              defaultColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .appleButton,
+                                                            )
+                                                          : FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
                                                     ),
@@ -336,9 +358,31 @@ class _UploadWidgetState extends State<UploadWidget>
                                                       },
                                                       side: BorderSide(
                                                         width: 2,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                        color: GetSupaCall
+                                                                        .colorButton(
+                                                                      uploadGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButton(
+                                                                      uploadGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButton(
+                                                                  uploadGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .appleButton,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
                                                                 .secondaryText,
                                                       ),
                                                       activeColor:
@@ -744,6 +788,16 @@ class _UploadWidgetState extends State<UploadWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Manrope',
+                                                  color: colorFromCssString(
+                                                    GetSupaCall.colorTitle(
+                                                      uploadGetSupaResponse
+                                                          .jsonBody,
+                                                    )!,
+                                                    defaultColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                  ),
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
