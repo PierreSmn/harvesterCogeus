@@ -305,9 +305,31 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       ),
                                                     ),
                                                     unselectedWidgetColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .secondaryText,
+                                                        GetSupaCall.colorButton(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButton(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButton(
+                                                                  homeGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .appleButton,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondary,
                                                   ),
                                                   child: Checkbox(
                                                     value:
@@ -328,10 +350,32 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     },
                                                     side: BorderSide(
                                                       width: 2,
-                                                      color:
-                                                          FlutterFlowTheme.of(
+                                                      color: GetSupaCall
+                                                                      .colorButton(
+                                                                    homeGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  null &&
+                                                              GetSupaCall
+                                                                      .colorButton(
+                                                                    homeGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  ''
+                                                          ? colorFromCssString(
+                                                              GetSupaCall
+                                                                  .colorButton(
+                                                                homeGetSupaResponse
+                                                                    .jsonBody,
+                                                              )!,
+                                                              defaultColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .appleButton,
+                                                            )
+                                                          : FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondaryText,
+                                                              .secondary,
                                                     ),
                                                     activeColor:
                                                         FlutterFlowTheme.of(

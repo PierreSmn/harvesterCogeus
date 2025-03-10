@@ -59,4 +59,10 @@ class ValidSubsRow extends SupabaseDataRow {
 
   List<int> get tagId => getListField<int>('tagId');
   set tagId(List<int>? value) => setListField<int>('tagId', value);
+
+  String? get clubRugby => getField<String>('club_rugby');
+  set clubRugby(String? value) => setField<String>('club_rugby', value);
+
+  String? get instagram => getField<String>('instagram');
+  set instagram(String? value) => setField<String>('instagram', value);
 }
