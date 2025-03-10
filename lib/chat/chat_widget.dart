@@ -336,30 +336,24 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             true;
                                                         _model.showchat = false;
                                                         safeSetState(() {});
-                                                        unawaited(
-                                                          () async {
-                                                            await ExperiencesTable()
-                                                                .update(
-                                                              data: {
-                                                                'theme':
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  chatClientsRow
-                                                                      .theme1,
-                                                                  'Qualité',
-                                                                ),
-                                                                'theme_choice':
-                                                                    1,
-                                                              },
-                                                              matchingRows:
-                                                                  (rows) => rows
-                                                                      .eqOrNull(
-                                                                'id',
-                                                                FFAppState()
-                                                                    .expId,
-                                                              ),
-                                                            );
-                                                          }(),
+                                                        await ExperiencesTable()
+                                                            .update(
+                                                          data: {
+                                                            'theme':
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              chatClientsRow
+                                                                  .theme1,
+                                                              'Qualité',
+                                                            ),
+                                                            'theme_choice': 1,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            FFAppState().expId,
+                                                          ),
                                                         );
                                                         if (animationsMap[
                                                                 'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -484,30 +478,24 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             true;
                                                         _model.showchat = false;
                                                         safeSetState(() {});
-                                                        unawaited(
-                                                          () async {
-                                                            await ExperiencesTable()
-                                                                .update(
-                                                              data: {
-                                                                'theme':
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  chatClientsRow
-                                                                      .theme2,
-                                                                  'Fiabilité',
-                                                                ),
-                                                                'theme_choice':
-                                                                    2,
-                                                              },
-                                                              matchingRows:
-                                                                  (rows) => rows
-                                                                      .eqOrNull(
-                                                                'id',
-                                                                FFAppState()
-                                                                    .expId,
-                                                              ),
-                                                            );
-                                                          }(),
+                                                        await ExperiencesTable()
+                                                            .update(
+                                                          data: {
+                                                            'theme':
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              chatClientsRow
+                                                                  .theme2,
+                                                              'Fiabilité',
+                                                            ),
+                                                            'theme_choice': 2,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            FFAppState().expId,
+                                                          ),
                                                         );
                                                         if (animationsMap[
                                                                 'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -632,30 +620,24 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             true;
                                                         _model.showchat = false;
                                                         safeSetState(() {});
-                                                        unawaited(
-                                                          () async {
-                                                            await ExperiencesTable()
-                                                                .update(
-                                                              data: {
-                                                                'theme':
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  chatClientsRow
-                                                                      .theme3,
-                                                                  'Service Client',
-                                                                ),
-                                                                'theme_choice':
-                                                                    3,
-                                                              },
-                                                              matchingRows:
-                                                                  (rows) => rows
-                                                                      .eqOrNull(
-                                                                'id',
-                                                                FFAppState()
-                                                                    .expId,
-                                                              ),
-                                                            );
-                                                          }(),
+                                                        await ExperiencesTable()
+                                                            .update(
+                                                          data: {
+                                                            'theme':
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              chatClientsRow
+                                                                  .theme3,
+                                                              'Service Client',
+                                                            ),
+                                                            'theme_choice': 3,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            FFAppState().expId,
+                                                          ),
                                                         );
                                                         if (animationsMap[
                                                                 'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -786,30 +768,24 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             true;
                                                         _model.showchat = false;
                                                         safeSetState(() {});
-                                                        unawaited(
-                                                          () async {
-                                                            await ExperiencesTable()
-                                                                .update(
-                                                              data: {
-                                                                'theme':
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  chatClientsRow
-                                                                      .theme4,
-                                                                  'Facilité d\'utilisation',
-                                                                ),
-                                                                'theme_choice':
-                                                                    4,
-                                                              },
-                                                              matchingRows:
-                                                                  (rows) => rows
-                                                                      .eqOrNull(
-                                                                'id',
-                                                                FFAppState()
-                                                                    .expId,
-                                                              ),
-                                                            );
-                                                          }(),
+                                                        await ExperiencesTable()
+                                                            .update(
+                                                          data: {
+                                                            'theme':
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              chatClientsRow
+                                                                  .theme4,
+                                                              'Facilité d\'utilisation',
+                                                            ),
+                                                            'theme_choice': 4,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            FFAppState().expId,
+                                                          ),
                                                         );
                                                         if (animationsMap[
                                                                 'conditionalBuilderOnActionTriggerAnimation'] !=
@@ -930,25 +906,18 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                             true;
                                                         _model.showchat = true;
                                                         safeSetState(() {});
-                                                        unawaited(
-                                                          () async {
-                                                            await ExperiencesTable()
-                                                                .update(
-                                                              data: {
-                                                                'theme':
-                                                                    'Autre',
-                                                                'theme_choice':
-                                                                    5,
-                                                              },
-                                                              matchingRows:
-                                                                  (rows) => rows
-                                                                      .eqOrNull(
-                                                                'id',
-                                                                FFAppState()
-                                                                    .expId,
-                                                              ),
-                                                            );
-                                                          }(),
+                                                        await ExperiencesTable()
+                                                            .update(
+                                                          data: {
+                                                            'theme': 'Autre',
+                                                            'theme_choice': 5,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            FFAppState().expId,
+                                                          ),
                                                         );
                                                       },
                                                       child: Container(
