@@ -99,207 +99,134 @@ class _DoneWidgetState extends State<DoneWidget> {
                           FlutterFlowTheme.of(context).primaryBackground,
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  child: Stack(
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            40.0, 0.0, 40.0, 0.0),
-                        child: ClipRRect(
+                      if (FFAppState().slug == 'ffr')
+                        ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            valueOrDefault<String>(
-                              GetSupaCall.logoURL(
-                                doneGetSupaResponse.jsonBody,
-                              ),
-                              'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1720442986279000.png',
-                            ),
-                            height: 90.0,
-                            fit: BoxFit.contain,
+                          child: Image.asset(
+                            'assets/images/BG.jpeg',
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: MediaQuery.sizeOf(context).height * 1.0,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          decoration: BoxDecoration(),
-                          child: Padding(
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 30.0, 24.0, 0.0),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width: 400.0,
-                                    decoration: BoxDecoration(),
-                                    child: RichText(
-                                      textScaler:
-                                          MediaQuery.of(context).textScaler,
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text:
-                                                'Merci de votre participation !',
-                                            style: TextStyle(),
-                                          )
-                                        ],
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Manrope',
-                                              color: colorFromCssString(
-                                                GetSupaCall.colorTitle(
-                                                  doneGetSupaResponse.jsonBody,
-                                                )!,
-                                                defaultColor: Colors.black,
-                                              ),
-                                              fontSize: 27.0,
-                                              letterSpacing: -1,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
+                                40.0, 0.0, 40.0, 0.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                valueOrDefault<String>(
+                                  GetSupaCall.logoURL(
+                                    doneGetSupaResponse.jsonBody,
                                   ),
-                                  if (FFAppState().slug != 'vandbfest')
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(16.0),
-                                      child: Image.network(
-                                        GetSupaCall.imageURL(
-                                          doneGetSupaResponse.jsonBody,
-                                        )!,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                  if (GetSupaCall.twogifts(
-                                        doneGetSupaResponse.jsonBody,
-                                      ) ==
-                                      false)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 60.0, 0.0, 0.0),
-                                      child: Container(
+                                  'https://pifcxlqwffdrqcwggoqb.supabase.co/storage/v1/object/public/conversations/ffUploads/1720442986279000.png',
+                                ),
+                                height: 90.0,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              decoration: BoxDecoration(),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 30.0, 24.0, 0.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
                                         width: 400.0,
                                         decoration: BoxDecoration(),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            RichText(
-                                              textScaler: MediaQuery.of(context)
-                                                  .textScaler,
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text:
-                                                        'Cliquez ci-dessous pour copier le code qui vous offre ',
-                                                    style: TextStyle(),
-                                                  ),
-                                                  TextSpan(
-                                                    text: GetSupaCall
-                                                        .descriptionCodePromo(
+                                        child: RichText(
+                                          textScaler:
+                                              MediaQuery.of(context).textScaler,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                    'Merci de votre participation !',
+                                                style: TextStyle(),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Manrope',
+                                                  color: colorFromCssString(
+                                                    GetSupaCall.colorTitle(
                                                       doneGetSupaResponse
                                                           .jsonBody,
                                                     )!,
-                                                    style: TextStyle(),
-                                                  )
-                                                ],
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Manrope',
-                                                      color: colorFromCssString(
-                                                        GetSupaCall.colorText(
+                                                    defaultColor: Colors.black,
+                                                  ),
+                                                  fontSize: 27.0,
+                                                  letterSpacing: -1,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      if (FFAppState().slug != 'vandbfest')
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          child: Image.network(
+                                            GetSupaCall.imageURL(
+                                              doneGetSupaResponse.jsonBody,
+                                            )!,
+                                            width: 300.0,
+                                            height: 200.0,
+                                            fit: BoxFit.contain,
+                                          ),
+                                        ),
+                                      if (GetSupaCall.twogifts(
+                                            doneGetSupaResponse.jsonBody,
+                                          ) ==
+                                          false)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 60.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 400.0,
+                                            decoration: BoxDecoration(),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text:
+                                                            'Cliquez ci-dessous pour copier le code qui vous offre ',
+                                                        style: TextStyle(),
+                                                      ),
+                                                      TextSpan(
+                                                        text: GetSupaCall
+                                                            .descriptionCodePromo(
                                                           doneGetSupaResponse
                                                               .jsonBody,
                                                         )!,
-                                                        defaultColor:
-                                                            Colors.black,
-                                                      ),
-                                                      fontSize: 16.7,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                              ),
-                                              textAlign: TextAlign.center,
-                                            ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await Clipboard.setData(
-                                                    ClipboardData(
-                                                        text: GetSupaCall
-                                                            .codePromo(
-                                                  doneGetSupaResponse.jsonBody,
-                                                )!));
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      'Le code a bien été copié!',
-                                                      style: TextStyle(
-                                                        color:
-                                                            colorFromCssString(
-                                                          GetSupaCall
-                                                              .colorButtonText(
-                                                            doneGetSupaResponse
-                                                                .jsonBody,
-                                                          )!,
-                                                          defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryBackground,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    duration: Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        colorFromCssString(
-                                                      GetSupaCall.colorButton(
-                                                        doneGetSupaResponse
-                                                            .jsonBody,
-                                                      )!,
-                                                      defaultColor:
-                                                          Colors.black,
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.content_copy_outlined,
-                                                    color: colorFromCssString(
-                                                      GetSupaCall.colorTitle(
-                                                        doneGetSupaResponse
-                                                            .jsonBody,
-                                                      )!,
-                                                      defaultColor:
-                                                          Colors.black,
-                                                    ),
-                                                    size: 26.0,
-                                                  ),
-                                                  Text(
-                                                    GetSupaCall.codePromo(
-                                                      doneGetSupaResponse
-                                                          .jsonBody,
-                                                    )!,
+                                                        style: TextStyle(),
+                                                      )
+                                                    ],
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -308,217 +235,405 @@ class _DoneWidgetState extends State<DoneWidget> {
                                                           color:
                                                               colorFromCssString(
                                                             GetSupaCall
-                                                                .colorTitle(
+                                                                .colorText(
                                                               doneGetSupaResponse
                                                                   .jsonBody,
                                                             )!,
                                                             defaultColor:
                                                                 Colors.black,
                                                           ),
-                                                          fontSize: 21.0,
+                                                          fontSize: 16.7,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
-                                                              FontWeight.w600,
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
-                                                ].divide(SizedBox(width: 6.0)),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  await Clipboard.setData(
-                                                      ClipboardData(
-                                                          text: GetSupaCall
-                                                              .codePromo(
-                                                    doneGetSupaResponse
-                                                        .jsonBody,
-                                                  )!));
-                                                  await launchURL(
-                                                      GetSupaCall.ctaUrl(
-                                                    doneGetSupaResponse
-                                                        .jsonBody,
-                                                  )!);
-                                                },
-                                                text: 'Aller sur le site',
-                                                icon: Icon(
-                                                  Icons.exit_to_app,
-                                                  size: 15.0,
+                                                  textAlign: TextAlign.center,
                                                 ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: colorFromCssString(
-                                                    GetSupaCall.colorButton(
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await Clipboard.setData(
+                                                        ClipboardData(
+                                                            text: GetSupaCall
+                                                                .codePromo(
                                                       doneGetSupaResponse
                                                           .jsonBody,
-                                                    )!,
-                                                    defaultColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                  ),
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color:
+                                                    )!));
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          'Le code a bien été copié!',
+                                                          style: TextStyle(
+                                                            color:
+                                                                colorFromCssString(
+                                                              GetSupaCall
+                                                                  .colorButtonText(
+                                                                doneGetSupaResponse
+                                                                    .jsonBody,
+                                                              )!,
+                                                              defaultColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
                                                             colorFromCssString(
                                                           GetSupaCall
-                                                              .colorButtonText(
+                                                              .colorButton(
                                                             doneGetSupaResponse
                                                                 .jsonBody,
                                                           )!,
                                                           defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryBackground,
+                                                              Colors.black,
                                                         ),
-                                                        letterSpacing: 0.0,
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 0.0,
+                                                    );
+                                                  },
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Icons
+                                                            .content_copy_outlined,
+                                                        color:
+                                                            colorFromCssString(
+                                                          GetSupaCall
+                                                              .colorTitle(
+                                                            doneGetSupaResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              Colors.black,
+                                                        ),
+                                                        size: 26.0,
+                                                      ),
+                                                      Text(
+                                                        GetSupaCall.codePromo(
+                                                          doneGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Manrope',
+                                                              color:
+                                                                  colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorTitle(
+                                                                  doneGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    Colors
+                                                                        .black,
+                                                              ),
+                                                              fontSize: 21.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(width: 6.0)),
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          7.0),
                                                 ),
-                                              ),
-                                            ),
-                                          ].divide(SizedBox(height: 12.0)),
-                                        ),
-                                      ),
-                                    ),
-                                  if (FFAppState().slug == 'vandbfest')
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 60.0, 0.0, 0.0),
-                                      child: Container(
-                                        width: 400.0,
-                                        decoration: BoxDecoration(),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            RichText(
-                                              textScaler: MediaQuery.of(context)
-                                                  .textScaler,
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text:
-                                                        'Augmentez vos chances de gagner en envoyant une vidéo supplémentaire',
-                                                    style: TextStyle(),
-                                                  )
-                                                ],
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Manrope',
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 12.0, 0.0, 0.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      await Clipboard.setData(
+                                                          ClipboardData(
+                                                              text: GetSupaCall
+                                                                  .codePromo(
+                                                        doneGetSupaResponse
+                                                            .jsonBody,
+                                                      )!));
+                                                      await launchURL(
+                                                          GetSupaCall.ctaUrl(
+                                                        doneGetSupaResponse
+                                                            .jsonBody,
+                                                      )!);
+                                                    },
+                                                    text: 'Aller sur le site',
+                                                    icon: Icon(
+                                                      Icons.exit_to_app,
+                                                      size: 15.0,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color: colorFromCssString(
-                                                        GetSupaCall.colorText(
+                                                        GetSupaCall.colorButton(
                                                           doneGetSupaResponse
                                                               .jsonBody,
                                                         )!,
                                                         defaultColor:
-                                                            Colors.black,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
                                                       ),
-                                                      fontSize: 16.7,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FontWeight.normal,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color:
+                                                                    colorFromCssString(
+                                                                  GetSupaCall
+                                                                      .colorButtonText(
+                                                                    doneGetSupaResponse
+                                                                        .jsonBody,
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            Colors.transparent,
+                                                        width: 0.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              7.0),
                                                     ),
-                                              ),
-                                              textAlign: TextAlign.center,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                    VandbfestCopyWidget
-                                                        .routeName,
-                                                    queryParameters: {
-                                                      'slug': serializeParam(
-                                                        'vandbfest',
-                                                        ParamType.String,
-                                                      ),
-                                                    }.withoutNulls,
-                                                  );
-                                                },
-                                                text:
-                                                    'Envoyer une nouvelle vidéo',
-                                                icon: Icon(
-                                                  Icons.add,
-                                                  size: 15.0,
+                                                  ),
                                                 ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
+                                              ].divide(SizedBox(height: 12.0)),
+                                            ),
+                                          ),
+                                        ),
+                                      if (FFAppState().slug == 'vandbfest')
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 60.0, 0.0, 0.0),
+                                          child: Container(
+                                            width: 400.0,
+                                            decoration: BoxDecoration(),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text:
+                                                            'Augmentez vos chances de gagner en envoyant une vidéo supplémentaire',
+                                                        style: TextStyle(),
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              colorFromCssString(
+                                                            GetSupaCall
+                                                                .colorText(
+                                                              doneGetSupaResponse
+                                                                  .jsonBody,
+                                                            )!,
+                                                            defaultColor:
+                                                                Colors.black,
+                                                          ),
+                                                          fontSize: 16.7,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          24.0, 0.0, 24.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: Color(0xFFED6F5E),
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
+                                                          0.0, 12.0, 0.0, 0.0),
+                                                  child: FFButtonWidget(
+                                                    onPressed: () async {
+                                                      context.pushNamed(
+                                                        VandbfestCopyWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'slug':
+                                                              serializeParam(
+                                                            'vandbfest',
+                                                            ParamType.String,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    text:
+                                                        'Envoyer une nouvelle vidéo',
+                                                    icon: Icon(
+                                                      Icons.add,
+                                                      size: 15.0,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: Color(0xFFED6F5E),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color:
+                                                                    colorFromCssString(
+                                                                  GetSupaCall
+                                                                      .colorButtonText(
+                                                                    doneGetSupaResponse
+                                                                        .jsonBody,
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                ),
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderSide: BorderSide(
                                                         color:
-                                                            colorFromCssString(
-                                                          GetSupaCall
-                                                              .colorButtonText(
-                                                            doneGetSupaResponse
-                                                                .jsonBody,
-                                                          )!,
-                                                          defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryBackground,
-                                                        ),
-                                                        letterSpacing: 0.0,
+                                                            Colors.transparent,
+                                                        width: 0.0,
                                                       ),
-                                                  elevation: 0.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              7.0),
+                                                    ),
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          7.0),
+                                                ),
+                                              ].divide(SizedBox(height: 12.0)),
+                                            ),
+                                          ),
+                                        ),
+                                      if (FFAppState().slug == 'ffr')
+                                        Container(
+                                          width: 400.0,
+                                          decoration: BoxDecoration(),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 24.0, 24.0, 0.0),
+                                                child: RichText(
+                                                  textScaler:
+                                                      MediaQuery.of(context)
+                                                          .textScaler,
+                                                  text: TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                        text:
+                                                            'Grâce à vous, nous allons continuer à montrer que le respect est une valeur forte dans le rugby.\n\nÀ travers son Plan de Lutte contre les Violences et les Incivilités, la FFR continue de montrer que le rugby ne se limite pas à un sport : il est aussi un vecteur d\'éducation et de valeurs humaines.\n\nLe respect, sur et hors du terrain, c\'est l\'affaire de tous !\n\n(*) Le vainqueur sera contacté par les équipes de la FFR par email à la fin de chaque mois, jusqu\'au mois de juin\n2025.',
+                                                        style: TextStyle(),
+                                                      )
+                                                    ],
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Manrope',
+                                                          color:
+                                                              colorFromCssString(
+                                                            GetSupaCall
+                                                                .colorText(
+                                                              doneGetSupaResponse
+                                                                  .jsonBody,
+                                                            )!,
+                                                            defaultColor:
+                                                                Colors.black,
+                                                          ),
+                                                          fontSize: 16.7,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                  ),
+                                                  textAlign: TextAlign.justify,
                                                 ),
                                               ),
-                                            ),
-                                          ].divide(SizedBox(height: 12.0)),
+                                            ].divide(SizedBox(height: 12.0)),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                ].divide(SizedBox(height: 14.0)),
+                                    ].divide(SizedBox(height: 12.0)),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ]
+                            .divide(SizedBox(height: 16.0))
+                            .addToStart(SizedBox(height: 10.0))
+                            .addToEnd(SizedBox(height: 100.0)),
                       ),
-                    ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToStart(SizedBox(height: 10.0)),
+                    ],
                   ),
                 ),
               ),

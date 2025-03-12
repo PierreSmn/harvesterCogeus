@@ -62,6 +62,7 @@ class _NpsWidgetState extends State<NpsWidget> {
             'np2_id': _model.client?.firstOrNull?.np2Id,
             'bu_id': _model.client?.firstOrNull?.buId,
             'loc_id': _model.client?.firstOrNull?.locId,
+            'first_name': '',
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});

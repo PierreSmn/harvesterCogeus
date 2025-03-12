@@ -16,3 +16,4 @@ export '/app/upload/upload_widget.dart' show UploadWidget;
 export '/nps/nps_widget.dart' show NpsWidget;
 export '/chat/chat_widget.dart' show ChatWidget;
 export '/app/optin/optin_widget.dart' show OptinWidget;
+export '/app/ffr/ffr_widget.dart' show FfrWidget;
