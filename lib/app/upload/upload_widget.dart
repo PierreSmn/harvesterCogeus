@@ -139,680 +139,745 @@ class _UploadWidgetState extends State<UploadWidget>
                           FlutterFlowTheme.of(context).primaryBackground,
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  child: Stack(
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            40.0, 0.0, 40.0, 0.0),
-                        child: ClipRRect(
+                      if (widget.slug == 'ffr')
+                        ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            valueOrDefault<String>(
-                              GetSupaCall.logoURL(
-                                uploadGetSupaResponse.jsonBody,
-                              ),
-                              'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
-                            ),
-                            height: 110.0,
-                            fit: BoxFit.contain,
+                          child: Image.asset(
+                            'assets/images/BG.jpeg',
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: MediaQuery.sizeOf(context).height * 1.0,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                      ),
-                      Flexible(
-                        child: Container(
-                          decoration: BoxDecoration(),
-                          child: Padding(
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                24.0, 0.0, 24.0, 0.0),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  RichText(
-                                    textScaler:
-                                        MediaQuery.of(context).textScaler,
-                                    text: TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: GetSupaCall.gift(
-                                            uploadGetSupaResponse.jsonBody,
-                                          )!,
-                                          style: TextStyle(),
-                                        )
-                                      ],
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Manrope',
-                                            color: colorFromCssString(
-                                              GetSupaCall.colorTitle(
+                                40.0, 0.0, 40.0, 0.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                valueOrDefault<String>(
+                                  GetSupaCall.logoURL(
+                                    uploadGetSupaResponse.jsonBody,
+                                  ),
+                                  'https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/featured.png?auto=format&q=60&w=2060&h=1158.75&fit=crop&crop=faces',
+                                ),
+                                height: 110.0,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Container(
+                              decoration: BoxDecoration(),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      RichText(
+                                        textScaler:
+                                            MediaQuery.of(context).textScaler,
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: GetSupaCall.gift(
                                                 uploadGetSupaResponse.jsonBody,
                                               )!,
-                                              defaultColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                            fontSize: 27.0,
-                                            letterSpacing: -1,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  if (!GetSupaCall.carouselBool(
-                                    uploadGetSupaResponse.jsonBody,
-                                  )!)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 24.0, 0.0, 0.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
-                                            GetSupaCall.imageURL(
-                                              uploadGetSupaResponse.jsonBody,
-                                            ),
-                                            'https://picsum.photos/seed/548/600',
-                                          ),
-                                          width: 350.0,
-                                          height: 250.0,
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    ),
-                                  if (GetSupaCall.carouselBool(
-                                        uploadGetSupaResponse.jsonBody,
-                                      ) ??
-                                      true)
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'En envoyant vous aussi votre vidéo',
+                                              style: TextStyle(),
+                                            )
+                                          ],
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Manrope',
                                                 color: colorFromCssString(
-                                                  GetSupaCall.colorText(
+                                                  GetSupaCall.colorTitle(
                                                     uploadGetSupaResponse
                                                         .jsonBody,
                                                   )!,
                                                   defaultColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .secondary,
+                                                          .primaryText,
                                                 ),
-                                                fontSize: 18.0,
-                                                letterSpacing: 0.0,
+                                                fontSize: 27.0,
+                                                letterSpacing: -1,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                         ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      if (!GetSupaCall.carouselBool(
+                                        uploadGetSupaResponse.jsonBody,
+                                      )!)
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 24.0, 0.0, 0.0),
-                                          child: FlutterFlowWebView(
-                                            content: valueOrDefault<String>(
-                                              GetSupaCall.carouselCode(
-                                                uploadGetSupaResponse.jsonBody,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                GetSupaCall.imageURL(
+                                                  uploadGetSupaResponse
+                                                      .jsonBody,
+                                                ),
+                                                'https://picsum.photos/seed/548/600',
                                               ),
-                                              'noCode',
+                                              width: 350.0,
+                                              height: 250.0,
+                                              fit: BoxFit.contain,
                                             ),
-                                            width: 350.0,
-                                            height: 250.0,
-                                            verticalScroll: false,
-                                            horizontalScroll: false,
-                                            html: true,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  if (MediaQuery.sizeOf(context).width <
-                                      kBreakpointSmall)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 24.0, 0.0, 18.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            width: 280.0,
-                                            decoration: BoxDecoration(),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 10.0, 0.0),
-                                                  child: Theme(
-                                                    data: ThemeData(
-                                                      checkboxTheme:
-                                                          CheckboxThemeData(
-                                                        visualDensity:
-                                                            VisualDensity
-                                                                .compact,
-                                                        materialTapTargetSize:
-                                                            MaterialTapTargetSize
-                                                                .shrinkWrap,
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      4.0),
+                                      if (GetSupaCall.carouselBool(
+                                            uploadGetSupaResponse.jsonBody,
+                                          ) ??
+                                          true)
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Text(
+                                              'En envoyant vous aussi votre vidéo',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Manrope',
+                                                        color:
+                                                            colorFromCssString(
+                                                          GetSupaCall.colorText(
+                                                            uploadGetSupaResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondary,
                                                         ),
+                                                        fontSize: 18.0,
+                                                        letterSpacing: 0.0,
                                                       ),
-                                                      unselectedWidgetColor: GetSupaCall
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 24.0, 0.0, 0.0),
+                                              child: FlutterFlowWebView(
+                                                content: valueOrDefault<String>(
+                                                  GetSupaCall.carouselCode(
+                                                    uploadGetSupaResponse
+                                                        .jsonBody,
+                                                  ),
+                                                  'noCode',
+                                                ),
+                                                width: 350.0,
+                                                height: 250.0,
+                                                verticalScroll: false,
+                                                horizontalScroll: false,
+                                                html: true,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      if (MediaQuery.sizeOf(context).width <
+                                          kBreakpointSmall)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 24.0, 0.0, 18.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 280.0,
+                                                decoration: BoxDecoration(),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
+                                                      child: Theme(
+                                                        data: ThemeData(
+                                                          checkboxTheme:
+                                                              CheckboxThemeData(
+                                                            visualDensity:
+                                                                VisualDensity
+                                                                    .compact,
+                                                            materialTapTargetSize:
+                                                                MaterialTapTargetSize
+                                                                    .shrinkWrap,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          4.0),
+                                                            ),
+                                                          ),
+                                                          unselectedWidgetColor: GetSupaCall
+                                                                          .colorButton(
+                                                                        uploadGetSupaResponse
+                                                                            .jsonBody,
+                                                                      ) !=
+                                                                      null &&
+                                                                  GetSupaCall
+                                                                          .colorButton(
+                                                                        uploadGetSupaResponse
+                                                                            .jsonBody,
+                                                                      ) !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  GetSupaCall
                                                                       .colorButton(
                                                                     uploadGetSupaResponse
                                                                         .jsonBody,
-                                                                  ) !=
-                                                                  null &&
-                                                              GetSupaCall
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .appleButton,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                        ),
+                                                        child: Checkbox(
+                                                          value: _model
+                                                                  .checkboxValue ??=
+                                                              false,
+                                                          onChanged:
+                                                              (newValue) async {
+                                                            safeSetState(() =>
+                                                                _model.checkboxValue =
+                                                                    newValue!);
+                                                            if (newValue!) {
+                                                              _model.checked =
+                                                                  true;
+                                                              safeSetState(
+                                                                  () {});
+                                                            } else {
+                                                              _model.checked =
+                                                                  false;
+                                                              safeSetState(
+                                                                  () {});
+                                                            }
+                                                          },
+                                                          side: BorderSide(
+                                                            width: 2,
+                                                            color: GetSupaCall
+                                                                            .colorButton(
+                                                                          uploadGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButton(
+                                                                          uploadGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButton(
+                                                                      uploadGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .appleButton,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                          ),
+                                                          activeColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryBackground,
+                                                          checkColor: GetSupaCall
+                                                                          .colorButton(
+                                                                        uploadGetSupaResponse
+                                                                            .jsonBody,
+                                                                      ) !=
+                                                                      null &&
+                                                                  GetSupaCall
+                                                                          .colorButton(
+                                                                        uploadGetSupaResponse
+                                                                            .jsonBody,
+                                                                      ) !=
+                                                                      ''
+                                                              ? colorFromCssString(
+                                                                  GetSupaCall
                                                                       .colorButton(
                                                                     uploadGetSupaResponse
                                                                         .jsonBody,
-                                                                  ) !=
-                                                                  ''
-                                                          ? colorFromCssString(
-                                                              GetSupaCall
-                                                                  .colorButton(
-                                                                uploadGetSupaResponse
-                                                                    .jsonBody,
-                                                              )!,
-                                                              defaultColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .appleButton,
-                                                            )
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .appleButton,
+                                                                )
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .appleButton,
+                                                        ),
+                                                      ).animateOnActionTrigger(
+                                                          animationsMap[
+                                                              'checkboxOnActionTriggerAnimation']!,
+                                                          hasBeenTriggered:
+                                                              hasCheckboxTriggered),
                                                     ),
-                                                    child: Checkbox(
-                                                      value: _model
-                                                              .checkboxValue ??=
-                                                          false,
-                                                      onChanged:
-                                                          (newValue) async {
-                                                        safeSetState(() => _model
-                                                                .checkboxValue =
-                                                            newValue!);
-                                                        if (newValue!) {
-                                                          _model.checked = true;
-                                                          safeSetState(() {});
-                                                        } else {
-                                                          _model.checked =
-                                                              false;
-                                                          safeSetState(() {});
-                                                        }
-                                                      },
-                                                      side: BorderSide(
-                                                        width: 2,
-                                                        color: GetSupaCall
-                                                                        .colorButton(
-                                                                      uploadGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    null &&
+                                                    Flexible(
+                                                      child: RichText(
+                                                        textScaler:
+                                                            MediaQuery.of(
+                                                                    context)
+                                                                .textScaler,
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text:
+                                                                  'J\'accepte les ',
+                                                              style:
+                                                                  TextStyle(),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  'Conditions Générales',
+                                                              style: TextStyle(
+                                                                color:
+                                                                    colorFromCssString(
+                                                                  GetSupaCall
+                                                                      .colorButton(
+                                                                    uploadGetSupaResponse
+                                                                        .jsonBody,
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .appleButton,
+                                                                ),
+                                                              ),
+                                                              mouseCursor:
+                                                                  SystemMouseCursors
+                                                                      .click,
+                                                              recognizer:
+                                                                  TapGestureRecognizer()
+                                                                    ..onTap =
+                                                                        () async {
+                                                                      await launchURL(
+                                                                          'https://www.cogeus.com/terms-of-use');
+                                                                    },
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  ' et que ma vidéo apparaisse dans les communications de ',
+                                                              style:
+                                                                  TextStyle(),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  valueOrDefault<
+                                                                      String>(
                                                                 GetSupaCall
-                                                                        .colorButton(
-                                                                      uploadGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    ''
-                                                            ? colorFromCssString(
-                                                                GetSupaCall
-                                                                    .colorButton(
+                                                                    .brand(
                                                                   uploadGetSupaResponse
                                                                       .jsonBody,
-                                                                )!,
-                                                                defaultColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .appleButton,
-                                                              )
-                                                            : FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText,
-                                                      ),
-                                                      activeColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryBackground,
-                                                      checkColor: GetSupaCall
-                                                                      .colorButton(
-                                                                    uploadGetSupaResponse
-                                                                        .jsonBody,
-                                                                  ) !=
-                                                                  null &&
-                                                              GetSupaCall
-                                                                      .colorButton(
-                                                                    uploadGetSupaResponse
-                                                                        .jsonBody,
-                                                                  ) !=
-                                                                  ''
-                                                          ? colorFromCssString(
-                                                              GetSupaCall
-                                                                  .colorButton(
-                                                                uploadGetSupaResponse
-                                                                    .jsonBody,
-                                                              )!,
-                                                              defaultColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .appleButton,
+                                                                ),
+                                                                'brandName',
+                                                              ),
+                                                              style:
+                                                                  TextStyle(),
                                                             )
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .appleButton,
+                                                          ],
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Manrope',
+                                                                color:
+                                                                    colorFromCssString(
+                                                                  GetSupaCall
+                                                                      .colorText(
+                                                                    uploadGetSupaResponse
+                                                                        .jsonBody,
+                                                                  )!,
+                                                                  defaultColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                                fontSize: 13.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
                                                     ),
-                                                  ).animateOnActionTrigger(
-                                                      animationsMap[
-                                                          'checkboxOnActionTriggerAnimation']!,
-                                                      hasBeenTriggered:
-                                                          hasCheckboxTriggered),
+                                                  ],
                                                 ),
-                                                Flexible(
-                                                  child: RichText(
-                                                    textScaler:
-                                                        MediaQuery.of(context)
-                                                            .textScaler,
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text:
-                                                              'J\'accepte les ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        TextSpan(
-                                                          text:
-                                                              'Conditions Générales',
-                                                          style: TextStyle(
-                                                            color:
-                                                                colorFromCssString(
-                                                              GetSupaCall
-                                                                  .colorButton(
-                                                                uploadGetSupaResponse
-                                                                    .jsonBody,
-                                                              )!,
-                                                              defaultColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .appleButton,
-                                                            ),
-                                                          ),
-                                                          mouseCursor:
-                                                              SystemMouseCursors
-                                                                  .click,
-                                                          recognizer:
-                                                              TapGestureRecognizer()
-                                                                ..onTap =
-                                                                    () async {
-                                                                  await launchURL(
-                                                                      'https://www.cogeus.com/terms-of-use');
-                                                                },
-                                                        ),
-                                                        TextSpan(
-                                                          text:
-                                                              ' et que ma vidéo apparaisse dans les communications de ',
-                                                          style: TextStyle(),
-                                                        ),
-                                                        TextSpan(
-                                                          text: valueOrDefault<
-                                                              String>(
-                                                            GetSupaCall.brand(
-                                                              uploadGetSupaResponse
-                                                                  .jsonBody,
-                                                            ),
-                                                            'brandName',
-                                                          ),
-                                                          style: TextStyle(),
-                                                        )
-                                                      ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Manrope',
-                                                            color:
-                                                                colorFromCssString(
-                                                              GetSupaCall
-                                                                  .colorText(
-                                                                uploadGetSupaResponse
-                                                                    .jsonBody,
-                                                              )!,
-                                                              defaultColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                            ),
-                                                            fontSize: 13.0,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              _model.checked =
-                                                  _model.checkboxValue;
-                                              safeSetState(() {});
-                                              if (!_model.checked!) {
-                                                if (animationsMap[
-                                                        'checkboxOnActionTriggerAnimation'] !=
-                                                    null) {
-                                                  safeSetState(() =>
-                                                      hasCheckboxTriggered =
-                                                          true);
-                                                  SchedulerBinding.instance
-                                                      .addPostFrameCallback(
-                                                          (_) async =>
+                                              ),
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  _model.checked =
+                                                      _model.checkboxValue;
+                                                  safeSetState(() {});
+                                                  if (!_model.checked!) {
+                                                    if (animationsMap[
+                                                            'checkboxOnActionTriggerAnimation'] !=
+                                                        null) {
+                                                      safeSetState(() =>
+                                                          hasCheckboxTriggered =
+                                                              true);
+                                                      SchedulerBinding.instance
+                                                          .addPostFrameCallback((_) async =>
                                                               await animationsMap[
                                                                       'checkboxOnActionTriggerAnimation']!
                                                                   .controller
                                                                   .forward(
                                                                       from:
                                                                           0.0));
-                                                }
-                                                return;
-                                              }
-                                              final selectedMedia =
-                                                  await selectMedia(
-                                                storageFolderPath:
-                                                    GetSupaCall.slug(
-                                                  uploadGetSupaResponse
-                                                      .jsonBody,
-                                                ),
-                                                isVideo: true,
-                                                mediaSource:
-                                                    MediaSource.videoGallery,
-                                                multiImage: false,
-                                              );
-                                              if (selectedMedia != null &&
-                                                  selectedMedia.every((m) =>
-                                                      validateFileFormat(
-                                                          m.storagePath,
-                                                          context))) {
-                                                safeSetState(() => _model
-                                                    .isDataUploading = true);
-                                                var selectedUploadedFiles =
-                                                    <FFUploadedFile>[];
-
-                                                var downloadUrls = <String>[];
-                                                try {
-                                                  selectedUploadedFiles =
-                                                      selectedMedia
-                                                          .map((m) =>
-                                                              FFUploadedFile(
-                                                                name: m
-                                                                    .storagePath
-                                                                    .split('/')
-                                                                    .last,
-                                                                bytes: m.bytes,
-                                                                height: m
-                                                                    .dimensions
-                                                                    ?.height,
-                                                                width: m
-                                                                    .dimensions
-                                                                    ?.width,
-                                                                blurHash:
-                                                                    m.blurHash,
-                                                              ))
-                                                          .toList();
-
-                                                  downloadUrls =
-                                                      await uploadSupabaseStorageFiles(
-                                                    bucketName: 'submissions',
-                                                    selectedFiles:
-                                                        selectedMedia,
-                                                  );
-                                                } finally {
-                                                  _model.isDataUploading =
-                                                      false;
-                                                }
-                                                if (selectedUploadedFiles
-                                                            .length ==
-                                                        selectedMedia.length &&
-                                                    downloadUrls.length ==
-                                                        selectedMedia.length) {
-                                                  safeSetState(() {
-                                                    _model.uploadedLocalFile =
-                                                        selectedUploadedFiles
-                                                            .first;
-                                                    _model.uploadedFileUrl =
-                                                        downloadUrls.first;
-                                                  });
-                                                } else {
-                                                  safeSetState(() {});
-                                                  return;
-                                                }
-                                              }
-
-                                              if (_model.uploadedFileUrl !=
-                                                      '') {
-                                                FFAppState().videoReady = true;
-                                                FFAppState().questionAsked =
-                                                    GetSupaCall.expla(
-                                                  uploadGetSupaResponse
-                                                      .jsonBody,
-                                                )!;
-                                                FFAppState().videoUrl =
-                                                    _model.uploadedFileUrl;
-                                                safeSetState(() {});
-                                              } else {
-                                                await showDialog(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return WebViewAware(
-                                                      child: AlertDialog(
-                                                        title: Text('Erreur'),
-                                                        content: Text(
-                                                            'Vous devez séléctionner une vidéo'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                                return;
-                                              }
-
-                                              FFAppState().slug = widget.slug;
-                                              FFAppState().brandName =
-                                                  GetSupaCall.brand(
-                                                uploadGetSupaResponse.jsonBody,
-                                              )!;
-                                              FFAppState().validatedDone =
-                                                  false;
-                                              FFAppState().isRecording = false;
-                                              FFAppState()
-                                                  .recordVideoFBStorage = '';
-                                              safeSetState(() {});
-                                              unawaited(
-                                                () async {
-                                                  await NewStartCall.call(
-                                                    slug: FFAppState().slug,
-                                                    brand:
-                                                        FFAppState().brandName,
-                                                    time: getCurrentTimestamp
-                                                        .toString(),
-                                                  );
-                                                }(),
-                                              );
-
-                                              context.pushNamed(
-                                                  InfosWidget.routeName);
-                                            },
-                                            text: 'Je selectionne une vidéo',
-                                            options: FFButtonOptions(
-                                              width: 300.0,
-                                              height: 40.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: GetSupaCall.colorButton(
-                                                            uploadGetSupaResponse
-                                                                .jsonBody,
-                                                          ) !=
-                                                          null &&
-                                                      GetSupaCall.colorButton(
-                                                            uploadGetSupaResponse
-                                                                .jsonBody,
-                                                          ) !=
-                                                          ''
-                                                  ? colorFromCssString(
-                                                      GetSupaCall.colorButton(
-                                                        uploadGetSupaResponse
-                                                            .jsonBody,
-                                                      )!,
-                                                      defaultColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .appleButton,
-                                                    )
-                                                  : FlutterFlowTheme.of(context)
-                                                      .appleButton,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color: GetSupaCall
-                                                                        .colorButtonText(
-                                                                      uploadGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    null &&
-                                                                GetSupaCall
-                                                                        .colorButtonText(
-                                                                      uploadGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    ''
-                                                            ? colorFromCssString(
-                                                                GetSupaCall
-                                                                    .colorButtonText(
-                                                                  uploadGetSupaResponse
-                                                                      .jsonBody,
-                                                                )!,
-                                                                defaultColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                              )
-                                                            : FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(7.0),
-                                            ),
-                                          ),
-                                        ].divide(SizedBox(height: 12.0)),
-                                      ),
-                                    ),
-                                  if (MediaQuery.sizeOf(context).width >
-                                      kBreakpointSmall)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 48.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
-                                            decoration: BoxDecoration(),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                BarcodeWidget(
-                                                  data:
-                                                      'https://app.cogeus.com/home?slug=${widget.slug != '' ? widget.slug : FFAppState().slug}',
-                                                  barcode: Barcode.qrCode(),
-                                                  width: 240.0,
-                                                  height: 160.0,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  errorBuilder:
-                                                      (_context, _error) =>
-                                                          SizedBox(
-                                                    width: 240.0,
-                                                    height: 160.0,
-                                                  ),
-                                                  drawText: false,
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Text(
-                                            'Scannez ce code pour\n continuer sur un téléphone',
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Manrope',
-                                                  color: colorFromCssString(
-                                                    GetSupaCall.colorTitle(
+                                                    }
+                                                    return;
+                                                  }
+                                                  final selectedMedia =
+                                                      await selectMedia(
+                                                    storageFolderPath:
+                                                        GetSupaCall.slug(
                                                       uploadGetSupaResponse
                                                           .jsonBody,
-                                                    )!,
-                                                    defaultColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                    ),
+                                                    isVideo: true,
+                                                    mediaSource: MediaSource
+                                                        .videoGallery,
+                                                    multiImage: false,
+                                                  );
+                                                  if (selectedMedia != null &&
+                                                      selectedMedia.every((m) =>
+                                                          validateFileFormat(
+                                                              m.storagePath,
+                                                              context))) {
+                                                    safeSetState(() =>
+                                                        _model.isDataUploading =
+                                                            true);
+                                                    var selectedUploadedFiles =
+                                                        <FFUploadedFile>[];
+
+                                                    var downloadUrls =
+                                                        <String>[];
+                                                    try {
+                                                      selectedUploadedFiles =
+                                                          selectedMedia
+                                                              .map((m) =>
+                                                                  FFUploadedFile(
+                                                                    name: m
+                                                                        .storagePath
+                                                                        .split(
+                                                                            '/')
+                                                                        .last,
+                                                                    bytes:
+                                                                        m.bytes,
+                                                                    height: m
+                                                                        .dimensions
+                                                                        ?.height,
+                                                                    width: m
+                                                                        .dimensions
+                                                                        ?.width,
+                                                                    blurHash: m
+                                                                        .blurHash,
+                                                                  ))
+                                                              .toList();
+
+                                                      downloadUrls =
+                                                          await uploadSupabaseStorageFiles(
+                                                        bucketName:
+                                                            'submissions',
+                                                        selectedFiles:
+                                                            selectedMedia,
+                                                      );
+                                                    } finally {
+                                                      _model.isDataUploading =
+                                                          false;
+                                                    }
+                                                    if (selectedUploadedFiles
+                                                                .length ==
+                                                            selectedMedia
+                                                                .length &&
+                                                        downloadUrls.length ==
+                                                            selectedMedia
+                                                                .length) {
+                                                      safeSetState(() {
+                                                        _model.uploadedLocalFile =
+                                                            selectedUploadedFiles
+                                                                .first;
+                                                        _model.uploadedFileUrl =
+                                                            downloadUrls.first;
+                                                      });
+                                                    } else {
+                                                      safeSetState(() {});
+                                                      return;
+                                                    }
+                                                  }
+
+                                                  if (_model.uploadedFileUrl !=
+                                                          '') {
+                                                    FFAppState().videoReady =
+                                                        true;
+                                                    FFAppState().questionAsked =
+                                                        GetSupaCall.expla(
+                                                      uploadGetSupaResponse
+                                                          .jsonBody,
+                                                    )!;
+                                                    FFAppState().videoUrl =
+                                                        _model.uploadedFileUrl;
+                                                    safeSetState(() {});
+                                                  } else {
+                                                    await showDialog(
+                                                      context: context,
+                                                      builder:
+                                                          (alertDialogContext) {
+                                                        return WebViewAware(
+                                                          child: AlertDialog(
+                                                            title:
+                                                                Text('Erreur'),
+                                                            content: Text(
+                                                                'Vous devez séléctionner une vidéo'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                    return;
+                                                  }
+
+                                                  FFAppState().slug =
+                                                      widget.slug;
+                                                  FFAppState().brandName =
+                                                      GetSupaCall.brand(
+                                                    uploadGetSupaResponse
+                                                        .jsonBody,
+                                                  )!;
+                                                  FFAppState().validatedDone =
+                                                      false;
+                                                  FFAppState().isRecording =
+                                                      false;
+                                                  FFAppState()
+                                                      .recordVideoFBStorage = '';
+                                                  safeSetState(() {});
+                                                  unawaited(
+                                                    () async {
+                                                      await NewStartCall.call(
+                                                        slug: FFAppState().slug,
+                                                        brand: FFAppState()
+                                                            .brandName,
+                                                        time:
+                                                            getCurrentTimestamp
+                                                                .toString(),
+                                                      );
+                                                    }(),
+                                                  );
+
+                                                  context.pushNamed(
+                                                      InfosWidget.routeName);
+                                                },
+                                                text:
+                                                    'Je selectionne une vidéo',
+                                                options: FFButtonOptions(
+                                                  width: 300.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: GetSupaCall
+                                                                  .colorButton(
+                                                                uploadGetSupaResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              null &&
+                                                          GetSupaCall
+                                                                  .colorButton(
+                                                                uploadGetSupaResponse
+                                                                    .jsonBody,
+                                                              ) !=
+                                                              ''
+                                                      ? colorFromCssString(
+                                                          GetSupaCall
+                                                              .colorButton(
+                                                            uploadGetSupaResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                          defaultColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .appleButton,
+                                                        )
+                                                      : FlutterFlowTheme.of(
+                                                              context)
+                                                          .appleButton,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Manrope',
+                                                            color: GetSupaCall
+                                                                            .colorButtonText(
+                                                                          uploadGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButtonText(
+                                                                          uploadGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButtonText(
+                                                                      uploadGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
                                                   ),
-                                                  letterSpacing: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          7.0),
                                                 ),
+                                              ),
+                                            ].divide(SizedBox(height: 12.0)),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
-                                      ),
-                                    ),
-                                ].divide(SizedBox(height: 0.0)),
+                                        ),
+                                      if (MediaQuery.sizeOf(context).width >
+                                          kBreakpointSmall)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 48.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                decoration: BoxDecoration(),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    BarcodeWidget(
+                                                      data:
+                                                          'https://app.cogeus.com/home?slug=${widget.slug != '' ? widget.slug : FFAppState().slug}',
+                                                      barcode: Barcode.qrCode(),
+                                                      width: 240.0,
+                                                      height: 160.0,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      errorBuilder:
+                                                          (_context, _error) =>
+                                                              SizedBox(
+                                                        width: 240.0,
+                                                        height: 160.0,
+                                                      ),
+                                                      drawText: false,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Text(
+                                                'Scannez ce code pour\n continuer sur un téléphone',
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Manrope',
+                                                      color: colorFromCssString(
+                                                        GetSupaCall.colorTitle(
+                                                          uploadGetSupaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                        defaultColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                              ),
+                                            ].divide(SizedBox(height: 12.0)),
+                                          ),
+                                        ),
+                                    ].divide(SizedBox(height: 0.0)),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                        ]
+                            .divide(SizedBox(height: 16.0))
+                            .addToStart(SizedBox(height: 10.0)),
                       ),
-                    ]
-                        .divide(SizedBox(height: 16.0))
-                        .addToStart(SizedBox(height: 10.0)),
+                    ],
                   ),
                 ),
               ),
