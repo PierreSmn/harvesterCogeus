@@ -96,4 +96,10 @@ class ExperiencesRow extends SupabaseDataRow {
 
   int? get themeChoice => getField<int>('theme_choice');
   set themeChoice(int? value) => setField<int>('theme_choice', value);
+
+  String? get product => getField<String>('product');
+  set product(String? value) => setField<String>('product', value);
+
+  String? get orderId => getField<String>('orderId');
+  set orderId(String? value) => setField<String>('orderId', value);
 }

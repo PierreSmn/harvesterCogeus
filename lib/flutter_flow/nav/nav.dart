@@ -176,6 +176,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'name',
               ParamType.String,
             ),
+            product: params.getParam(
+              'product',
+              ParamType.String,
+            ),
+            lastname: params.getParam(
+              'lastname',
+              ParamType.String,
+            ),
+            orderId: params.getParam(
+              'orderId',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
