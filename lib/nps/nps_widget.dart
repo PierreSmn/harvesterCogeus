@@ -17,12 +17,18 @@ class NpsWidget extends StatefulWidget {
     this.nps,
     this.email,
     this.name,
+    this.product,
+    this.lastname,
+    this.orderId,
   });
 
   final int? clid;
   final int? nps;
   final String? email;
   final String? name;
+  final String? product;
+  final String? lastname;
+  final String? orderId;
 
   static String routeName = 'nps';
   static String routePath = '/nps';
@@ -58,11 +64,12 @@ class _NpsWidgetState extends State<NpsWidget> {
                 : widget.clid,
             'email': widget.email,
             'full_name': widget.name,
-            'np1_id': _model.client?.firstOrNull?.np1Id,
-            'np2_id': _model.client?.firstOrNull?.np2Id,
             'bu_id': _model.client?.firstOrNull?.buId,
             'loc_id': _model.client?.firstOrNull?.locId,
-            'first_name': '',
+            'first_name': widget.name,
+            'last_name': widget.lastname,
+            'product': widget.product,
+            'orderId': widget.orderId,
           });
           FFAppState().expId = _model.experience!.id;
           safeSetState(() {});

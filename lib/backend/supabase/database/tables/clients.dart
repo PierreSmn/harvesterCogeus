@@ -251,4 +251,10 @@ class ClientsRow extends SupabaseDataRow {
 
   int? get totalDetractors => getField<int>('total_detractors');
   set totalDetractors(int? value) => setField<int>('total_detractors', value);
+
+  bool? get hasWidgetTp => getField<bool>('has_widget_tp');
+  set hasWidgetTp(bool? value) => setField<bool>('has_widget_tp', value);
+
+  String? get widgetTpLink => getField<String>('widget_tp_link');
+  set widgetTpLink(String? value) => setField<String>('widget_tp_link', value);
 }
