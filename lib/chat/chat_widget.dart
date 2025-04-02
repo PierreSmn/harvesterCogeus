@@ -1,4 +1,3 @@
-import '';
 import '/backend/supabase/supabase.dart';
 import '/components/feedback_widget.dart';
 import '/components/repsnap_widget.dart';
@@ -858,8 +857,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   chatClientsRow
                                                                       .theme4,
                                                                   'Facilité d\'utilisation',
-                                                                ).maybeHandleOverflow(
-                                                                  maxChars: 35,
                                                                 ),
                                                                 textAlign:
                                                                     TextAlign
