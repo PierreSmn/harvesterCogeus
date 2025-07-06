@@ -13,6 +13,7 @@ import 'package:intl/intl.dart'; // Ensure you have this import for DateFormat
 import '../../flutter_flow/upload_data.dart';
 import 'package:camera/camera.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter/services.dart'; // ← pull in DeviceOrientation
 
 class CameraRecord extends StatefulWidget {
   const CameraRecord({
@@ -123,9 +124,14 @@ class _CameraRecordState extends State<CameraRecord>
                   snapshot.data![widget.control],
                   ResolutionPreset.veryHigh,
                 );
-                controller!.initialize().then((_) {
-                  if (!mounted) {
-                    return;
+                controller!.initialize().then((_) async {
+                  if (!mounted) return;
+                  // **LOCK** into portrait
+                  try {
+                    await controller!
+                        .lockCaptureOrientation(DeviceOrientation.portraitUp);
+                  } catch (e) {
+                    print("Couldn't lock orientation: $e");
                   }
                   setState(() {});
                 });
