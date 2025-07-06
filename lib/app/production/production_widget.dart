@@ -131,12 +131,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              1.0,
+                                          width: 430.0,
+                                          height: 900.0,
                                           decoration: BoxDecoration(),
                                           child: custom_widgets.CameraRecord(
                                             width: 430.0,
