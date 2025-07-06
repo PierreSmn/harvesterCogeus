@@ -132,7 +132,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       children: [
                                         Container(
                                           width: 430.0,
-                                          height: 900.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1.0,
                                           decoration: BoxDecoration(),
                                           child: custom_widgets.CameraRecord(
                                             width: 430.0,
