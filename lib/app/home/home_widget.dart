@@ -13,6 +13,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -184,7 +185,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            font: GoogleFonts.manrope(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             color: colorFromCssString(
                                               GetSupaCall.colorTitle(
                                                 homeGetSupaResponse.jsonBody,
@@ -196,6 +203,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             fontSize: 27.0,
                                             letterSpacing: -1,
                                             fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     textAlign: TextAlign.center,
@@ -234,7 +245,18 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                font: GoogleFonts.manrope(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorText(
                                                     homeGetSupaResponse
@@ -247,6 +269,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 ),
                                                 fontSize: 18.0,
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         Padding(
@@ -347,35 +377,61 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         safeSetState(() {});
                                                       }
                                                     },
-                                                    side: BorderSide(
-                                                      width: 2,
-                                                      color: GetSupaCall
-                                                                      .colorButton(
-                                                                    homeGetSupaResponse
-                                                                        .jsonBody,
-                                                                  ) !=
-                                                                  null &&
-                                                              GetSupaCall
-                                                                      .colorButton(
-                                                                    homeGetSupaResponse
-                                                                        .jsonBody,
-                                                                  ) !=
-                                                                  ''
-                                                          ? colorFromCssString(
-                                                              GetSupaCall
-                                                                  .colorButton(
-                                                                homeGetSupaResponse
-                                                                    .jsonBody,
-                                                              )!,
-                                                              defaultColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .appleButton,
-                                                            )
-                                                          : FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                    ),
+                                                    side: ((GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButton(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .appleButton,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText) !=
+                                                            null)
+                                                        ? BorderSide(
+                                                            width: 2,
+                                                            color: (GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        null &&
+                                                                    GetSupaCall
+                                                                            .colorButton(
+                                                                          homeGetSupaResponse
+                                                                              .jsonBody,
+                                                                        ) !=
+                                                                        ''
+                                                                ? colorFromCssString(
+                                                                    GetSupaCall
+                                                                        .colorButton(
+                                                                      homeGetSupaResponse
+                                                                          .jsonBody,
+                                                                    )!,
+                                                                    defaultColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .appleButton,
+                                                                  )
+                                                                : FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText),
+                                                          )
+                                                        : null,
                                                     activeColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -473,7 +529,19 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Manrope',
+                                                          font: GoogleFonts
+                                                              .manrope(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color:
                                                               colorFromCssString(
                                                             GetSupaCall
@@ -488,6 +556,16 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           ),
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -592,41 +670,54 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     : FlutterFlowTheme.of(
                                                             context)
                                                         .appleButton,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Manrope',
-                                                          color: GetSupaCall
-                                                                          .colorButtonText(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      null &&
-                                                                  GetSupaCall
-                                                                          .colorButtonText(
-                                                                        homeGetSupaResponse
-                                                                            .jsonBody,
-                                                                      ) !=
-                                                                      ''
-                                                              ? colorFromCssString(
-                                                                  GetSupaCall
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      font: GoogleFonts.manrope(
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
+                                                      color: GetSupaCall
                                                                       .colorButtonText(
                                                                     homeGetSupaResponse
                                                                         .jsonBody,
-                                                                  )!,
-                                                                  defaultColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                )
-                                                              : FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
+                                                                  ) !=
+                                                                  null &&
+                                                              GetSupaCall
+                                                                      .colorButtonText(
+                                                                    homeGetSupaResponse
+                                                                        .jsonBody,
+                                                                  ) !=
+                                                                  ''
+                                                          ? colorFromCssString(
+                                                              GetSupaCall
+                                                                  .colorButtonText(
+                                                                homeGetSupaResponse
+                                                                    .jsonBody,
+                                                              )!,
+                                                              defaultColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                            )
+                                                          : FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
@@ -686,8 +777,29 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  font: GoogleFonts.manrope(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                           Text(
@@ -695,8 +807,29 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  font: GoogleFonts.manrope(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                           FFButtonWidget(
@@ -760,41 +893,54 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     )
                                                   : FlutterFlowTheme.of(context)
                                                       .appleButton,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color: GetSupaCall
-                                                                        .colorButtonText(
-                                                                      homeGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    null &&
-                                                                GetSupaCall
-                                                                        .colorButtonText(
-                                                                      homeGetSupaResponse
-                                                                          .jsonBody,
-                                                                    ) !=
-                                                                    ''
-                                                            ? colorFromCssString(
-                                                                GetSupaCall
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.manrope(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: GetSupaCall
                                                                     .colorButtonText(
                                                                   homeGetSupaResponse
                                                                       .jsonBody,
-                                                                )!,
-                                                                defaultColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                              )
-                                                            : FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
+                                                                ) !=
+                                                                null &&
+                                                            GetSupaCall
+                                                                    .colorButtonText(
+                                                                  homeGetSupaResponse
+                                                                      .jsonBody,
+                                                                ) !=
+                                                                ''
+                                                        ? colorFromCssString(
+                                                            GetSupaCall
+                                                                .colorButtonText(
+                                                              homeGetSupaResponse
+                                                                  .jsonBody,
+                                                            )!,
+                                                            defaultColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                          )
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryBackground,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                               elevation: 0.0,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,

@@ -100,7 +100,6 @@ class _RepsnapWidgetState extends State<RepsnapWidget> {
                                     fontSize: 18.0,
                                     letterSpacing: FFAppConstants.spacing,
                                     fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
                                     lineHeight: 1.2,
                                   ),
                             ),

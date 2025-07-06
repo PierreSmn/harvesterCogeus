@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'upload_model.dart';
@@ -200,7 +201,14 @@ class _UploadWidgetState extends State<UploadWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                font: GoogleFonts.manrope(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorTitle(
                                                     uploadGetSupaResponse
@@ -214,6 +222,10 @@ class _UploadWidgetState extends State<UploadWidget>
                                                 fontSize: 27.0,
                                                 letterSpacing: -1,
                                                 fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         textAlign: TextAlign.center,
@@ -251,25 +263,45 @@ class _UploadWidgetState extends State<UploadWidget>
                                           children: [
                                             Text(
                                               'En envoyant vous aussi votre vidéo',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color:
-                                                            colorFromCssString(
-                                                          GetSupaCall.colorText(
-                                                            uploadGetSupaResponse
-                                                                .jsonBody,
-                                                          )!,
-                                                          defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondary,
-                                                        ),
-                                                        fontSize: 18.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.manrope(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: colorFromCssString(
+                                                      GetSupaCall.colorText(
+                                                        uploadGetSupaResponse
+                                                            .jsonBody,
+                                                      )!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                    ),
+                                                    fontSize: 18.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -384,34 +416,53 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                   () {});
                                                             }
                                                           },
-                                                          side: BorderSide(
-                                                            width: 2,
-                                                            color: GetSupaCall
-                                                                            .colorButton(
-                                                                          uploadGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        null &&
-                                                                    GetSupaCall
-                                                                            .colorButton(
-                                                                          uploadGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        ''
-                                                                ? colorFromCssString(
-                                                                    GetSupaCall
-                                                                        .colorButton(
-                                                                      uploadGetSupaResponse
-                                                                          .jsonBody,
-                                                                    )!,
-                                                                    defaultColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .appleButton,
-                                                                  )
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                          ),
+                                                          side: ((GetSupaCall
+                                                                                  .colorButton(
+                                                                                uploadGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              null &&
+                                                                          GetSupaCall
+                                                                                  .colorButton(
+                                                                                uploadGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          GetSupaCall
+                                                                              .colorButton(
+                                                                            uploadGetSupaResponse.jsonBody,
+                                                                          )!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).appleButton,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText) !=
+                                                                  null)
+                                                              ? BorderSide(
+                                                                  width: 2,
+                                                                  color: (GetSupaCall
+                                                                                  .colorButton(
+                                                                                uploadGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              null &&
+                                                                          GetSupaCall
+                                                                                  .colorButton(
+                                                                                uploadGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          GetSupaCall
+                                                                              .colorButton(
+                                                                            uploadGetSupaResponse.jsonBody,
+                                                                          )!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).appleButton,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText),
+                                                                )
+                                                              : null,
                                                           activeColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -516,8 +567,17 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Manrope',
+                                                                font: GoogleFonts
+                                                                    .manrope(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color:
                                                                     colorFromCssString(
                                                                   GetSupaCall
@@ -533,6 +593,14 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -580,9 +648,9 @@ class _UploadWidgetState extends State<UploadWidget>
                                                           validateFileFormat(
                                                               m.storagePath,
                                                               context))) {
-                                                    safeSetState(() =>
-                                                        _model.isDataUploading =
-                                                            true);
+                                                    safeSetState(() => _model
+                                                            .isDataUploading_uploadData3u2 =
+                                                        true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
 
@@ -619,7 +687,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                                             selectedMedia,
                                                       );
                                                     } finally {
-                                                      _model.isDataUploading =
+                                                      _model.isDataUploading_uploadData3u2 =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -630,10 +698,10 @@ class _UploadWidgetState extends State<UploadWidget>
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile =
+                                                        _model.uploadedLocalFile_uploadData3u2 =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl =
+                                                        _model.uploadedFileUrl_uploadData3u2 =
                                                             downloadUrls.first;
                                                       });
                                                     } else {
@@ -642,7 +710,7 @@ class _UploadWidgetState extends State<UploadWidget>
                                                     }
                                                   }
 
-                                                  if (_model.uploadedFileUrl !=
+                                                  if (_model.uploadedFileUrl_uploadData3u2 !=
                                                           '') {
                                                     FFAppState().videoReady =
                                                         true;
@@ -651,8 +719,8 @@ class _UploadWidgetState extends State<UploadWidget>
                                                       uploadGetSupaResponse
                                                           .jsonBody,
                                                     )!;
-                                                    FFAppState().videoUrl =
-                                                        _model.uploadedFileUrl;
+                                                    FFAppState().videoUrl = _model
+                                                        .uploadedFileUrl_uploadData3u2;
                                                     safeSetState(() {});
                                                   } else {
                                                     await showDialog(
@@ -749,43 +817,55 @@ class _UploadWidgetState extends State<UploadWidget>
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .appleButton,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Manrope',
-                                                            color: GetSupaCall
-                                                                            .colorButtonText(
-                                                                          uploadGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        null &&
-                                                                    GetSupaCall
-                                                                            .colorButtonText(
-                                                                          uploadGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        ''
-                                                                ? colorFromCssString(
-                                                                    GetSupaCall
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.manrope(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: GetSupaCall
                                                                         .colorButtonText(
                                                                       uploadGetSupaResponse
                                                                           .jsonBody,
-                                                                    )!,
-                                                                    defaultColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                  )
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButtonText(
+                                                                      uploadGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButtonText(
+                                                                  uploadGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -849,7 +929,18 @@ class _UploadWidgetState extends State<UploadWidget>
                                                         context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      font: GoogleFonts.manrope(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       color: colorFromCssString(
                                                         GetSupaCall.colorTitle(
                                                           uploadGetSupaResponse
@@ -861,6 +952,16 @@ class _UploadWidgetState extends State<UploadWidget>
                                                                 .primaryText,
                                                       ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
                                               ),
                                             ].divide(SizedBox(height: 12.0)),

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'feedback_model.dart';
@@ -97,7 +98,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               fontSize: 24.0,
                               letterSpacing: FFAppConstants.spacing,
                               fontWeight: FontWeight.w500,
-                              useGoogleFonts: false,
                             ),
                       ),
                       Column(
@@ -126,7 +126,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Row(
@@ -173,8 +172,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 6.0)),
@@ -209,7 +225,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Row(
@@ -256,8 +271,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 6.0)),
@@ -292,7 +324,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Row(
@@ -339,8 +370,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 6.0)),
@@ -375,7 +423,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Row(
@@ -422,8 +469,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 6.0)),
@@ -458,7 +522,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   Row(
@@ -505,8 +568,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ].divide(SizedBox(width: 6.0)),
@@ -538,7 +618,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                           fontSize: 16.0,
                                           letterSpacing: FFAppConstants.spacing,
                                           fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
                                         ),
                                   ),
                                   TextFormField(
@@ -551,8 +630,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            font: GoogleFonts.manrope(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -594,8 +690,25 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          font: GoogleFonts.manrope(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                     maxLines: 5,
                                     minLines: 3,
@@ -697,7 +810,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
-                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ].divide(SizedBox(width: 6.0)),
@@ -747,7 +859,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                       fontSize: 17.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
-                                      useGoogleFonts: false,
                                     ),
                               ),
                             ),

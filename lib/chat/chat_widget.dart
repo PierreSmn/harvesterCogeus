@@ -7,8 +7,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'chat_model.dart';
@@ -257,7 +259,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   .spacing,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -445,8 +446,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -587,8 +586,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -735,8 +732,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -878,8 +873,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w500,
-                                                                      useGoogleFonts:
-                                                                          false,
                                                                     ),
                                                               ),
                                                             ],
@@ -1014,8 +1007,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             FFAppConstants.spacing,
                                                                         fontWeight:
                                                                             FontWeight.w500,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1069,8 +1060,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1131,8 +1120,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1187,8 +1174,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1258,8 +1243,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -1515,7 +1498,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               fontSize: 18.0,
                                                                               letterSpacing: FFAppConstants.spacing,
                                                                               fontWeight: FontWeight.w500,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -1685,8 +1667,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 FFAppConstants.spacing,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -1750,8 +1730,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -1987,7 +1965,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               fontSize: 18.0,
                                                                               letterSpacing: FFAppConstants.spacing,
                                                                               fontWeight: FontWeight.w500,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -2157,8 +2134,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 FFAppConstants.spacing,
                                                                             fontWeight:
                                                                                 FontWeight.w500,
-                                                                            useGoogleFonts:
-                                                                                false,
                                                                           ),
                                                                     ),
                                                                   ],
@@ -2216,8 +2191,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -2319,8 +2292,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2538,7 +2509,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 fontSize: 18.0,
                                                                                 letterSpacing: FFAppConstants.spacing,
                                                                                 fontWeight: FontWeight.w500,
-                                                                                useGoogleFonts: false,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -2677,7 +2647,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               fontSize: 18.0,
                                                                               letterSpacing: FFAppConstants.spacing,
                                                                               fontWeight: FontWeight.w500,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -2741,8 +2710,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
-                                                                    useGoogleFonts:
-                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -2928,7 +2895,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                                 fontSize: 18.0,
                                                                                 letterSpacing: FFAppConstants.spacing,
                                                                                 fontWeight: FontWeight.w500,
-                                                                                useGoogleFonts: false,
                                                                               ),
                                                                         ),
                                                                       ],
@@ -3039,7 +3005,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               fontSize: 18.0,
                                                                               letterSpacing: FFAppConstants.spacing,
                                                                               fontWeight: FontWeight.w500,
-                                                                              useGoogleFonts: false,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -3096,8 +3061,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -3180,8 +3143,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
-                                                                  useGoogleFonts:
-                                                                      false,
                                                                 ),
                                                       ),
                                                     ),
@@ -3367,8 +3328,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                               FFAppConstants.spacing,
                                                                           fontWeight:
                                                                               FontWeight.w500,
-                                                                          useGoogleFonts:
-                                                                              false,
                                                                         ),
                                                                   ),
                                                                 ],
@@ -3487,8 +3446,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                             FFAppConstants.spacing,
                                                                         fontWeight:
                                                                             FontWeight.w500,
-                                                                        useGoogleFonts:
-                                                                            false,
                                                                       ),
                                                                 ),
                                                               ],
@@ -3542,8 +3499,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                useGoogleFonts:
-                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -3594,7 +3549,6 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                                                   .spacing,
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ),
@@ -3681,15 +3635,49 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          font: GoogleFonts.manrope(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
                                         ),
                                     hintText: 'Ecrivez ici',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Manrope',
+                                          font: GoogleFonts.manrope(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
+                                          ),
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .fontStyle,
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -3741,13 +3729,39 @@ class _ChatWidgetState extends State<ChatWidget> with TickerProviderStateMixin {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Manrope',
+                                        font: GoogleFonts.manrope(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
                                       ),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model.textControllerValidator
                                       .asValidator(context),
+                                  inputFormatters: [
+                                    if (!isAndroid && !isiOS)
+                                      TextInputFormatter.withFunction(
+                                          (oldValue, newValue) {
+                                        return TextEditingValue(
+                                          selection: newValue.selection,
+                                          text: newValue.text.toCapitalization(
+                                              TextCapitalization.sentences),
+                                        );
+                                      }),
+                                  ],
                                 ),
                               ),
                             ],

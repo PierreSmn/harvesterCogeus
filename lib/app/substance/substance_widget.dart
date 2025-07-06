@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'substance_model.dart';
 export 'substance_model.dart';
@@ -172,7 +173,13 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Manrope',
+                                            font: GoogleFonts.manrope(
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             color: GetSupaCall.colorTitle(
                                                           substanceGetSupaResponse
                                                               .jsonBody,
@@ -195,6 +202,10 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                             fontSize: 27.0,
                                             letterSpacing: -1,
                                             fontWeight: FontWeight.w600,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     textAlign: TextAlign.center,
@@ -219,8 +230,25 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                     ),
@@ -286,13 +314,17 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                           safeSetState(() {});
                                                         }
                                                       },
-                                                      side: BorderSide(
-                                                        width: 2,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                      ),
+                                                      side: (FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondaryText !=
+                                                              null)
+                                                          ? BorderSide(
+                                                              width: 2,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                            )
+                                                          : null,
                                                       activeColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -405,14 +437,31 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Manrope',
+                                                                font: GoogleFonts
+                                                                    .manrope(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                     ),
                                                   ),
@@ -521,43 +570,55 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .appleButton,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Manrope',
-                                                            color: GetSupaCall
-                                                                            .colorButtonText(
-                                                                          substanceGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        null &&
-                                                                    GetSupaCall
-                                                                            .colorButtonText(
-                                                                          substanceGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        ''
-                                                                ? colorFromCssString(
-                                                                    GetSupaCall
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.manrope(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: GetSupaCall
                                                                         .colorButtonText(
                                                                       substanceGetSupaResponse
                                                                           .jsonBody,
-                                                                    )!,
-                                                                    defaultColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                  )
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButtonText(
+                                                                      substanceGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButtonText(
+                                                                  substanceGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -618,8 +679,29 @@ class _SubstanceWidgetState extends State<SubstanceWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Manrope',
+                                                  font: GoogleFonts.manrope(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ].divide(SizedBox(height: 12.0)),
