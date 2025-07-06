@@ -12,10 +12,10 @@ class UploadModel extends FlutterFlowModel<UploadWidget> {
 
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData3u2 = false;
+  FFUploadedFile uploadedLocalFile_uploadData3u2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData3u2 = '';
 
   @override
   void initState(BuildContext context) {}

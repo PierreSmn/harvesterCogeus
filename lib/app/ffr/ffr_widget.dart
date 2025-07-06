@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'ffr_model.dart';
@@ -198,7 +199,14 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Manrope',
+                                                font: GoogleFonts.manrope(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
                                                 color: colorFromCssString(
                                                   GetSupaCall.colorTitle(
                                                     ffrGetSupaResponse.jsonBody,
@@ -211,6 +219,10 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                 fontSize: 27.0,
                                                 letterSpacing: -1,
                                                 fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                         textAlign: TextAlign.center,
@@ -247,25 +259,45 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                           children: [
                                             Text(
                                               'En envoyant vous aussi votre vidéo',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Manrope',
-                                                        color:
-                                                            colorFromCssString(
-                                                          GetSupaCall.colorText(
-                                                            ffrGetSupaResponse
-                                                                .jsonBody,
-                                                          )!,
-                                                          defaultColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .secondary,
-                                                        ),
-                                                        fontSize: 18.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.manrope(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    color: colorFromCssString(
+                                                      GetSupaCall.colorText(
+                                                        ffrGetSupaResponse
+                                                            .jsonBody,
+                                                      )!,
+                                                      defaultColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                    ),
+                                                    fontSize: 18.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -379,34 +411,53 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                                   () {});
                                                             }
                                                           },
-                                                          side: BorderSide(
-                                                            width: 2,
-                                                            color: GetSupaCall
-                                                                            .colorButton(
-                                                                          ffrGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        null &&
-                                                                    GetSupaCall
-                                                                            .colorButton(
-                                                                          ffrGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        ''
-                                                                ? colorFromCssString(
-                                                                    GetSupaCall
-                                                                        .colorButton(
-                                                                      ffrGetSupaResponse
-                                                                          .jsonBody,
-                                                                    )!,
-                                                                    defaultColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .appleButton,
-                                                                  )
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                          ),
+                                                          side: ((GetSupaCall
+                                                                                  .colorButton(
+                                                                                ffrGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              null &&
+                                                                          GetSupaCall
+                                                                                  .colorButton(
+                                                                                ffrGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          GetSupaCall
+                                                                              .colorButton(
+                                                                            ffrGetSupaResponse.jsonBody,
+                                                                          )!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).appleButton,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText) !=
+                                                                  null)
+                                                              ? BorderSide(
+                                                                  width: 2,
+                                                                  color: (GetSupaCall
+                                                                                  .colorButton(
+                                                                                ffrGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              null &&
+                                                                          GetSupaCall
+                                                                                  .colorButton(
+                                                                                ffrGetSupaResponse.jsonBody,
+                                                                              ) !=
+                                                                              ''
+                                                                      ? colorFromCssString(
+                                                                          GetSupaCall
+                                                                              .colorButton(
+                                                                            ffrGetSupaResponse.jsonBody,
+                                                                          )!,
+                                                                          defaultColor:
+                                                                              FlutterFlowTheme.of(context).appleButton,
+                                                                        )
+                                                                      : FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText),
+                                                                )
+                                                              : null,
                                                           activeColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -511,8 +562,17 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Manrope',
+                                                                font: GoogleFonts
+                                                                    .manrope(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color:
                                                                     colorFromCssString(
                                                                   GetSupaCall
@@ -528,6 +588,14 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                                 fontSize: 13.0,
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ),
@@ -575,9 +643,9 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                           validateFileFormat(
                                                               m.storagePath,
                                                               context))) {
-                                                    safeSetState(() =>
-                                                        _model.isDataUploading =
-                                                            true);
+                                                    safeSetState(() => _model
+                                                            .isDataUploading_uploadData3u2ffr =
+                                                        true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
 
@@ -614,7 +682,7 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                             selectedMedia,
                                                       );
                                                     } finally {
-                                                      _model.isDataUploading =
+                                                      _model.isDataUploading_uploadData3u2ffr =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
@@ -625,10 +693,10 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                             selectedMedia
                                                                 .length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile =
+                                                        _model.uploadedLocalFile_uploadData3u2ffr =
                                                             selectedUploadedFiles
                                                                 .first;
-                                                        _model.uploadedFileUrl =
+                                                        _model.uploadedFileUrl_uploadData3u2ffr =
                                                             downloadUrls.first;
                                                       });
                                                     } else {
@@ -637,7 +705,7 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                     }
                                                   }
 
-                                                  if (_model.uploadedFileUrl !=
+                                                  if (_model.uploadedFileUrl_uploadData3u2ffr !=
                                                           '') {
                                                     FFAppState().videoReady =
                                                         true;
@@ -646,8 +714,8 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                       ffrGetSupaResponse
                                                           .jsonBody,
                                                     )!;
-                                                    FFAppState().videoUrl =
-                                                        _model.uploadedFileUrl;
+                                                    FFAppState().videoUrl = _model
+                                                        .uploadedFileUrl_uploadData3u2ffr;
                                                     safeSetState(() {});
                                                   } else {
                                                     await showDialog(
@@ -743,43 +811,55 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .appleButton,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Manrope',
-                                                            color: GetSupaCall
-                                                                            .colorButtonText(
-                                                                          ffrGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        null &&
-                                                                    GetSupaCall
-                                                                            .colorButtonText(
-                                                                          ffrGetSupaResponse
-                                                                              .jsonBody,
-                                                                        ) !=
-                                                                        ''
-                                                                ? colorFromCssString(
-                                                                    GetSupaCall
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.manrope(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: GetSupaCall
                                                                         .colorButtonText(
                                                                       ffrGetSupaResponse
                                                                           .jsonBody,
-                                                                    )!,
-                                                                    defaultColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                  )
-                                                                : FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
+                                                                    ) !=
+                                                                    null &&
+                                                                GetSupaCall
+                                                                        .colorButtonText(
+                                                                      ffrGetSupaResponse
+                                                                          .jsonBody,
+                                                                    ) !=
+                                                                    ''
+                                                            ? colorFromCssString(
+                                                                GetSupaCall
+                                                                    .colorButtonText(
+                                                                  ffrGetSupaResponse
+                                                                      .jsonBody,
+                                                                )!,
+                                                                defaultColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                              )
+                                                            : FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
@@ -843,7 +923,18 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                         context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Manrope',
+                                                      font: GoogleFonts.manrope(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
                                                       color: colorFromCssString(
                                                         GetSupaCall.colorTitle(
                                                           ffrGetSupaResponse
@@ -855,6 +946,16 @@ class _FfrWidgetState extends State<FfrWidget> with TickerProviderStateMixin {
                                                                 .primaryText,
                                                       ),
                                                       letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
                                                     ),
                                               ),
                                             ].divide(SizedBox(height: 12.0)),

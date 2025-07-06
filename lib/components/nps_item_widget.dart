@@ -131,7 +131,6 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
                       fontSize: 18.0,
                       letterSpacing: 0.0,
                       fontWeight: FontWeight.w500,
-                      useGoogleFonts: false,
                     ),
               ),
               if (widget.nps == 10)
@@ -143,7 +142,6 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
                         fontSize: 16.0,
                         letterSpacing: FFAppConstants.spacing,
                         fontWeight: FontWeight.w500,
-                        useGoogleFonts: false,
                       ),
                 ),
               if (widget.nps == 0)
@@ -155,7 +153,6 @@ class _NpsItemWidgetState extends State<NpsItemWidget> {
                         fontSize: 16.0,
                         letterSpacing: FFAppConstants.spacing,
                         fontWeight: FontWeight.w500,
-                        useGoogleFonts: false,
                       ),
                 ),
             ].divide(SizedBox(width: 6.0)),

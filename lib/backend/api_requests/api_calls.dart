@@ -154,7 +154,7 @@ class PostSubmissionFgCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'post submission fg',
-      apiUrl: 'https://tryinit.fastgenapp.com/submitFF',
+      apiUrl: 'https://qmtvmp.buildship.run/submitff',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

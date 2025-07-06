@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'vandbfest_copy_model.dart';
@@ -210,7 +211,13 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Manrope',
+                                              font: GoogleFonts.manrope(
+                                                fontWeight: FontWeight.w600,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
                                               color: GetSupaCall.colorTitle(
                                                             vandbfestCopyGetSupaResponse
                                                                 .jsonBody,
@@ -234,6 +241,10 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                               fontSize: 27.0,
                                               letterSpacing: -1,
                                               fontWeight: FontWeight.w600,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
                                             ),
                                       ),
                                       textAlign: TextAlign.center,
@@ -309,12 +320,17 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                             safeSetState(() {});
                                                           }
                                                         },
-                                                        side: BorderSide(
-                                                          width: 2,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                        ),
+                                                        side: (FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText !=
+                                                                null)
+                                                            ? BorderSide(
+                                                                width: 2,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                              )
+                                                            : null,
                                                         activeColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -426,8 +442,17 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                                     context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Manrope',
+                                                                  font: GoogleFonts
+                                                                      .manrope(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
@@ -435,6 +460,14 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                                       13.0,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
                                                                 ),
                                                       ),
                                                     ),
@@ -489,7 +522,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                                 m.storagePath,
                                                                 context))) {
                                                       safeSetState(() => _model
-                                                              .isDataUploading =
+                                                              .isDataUploading_uploadData3uInUSE =
                                                           true);
                                                       var selectedUploadedFiles =
                                                           <FFUploadedFile>[];
@@ -527,7 +560,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                               selectedMedia,
                                                         );
                                                       } finally {
-                                                        _model.isDataUploading =
+                                                        _model.isDataUploading_uploadData3uInUSE =
                                                             false;
                                                       }
                                                       if (selectedUploadedFiles
@@ -538,10 +571,10 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                               selectedMedia
                                                                   .length) {
                                                         safeSetState(() {
-                                                          _model.uploadedLocalFile =
+                                                          _model.uploadedLocalFile_uploadData3uInUSE =
                                                               selectedUploadedFiles
                                                                   .first;
-                                                          _model.uploadedFileUrl =
+                                                          _model.uploadedFileUrl_uploadData3uInUSE =
                                                               downloadUrls
                                                                   .first;
                                                         });
@@ -551,7 +584,7 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                       }
                                                     }
 
-                                                    if (_model.uploadedFileUrl !=
+                                                    if (_model.uploadedFileUrl_uploadData3uInUSE !=
                                                             '') {
                                                       FFAppState().videoReady =
                                                           true;
@@ -561,9 +594,8 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                         vandbfestCopyGetSupaResponse
                                                             .jsonBody,
                                                       )!;
-                                                      FFAppState().videoUrl =
-                                                          _model
-                                                              .uploadedFileUrl;
+                                                      FFAppState().videoUrl = _model
+                                                          .uploadedFileUrl_uploadData3uInUSE;
                                                       safeSetState(() {});
                                                     }
                                                     FFAppState().slug =
@@ -644,8 +676,16 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                                 context)
                                                             .titleSmall
                                                             .override(
-                                                              fontFamily:
-                                                                  'Manrope',
+                                                              font: GoogleFonts
+                                                                  .manrope(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
                                                               color: GetSupaCall
                                                                               .colorButtonText(
                                                                             vandbfestCopyGetSupaResponse.jsonBody,
@@ -674,6 +714,11 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
+                                                              fontStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
                                                             ),
                                                     elevation: 0.0,
                                                     borderSide: BorderSide(
@@ -736,8 +781,30 @@ class _VandbfestCopyWidgetState extends State<VandbfestCopyWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Manrope',
+                                                        font:
+                                                            GoogleFonts.manrope(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
                                                       ),
                                             ),
                                           ].divide(SizedBox(height: 12.0)),

@@ -12,10 +12,10 @@ class FfrModel extends FlutterFlowModel<FfrWidget> {
 
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadData3u2ffr = false;
+  FFUploadedFile uploadedLocalFile_uploadData3u2ffr =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadData3u2ffr = '';
 
   @override
   void initState(BuildContext context) {}

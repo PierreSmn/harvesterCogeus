@@ -25,10 +25,10 @@ class ProductionModel extends FlutterFlowModel<ProductionWidget> {
   FlutterFlowTimerController timerController =
       FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_uploadDataTwe = false;
+  FFUploadedFile uploadedLocalFile_uploadDataTwe =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_uploadDataTwe = '';
 
   @override
   void initState(BuildContext context) {}
